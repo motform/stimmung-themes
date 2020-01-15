@@ -1,6 +1,6 @@
-# Stimmung — A theme toned to inner harmonies
+# Stimmung
 
-This is the first version of the theme, good enough for daily use, 
+This is the first version of the theme, good enough for (my own) daily use, 
 but still missing a bunch of faces. Screenshots and a light version coming soon™.
 
 

@@ -81,16 +81,28 @@
                (error                       :foreground ,s-red)
                (cancel                      :foreground ,s-red :strike-through t)
                (warning                     :foreground ,s-red)
+               (success                     :foreground ,s-green)
                (isearch                     :foreground ,s-fg    :background ,s-hline)
                (isearch-highlight           :foreground ,s-fg    :background ,s-wtf)
                (isearch-fail                :foreground ,s-fg    :background ,s-red)
-               (isearch-                :foreground ,s-fg    :background ,s-red)
                (paren-matched               :foreground ,s-green :background ,s-bg)
-               (paren-unmatched             :foreground ,s-red :background ,s-bg)
+               (paren-unmatched             :foreground ,s-red   :background ,s-bg)
                (escape-glyph                :foreground ,s-red :bold t)
                (homoglyph                   :foreground ,s-red :bold t)
 
-               (eshell-prompt               :foreground ,s-gray :bold t)
+               ;; eshell
+               (eshell-prompt        :foreground ,s-lgray :bold t)
+               (eshell-ls-directory  :foreground ,s-beige :bold t)
+               (eshell-ls-symlink    :foreground ,s-fg :italic t)
+               (eshell-ls-executable :foreground ,s-gray :bold t)
+               (eshell-ls-readonly   :foreground ,s-red)
+               (eshell-ls-unreadable :foreground ,s-gray) ; too dark?
+               (eshell-ls-special    :foreground ,s-green :italic t)
+               (eshell-ls-missing    :foreground ,s-red)
+               (eshell-ls-product    :foreground ,s-fg)
+               (eshell-ls-archive    :foreground ,s-lgray)
+               (eshell-ls-entries    :foreground ,s-fg)
+               (eshell-ls-backup     :foreground ,s-lgray :italic t)
 
                ;; syntax
                (font-lock-builtin-face           :foreground ,s-beige   :italic t)
@@ -99,7 +111,7 @@
                (font-lock-doc-face               :foreground ,s-comment :italic t) ; should this be the same as comments?
                (font-lock-constant-face          :foreground ,s-beige   :bold t :italic t)
                (font-lock-function-name-face     :foreground ,s-beige   :bold t)
-               (font-lock-keyword-face           :foreground ,s-lgray   :bold t bold)
+               (font-lock-keyword-face           :foreground ,s-lgray   :bold t bold) ; should this be gray?
                (font-lock-string-face            :foreground ,s-lgray) ; a bit dark?
                (font-lock-type-face              :foreground ,s-beige   :bold t)
                (font-lock-variable-name-face     :foreground ,s-fg      :italic t)
@@ -112,15 +124,15 @@
                (avy-lead-face-2 :inherit 'avy-lead-face)
 
                ;; flyspell
-               ;; TODO make the macro work with advanced styles
-               (flyspell-incorrent :underline ,s-red)
+               ;; TODO make these lines wavy!
+               (flyspell-incorrect :underline ,s-red)
                (flyspell-duplicate :underline ,s-beige)
                (flycheck-error     :underline ,s-red)
                (flysheck-warning   :underline ,s-beige)
                (flycheck-note      :underline ,s-green)
 
                ;; hydra
-               (hydra-face-red      :foreground ,s-beige  :bold t)
+               (hydra-face-red      :foreground ,s-fg  :bold t)
                (hydra-face-blue     :foreground ,s-lgray :bold t)
                (hydra-face-amaranth :foreground ,s-lgray :bold t)
                (hydra-face-pink     :foreground ,s-lgray :bold t)
@@ -134,21 +146,17 @@
                (company-echo-common              :background ,s-fg  :foreground ,s-bg)
                (company-preview                  :background ,s-bg  :foreground ,s-beige)
                (company-tooltip                  :background ,s-gray :foreground ,s-fg)
-               (company-tooltip-annotation       :foreground ,s-beige)
+               (company-tooltip-ann
+                otation       :foreground ,s-beige)
                (company-tooltip-common           :foreground ,s-lgray)
                (company-tooltip-common-selection :foreground ,s-beige)
                (company-tooltip-mouse            :inherit highlight)
                (company-tooltip-selection        :background ,s-gray :foreground ,s-lgray)
                (company-tooltip-selection-       :background ,s-gray :foreground ,s-lgray)
 
-               ;; eshell
-
-               ;; eshell
-               ;; TODO  change the prompt?
-
                ;; modeline
                ;; TODO introduce a dark gray for this?
-               (mode-line           :foreground ,s-fg   :background ,s-bg)
+               (mode-line           :foreground ,s-fg    :background ,s-bg)
                (mode-line-inactive  :foreground ,s-lgray :background ,s-bg)
                (mode-line-buffer-id :foreground ,s-fg :bold t :italic t)
                (mode-line-emphasis  :foreground ,s-fg :bold t)
@@ -160,7 +168,8 @@
                (doom-modeline-buffer-path       :foreground ,s-fg)
                (doom-modeline-buffer-file       :foreground ,s-fg  :weight bold)
                (doom-modeline-buffer-modified   :foreground ,s-red :weight bold)
-               (doom-modeline-bar               :foreground ,s-fg  :background ,s-bg )
+               (doom-modeline-bar               :background ,s-lgray) ; the leftmost bar
+               (doom-modeline-bar-inactive      :foreground ,s-fg  :background ,s-bg)
                (doom-modeline-evil-insert-state :foreground ,s-beige)
                (doom-modeline-evil-normal-state :foreground ,s-lgray)
                (doom-modeline-evil-visual-state :foreground ,s-beige)
@@ -213,6 +222,7 @@
                (magit-section-highlight      :background ,s-gray)
 
                ;; org
+               ;; there are a _lot_ of faces in org, so some might still be missing
 
                ;; (org-agenda-date :foreground ,dracula-cyan :underline nil)
                ;; (org-agenda-dimmed-todo-face :foreground ,dracula-comment)
@@ -221,13 +231,14 @@
                ;; (org-column :background ,bg4)
                ;; (org-column-title :inherit org-column :weight bold :underline t)
 
-               (org-code                  :distant-foreground ,s-bg :background ,s-beige) ; make the highlighed fg be
+               (org-code                  :foreground ,s-beige :distant-foreground ,s-bg :background ,s-beige) ; make the highlighed fg be
                (org-block                 :foreground ,s-fg  :background ,s-gray)
                (org-block-begin-line      :foreground ,s-lgray :background ,s-gray :bold t) ; could be a better fg
                (org-block-end-line        :foreground ,s-lgray :background ,s-gray :bold t)
                (org-date                  :foreground ,s-beige)
-               (org-document-info         :foreground ,s-fg :italic t)
-               (org-document-info-keyword :foreground ,s-comment)
+               (org-drawer                :foreground ,s-lgray :bold t)
+               (org-document-info         :foreground ,s-fg :italic t) ;; BUG does not seem to correctly color fg
+               (org-document-info-keyword :foreground ,s-comment :background ,s-bg)
                (org-document-title        :foreground ,s-fg :weight bold)
                (org-done                  :foreground ,s-green)
                (org-ellipsis              :foreground ,s-comment)
@@ -243,7 +254,7 @@
                (org-level-6               :foreground ,s-fg :bold t)
                (org-level-7               :foreground ,s-fg :bold t)
                (org-level-8               :foreground ,s-fg :bold t)
-               (org-link                  :foreground ,s-comment :underline t)
+               (org-link                  :foreground ,s-comment :underline t) ; foreground not respected?
                (org-list-dt               :foreground ,s-comment :bold t)
                (org-priority              :foreground ,s-beige)
                (org-scheduled             :foreground ,s-red)
@@ -252,12 +263,13 @@
                (org-sexp-date             :foreground ,s-beige)
                (org-special-keyword       :foreground ,s-beige)
                (org-table                 :foreground ,s-comment)
-               (org-tag                   :foreground ,s-comment :bold t)
+               (org-tag                   :foreground ,s-comment :background ,s-bg :bold t)
                (org-todo                  :foreground ,s-red     :bold t)
                (org-upcoming-deadline     :foreground ,s-red)
                (org-warning               :foreground ,s-red     :bold t)
 
                ;; markdown mode
+               ;; TODO parity with doom-themes
                (markdown-header-face :foreground ,s-fg :bold t)
                (markdown-list-face   :foreground ,s-lgray :bold t)
                (markdown-italic-face :foreground ,s-fg :italic t)
@@ -266,7 +278,7 @@
                (markdown-url-face    :foreground ,s-comment :underline t)
 
                ;; smartparens
-               (sp-show-pair-match-face :inherit 'paren-matched)
+               (sp-show-pair-match-face    :inherit 'paren-matched)
                (sp-show-pair-mismatch-face :inherit 'paren-unmatched)
 
                ;; prism
