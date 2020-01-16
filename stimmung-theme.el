@@ -59,7 +59,7 @@
 
       (faces '((cursor              :background ,s-fg)
                (hl-line             :background ,s-hline :extend t)
-               (secondary-selection :background ,s-red)
+               (secondary-selection :background ,s-gray :foreground ,s-red   :bold t)
                (region              :background ,s-hline :bold t)
                (shadow              :background ,s-hline)
                (highlight           :foreground ,s-fg    :background ,s-gray :bold t)
@@ -74,21 +74,41 @@
                (trailing-whitespace :foreground ,s-red)
                (tooltip             :foreground ,s-fg :background ,s-gray)
                (vertical-border     :foreground ,s-hline :background ,s-hline)
+               (nobreak-space       :inherit 'default :underline nil)
                (default-italic      :slant italic)
+
+               (error                       :foreground ,s-red)
+               (warning                     :foreground ,s-red)
+               (success                     :foreground ,s-green)
 
                (minibuffer-noticable-prompt :foreground ,s-lgray :bold t)
                (minibuffer-prompt           :foreground ,s-lgray :bold t)
-               (error                       :foreground ,s-red)
                (cancel                      :foreground ,s-red :strike-through t)
-               (warning                     :foreground ,s-red)
-               (success                     :foreground ,s-green)
                (isearch                     :foreground ,s-fg    :background ,s-hline)
                (isearch-highlight           :foreground ,s-fg    :background ,s-wtf)
-               (isearch-fail                :foreground ,s-fg    :background ,s-red)
+               (isearch-fail                :foreground ,s-red   :background ,s-bg)
                (paren-matched               :foreground ,s-green :background ,s-bg)
                (paren-unmatched             :foreground ,s-red   :background ,s-bg)
                (escape-glyph                :foreground ,s-red :bold t)
                (homoglyph                   :foreground ,s-red :bold t)
+
+               ;; syntax
+               (font-lock-builtin-face              :foreground ,s-beige   :italic t)
+               (font-lock-comment-delimiter-face    :foreground ,s-comment :italic t)
+               (font-lock-comment-face              :foreground ,s-comment :italic t)
+               (font-lock-doc-face                  :foreground ,s-comment :italic t) ; should this be the same as comments?
+               (font-lock-constant-face             :foreground ,s-beige   :bold t :italic t)
+               (font-lock-function-name-face        :foreground ,s-beige   :bold t)
+               (font-lock-keyword-face              :foreground ,s-lgray   :bold t) ; should this be gray?
+               (font-lock-string-face               :foreground ,s-lgray) ; a bit dark?
+               (font-lock-type-face                 :foreground ,s-beige   :bold t)
+               (font-lock-variable-name-face        :foreground ,s-fg      :italic t)
+               (font-lock-warning-face              :foreground ,s-red)
+               (font-lock-negation-char-face        :foreground ,s-fg :bold t)
+               (font-lock-preprocessor-face         :foreground ,s-fg :bold t)
+               (font-lock-preprocessor-char-face    :foreground ,s-fg :bold t)
+               (font-lock-regexp-grouping-backslash :foreground ,s-fg :bold t)
+               (font-lock-regexp-grouping-construct :foreground ,s-fg :bold t)
 
                ;; eshell
                (eshell-prompt        :foreground ,s-lgray :bold t)
@@ -103,19 +123,6 @@
                (eshell-ls-archive    :foreground ,s-lgray)
                (eshell-ls-entries    :foreground ,s-fg)
                (eshell-ls-backup     :foreground ,s-lgray :italic t)
-
-               ;; syntax
-               (font-lock-builtin-face           :foreground ,s-beige   :italic t)
-               (font-lock-comment-delimiter-face :foreground ,s-comment :italic t)
-               (font-lock-comment-face           :foreground ,s-comment :italic t)
-               (font-lock-doc-face               :foreground ,s-comment :italic t) ; should this be the same as comments?
-               (font-lock-constant-face          :foreground ,s-beige   :bold t :italic t)
-               (font-lock-function-name-face     :foreground ,s-beige   :bold t)
-               (font-lock-keyword-face           :foreground ,s-lgray   :bold t bold) ; should this be gray?
-               (font-lock-string-face            :foreground ,s-lgray) ; a bit dark?
-               (font-lock-type-face              :foreground ,s-beige   :bold t)
-               (font-lock-variable-name-face     :foreground ,s-fg      :italic t)
-               (font-lock-warning-face           :foreground ,s-red)
 
                ;; avy
                (avy-lead-face :background ,s-hline :foreground ,s-fg :distant-foreground ,s-comment :bold t)
@@ -146,36 +153,55 @@
                (company-echo-common              :background ,s-fg  :foreground ,s-bg)
                (company-preview                  :background ,s-bg  :foreground ,s-beige)
                (company-tooltip                  :background ,s-gray :foreground ,s-fg)
-               (company-tooltip-ann
-                otation       :foreground ,s-beige)
+               (company-tooltip-annotation       :foreground ,s-beige)
                (company-tooltip-common           :foreground ,s-lgray)
                (company-tooltip-common-selection :foreground ,s-beige)
                (company-tooltip-mouse            :inherit highlight)
                (company-tooltip-selection        :background ,s-gray :foreground ,s-lgray)
                (company-tooltip-selection-       :background ,s-gray :foreground ,s-lgray)
 
+               ;; compilation
+               (compilation-column-number  :inherit 'font-lock-comment-face)
+               (compilation-line-number    :foreground ,s-beige)
+               (compilation-error   :inherit 'error   :bold t)
+               (compilation-warning :inherit 'warning :italic t)
+               (compilation-info    :inherit 'success)
+               (compilation-mode-line-exit :inherit 'compilation-info)
+               (compilation-mode-line-fail :inherit 'compilation-error)
+
                ;; modeline
-               ;; TODO introduce a dark gray for this?
                (mode-line           :foreground ,s-fg    :background ,s-bg)
                (mode-line-inactive  :foreground ,s-lgray :background ,s-bg)
                (mode-line-buffer-id :foreground ,s-fg :bold t :italic t)
                (mode-line-emphasis  :foreground ,s-fg :bold t)
                (mode-line-highlight :foreground ,s-beige)
+               (header-line         :inherit 'mode-line :distant-foreground ,s-bg)
 
-               ;; hydra
+               ;; TODO custom
 
                ;; doom-modeline
-               (doom-modeline-buffer-path       :foreground ,s-fg)
-               (doom-modeline-buffer-file       :foreground ,s-fg  :weight bold)
-               (doom-modeline-buffer-modified   :foreground ,s-red :weight bold)
-               (doom-modeline-bar               :background ,s-lgray) ; the leftmost bar
-               (doom-modeline-bar-inactive      :foreground ,s-fg  :background ,s-bg)
-               (doom-modeline-evil-insert-state :foreground ,s-beige)
-               (doom-modeline-evil-normal-state :foreground ,s-lgray)
-               (doom-modeline-evil-visual-state :foreground ,s-beige)
-               (doom-modeline--helm-current-source :foreground ,s-beige)
+               (doom-modeline-buffer-path        :foreground ,s-lgray)
+               (doom-modeline-buffer-file        :foreground ,s-fg  :weight bold)
+               (doom-modeline-buffer-modified    :foreground ,s-red :weight bold)
+               (doom-modeline-project-dir        :foreground ,s-fg :weight bold)
+               (doom-modeline-project-root-dir   :foreground ,s-lgray :weight normal)
+               (doom-modeline-project-parent-dir :foreground ,s-lgray :weight normal)
+               (doom-modeline-bar                :background ,s-bg) ; the leftmost bar
+               (doom-modeline-bar-inactive       :foreground ,s-fg  :background ,s-bg)
+               (doom-modeline-evil-insert-state  :foreground ,s-beige)
+               (doom-modeline-evil-normal-state  :foreground ,s-lgray)
+               (doom-modeline-evil-visual-state  :foreground ,s-beige)
 
                ;; dired
+               (dired-directory  :foreground ,s-lgray :bold t)
+               (dired-ignored    :foreground ,s-comment)
+               (dired-flagged    :foreground ,s-green)
+               (dired-header     :foreground ,s-fg  :bold t)
+               (dired-mark       :foreground ,s-red :bold t)
+               (dired-marked     :foreground ,s-red :bold t :italic t)
+               (dired-perm-write :foreground ,s-fg  :underline t)
+               (dired-symlink    :foreground ,s-fg  :italic t)
+               (dired-warning    :foreground ,s-red)
 
                ;; evil
                (evil-ex-info                   :foreground ,s-red :italic t)
