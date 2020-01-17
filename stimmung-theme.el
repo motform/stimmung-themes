@@ -6,7 +6,7 @@
 ;; URL: https://github.com/motform/stimmung
 ;; Package-Requires: ((emacs "24"))
 ;; Created: 2019-12-20
-;; Keywords: themes
+;; Keywords: color theme
 
 ;; This file is NOT part of GNU Emacs.
 
@@ -58,51 +58,50 @@
                 (s-wtf     "#ff79c6")))
 
       (faces '((cursor              :background ,s-fg)
+               (shadow              :background ,s-hline)
                (hl-line             :background ,s-hline :extend t)
                (secondary-selection :background ,s-gray :foreground ,s-red   :bold t)
                (region              :background ,s-hline :bold t)
-               (shadow              :background ,s-hline)
                (highlight           :foreground ,s-fg    :background ,s-gray :bold t)
-               (lazy-highlight      :foreground ,s-lgray :background ,s-bg :bold t)
+               (lazy-highlight      :foreground ,s-lgray :background ,s-bg   :bold t)
                (default             :foreground ,s-fg    :background ,s-bg)
                (match               :foreground ,s-green :bold t)
                (fringe              :foreground ,s-fg    :background ,s-bg)
-               (info-string         :foreground ,s-beige)
                (link                :foreground ,s-beige :underline t)
                (button              :foreground ,s-beige :underline t)
                (header-line         :foreground ,s-beige :bold t)
-               (trailing-whitespace :foreground ,s-red)
-               (tooltip             :foreground ,s-fg :background ,s-gray)
+               (tooltip             :foreground ,s-fg    :background ,s-gray)
                (vertical-border     :foreground ,s-hline :background ,s-hline)
-               (nobreak-space       :inherit 'default :underline nil)
+               (info-string         :foreground ,s-beige)
                (default-italic      :slant italic)
+
 
                (error                       :foreground ,s-red)
                (warning                     :foreground ,s-red)
                (success                     :foreground ,s-green)
+               (cancel                      :foreground ,s-red :strike-through t)
 
                (minibuffer-noticable-prompt :foreground ,s-lgray :bold t)
                (minibuffer-prompt           :foreground ,s-lgray :bold t)
-               (cancel                      :foreground ,s-red :strike-through t)
                (isearch                     :foreground ,s-fg    :background ,s-hline)
                (isearch-highlight           :foreground ,s-fg    :background ,s-wtf)
                (isearch-fail                :foreground ,s-red   :background ,s-bg)
                (paren-matched               :foreground ,s-green :background ,s-bg)
                (paren-unmatched             :foreground ,s-red   :background ,s-bg)
-               (escape-glyph                :foreground ,s-red :bold t)
-               (homoglyph                   :foreground ,s-red :bold t)
+               (escape-glyph                :foreground ,s-red   :bold t)
+               (homoglyph                   :foreground ,s-red   :bold t)
 
                ;; syntax
                (font-lock-builtin-face              :foreground ,s-beige   :italic t)
                (font-lock-comment-delimiter-face    :foreground ,s-comment :italic t)
                (font-lock-comment-face              :foreground ,s-comment :italic t)
-               (font-lock-doc-face                  :foreground ,s-comment :italic t) ; should this be the same as comments?
+               (font-lock-doc-face                  :foreground ,s-comment :italic t)
                (font-lock-constant-face             :foreground ,s-beige   :bold t :italic t)
                (font-lock-function-name-face        :foreground ,s-beige   :bold t)
-               (font-lock-keyword-face              :foreground ,s-lgray   :bold t) ; should this be gray?
-               (font-lock-string-face               :foreground ,s-lgray) ; a bit dark?
+               (font-lock-keyword-face              :foreground ,s-lgray   :bold t)
                (font-lock-type-face                 :foreground ,s-beige   :bold t)
                (font-lock-variable-name-face        :foreground ,s-fg      :italic t)
+               (font-lock-string-face               :foreground ,s-lgray)
                (font-lock-warning-face              :foreground ,s-red)
                (font-lock-negation-char-face        :foreground ,s-fg :bold t)
                (font-lock-preprocessor-face         :foreground ,s-fg :bold t)
@@ -113,8 +112,8 @@
                ;; eshell
                (eshell-prompt        :foreground ,s-lgray :bold t)
                (eshell-ls-directory  :foreground ,s-beige :bold t)
-               (eshell-ls-symlink    :foreground ,s-fg :italic t)
-               (eshell-ls-executable :foreground ,s-gray :bold t)
+               (eshell-ls-symlink    :foreground ,s-fg    :italic t)
+               (eshell-ls-executable :foreground ,s-gray  :bold t)
                (eshell-ls-readonly   :foreground ,s-red)
                (eshell-ls-unreadable :foreground ,s-gray) ; too dark?
                (eshell-ls-special    :foreground ,s-green :italic t)
@@ -125,7 +124,7 @@
                (eshell-ls-backup     :foreground ,s-lgray :italic t)
 
                ;; avy
-               (avy-lead-face :background ,s-hline :foreground ,s-fg :distant-foreground ,s-comment :bold t)
+               (avy-lead-face   :background ,s-hline :foreground ,s-fg :distant-foreground ,s-comment :bold t)
                (avy-lead-face-0 :inherit 'avy-lead-face)
                (avy-lead-face-1 :inherit 'avy-lead-face)
                (avy-lead-face-2 :inherit 'avy-lead-face)
@@ -139,7 +138,7 @@
                (flycheck-note      :underline ,s-green)
 
                ;; hydra
-               (hydra-face-red      :foreground ,s-fg  :bold t)
+               (hydra-face-red      :foreground ,s-fg    :bold t)
                (hydra-face-blue     :foreground ,s-lgray :bold t)
                (hydra-face-amaranth :foreground ,s-lgray :bold t)
                (hydra-face-pink     :foreground ,s-lgray :bold t)
@@ -150,8 +149,8 @@
                ;; company
                (company-scrollbar-bg             :background ,s-lgray)
                (company-scrollbar-fg             :foreground ,s-fg)
-               (company-echo-common              :background ,s-fg  :foreground ,s-bg)
-               (company-preview                  :background ,s-bg  :foreground ,s-beige)
+               (company-echo-common              :background ,s-fg   :foreground ,s-bg)
+               (company-preview                  :background ,s-bg   :foreground ,s-beige)
                (company-tooltip                  :background ,s-gray :foreground ,s-fg)
                (company-tooltip-annotation       :foreground ,s-beige)
                (company-tooltip-common           :foreground ,s-lgray)
@@ -161,33 +160,33 @@
                (company-tooltip-selection-       :background ,s-gray :foreground ,s-lgray)
 
                ;; compilation
+               (compilation-line-number    :foreground ,s-beige :bold t)
                (compilation-column-number  :inherit 'font-lock-comment-face)
-               (compilation-line-number    :foreground ,s-beige)
-               (compilation-error   :inherit 'error   :bold t)
-               (compilation-warning :inherit 'warning :italic t)
-               (compilation-info    :inherit 'success)
+               (compilation-error          :inherit 'error   :bold t)
+               (compilation-warning        :inherit 'warning :italic t)
+               (compilation-info           :inherit 'success)
                (compilation-mode-line-exit :inherit 'compilation-info)
                (compilation-mode-line-fail :inherit 'compilation-error)
 
                ;; modeline
+               (header-line         :inherit 'mode-line  :distant-foreground ,s-bg)
                (mode-line           :foreground ,s-fg    :background ,s-bg)
                (mode-line-inactive  :foreground ,s-lgray :background ,s-bg)
-               (mode-line-buffer-id :foreground ,s-fg :bold t :italic t)
-               (mode-line-emphasis  :foreground ,s-fg :bold t)
+               (mode-line-buffer-id :foreground ,s-fg    :bold t :italic t)
+               (mode-line-emphasis  :foreground ,s-fg    :bold t)
                (mode-line-highlight :foreground ,s-beige)
-               (header-line         :inherit 'mode-line :distant-foreground ,s-bg)
 
                ;; TODO custom
 
                ;; doom-modeline
                (doom-modeline-buffer-path        :foreground ,s-lgray)
-               (doom-modeline-buffer-file        :foreground ,s-fg  :weight bold)
-               (doom-modeline-buffer-modified    :foreground ,s-red :weight bold)
-               (doom-modeline-project-dir        :foreground ,s-fg :weight bold)
+               (doom-modeline-buffer-file        :foreground ,s-fg    :weight bold)
+               (doom-modeline-buffer-modified    :foreground ,s-red   :weight bold)
+               (doom-modeline-project-dir        :foreground ,s-fg    :weight bold)
                (doom-modeline-project-root-dir   :foreground ,s-lgray :weight normal)
                (doom-modeline-project-parent-dir :foreground ,s-lgray :weight normal)
+               (doom-modeline-bar-inactive       :foreground ,s-fg    :background ,s-bg)
                (doom-modeline-bar                :background ,s-bg) ; the leftmost bar
-               (doom-modeline-bar-inactive       :foreground ,s-fg  :background ,s-bg)
                (doom-modeline-evil-insert-state  :foreground ,s-beige)
                (doom-modeline-evil-normal-state  :foreground ,s-lgray)
                (doom-modeline-evil-visual-state  :foreground ,s-beige)
@@ -244,7 +243,7 @@
                (magit-log-author             :foreground ,s-lgray)
                (magit-process-ng             :foreground ,s-beige :bold t)
                (magit-process-ok             :foreground ,s-green :bold t)
-               (magit-section-heading        :foreground ,s-lgray  :bold t)
+               (magit-section-heading        :foreground ,s-lgray :bold t)
                (magit-section-highlight      :background ,s-gray)
 
                ;; org
@@ -258,14 +257,14 @@
                ;; (org-column-title :inherit org-column :weight bold :underline t)
 
                (org-code                  :foreground ,s-beige :distant-foreground ,s-bg :background ,s-beige) ; make the highlighed fg be
-               (org-block                 :foreground ,s-fg  :background ,s-gray)
+               (org-block                 :foreground ,s-fg    :background ,s-gray)
                (org-block-begin-line      :foreground ,s-lgray :background ,s-gray :bold t) ; could be a better fg
                (org-block-end-line        :foreground ,s-lgray :background ,s-gray :bold t)
                (org-date                  :foreground ,s-beige)
-               (org-drawer                :foreground ,s-lgray :bold t)
-               (org-document-info         :foreground ,s-fg :italic t) ;; BUG does not seem to correctly color fg
+               (org-drawer                :foreground ,s-lgray   :bold t)
+               (org-document-info         :foreground ,s-fg      :italic t) ;; BUG does not seem to correctly color fg
                (org-document-info-keyword :foreground ,s-comment :background ,s-bg)
-               (org-document-title        :foreground ,s-fg :weight bold)
+               (org-document-title        :foreground ,s-fg      :weight bold)
                (org-done                  :foreground ,s-green)
                (org-ellipsis              :foreground ,s-comment)
                (org-footnote              :foreground ,s-beige)
@@ -290,25 +289,42 @@
                (org-special-keyword       :foreground ,s-beige)
                (org-table                 :foreground ,s-comment)
                (org-tag                   :foreground ,s-comment :background ,s-bg :bold t)
-               (org-todo                  :foreground ,s-red     :bold t)
+               (org-todo                  :foreground ,s-red :bold t)
+               (org-warning               :foreground ,s-red :bold t)
                (org-upcoming-deadline     :foreground ,s-red)
-               (org-warning               :foreground ,s-red     :bold t)
 
                ;; markdown mode
                ;; TODO parity with doom-themes
-               (markdown-header-face :foreground ,s-fg :bold t)
-               (markdown-list-face   :foreground ,s-lgray :bold t)
-               (markdown-italic-face :foreground ,s-fg :italic t)
-               (markdown-bold-face   :foreground ,s-fg :bold t)
-               (markdown-link-face   :foreground ,s-fg :bold t)
+               (markdown-header-face :foreground ,s-fg      :bold t)
+               (markdown-list-face   :foreground ,s-lgray   :bold t)
+               (markdown-italic-face :foreground ,s-fg      :italic t)
+               (markdown-bold-face   :foreground ,s-fg      :bold t)
+               (markdown-link-face   :foreground ,s-fg      :bold t)
                (markdown-url-face    :foreground ,s-comment :underline t)
 
                ;; smartparens
                (sp-show-pair-match-face    :inherit 'paren-matched)
                (sp-show-pair-mismatch-face :inherit 'paren-unmatched)
 
-               ;; prism
-               ;; web-mode
+               ;; TODO undo-tree
+               ;; (undo-tree-visualizer-default-face :foreground base5)
+               ;; (undo-tree-visualizer-current-face :foreground green :weight 'bold)
+               ;; (undo-tree-visualizer-unmodified-face :foreground base5)
+               ;; (undo-tree-visualizer-active-branch-face :foreground blue)
+               ;; (undo-tree-visualizer-register-face :foreground yellow)
+
+               ;; TODO prism
+               ;; TODO web-mode
+               ;; TODO whitespace
+               (whitespace-empty       :background ,s-gray)
+               (trailing-whitespace    :foreground ,s-red)
+               (whitespace-space       :foreground ,s-lgray)
+               (whitespace-newline     :foreground ,s-lgray)
+               (whitespace-tab         :foreground ,s-lgray :background (unless (default-value 'indent-tabs-mode) ,s-gray))
+               (whitespace-indentation :foreground ,s-red   :background ,s-lgray)
+               (whitespace-line        :foreground ,s-red   :background ,s-fg :weight 'bold)
+               (nobreak-space          :inherit 'default    :underline nil)
+               (whitespace-trailing    :inherit 'trailing-whitespace)
                )))
 
   (apply #'custom-theme-set-faces
