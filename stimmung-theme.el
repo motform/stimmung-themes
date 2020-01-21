@@ -302,6 +302,13 @@
                (markdown-link-face   :foreground ,s-fg      :bold t)
                (markdown-url-face    :foreground ,s-comment :underline t)
 
+               ;; show-paren
+               ;; NOTE the green/red is a bit faint right now, but the italic sort of balances that, not sure
+               (show-paren-match-face       :background ,s-bg :foreground ,s-fg :bold t :italic t)
+               (show-paren-match            :background ,s-bg :foreground ,s-fg :bold t :italic t)
+               (show-paren-match-expression :background ,s-bg :foreground ,s-fg :bold t :italic t)
+               (show-paren-mismatch         :background ,s-bg :foreground ,s-red :bold t :italic t)
+
                ;; smartparens
                (sp-show-pair-match-face    :inherit 'paren-matched)
                (sp-show-pair-mismatch-face :inherit 'paren-unmatched)
