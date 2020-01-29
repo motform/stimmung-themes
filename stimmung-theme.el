@@ -31,7 +31,7 @@
 ;; emphasize comments and mesh well with the colors used by MacOS dark mode.
 ;; Stimmung makes heavy use of typographic features to distinguish syntactic elements
 ;; instead of with colors.  Thus it requires a font with bold, italic and bold italic.
-
+;;
 ;; The macros used to generate the theme is forked from Dracula.el:
 ;; https://github.com/dracula/emacs
 
@@ -43,15 +43,13 @@
   "A theme tuned to inner harmonies.")
 
 (let ((colors '((s-bg      "#1e1e1e") ; background, a dark gray
-                (s-fg      "#dddddd") ; foreground, almost white
+                (s-fg      "#ffffff") ; foreground, very white
                 (s-hline   "#2a2a2a")
-                (s-comment "#989898") ; should the comments be more pronounced?
+                (s-comment "#a5a5a5") ; should the comments be more pronounced?
 
-                (s-lgray   "#929296")
-                (s-gray    "#2e2e2e")
-                (s-black   "#000000")
-
-                (s-beige   "#d1bb95")
+                (s-lgray   "#929296") ; contrasting foregrounds
+                (s-gray    "#2e2e2e") ; contrasting backgrounds
+                (s-beige   "#e0d2b9") ; kind of overpowers everything else, should it be lighter?
                 (s-red     "#d19d95")
                 (s-green   "#c9d195")
 
@@ -60,7 +58,7 @@
       (faces '((cursor              :background ,s-fg)
                (shadow              :background ,s-hline)
                (hl-line             :background ,s-hline :extend t)
-               (secondary-selection :background ,s-gray :foreground ,s-red   :bold t)
+               (secondary-selection :background ,s-gray  :foreground ,s-red  :bold t)
                (region              :background ,s-hline :bold t)
                (highlight           :foreground ,s-fg    :background ,s-gray :bold t)
                (lazy-highlight      :foreground ,s-lgray :background ,s-bg   :bold t)
@@ -112,8 +110,8 @@
                ;; eshell
                (eshell-prompt        :foreground ,s-lgray :bold t)
                (eshell-ls-directory  :foreground ,s-beige :bold t)
-               (eshell-ls-symlink    :foreground ,s-fg    :italic t)
                (eshell-ls-executable :foreground ,s-gray  :bold t)
+               (eshell-ls-symlink    :foreground ,s-fg    :italic t)
                (eshell-ls-readonly   :foreground ,s-red)
                (eshell-ls-unreadable :foreground ,s-gray) ; too dark?
                (eshell-ls-special    :foreground ,s-green :italic t)
@@ -246,6 +244,16 @@
                (magit-section-heading        :foreground ,s-lgray :bold t)
                (magit-section-highlight      :background ,s-gray)
 
+               ;; outline, extends org-outline
+               (outline-1 :foreground ,s-fg :bold t :extend t)
+               (outline-2 :foreground ,s-fg :bold t :extend t)
+               (outline-3 :foreground ,s-fg :bold t :extend t)
+               (outline-4 :foreground ,s-fg :bold t :extend t)
+               (outline-5 :foreground ,s-fg :bold t :extend t)
+               (outline-6 :foreground ,s-fg :bold t :extend t)
+               (outline-7 :foreground ,s-fg :bold t :extend t)
+               (outline-8 :foreground ,s-fg :bold t :extend t)
+
                ;; org
                ;; there are a _lot_ of faces in org, so some might still be missing
 
@@ -256,13 +264,13 @@
                ;; (org-column :background ,bg4)
                ;; (org-column-title :inherit org-column :weight bold :underline t)
 
-               (org-code                  :foreground ,s-beige :distant-foreground ,s-bg :background ,s-beige) ; make the highlighed fg be
+               (org-code                  :foreground ,s-beige :distant-foreground ,s-bg :background ,s-beige)
                (org-block                 :foreground ,s-fg    :background ,s-gray)
                (org-block-begin-line      :foreground ,s-lgray :background ,s-gray :bold t) ; could be a better fg
                (org-block-end-line        :foreground ,s-lgray :background ,s-gray :bold t)
-               (org-date                  :foreground ,s-beige)
+               (org-date                  :foreground ,s-beige   :bold t)
                (org-drawer                :foreground ,s-lgray   :bold t)
-               (org-document-info         :foreground ,s-fg      :italic t) ;; BUG does not seem to correctly color fg
+               (org-document-info         :foreground ,s-fg      :background ,s-bg :italic t) ;; BUG  does not seem to correctly color fg
                (org-document-info-keyword :foreground ,s-comment :background ,s-bg)
                (org-document-title        :foreground ,s-fg      :weight bold)
                (org-done                  :foreground ,s-green)
@@ -271,15 +279,7 @@
                (org-formula               :foreground ,s-comment)
                (org-headline-done         :foreground ,s-comment :weight normal :strike-through t)
                (org-hide                  :foreground ,s-bg :background ,s-bg)
-               (org-level-1               :foreground ,s-fg :bold t)
-               (org-level-2               :foreground ,s-fg :bold t)
-               (org-level-3               :foreground ,s-fg :bold t)
-               (org-level-4               :foreground ,s-fg :bold t)
-               (org-level-5               :foreground ,s-fg :bold t)
-               (org-level-6               :foreground ,s-fg :bold t)
-               (org-level-7               :foreground ,s-fg :bold t)
-               (org-level-8               :foreground ,s-fg :bold t)
-               (org-link                  :foreground ,s-comment :underline t) ; foreground not respected?
+               (org-link                  :foreground ,s-comment :underline t) ;; BUG  foreground not respected?
                (org-list-dt               :foreground ,s-comment :bold t)
                (org-priority              :foreground ,s-beige)
                (org-scheduled             :foreground ,s-red)
@@ -322,17 +322,16 @@
 
                ;; TODO prism
                ;; TODO web-mode
-               ;; TODO whitespace
                (whitespace-empty       :background ,s-gray)
                (trailing-whitespace    :foreground ,s-red)
                (whitespace-space       :foreground ,s-lgray)
                (whitespace-newline     :foreground ,s-lgray)
-               (whitespace-tab         :foreground ,s-lgray :background (unless (default-value 'indent-tabs-mode) ,s-gray))
+               ;; (whitespace-tab         :foreground ,s-lgray :background (unless (default-value 'indent-tabs-mode) ,s-gray))
+               (whitespace-tab         :foreground ,s-lgray :background ,s-bg)
                (whitespace-indentation :foreground ,s-red   :background ,s-lgray)
-               (whitespace-line        :foreground ,s-red   :background ,s-fg :weight 'bold)
+               (whitespace-line        :foreground ,s-red   :background ,s-fg :weight bold)
                (nobreak-space          :inherit 'default    :underline nil)
-               (whitespace-trailing    :inherit 'trailing-whitespace)
-               )))
+               (whitespace-trailing    :inherit 'trailing-whitespace))))
 
   (apply #'custom-theme-set-faces
          'stimmung
