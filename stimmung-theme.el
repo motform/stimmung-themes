@@ -129,11 +129,12 @@
 
                ;; flyspell
                ;; TODO make these lines wavy!
-               (flyspell-incorrect :underline ,s-red)
-               (flyspell-duplicate :underline ,s-beige)
-               (flycheck-error     :underline ,s-red)
-               (flysheck-warning   :underline ,s-beige)
-               (flycheck-note      :underline ,s-green)
+               (flyspell-incorrect       :underline ,s-red)
+               (flyspell-duplicate       :underline ,s-beige)
+               (flycheck-error           :underline ,s-red)
+               (flysheck-warning         :underline ,s-beige)
+               (flysheck-warning-overlay :underline ,s-beige)
+               (flycheck-note            :underline ,s-green)
 
                ;; hydra
                (hydra-face-red      :foreground ,s-fg    :bold t)
@@ -153,9 +154,9 @@
                (company-tooltip-annotation       :foreground ,s-beige)
                (company-tooltip-common           :foreground ,s-lgray)
                (company-tooltip-common-selection :foreground ,s-beige)
-               (company-tooltip-mouse            :inherit highlight)
                (company-tooltip-selection        :background ,s-gray :foreground ,s-lgray)
                (company-tooltip-selection-       :background ,s-gray :foreground ,s-lgray)
+               (company-tooltip-mouse            :inherit highlight)
 
                ;; compilation
                (compilation-line-number    :foreground ,s-beige :bold t)
@@ -295,33 +296,61 @@
 
                ;; markdown mode
                ;; TODO parity with doom-themes
-               (markdown-header-face :foreground ,s-fg      :bold t)
-               (markdown-list-face   :foreground ,s-lgray   :bold t)
-               (markdown-italic-face :foreground ,s-fg      :italic t)
-               (markdown-bold-face   :foreground ,s-fg      :bold t)
-               (markdown-link-face   :foreground ,s-fg      :bold t)
-               (markdown-url-face    :foreground ,s-comment :underline t)
+               (markdown-header-face             :foreground ,s-fg      :bold t)
+               (markdown-list-face               :foreground ,s-lgray   :bold t)
+               (markdown-bold-face               :foreground ,s-fg      :bold t)
+               (markdown-blockquote-face         :foreground ,s-comment :italic t)
+               (markdown-italic-face             :foreground ,s-fg      :italic t)
+               (markdown-link-face               :foreground ,s-comment :underline t)
+               (markdown-url-face                :foreground ,s-comment :underline t)
+               (markdown-header-delimiter-face   :inherit 'markdown-header-face)
+               (markdown-metadata-key-face       :foreground ,s-comment)
+               (markdown-markup-face             :foreground ,s-fg)
+               (markdown-pre-face                :foreground ,s-fg)
+               (markdown-code-face               :background ,s-lgray :extend t)
+               (markdown-reference-face          :foreground ,s-comment)
+               (markdown-html-attr-name-face     :inherit 'font-lock-variable-name-face)
+               (markdown-html-attr-value-face    :inherit 'font-lock-string-face)
+               (markdown-html-entity-face        :inherit 'font-lock-variable-name-face)
+               (markdown-html-tag-delimiter-face :inherit 'markdown-markup-face)
+               (markdown-html-tag-name-face      :inherit 'font-lock-keyword-face)
+               (markdown-inline-code-face        :inherit 'markdown-code-face :extend nil)
 
                ;; show-paren
                ;; NOTE the green/red is a bit faint right now, but the italic sort of balances that, not sure
-               (show-paren-match-face       :background ,s-bg :foreground ,s-fg :bold t :italic t)
-               (show-paren-match            :background ,s-bg :foreground ,s-fg :bold t :italic t)
-               (show-paren-match-expression :background ,s-bg :foreground ,s-fg :bold t :italic t)
+               (show-paren-match-face       :background ,s-bg :foreground ,s-fg  :bold t :italic t)
+               (show-paren-match            :background ,s-bg :foreground ,s-fg  :bold t :italic t)
+               (show-paren-match-expression :background ,s-bg :foreground ,s-fg  :bold t :italic t)
                (show-paren-mismatch         :background ,s-bg :foreground ,s-red :bold t :italic t)
 
                ;; smartparens
                (sp-show-pair-match-face    :inherit 'paren-matched)
                (sp-show-pair-mismatch-face :inherit 'paren-unmatched)
 
-               ;; TODO undo-tree
-               ;; (undo-tree-visualizer-default-face :foreground base5)
-               ;; (undo-tree-visualizer-current-face :foreground green :weight 'bold)
-               ;; (undo-tree-visualizer-unmodified-face :foreground base5)
-               ;; (undo-tree-visualizer-active-branch-face :foreground blue)
-               ;; (undo-tree-visualizer-register-face :foreground yellow)
+               ;; re-builder
+               (reb-match-0 :foreground ,s-fg :inverse-video t :bold t)
+               (reb-match-1 :foreground ,s-fg :inverse-video t :bold t)
+               (reb-match-2 :foreground ,s-fg :inverse-video t :bold t)
+               (reb-match-3 :foreground ,s-fg :inverse-video t :bold t)
+
+               ;; undo-tree
+               (undo-tree-visualizer-default-face       :foreground ,s-fg)
+               (undo-tree-visualizer-current-face       :foreground ,s-green :bold t)
+               (undo-tree-visualizer-unmodified-face    :foreground ,s-lgray :italic t)
+               (undo-tree-visualizer-active-branch-face :foreground ,s-fg)
+               (undo-tree-visualizer-register-face      :foreground ,s-fg)
 
                ;; TODO prism
-               ;; TODO web-mode
+
+               ;; web-mode
+               (web-mode-doctype-face           :foreground ,s-comment)
+               (web-mode-html-tag-face          :foreground ,s-fg :italic t)
+               (web-mode-html-tag-bracket-face  :foreground ,s-fg)
+               (web-mode-html-attr-name-face    :foreground ,s-fg :bold t)
+               (web-mode-html-entity-face       :foreground ,s-fg :italic t)
+               (web-mode-block-control-face     :foreground ,s-lgray)
+               (web-mode-html-tag-bracket-face  :foreground ,s-fg :bold t)
+
                (whitespace-empty       :background ,s-gray)
                (trailing-whitespace    :foreground ,s-red)
                (whitespace-space       :foreground ,s-lgray)
