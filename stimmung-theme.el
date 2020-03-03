@@ -66,13 +66,13 @@
                (match               :foreground ,s-green :bold t)
                (fringe              :foreground ,s-fg    :background ,s-bg)
                (link                :foreground ,s-beige :underline t)
+               (link-visited        :foreground ,s-beige :underline t :italic t)
                (button              :foreground ,s-beige :underline t)
                (header-line         :foreground ,s-beige :bold t)
                (tooltip             :foreground ,s-fg    :background ,s-gray)
                (vertical-border     :foreground ,s-hline :background ,s-hline)
                (info-string         :foreground ,s-beige)
                (default-italic      :slant italic)
-
 
                (error                       :foreground ,s-red)
                (warning                     :foreground ,s-red)
@@ -89,13 +89,17 @@
                (escape-glyph                :foreground ,s-red   :bold t)
                (homoglyph                   :foreground ,s-red   :bold t)
 
+               (line-number              :foreground ,s-lgray :background ,s-bg)
+               (line-number-current-line :foreground ,s-fg    :background ,s-bg)
+               (linum                    :inherit 'line-number)
+
                ;; syntax
                (font-lock-builtin-face              :foreground ,s-beige   :italic t)
                (font-lock-comment-delimiter-face    :foreground ,s-comment :italic t)
                (font-lock-comment-face              :foreground ,s-comment :italic t)
                (font-lock-doc-face                  :foreground ,s-comment :italic t)
                (font-lock-constant-face             :foreground ,s-beige   :bold t :italic t)
-               (font-lock-function-name-face        :foreground ,s-beige   :bold t)
+               (font-lock-function-name-face        :foreground ,s-fg      :bold t)
                (font-lock-keyword-face              :foreground ,s-lgray   :bold t)
                (font-lock-type-face                 :foreground ,s-beige   :bold t)
                (font-lock-variable-name-face        :foreground ,s-fg      :italic t)
@@ -186,9 +190,10 @@
                (doom-modeline-project-parent-dir :foreground ,s-lgray :weight normal)
                (doom-modeline-bar-inactive       :foreground ,s-fg    :background ,s-bg)
                (doom-modeline-bar                :background ,s-bg) ; the leftmost bar
-               (doom-modeline-evil-insert-state  :foreground ,s-beige)
+               (doom-modeline-evil-insert-state  :foreground ,s-fg)
+               (doom-modeline-evil-visual-state  :foreground ,s-fg)
                (doom-modeline-evil-normal-state  :foreground ,s-lgray)
-               (doom-modeline-evil-visual-state  :foreground ,s-beige)
+               (doom-modeline-evil-emacs-state   :foreground ,s-red :italic nil)
 
                ;; dired
                (dired-directory  :foreground ,s-lgray :bold t)
@@ -207,6 +212,11 @@
                ;; (evil-ex-substitute-matches     :background base0 :foreground red   :strike-through t :weight 'bold)
                ;; (evil-ex-substitute-replacement :background base0 :foreground green :weight 'bold)
                (evil-search-highlight-persist-highlight-face :inherit 'lazy-highlight)
+
+               ;; info
+               (Info-quoted    :foreground ,s-beige :inherit 'default :bold t)
+               (info-menu-star :foreground ,s-fg :bold t) ;; NOTE this should maybe have another color
+               ;; link-styling is inherited from ~link~
 
                ;; ivy
                (ivy-current-match              :foreground ,s-beige :background ,s-bg :bold t)
@@ -229,7 +239,7 @@
                (ivy-grep-info                  :foreground ,s-red)
                (ivy-completions-annotations    :foreground ,s-red)
 
-               ;; magit
+               ;; TODO magit
                (magit-branch                 :foreground ,s-beige :bold t)
                (magit-diff-context-highlight :foreground ,s-lgray :background ,s-gray)
                (magit-diff-file-header       :foreground ,s-lgray :background ,s-gray)
@@ -244,6 +254,14 @@
                (magit-process-ok             :foreground ,s-green :bold t)
                (magit-section-heading        :foreground ,s-lgray :bold t)
                (magit-section-highlight      :background ,s-gray)
+
+               ;; diff-hl
+               (diff-hl-insert         :foreground ,s-green   :background ,s-bg)
+               (diff-hl-delete         :foreground ,s-red     :background ,s-bg)
+               (diff-hl-change         :foreground ,s-beige   :background ,s-bg)
+               (diff-hl-ignore         :foreground ,s-comment :background ,s-bg)
+               (diff-hl-margin-ignore  :foreground ,s-comment :background ,s-bg)
+               (diff-hl-margin-unknown :foreground ,s-comment :background ,s-bg)
 
                ;; outline, extends org-outline
                (outline-1 :foreground ,s-fg :bold t :extend t)
@@ -318,10 +336,10 @@
 
                ;; show-paren
                ;; NOTE the green/red is a bit faint right now, but the italic sort of balances that, not sure
-               (show-paren-match-face       :background ,s-bg :foreground ,s-fg  :bold t :italic t)
-               (show-paren-match            :background ,s-bg :foreground ,s-fg  :bold t :italic t)
-               (show-paren-match-expression :background ,s-bg :foreground ,s-fg  :bold t :italic t)
-               (show-paren-mismatch         :background ,s-bg :foreground ,s-red :bold t :italic t)
+               (show-paren-match-face       :background ,s-bg :foreground ,s-red :bold t :italic t)
+               (show-paren-match            :background ,s-bg :foreground ,s-red :bold t :italic t)
+               (show-paren-match-expression :background ,s-bg :foreground ,s-red :bold t :italic t)
+               (show-paren-mismatch         :background ,s-red :foreground ,s-bg :bold t :italic t)
 
                ;; smartparens
                (sp-show-pair-match-face    :inherit 'paren-matched)
@@ -340,6 +358,12 @@
                (undo-tree-visualizer-active-branch-face :foreground ,s-fg)
                (undo-tree-visualizer-register-face      :foreground ,s-fg)
 
+               ;; wo/man
+               (Man-overstrike :foreground ,s-comment :bold t)
+               (Man-underline  :foreground ,s-comment :underline nil :italic t)
+               (woman-bold     :inherit 'Man-overstrike)
+               (woman-italic   :inherit 'Man-underline)
+
                ;; TODO prism
 
                ;; web-mode
@@ -355,7 +379,6 @@
                (trailing-whitespace    :foreground ,s-red)
                (whitespace-space       :foreground ,s-lgray)
                (whitespace-newline     :foreground ,s-lgray)
-               ;; (whitespace-tab         :foreground ,s-lgray :background (unless (default-value 'indent-tabs-mode) ,s-gray))
                (whitespace-tab         :foreground ,s-lgray :background ,s-bg)
                (whitespace-indentation :foreground ,s-red   :background ,s-lgray)
                (whitespace-line        :foreground ,s-red   :background ,s-fg :weight bold)
@@ -380,8 +403,8 @@
 
 (custom-theme-set-variables
  'stimmung
- '(ansi-color-names-vector ["#1e1e1e" "#2e2e2e" "#2e2e2e" "#2e2e2e"
-                            "#2e2e2e" "#2e2e2e" "#2e2e2e" "#2e2e2e"]))
+ '(ansi-color-names-vector ["#1e1e1e" "#dddddd" "#dddddd" "#dddddd"
+                            "#dddddd" "#dddddd" "#dddddd" "#dddddd"]))
 
 ;;;###autoload
 (when load-file-name
