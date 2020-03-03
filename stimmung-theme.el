@@ -273,16 +273,23 @@
                (outline-7 :foreground ,s-fg :bold t :extend t)
                (outline-8 :foreground ,s-fg :bold t :extend t)
 
+               ;; org-agenda
+               ;; (org-agenda-done :inherit 'org-done)
+               ;; (org-agenda-dimmed-todo-face :foreground comments)
+               ;; (org-agenda-date          :foreground violet :weight 'ultra-bold)
+               ;; (org-agenda-date-today    :foreground (doom-lighten violet 0.4)   :weight 'ultra-bold)
+               ;; (org-agenda-date-weekend  :foreground (doom-darken violet 0.4)  :weight 'ultra-bold)
+               ;; (org-agenda-structure     :foreground fg :weight 'ultra-bold)
+               ;; (org-agenda-clocking      :background (doom-blend blue bg 0.2))
+               ;; (org-upcoming-deadline         :foreground (doom-blend fg bg 0.8))
+               ;; (org-upcoming-distant-deadline :foreground (doom-blend fg bg 0.5))
+               ;; (org-scheduled            :foreground fg)
+               ;; (org-scheduled-today      :foreground base7)
+               ;; (org-scheduled-previously :foreground base8)
+               ;; (org-time-grid            :foreground comments)
+               ;; (org-sexp-date            :foreground fg)
+
                ;; org
-               ;; there are a _lot_ of faces in org, so some might still be missing
-
-               ;; (org-agenda-date :foreground ,dracula-cyan :underline nil)
-               ;; (org-agenda-dimmed-todo-face :foreground ,dracula-comment)
-               ;; (org-agenda-done :foreground ,dracula-green)
-               ;; (org-agenda-structure :foreground ,dracula-purple)
-               ;; (org-column :background ,bg4)
-               ;; (org-column-title :inherit org-column :weight bold :underline t)
-
                (org-code                  :foreground ,s-beige :distant-foreground ,s-bg :background ,s-beige)
                (org-block                 :foreground ,s-fg    :background ,s-gray)
                (org-block-begin-line      :foreground ,s-lgray :background ,s-gray :bold t) ; could be a better fg
@@ -298,7 +305,7 @@
                (org-formula               :foreground ,s-comment)
                (org-headline-done         :foreground ,s-comment :weight normal :strike-through t)
                (org-hide                  :foreground ,s-bg :background ,s-bg)
-               (org-link                  :foreground ,s-comment :underline t) ;; BUG  foreground not respected?
+               (org-link                  :foreground ,s-comment :bold t :underline t) ;; BUG  foreground not respected
                (org-list-dt               :foreground ,s-comment :bold t)
                (org-priority              :foreground ,s-beige)
                (org-scheduled             :foreground ,s-red)
