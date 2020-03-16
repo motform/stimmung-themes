@@ -256,12 +256,12 @@
                (magit-section-highlight      :background ,s-gray)
 
                ;; diff-hl
-               (diff-hl-insert         :foreground ,s-green   :background ,s-bg)
-               (diff-hl-delete         :foreground ,s-red     :background ,s-bg)
-               (diff-hl-change         :foreground ,s-beige   :background ,s-bg)
-               (diff-hl-ignore         :foreground ,s-comment :background ,s-bg)
-               (diff-hl-margin-ignore  :foreground ,s-comment :background ,s-bg)
-               (diff-hl-margin-unknown :foreground ,s-comment :background ,s-bg)
+               (diff-hl-insert         :foreground ,s-green   :background ,s-bg :bold nil :italic nil)
+               (diff-hl-delete         :foreground ,s-red     :background ,s-bg :bold nil :italic nil)
+               (diff-hl-change         :foreground ,s-lgray   :background ,s-bg :bold nil :italic nil)
+               (diff-hl-ignore         :foreground ,s-comment :background ,s-bg :bold nil :italic nil)
+               (diff-hl-margin-ignore  :foreground ,s-comment :background ,s-bg :bold nil :italic nil)
+               (diff-hl-margin-unknown :foreground ,s-comment :background ,s-bg :bold nil :italic nil)
 
                ;; outline, extends org-outline
                (outline-1 :foreground ,s-fg :bold t :extend t)
@@ -320,7 +320,6 @@
                (org-upcoming-deadline     :foreground ,s-red)
 
                ;; markdown mode
-               ;; TODO parity with doom-themes
                (markdown-header-face             :foreground ,s-fg      :bold t)
                (markdown-list-face               :foreground ,s-lgray   :bold t)
                (markdown-bold-face               :foreground ,s-fg      :bold t)
