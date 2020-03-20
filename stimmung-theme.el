@@ -351,6 +351,20 @@
                (sp-show-pair-match-face    :inherit 'paren-matched)
                (sp-show-pair-mismatch-face :inherit 'paren-unmatched)
 
+               ;; LaTeX
+               (font-latex-sectioning-0-face :foreground ,s-beige :bold t)
+               (font-latex-sectioning-1-face :foreground ,s-beige :bold t)
+               (font-latex-sectioning-2-face :foreground ,s-beige :bold t)
+               (font-latex-sectioning-3-face :foreground ,s-beige :bold t :italic t)
+               (font-latex-sectioning-4-face :foreground ,s-beige :italic t)
+               (font-latex-italic-face       :foreground ,s-fg :italic t)
+               (font-latex-bold-face         :foreground ,s-fg :bold t)
+               (font-latex-verbatim-face     :foreground ,s-beige :bold t)
+               (font-latex-string-face       :foreground ,s-lgray)
+               (font-latex-warning-face      :foreground ,s-red)
+               (font-latex-math-face         :foreground ,s-lgray)
+               (font-latex-script-char-face  :foreground ,s-beige)
+
                ;; re-builder
                (reb-match-0 :foreground ,s-fg :inverse-video t :bold t)
                (reb-match-1 :foreground ,s-fg :inverse-video t :bold t)
