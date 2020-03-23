@@ -213,6 +213,12 @@
                ;; (evil-ex-substitute-replacement :background base0 :foreground green :weight 'bold)
                (evil-search-highlight-persist-highlight-face :inherit 'lazy-highlight)
 
+               ;; evil-mc
+               (evil-mc-cursor-default-face :foreground ,s-bg :background ,s-fg)
+               (evil-mc-region-face         :foreground ,s-bg :background ,s-fg)
+               (evil-mc-cursor-bar-face     :foreground ,s-comment)
+               (evil-mc-cursor-hbar-face    :foreground ,s-comment)
+
                ;; info
                (Info-quoted    :foreground ,s-beige :inherit 'default :bold t)
                (info-menu-star :foreground ,s-fg :bold t) ;; NOTE this should maybe have another color
