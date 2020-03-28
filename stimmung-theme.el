@@ -46,12 +46,12 @@
  '(shadow   ((t (:background "gray15"))))
  '(hl-line  ((t (:background "gray15"))))
 
- '(secondary-selection ((t (:background "gray20"    :foreground "IndianRed1"  :bold t))))
- '(region              ((t (:background "gray15"    :bold t))))
- '(highlight           ((t (:foreground "white"     :background "gray20" :bold t))))
- '(lazy-highlight      ((t (:foreground "gray60"    :background "gray12"   :bold t))))
- '(default             ((t (:foreground "white"     :background "gray12"))))
- '(fringe              ((t (:foreground "white"     :background "gray12"))))
+ '(secondary-selection ((t (:background "gray20"     :foreground "IndianRed1"  :bold t))))
+ '(region              ((t (:background "gray15"     :bold t))))
+ '(highlight           ((t (:foreground "white"      :background "gray20" :bold t))))
+ '(lazy-highlight      ((t (:foreground "gray60"     :background "gray12"   :bold t))))
+ '(default             ((t (:foreground "white"      :background "gray12"))))
+ '(fringe              ((t (:foreground "white"      :background "gray12"))))
  '(match               ((t (:foreground "PaleGreen4" :bold t))))
  '(link                ((t (:foreground "NavajoWhite1" :underline t))))
  '(link-visited        ((t (:foreground "NavajoWhite1" :underline t :italic t))))
@@ -67,8 +67,8 @@
  '(success                     ((t (:foreground "PaleGreen4"))))
  '(cancel                      ((t (:foreground "IndianRed1" :strike-through t))))
  
- '(minibuffer-noticable-prompt ((t (:foreground "gray60" :bold t))))
- '(minibuffer-prompt           ((t (:foreground "gray60" :bold t))))
+ '(minibuffer-noticable-prompt ((t (:foreground "gray60"     :bold t))))
+ '(minibuffer-prompt           ((t (:foreground "gray60"     :bold t))))
  '(isearch                     ((t (:foreground "white"      :background "gray15"))))
  '(isearch-highlight           ((t (:foreground "gray12"     :background "white"))))
  '(isearch-fail                ((t (:foreground "IndianRed1" :background "gray12"))))
@@ -82,10 +82,10 @@
  '(linum                    ((t (:inherit 'line-number))))
  
  ;; syntax
- '(font-lock-builtin-face              ((t (:foreground "NavajoWhite1"   :italic t))))
- '(font-lock-comment-delimiter-face    ((t (:foreground "gray65" :italic t))))
- '(font-lock-comment-face              ((t (:foreground "gray65" :italic t))))
- '(font-lock-doc-face                  ((t (:foreground "gray65" :italic t))))
+ '(font-lock-builtin-face              ((t (:foreground "NavajoWhite1" :italic t))))
+ '(font-lock-comment-delimiter-face    ((t (:foreground "gray65"       :italic t))))
+ '(font-lock-comment-face              ((t (:foreground "gray65"       :italic t))))
+ '(font-lock-doc-face                  ((t (:foreground "gray65"       :italic t))))
  '(font-lock-constant-face             ((t (:foreground "NavajoWhite1" :bold t :italic t))))
  '(font-lock-function-name-face        ((t (:foreground "white"        :bold t))))
  '(font-lock-keyword-face              ((t (:foreground "gray60"       :bold t))))
@@ -100,13 +100,13 @@
  '(font-lock-regexp-grouping-construct ((t (:foreground "white" :bold t))))
  
  ;; eshell
- '(eshell-prompt        ((t (:foreground "gray60" :bold t))))
+ '(eshell-prompt        ((t (:foreground "gray60"       :bold t))))
  '(eshell-ls-directory  ((t (:foreground "NavajoWhite1" :bold t))))
- '(eshell-ls-executable ((t (:foreground "gray20"  :bold t))))
- '(eshell-ls-symlink    ((t (:foreground "white"    :italic t))))
+ '(eshell-ls-executable ((t (:foreground "gray20"       :bold t))))
+ '(eshell-ls-symlink    ((t (:foreground "white"        :italic t))))
  '(eshell-ls-readonly   ((t (:foreground "IndianRed1"))))
  '(eshell-ls-unreadable ((t (:foreground "gray20")))) ; too dark?
- '(eshell-ls-special    ((t (:foreground "PaleGreen4" :italic t))))
+ '(eshell-ls-special    ((t (:foreground "PaleGreen4"   :italic t))))
  '(eshell-ls-missing    ((t (:foreground "IndianRed1"))))
  '(eshell-ls-product    ((t (:foreground "white"))))
  '(eshell-ls-archive    ((t (:foreground "gray60"))))
@@ -121,12 +121,12 @@
  
  ;; flyspell
  ;; TODO make these lines wavy!
- '(flyspell-incorrect       ((t (:underline "IndianRed1"))))
- '(flyspell-duplicate       ((t (:underline "NavajoWhite1"))))
- '(flycheck-error           ((t (:underline "IndianRed1"))))
- '(flysheck-warning         ((t (:underline "NavajoWhite1"))))
- '(flysheck-warning-overlay ((t (:underline "NavajoWhite1"))))
- '(flycheck-note            ((t (:underline "PaleGreen4"))))
+ '(flyspell-incorrect       ((t (:underline (:style wave :color "IndianRed1") ))))
+ '(flyspell-duplicate       ((t (:underline (:style wave :color "NavajoWhite1")))))
+ '(flycheck-error           ((t (:underline (:style wave :color "IndianRed1")))))
+ '(flysheck-warning         ((t (:underline (:style wave :color "NavajoWhite1")))))
+ '(flysheck-warning-overlay ((t (:underline (:style wave :color "NavajoWhite1")))))
+ '(flycheck-note            ((t (:underline (:style wave :color "PaleGreen4")))))
  
  ;; hydra
  '(hydra-face-red      ((t (:foreground "white"  :bold t))))
@@ -161,22 +161,22 @@
  
  ;; modeline
  '(header-line         ((t (:inherit 'mode-line  :distant-foreground "gray12"))))
- '(mode-line           ((t (:foreground "white"    :background "gray12"))))
+ '(mode-line           ((t (:foreground "white"  :background "gray12"))))
  '(mode-line-inactive  ((t (:foreground "gray60" :background "gray12"))))
- '(mode-line-buffer-id ((t (:foreground "white"    :bold t :italic t))))
- '(mode-line-emphasis  ((t (:foreground "white"    :bold t))))
+ '(mode-line-buffer-id ((t (:foreground "white"  :bold t :italic t))))
+ '(mode-line-emphasis  ((t (:foreground "white"  :bold t))))
  '(mode-line-highlight ((t (:foreground "NavajoWhite1"))))
  
  ;; TODO custom
  
  ;; doom-modeline
  '(doom-modeline-buffer-path        ((t (:foreground "gray60"))))
- '(doom-modeline-buffer-file        ((t (:foreground "white"   :weight bold))))
+ '(doom-modeline-buffer-file        ((t (:foreground "white"      :weight bold))))
  '(doom-modeline-buffer-modified    ((t (:foreground "IndianRed1" :weight bold))))
- '(doom-modeline-project-dir        ((t (:foreground "white"   :weight bold))))
- '(doom-modeline-project-root-dir   ((t (:foreground "gray60"  :weight normal))))
- '(doom-modeline-project-parent-dir ((t (:foreground "gray60"  :weight normal))))
- '(doom-modeline-bar-inactive       ((t (:foreground "white"   :background "gray12"))))
+ '(doom-modeline-project-dir        ((t (:foreground "white"      :weight bold))))
+ '(doom-modeline-project-root-dir   ((t (:foreground "gray60"     :weight normal))))
+ '(doom-modeline-project-parent-dir ((t (:foreground "gray60"     :weight normal))))
+ '(doom-modeline-bar-inactive       ((t (:foreground "white"      :background "gray12"))))
  '(doom-modeline-bar                ((t (:background "gray12")))) ; the leftmost bar
  '(doom-modeline-evil-insert-state  ((t (:foreground "white"))))
  '(doom-modeline-evil-visual-state  ((t (:foreground "white"))))
@@ -187,11 +187,11 @@
  '(dired-directory  ((t (:foreground "gray60" :bold t))))
  '(dired-ignored    ((t (:foreground "gray65"))))
  '(dired-flagged    ((t (:foreground "PaleGreen4"))))
- '(dired-header     ((t (:foreground "white"   :bold t))))
+ '(dired-header     ((t (:foreground "white"      :bold t))))
  '(dired-mark       ((t (:foreground "IndianRed1" :bold t))))
  '(dired-marked     ((t (:foreground "IndianRed1" :bold t :italic t))))
- '(dired-perm-write ((t (:foreground "white"  :underline t))))
- '(dired-symlink    ((t (:foreground "white"  :italic t))))
+ '(dired-perm-write ((t (:foreground "white"      :underline t))))
+ '(dired-symlink    ((t (:foreground "white"      :italic t))))
  '(dired-warning    ((t (:foreground "IndianRed1"))))
  
  ;; evil
@@ -256,12 +256,12 @@
  '(magit-section-highlight      ((t (:background "gray20"))))
  
  ;; diff-hl
- '(diff-hl-insert         ((t (:foreground "PaleGreen4"   :background "gray12" :bold nil :italic nil))))
- '(diff-hl-delete         ((t (:foreground "IndianRed1"     :background "gray12" :bold nil :italic nil))))
- '(diff-hl-change         ((t (:foreground "gray60"   :background "gray12" :bold nil :italic nil))))
- '(diff-hl-ignore         ((t (:foreground "gray65" :background "gray12" :bold nil :italic nil))))
- '(diff-hl-margin-ignore  ((t (:foreground "gray65" :background "gray12" :bold nil :italic nil))))
- '(diff-hl-margin-unknown ((t (:foreground "gray65" :background "gray12" :bold nil :italic nil))))
+ '(diff-hl-insert         ((t (:foreground "PaleGreen4" :background "gray12" :bold nil :italic nil))))
+ '(diff-hl-delete         ((t (:foreground "IndianRed1" :background "gray12" :bold nil :italic nil))))
+ '(diff-hl-change         ((t (:foreground "gray60"     :background "gray12" :bold nil :italic nil))))
+ '(diff-hl-ignore         ((t (:foreground "gray65"     :background "gray12" :bold nil :italic nil))))
+ '(diff-hl-margin-ignore  ((t (:foreground "gray65"     :background "gray12" :bold nil :italic nil))))
+ '(diff-hl-margin-unknown ((t (:foreground "gray65"     :background "gray12" :bold nil :italic nil))))
  
  ;; outline, extends org-outline
  '(outline-1 ((t (:foreground "white" :bold t :extend t))))
@@ -277,22 +277,22 @@
  
  ;; org
  '(org-code                  ((t (:foreground "NavajoWhite1" :distant-foreground "gray12" :background "NavajoWhite1"))))
- '(org-block                 ((t (:foreground "white"    :background "gray20"))))
- '(org-block-begin-line      ((t (:foreground "gray60" :background "gray20" :bold t)))) ; could be a better fg
- '(org-block-end-line        ((t (:foreground "gray60" :background "gray20" :bold t))))
- '(org-date                  ((t (:foreground "NavajoWhite1"   :bold t))))
- '(org-drawer                ((t (:foreground "gray60"   :bold t))))
- '(org-document-info         ((t (:foreground "white"      :background "gray12" :italic t)))) ;; BUG does not seem to correctly color fg
- '(org-document-info-keyword ((t (:foreground "gray65" :background "gray12"))))
- '(org-document-title        ((t (:foreground "white"      :weight bold))))
+ '(org-block                 ((t (:foreground "white"        :background "gray20"))))
+ '(org-block-begin-line      ((t (:foreground "gray60"       :background "gray20" :bold t)))) ; could be a better fg
+ '(org-block-end-line        ((t (:foreground "gray60"       :background "gray20" :bold t))))
+ '(org-date                  ((t (:foreground "NavajoWhite1" :bold t))))
+ '(org-drawer                ((t (:foreground "gray60"       :bold t))))
+ '(org-document-info         ((t (:foreground "white"        :background "gray12" :italic t)))) ;; BUG does not seem to correctly color fg
+ '(org-document-info-keyword ((t (:foreground "gray65"       :background "gray12"))))
+ '(org-document-title        ((t (:foreground "white"        :weight bold))))
  '(org-done                  ((t (:foreground "PaleGreen4"   :bold t :strike-through t))))
  '(org-ellipsis              ((t (:foreground "gray65"))))
  '(org-footnote              ((t (:foreground "NavajoWhite1"))))
  '(org-formula               ((t (:foreground "gray65"))))
- '(org-headline-done         ((t (:foreground "gray65" :weight normal :strike-through t))))
- '(org-hide                  ((t (:foreground "gray12" :background "gray12"))))
- '(org-link                  ((t (:foreground "gray65" :bold t :underline t)))) ;; BUG foreground not respected
- '(org-list-dt               ((t (:foreground "gray65" :bold t))))
+ '(org-headline-done         ((t (:foreground "gray65"       :weight normal :strike-through t))))
+ '(org-hide                  ((t (:foreground "gray12"       :background "gray12"))))
+ '(org-link                  ((t (:foreground "gray65"       :bold t :underline t)))) ;; BUG foreground not respected
+ '(org-list-dt               ((t (:foreground "gray65"       :bold t))))
  '(org-priority              ((t (:foreground "NavajoWhite1"))))
  '(org-scheduled             ((t (:foreground "IndianRed1"))))
  '(org-scheduled-previously  ((t (:foreground "NavajoWhite1"))))
@@ -300,17 +300,17 @@
  '(org-sexp-date             ((t (:foreground "NavajoWhite1"))))
  '(org-special-keyword       ((t (:foreground "NavajoWhite1"))))
  '(org-table                 ((t (:foreground "gray65"))))
- '(org-tag                   ((t (:foreground "gray65" :background "gray12" :bold t))))
- '(org-todo                  ((t (:foreground "IndianRed1" :bold t))))
- '(org-warning               ((t (:foreground "IndianRed1" :bold t))))
+ '(org-tag                   ((t (:foreground "gray65"       :background "gray12" :bold t))))
+ '(org-todo                  ((t (:foreground "IndianRed1"   :bold t))))
+ '(org-warning               ((t (:foreground "IndianRed1"   :bold t))))
  '(org-upcoming-deadline     ((t (:foreground "IndianRed1"))))
  
  ;; markdown mode
- '(markdown-header-face             ((t (:foreground "white"      :bold t))))
- '(markdown-list-face               ((t (:foreground "gray60"   :bold t))))
- '(markdown-bold-face               ((t (:foreground "white"      :bold t))))
+ '(markdown-header-face             ((t (:foreground "white"  :bold t))))
+ '(markdown-list-face               ((t (:foreground "gray60" :bold t))))
+ '(markdown-bold-face               ((t (:foreground "white"  :bold t))))
  '(markdown-blockquote-face         ((t (:foreground "gray65" :italic t))))
- '(markdown-italic-face             ((t (:foreground "white"      :italic t))))
+ '(markdown-italic-face             ((t (:foreground "white"  :italic t))))
  '(markdown-link-face               ((t (:foreground "gray65" :underline t))))
  '(markdown-url-face                ((t (:foreground "gray65" :underline t))))
  '(markdown-header-delimiter-face   ((t (:inherit 'markdown-header-face))))
@@ -327,9 +327,9 @@
  '(markdown-inline-code-face        ((t (:inherit 'markdown-code-face :extend nil))))
  
  ;; show-paren
- '(show-paren-match-face       ((t (:background "gray12" :foreground "tan1" :bold t :italic t))))
- '(show-paren-match            ((t (:background "gray12" :foreground "tan1" :bold t :italic t))))
- '(show-paren-match-expression ((t (:background "gray12" :foreground "tan1" :bold t :italic t))))
+ '(show-paren-match-face       ((t (:background "gray12"     :foreground "tan1" :bold t :italic t))))
+ '(show-paren-match            ((t (:background "gray12"     :foreground "tan1" :bold t :italic t))))
+ '(show-paren-match-expression ((t (:background "gray12"     :foreground "tan1" :bold t :italic t))))
  '(show-paren-mismatch         ((t (:background "IndianRed1" :foreground "gray12" :bold t :italic t))))
  
  ;; smartparens
@@ -384,12 +384,11 @@
  '(whitespace-empty       ((t (:background "gray20"))))
  '(whitespace-space       ((t (:foreground "gray60"))))
  '(whitespace-newline     ((t (:foreground "gray60"))))
- '(whitespace-tab         ((t (:foreground "gray60"  :background "gray12"))))
+ '(whitespace-tab         ((t (:foreground "gray60"     :background "gray12"))))
  '(whitespace-indentation ((t (:foreground "IndianRed1" :background "gray60"))))
  '(whitespace-line        ((t (:foreground "IndianRed1" :background "white" :weight bold))))
- '(nobreak-space          ((t (:inherit 'default    :underline nil))))
- '(whitespace-trailing    ((t (:foreground "IndianRed1"))))
- )
+ '(nobreak-space          ((t (:inherit 'default        :underline nil))))
+ '(whitespace-trailing    ((t (:foreground "IndianRed1")))))
 
 (custom-theme-set-variables
  'stimmung
