@@ -1,17 +1,17 @@
 ;;; stimmung.el --- a theme tuned to inner harmonies. -*- lexical-binding: t -*-
-
+;;
 ;; Copyright © 2019
-
+;;
 ;; Author: Love Lagerkvist
 ;; URL: https://github.com/motform/stimmung
 ;; Package-Requires: ((emacs "24"))
 ;; Created: 2019-12-20
 ;; Keywords: color theme
-
+;;
 ;; This file is NOT part of GNU Emacs.
-
+;;
 ;;; License:
-
+;;
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation; either version 3, or (at your option)
@@ -24,17 +24,14 @@
 ;;
 ;; For a full copy of the GNU General Public License
 ;; see <http://www.gnu.org/licenses/>.
-
+;;
 ;;; Commentary:
-
+;;
 ;; The idea behind this theme is to decrease fruit salad factor,
 ;; emphasize comments and mesh well with the colors used by MacOS dark mode.
 ;; Stimmung makes heavy use of typographic features to distinguish syntactic elements
 ;; instead of with colors.  Thus it requires a font with bold, italic and bold italic.
 ;;
-;; The macros used to generate the theme is forked from Dracula.el:
-;; https://github.com/dracula/emacs
-
 ;;; Code:
 
 (require 'cl-lib)
@@ -42,390 +39,357 @@
 (deftheme stimmung
   "A theme tuned to inner harmonies.")
 
-(let ((colors '((s-bg      "#1e1e1e") ; background, a dark gray
-                (s-fg      "#ffffff") ; foreground, very white
-                (s-hline   "#2a2a2a")
-                (s-comment "#a5a5a5") ; should the comments be more pronounced?
+(custom-theme-set-faces
+ 'stimmung
 
-                (s-lgray   "#929296") ; contrasting foregrounds
-                (s-gray    "#2e2e2e") ; contrasting backgrounds
-                (s-beige   "#e0d2b9") ; kind of overpowers everything else, should it be lighter?
-                (s-red     "#d19d95")
-                (s-green   "#c9d195")
+ '(default  ((t (:background "gray12" :foreground "white"))))
+ '(shadow   ((t (:background "gray15"))))
+ '(hl-line  ((t (:background "gray15"))))
 
-                (s-wtf     "#ff79c6")))
+ '(secondary-selection ((t (:background "gray20"    :foreground "IndianRed1"  :bold t))))
+ '(region              ((t (:background "gray15"    :bold t))))
+ '(highlight           ((t (:foreground "white"     :background "gray20" :bold t))))
+ '(lazy-highlight      ((t (:foreground "gray60"    :background "gray12"   :bold t))))
+ '(default             ((t (:foreground "white"     :background "gray12"))))
+ '(fringe              ((t (:foreground "white"     :background "gray12"))))
+ '(match               ((t (:foreground "PaleGreen4" :bold t))))
+ '(link                ((t (:foreground "NavajoWhite1" :underline t))))
+ '(link-visited        ((t (:foreground "NavajoWhite1" :underline t :italic t))))
+ '(button              ((t (:foreground "NavajoWhite1" :underline t))))
+ '(header-line         ((t (:foreground "NavajoWhite1" :bold t))))
+ '(tooltip             ((t (:foreground "white"  :background "gray20"))))
+ '(vertical-border     ((t (:foreground "gray15" :background "gray15"))))
+ '(info-string         ((t (:foreground "NavajoWhite1"))))
+ '(default-italic      ((t (:slant italic))))
 
-      (faces '((cursor              :background ,s-fg)
-               (shadow              :background ,s-hline)
-               (hl-line             :background ,s-hline :extend t)
-               (secondary-selection :background ,s-gray  :foreground ,s-red  :bold t)
-               (region              :background ,s-hline :bold t)
-               (highlight           :foreground ,s-fg    :background ,s-gray :bold t)
-               (lazy-highlight      :foreground ,s-lgray :background ,s-bg   :bold t)
-               (default             :foreground ,s-fg    :background ,s-bg)
-               (match               :foreground ,s-green :bold t)
-               (fringe              :foreground ,s-fg    :background ,s-bg)
-               (link                :foreground ,s-beige :underline t)
-               (link-visited        :foreground ,s-beige :underline t :italic t)
-               (button              :foreground ,s-beige :underline t)
-               (header-line         :foreground ,s-beige :bold t)
-               (tooltip             :foreground ,s-fg    :background ,s-gray)
-               (vertical-border     :foreground ,s-hline :background ,s-hline)
-               (info-string         :foreground ,s-beige)
-               (default-italic      :slant italic)
+ '(error                       ((t (:foreground "IndianRed1"))))
+ '(warning                     ((t (:foreground "IndianRed1"))))
+ '(success                     ((t (:foreground "PaleGreen4"))))
+ '(cancel                      ((t (:foreground "IndianRed1" :strike-through t))))
+ 
+ '(minibuffer-noticable-prompt ((t (:foreground "gray60" :bold t))))
+ '(minibuffer-prompt           ((t (:foreground "gray60" :bold t))))
+ '(isearch                     ((t (:foreground "white"      :background "gray15"))))
+ '(isearch-highlight           ((t (:foreground "gray12"     :background "white"))))
+ '(isearch-fail                ((t (:foreground "IndianRed1" :background "gray12"))))
+ '(paren-matched               ((t (:foreground "PaleGreen4" :background "gray12"))))
+ '(paren-unmatched             ((t (:foreground "IndianRed1" :background "gray12"))))
+ '(escape-glyph                ((t (:foreground "IndianRed1" :bold t))))
+ '(homoglyph                   ((t (:foreground "IndianRed1" :bold t))))
+ 
+ '(line-number              ((t (:foreground "gray60" :background "gray12"))))
+ '(line-number-current-line ((t (:foreground "white"  :background "gray12"))))
+ '(linum                    ((t (:inherit 'line-number))))
+ 
+ ;; syntax
+ '(font-lock-builtin-face              ((t (:foreground "NavajoWhite1"   :italic t))))
+ '(font-lock-comment-delimiter-face    ((t (:foreground "gray65" :italic t))))
+ '(font-lock-comment-face              ((t (:foreground "gray65" :italic t))))
+ '(font-lock-doc-face                  ((t (:foreground "gray65" :italic t))))
+ '(font-lock-constant-face             ((t (:foreground "NavajoWhite1" :bold t :italic t))))
+ '(font-lock-function-name-face        ((t (:foreground "white"        :bold t))))
+ '(font-lock-keyword-face              ((t (:foreground "gray60"       :bold t))))
+ '(font-lock-type-face                 ((t (:foreground "NavajoWhite1" :bold t))))
+ '(font-lock-variable-name-face        ((t (:foreground "white"        :italic t))))
+ '(font-lock-string-face               ((t (:foreground "gray60"))))
+ '(font-lock-warning-face              ((t (:foreground "IndianRed1"))))
+ '(font-lock-negation-char-face        ((t (:foreground "white" :bold t))))
+ '(font-lock-preprocessor-face         ((t (:foreground "white" :bold t))))
+ '(font-lock-preprocessor-char-face    ((t (:foreground "white" :bold t))))
+ '(font-lock-regexp-grouping-backslash ((t (:foreground "white" :bold t))))
+ '(font-lock-regexp-grouping-construct ((t (:foreground "white" :bold t))))
+ 
+ ;; eshell
+ '(eshell-prompt        ((t (:foreground "gray60" :bold t))))
+ '(eshell-ls-directory  ((t (:foreground "NavajoWhite1" :bold t))))
+ '(eshell-ls-executable ((t (:foreground "gray20"  :bold t))))
+ '(eshell-ls-symlink    ((t (:foreground "white"    :italic t))))
+ '(eshell-ls-readonly   ((t (:foreground "IndianRed1"))))
+ '(eshell-ls-unreadable ((t (:foreground "gray20")))) ; too dark?
+ '(eshell-ls-special    ((t (:foreground "PaleGreen4" :italic t))))
+ '(eshell-ls-missing    ((t (:foreground "IndianRed1"))))
+ '(eshell-ls-product    ((t (:foreground "white"))))
+ '(eshell-ls-archive    ((t (:foreground "gray60"))))
+ '(eshell-ls-entries    ((t (:foreground "white"))))
+ '(eshell-ls-backup     ((t (:foreground "gray60" :italic t))))
+ 
+ ;; avy
+ '(avy-lead-face   ((t (:background "gray15" :foreground "white" :distant-foreground "gray65" :bold t))))
+ '(avy-lead-face-0 ((t (:inherit 'avy-lead-face))))
+ '(avy-lead-face-1 ((t (:inherit 'avy-lead-face))))
+ '(avy-lead-face-2 ((t (:inherit 'avy-lead-face))))
+ 
+ ;; flyspell
+ ;; TODO make these lines wavy!
+ '(flyspell-incorrect       ((t (:underline "IndianRed1"))))
+ '(flyspell-duplicate       ((t (:underline "NavajoWhite1"))))
+ '(flycheck-error           ((t (:underline "IndianRed1"))))
+ '(flysheck-warning         ((t (:underline "NavajoWhite1"))))
+ '(flysheck-warning-overlay ((t (:underline "NavajoWhite1"))))
+ '(flycheck-note            ((t (:underline "PaleGreen4"))))
+ 
+ ;; hydra
+ '(hydra-face-red      ((t (:foreground "white"  :bold t))))
+ '(hydra-face-blue     ((t (:foreground "gray60" :bold t))))
+ '(hydra-face-amaranth ((t (:foreground "gray60" :bold t))))
+ '(hydra-face-pink     ((t (:foreground "gray60" :bold t))))
+ '(hydra-face-teal     ((t (:foreground "gray60" :bold t))))
+ 
+ ;; cider
+ 
+ ;; company
+ '(company-scrollbar-bg             ((t (:background "gray60"))))
+ '(company-scrollbar-fg             ((t (:foreground "white"))))
+ '(company-echo-common              ((t (:background "white"  :foreground "gray12"))))
+ '(company-preview                  ((t (:background "gray12" :foreground "NavajoWhite1"))))
+ '(company-tooltip                  ((t (:background "gray20" :foreground "white"))))
+ '(company-tooltip-annotation       ((t (:foreground "NavajoWhite1"))))
+ '(company-tooltip-common           ((t (:foreground "gray60"))))
+ '(company-tooltip-common-selection ((t (:foreground "NavajoWhite1"))))
+ '(company-tooltip-selection        ((t (:background "gray20" :foreground "gray60"))))
+ '(company-tooltip-selection-       ((t (:background "gray20" :foreground "gray60"))))
+ '(company-tooltip-mouse            ((t (:inherit highlight))))
+ 
+ ;; compilation
+ '(compilation-line-number    ((t (:foreground "NavajoWhite1" :bold t))))
+ '(compilation-column-number  ((t (:inherit 'font-lock-comment-face))))
+ '(compilation-error          ((t (:inherit 'error   :bold t))))
+ '(compilation-warning        ((t (:inherit 'warning :italic t))))
+ '(compilation-info           ((t (:inherit 'success))))
+ '(compilation-mode-line-exit ((t (:inherit 'compilation-info))))
+ '(compilation-mode-line-fail ((t (:inherit 'compilation-error))))
+ 
+ ;; modeline
+ '(header-line         ((t (:inherit 'mode-line  :distant-foreground "gray12"))))
+ '(mode-line           ((t (:foreground "white"    :background "gray12"))))
+ '(mode-line-inactive  ((t (:foreground "gray60" :background "gray12"))))
+ '(mode-line-buffer-id ((t (:foreground "white"    :bold t :italic t))))
+ '(mode-line-emphasis  ((t (:foreground "white"    :bold t))))
+ '(mode-line-highlight ((t (:foreground "NavajoWhite1"))))
+ 
+ ;; TODO custom
+ 
+ ;; doom-modeline
+ '(doom-modeline-buffer-path        ((t (:foreground "gray60"))))
+ '(doom-modeline-buffer-file        ((t (:foreground "white"   :weight bold))))
+ '(doom-modeline-buffer-modified    ((t (:foreground "IndianRed1" :weight bold))))
+ '(doom-modeline-project-dir        ((t (:foreground "white"   :weight bold))))
+ '(doom-modeline-project-root-dir   ((t (:foreground "gray60"  :weight normal))))
+ '(doom-modeline-project-parent-dir ((t (:foreground "gray60"  :weight normal))))
+ '(doom-modeline-bar-inactive       ((t (:foreground "white"   :background "gray12"))))
+ '(doom-modeline-bar                ((t (:background "gray12")))) ; the leftmost bar
+ '(doom-modeline-evil-insert-state  ((t (:foreground "white"))))
+ '(doom-modeline-evil-visual-state  ((t (:foreground "white"))))
+ '(doom-modeline-evil-normal-state  ((t (:foreground "gray60"))))
+ '(doom-modeline-evil-emacs-state   ((t (:foreground "IndianRed1" :italic nil))))
+ 
+ ;; dired
+ '(dired-directory  ((t (:foreground "gray60" :bold t))))
+ '(dired-ignored    ((t (:foreground "gray65"))))
+ '(dired-flagged    ((t (:foreground "PaleGreen4"))))
+ '(dired-header     ((t (:foreground "white"   :bold t))))
+ '(dired-mark       ((t (:foreground "IndianRed1" :bold t))))
+ '(dired-marked     ((t (:foreground "IndianRed1" :bold t :italic t))))
+ '(dired-perm-write ((t (:foreground "white"  :underline t))))
+ '(dired-symlink    ((t (:foreground "white"  :italic t))))
+ '(dired-warning    ((t (:foreground "IndianRed1"))))
+ 
+ ;; evil
+ '(evil-ex-info                   ((t (:foreground "IndianRed1" :italic t))))
+ '(evil-ex-search                 ((t (:background "gray15" :foreground "white" :bold t))))
+ ;; (evil-ex-substitute-matches     :background base0 :foreground red   :strike-through t :weight 'bold)
+ ;; (evil-ex-substitute-replacement :background base0 :foreground green :weight 'bold)
+ '(evil-search-highlight-persist-highlight-face ((t (:inherit 'lazy-highlight))))
+ 
+ ;; evil-mc
+ '(evil-mc-cursor-default-face ((t (:foreground "gray12" :background "white"))))
+ '(evil-mc-region-face         ((t (:foreground "gray12" :background "white"))))
+ '(evil-mc-cursor-bar-face     ((t (:foreground "gray65"))))
+ '(evil-mc-cursor-hbar-face    ((t (:foreground "gray65"))))
+ 
+ ;; info
+ '(info-quoted    ((t (:foreground "NavajoWhite1" :inherit 'default :bold t))))
+ '(info-menu-star ((t (:foreground "white" :bold t))))
+ ;; NOTE this should maybe have another color
 
-               (error                       :foreground ,s-red)
-               (warning                     :foreground ,s-red)
-               (success                     :foreground ,s-green)
-               (cancel                      :foreground ,s-red :strike-through t)
+ ;; ivy
+ '(ivy-current-match              ((t (:foreground "NavajoWhite1" :background "gray12" :bold t))))
+ '(ivy-minibuffer-match-highlight ((t (:foreground "PaleGreen4"))))
+ '(ivy-minibuffer-match-face-1    ((t (:foreground "gray65" :bold t :italic t))))
+ '(ivy-minibuffer-match-face-2    ((t (:foreground "gray65" :bold t :italic t))))
+ '(ivy-minibuffer-match-face-3    ((t (:foreground "gray65" :bold t :italic t))))
+ '(ivy-minibuffer-match-face-4    ((t (:foreground "gray65" :bold t :italic t))))
+ '(ivy-confirm-face               ((t (:foreground "PaleGreen4"))))
+ '(ivy-required-face              ((t (:foreground "IndianRed1"))))
+ '(ivy-subdir                     ((t (:foreground "gray65"))))
+ '(ivy-modified-buffer            ((t (:foreground "IndianRed1" :bold t))))
+ '(ivy-modified-outside-buffer    ((t (:foreground "IndianRed1"))))
+ '(ivy-remote                     ((t (:foreground "gray65"))))
+ '(ivy-virtual                    ((t (:foreground "gray65" :italic t))))
+ '(ivy-prompt                     ((t (:foreground "IndianRed1"))))
+ '(ivy-prompt-match               ((t (:foreground "IndianRed1"))))
+ '(ivy-separator                  ((t (:foreground "NavajoWhite1"))))
+ '(ivy-highlight-face             ((t (:foreground "IndianRed1"))))
+ '(ivy-grep-info                  ((t (:foreground "IndianRed1"))))
+ '(ivy-completions-annotations    ((t (:foreground "IndianRed1"))))
+ 
+ ;; TODO magit
+ '(magit-bisect-bad        ((t (:foreground "IndianRed1"))))
+ '(magit-bisect-good       ((t (:foreground "PaleGreen4"))))
+ '(magit-bisect-skip       ((t (:foreground "gray65"))))
+ '(magit-blame-date        ((t (:foreground "IndianRed1"))))
+ '(magit-branch            ((t (:foreground "NavajoWhite1" :bold t))))
+ 
+ '(magit-diff-context-highlight ((t (:foreground "gray60" :background "gray20"))))
+ '(magit-diff-file-header       ((t (:foreground "gray60" :background "gray20"))))
+ '(magit-diffstat-added         ((t (:foreground "PaleGreen4"))))
+ '(magit-diffstat-removed       ((t (:foreground "IndianRed1"))))
+ '(magit-dimmed                 ((t (:foreground "gray65"))))
+ '(magit-hash                   ((t (:foreground "gray60"))))
+ '(magit-hunk-heading           ((t (:background "gray20"))))
+ '(magit-hunk-heading-highlight ((t (:background "gray20"))))
+ '(magit-item-highlight         ((t (:background "gray20"))))
+ '(magit-log-author             ((t (:foreground "gray60"))))
+ '(magit-process-ng             ((t (:foreground "NavajoWhite1" :bold t))))
+ '(magit-process-ok             ((t (:foreground "PaleGreen4" :bold t))))
+ '(magit-section-heading        ((t (:foreground "gray60" :bold t))))
+ '(magit-section-highlight      ((t (:background "gray20"))))
+ 
+ ;; diff-hl
+ '(diff-hl-insert         ((t (:foreground "PaleGreen4"   :background "gray12" :bold nil :italic nil))))
+ '(diff-hl-delete         ((t (:foreground "IndianRed1"     :background "gray12" :bold nil :italic nil))))
+ '(diff-hl-change         ((t (:foreground "gray60"   :background "gray12" :bold nil :italic nil))))
+ '(diff-hl-ignore         ((t (:foreground "gray65" :background "gray12" :bold nil :italic nil))))
+ '(diff-hl-margin-ignore  ((t (:foreground "gray65" :background "gray12" :bold nil :italic nil))))
+ '(diff-hl-margin-unknown ((t (:foreground "gray65" :background "gray12" :bold nil :italic nil))))
+ 
+ ;; outline, extends org-outline
+ '(outline-1 ((t (:foreground "white" :bold t :extend t))))
+ '(outline-2 ((t (:foreground "white" :bold t :extend t))))
+ '(outline-3 ((t (:foreground "white" :bold t :extend t))))
+ '(outline-4 ((t (:foreground "white" :bold t :extend t))))
+ '(outline-5 ((t (:foreground "white" :bold t :extend t))))
+ '(outline-6 ((t (:foreground "white" :bold t :extend t))))
+ '(outline-7 ((t (:foreground "white" :bold t :extend t))))
+ '(outline-8 ((t (:foreground "white" :bold t :extend t))))
 
-               (minibuffer-noticable-prompt :foreground ,s-lgray :bold t)
-               (minibuffer-prompt           :foreground ,s-lgray :bold t)
-               (isearch                     :foreground ,s-fg    :background ,s-hline)
-               (isearch-highlight           :foreground ,s-fg    :background ,s-wtf)
-               (isearch-fail                :foreground ,s-red   :background ,s-bg)
-               (paren-matched               :foreground ,s-green :background ,s-bg)
-               (paren-unmatched             :foreground ,s-red   :background ,s-bg)
-               (escape-glyph                :foreground ,s-red   :bold t)
-               (homoglyph                   :foreground ,s-red   :bold t)
+ ;; TODO org-agenda
+ 
+ ;; org
+ '(org-code                  ((t (:foreground "NavajoWhite1" :distant-foreground "gray12" :background "NavajoWhite1"))))
+ '(org-block                 ((t (:foreground "white"    :background "gray20"))))
+ '(org-block-begin-line      ((t (:foreground "gray60" :background "gray20" :bold t)))) ; could be a better fg
+ '(org-block-end-line        ((t (:foreground "gray60" :background "gray20" :bold t))))
+ '(org-date                  ((t (:foreground "NavajoWhite1"   :bold t))))
+ '(org-drawer                ((t (:foreground "gray60"   :bold t))))
+ '(org-document-info         ((t (:foreground "white"      :background "gray12" :italic t)))) ;; BUG does not seem to correctly color fg
+ '(org-document-info-keyword ((t (:foreground "gray65" :background "gray12"))))
+ '(org-document-title        ((t (:foreground "white"      :weight bold))))
+ '(org-done                  ((t (:foreground "PaleGreen4"   :bold t :strike-through t))))
+ '(org-ellipsis              ((t (:foreground "gray65"))))
+ '(org-footnote              ((t (:foreground "NavajoWhite1"))))
+ '(org-formula               ((t (:foreground "gray65"))))
+ '(org-headline-done         ((t (:foreground "gray65" :weight normal :strike-through t))))
+ '(org-hide                  ((t (:foreground "gray12" :background "gray12"))))
+ '(org-link                  ((t (:foreground "gray65" :bold t :underline t)))) ;; BUG foreground not respected
+ '(org-list-dt               ((t (:foreground "gray65" :bold t))))
+ '(org-priority              ((t (:foreground "NavajoWhite1"))))
+ '(org-scheduled             ((t (:foreground "IndianRed1"))))
+ '(org-scheduled-previously  ((t (:foreground "NavajoWhite1"))))
+ '(org-scheduled-today       ((t (:foreground "PaleGreen4"))))
+ '(org-sexp-date             ((t (:foreground "NavajoWhite1"))))
+ '(org-special-keyword       ((t (:foreground "NavajoWhite1"))))
+ '(org-table                 ((t (:foreground "gray65"))))
+ '(org-tag                   ((t (:foreground "gray65" :background "gray12" :bold t))))
+ '(org-todo                  ((t (:foreground "IndianRed1" :bold t))))
+ '(org-warning               ((t (:foreground "IndianRed1" :bold t))))
+ '(org-upcoming-deadline     ((t (:foreground "IndianRed1"))))
+ 
+ ;; markdown mode
+ '(markdown-header-face             ((t (:foreground "white"      :bold t))))
+ '(markdown-list-face               ((t (:foreground "gray60"   :bold t))))
+ '(markdown-bold-face               ((t (:foreground "white"      :bold t))))
+ '(markdown-blockquote-face         ((t (:foreground "gray65" :italic t))))
+ '(markdown-italic-face             ((t (:foreground "white"      :italic t))))
+ '(markdown-link-face               ((t (:foreground "gray65" :underline t))))
+ '(markdown-url-face                ((t (:foreground "gray65" :underline t))))
+ '(markdown-header-delimiter-face   ((t (:inherit 'markdown-header-face))))
+ '(markdown-metadata-key-face       ((t (:foreground "gray65"))))
+ '(markdown-markup-face             ((t (:foreground "white"))))
+ '(markdown-pre-face                ((t (:foreground "white"))))
+ '(markdown-code-face               ((t (:background "gray60" :extend t))))
+ '(markdown-reference-face          ((t (:foreground "gray65"))))
+ '(markdown-html-attr-name-face     ((t (:inherit 'font-lock-variable-name-face))))
+ '(markdown-html-attr-value-face    ((t (:inherit 'font-lock-string-face))))
+ '(markdown-html-entity-face        ((t (:inherit 'font-lock-variable-name-face))))
+ '(markdown-html-tag-delimiter-face ((t (:inherit 'markdown-markup-face))))
+ '(markdown-html-tag-name-face      ((t (:inherit 'font-lock-keyword-face))))
+ '(markdown-inline-code-face        ((t (:inherit 'markdown-code-face :extend nil))))
+ 
+ ;; show-paren
+ '(show-paren-match-face       ((t (:background "gray12" :foreground "tan1" :bold t :italic t))))
+ '(show-paren-match            ((t (:background "gray12" :foreground "tan1" :bold t :italic t))))
+ '(show-paren-match-expression ((t (:background "gray12" :foreground "tan1" :bold t :italic t))))
+ '(show-paren-mismatch         ((t (:background "IndianRed1" :foreground "gray12" :bold t :italic t))))
+ 
+ ;; smartparens
+ '(sp-show-pair-match-face    ((t (:inherit 'paren-matched))))
+ '(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
+ 
+ ;; LaTeX
+ '(font-latex-sectioning-0-face ((t (:foreground "NavajoWhite1" :bold t))))
+ '(font-latex-sectioning-1-face ((t (:foreground "NavajoWhite1" :bold t))))
+ '(font-latex-sectioning-2-face ((t (:foreground "NavajoWhite1" :bold t))))
+ '(font-latex-sectioning-3-face ((t (:foreground "NavajoWhite1" :bold t :italic t))))
+ '(font-latex-sectioning-4-face ((t (:foreground "NavajoWhite1" :italic t))))
+ '(font-latex-italic-face       ((t (:foreground "white" :italic t))))
+ '(font-latex-bold-face         ((t (:foreground "white" :bold t))))
+ '(font-latex-verbatim-face     ((t (:foreground "NavajoWhite1" :bold t))))
+ '(font-latex-string-face       ((t (:foreground "gray60"))))
+ '(font-latex-warning-face      ((t (:foreground "IndianRed1"))))
+ '(font-latex-math-face         ((t (:foreground "gray60"))))
+ '(font-latex-script-char-face  ((t (:foreground "NavajoWhite1"))))
 
-               (line-number              :foreground ,s-lgray :background ,s-bg)
-               (line-number-current-line :foreground ,s-fg    :background ,s-bg)
-               (linum                    :inherit 'line-number)
+ ;; re-builder
+ '(reb-match-0 ((t (:foreground "white" :inverse-video t :bold t))))
+ '(reb-match-1 ((t (:foreground "white" :inverse-video t :bold t))))
+ '(reb-match-2 ((t (:foreground "white" :inverse-video t :bold t))))
+ '(reb-match-3 ((t (:foreground "white" :inverse-video t :bold t))))
+ 
+ ;; undo-tree
+ '(undo-tree-visualizer-default-face       ((t (:foreground "white"))))
+ '(undo-tree-visualizer-current-face       ((t (:foreground "PaleGreen4" :bold t))))
+ '(undo-tree-visualizer-unmodified-face    ((t (:foreground "gray60" :italic t))))
+ '(undo-tree-visualizer-active-branch-face ((t (:foreground "white"))))
+ '(undo-tree-visualizer-register-face      ((t (:foreground "white"))))
+ 
+ ;; wo/man
+ '(Man-overstrike ((t (:foreground "gray65" :bold t))))
+ '(Man-underline  ((t (:foreground "gray65" :underline nil :italic t))))
+ '(woman-bold     ((t (:inherit 'Man-overstrike))))
+ '(woman-italic   ((t (:inherit 'Man-underline))))
+ 
+ ;; TODO prism
+ 
+ ;; web-mode
+ '(web-mode-doctype-face           ((t (:foreground "gray65"))))
+ '(web-mode-html-tag-face          ((t (:foreground "white" :italic t))))
+ '(web-mode-html-tag-bracket-face  ((t (:foreground "white"))))
+ '(web-mode-html-attr-name-face    ((t (:foreground "white" :bold t))))
+ '(web-mode-html-entity-face       ((t (:foreground "white" :italic t))))
+ '(web-mode-block-control-face     ((t (:foreground "gray60"))))
+ '(web-mode-html-tag-bracket-face  ((t (:foreground "white" :bold t))))
 
-               ;; syntax
-               (font-lock-builtin-face              :foreground ,s-beige   :italic t)
-               (font-lock-comment-delimiter-face    :foreground ,s-comment :italic t)
-               (font-lock-comment-face              :foreground ,s-comment :italic t)
-               (font-lock-doc-face                  :foreground ,s-comment :italic t)
-               (font-lock-constant-face             :foreground ,s-beige   :bold t :italic t)
-               (font-lock-function-name-face        :foreground ,s-fg      :bold t)
-               (font-lock-keyword-face              :foreground ,s-lgray   :bold t)
-               (font-lock-type-face                 :foreground ,s-beige   :bold t)
-               (font-lock-variable-name-face        :foreground ,s-fg      :italic t)
-               (font-lock-string-face               :foreground ,s-lgray)
-               (font-lock-warning-face              :foreground ,s-red)
-               (font-lock-negation-char-face        :foreground ,s-fg :bold t)
-               (font-lock-preprocessor-face         :foreground ,s-fg :bold t)
-               (font-lock-preprocessor-char-face    :foreground ,s-fg :bold t)
-               (font-lock-regexp-grouping-backslash :foreground ,s-fg :bold t)
-               (font-lock-regexp-grouping-construct :foreground ,s-fg :bold t)
-
-               ;; eshell
-               (eshell-prompt        :foreground ,s-lgray :bold t)
-               (eshell-ls-directory  :foreground ,s-beige :bold t)
-               (eshell-ls-executable :foreground ,s-gray  :bold t)
-               (eshell-ls-symlink    :foreground ,s-fg    :italic t)
-               (eshell-ls-readonly   :foreground ,s-red)
-               (eshell-ls-unreadable :foreground ,s-gray) ; too dark?
-               (eshell-ls-special    :foreground ,s-green :italic t)
-               (eshell-ls-missing    :foreground ,s-red)
-               (eshell-ls-product    :foreground ,s-fg)
-               (eshell-ls-archive    :foreground ,s-lgray)
-               (eshell-ls-entries    :foreground ,s-fg)
-               (eshell-ls-backup     :foreground ,s-lgray :italic t)
-
-               ;; avy
-               (avy-lead-face   :background ,s-hline :foreground ,s-fg :distant-foreground ,s-comment :bold t)
-               (avy-lead-face-0 :inherit 'avy-lead-face)
-               (avy-lead-face-1 :inherit 'avy-lead-face)
-               (avy-lead-face-2 :inherit 'avy-lead-face)
-
-               ;; flyspell
-               ;; TODO make these lines wavy!
-               (flyspell-incorrect       :underline ,s-red)
-               (flyspell-duplicate       :underline ,s-beige)
-               (flycheck-error           :underline ,s-red)
-               (flysheck-warning         :underline ,s-beige)
-               (flysheck-warning-overlay :underline ,s-beige)
-               (flycheck-note            :underline ,s-green)
-
-               ;; hydra
-               (hydra-face-red      :foreground ,s-fg    :bold t)
-               (hydra-face-blue     :foreground ,s-lgray :bold t)
-               (hydra-face-amaranth :foreground ,s-lgray :bold t)
-               (hydra-face-pink     :foreground ,s-lgray :bold t)
-               (hydra-face-teal     :foreground ,s-lgray :bold t)
-
-               ;; cider
-
-               ;; company
-               (company-scrollbar-bg             :background ,s-lgray)
-               (company-scrollbar-fg             :foreground ,s-fg)
-               (company-echo-common              :background ,s-fg   :foreground ,s-bg)
-               (company-preview                  :background ,s-bg   :foreground ,s-beige)
-               (company-tooltip                  :background ,s-gray :foreground ,s-fg)
-               (company-tooltip-annotation       :foreground ,s-beige)
-               (company-tooltip-common           :foreground ,s-lgray)
-               (company-tooltip-common-selection :foreground ,s-beige)
-               (company-tooltip-selection        :background ,s-gray :foreground ,s-lgray)
-               (company-tooltip-selection-       :background ,s-gray :foreground ,s-lgray)
-               (company-tooltip-mouse            :inherit highlight)
-
-               ;; compilation
-               (compilation-line-number    :foreground ,s-beige :bold t)
-               (compilation-column-number  :inherit 'font-lock-comment-face)
-               (compilation-error          :inherit 'error   :bold t)
-               (compilation-warning        :inherit 'warning :italic t)
-               (compilation-info           :inherit 'success)
-               (compilation-mode-line-exit :inherit 'compilation-info)
-               (compilation-mode-line-fail :inherit 'compilation-error)
-
-               ;; modeline
-               (header-line         :inherit 'mode-line  :distant-foreground ,s-bg)
-               (mode-line           :foreground ,s-fg    :background ,s-bg)
-               (mode-line-inactive  :foreground ,s-lgray :background ,s-bg)
-               (mode-line-buffer-id :foreground ,s-fg    :bold t :italic t)
-               (mode-line-emphasis  :foreground ,s-fg    :bold t)
-               (mode-line-highlight :foreground ,s-beige)
-
-               ;; TODO custom
-
-               ;; doom-modeline
-               (doom-modeline-buffer-path        :foreground ,s-lgray)
-               (doom-modeline-buffer-file        :foreground ,s-fg    :weight bold)
-               (doom-modeline-buffer-modified    :foreground ,s-red   :weight bold)
-               (doom-modeline-project-dir        :foreground ,s-fg    :weight bold)
-               (doom-modeline-project-root-dir   :foreground ,s-lgray :weight normal)
-               (doom-modeline-project-parent-dir :foreground ,s-lgray :weight normal)
-               (doom-modeline-bar-inactive       :foreground ,s-fg    :background ,s-bg)
-               (doom-modeline-bar                :background ,s-bg) ; the leftmost bar
-               (doom-modeline-evil-insert-state  :foreground ,s-fg)
-               (doom-modeline-evil-visual-state  :foreground ,s-fg)
-               (doom-modeline-evil-normal-state  :foreground ,s-lgray)
-               (doom-modeline-evil-emacs-state   :foreground ,s-red :italic nil)
-
-               ;; dired
-               (dired-directory  :foreground ,s-lgray :bold t)
-               (dired-ignored    :foreground ,s-comment)
-               (dired-flagged    :foreground ,s-green)
-               (dired-header     :foreground ,s-fg  :bold t)
-               (dired-mark       :foreground ,s-red :bold t)
-               (dired-marked     :foreground ,s-red :bold t :italic t)
-               (dired-perm-write :foreground ,s-fg  :underline t)
-               (dired-symlink    :foreground ,s-fg  :italic t)
-               (dired-warning    :foreground ,s-red)
-
-               ;; evil
-               (evil-ex-info                   :foreground ,s-red :italic t)
-               (evil-ex-search                 :background ,s-hline :foreground ,s-fg :bold t)
-               ;; (evil-ex-substitute-matches     :background base0 :foreground red   :strike-through t :weight 'bold)
-               ;; (evil-ex-substitute-replacement :background base0 :foreground green :weight 'bold)
-               (evil-search-highlight-persist-highlight-face :inherit 'lazy-highlight)
-
-               ;; evil-mc
-               (evil-mc-cursor-default-face :foreground ,s-bg :background ,s-fg)
-               (evil-mc-region-face         :foreground ,s-bg :background ,s-fg)
-               (evil-mc-cursor-bar-face     :foreground ,s-comment)
-               (evil-mc-cursor-hbar-face    :foreground ,s-comment)
-
-               ;; info
-               (Info-quoted    :foreground ,s-beige :inherit 'default :bold t)
-               (info-menu-star :foreground ,s-fg :bold t) ;; NOTE this should maybe have another color
-               ;; link-styling is inherited from ~link~
-
-               ;; ivy
-               (ivy-current-match              :foreground ,s-beige :background ,s-bg :bold t)
-               (ivy-minibuffer-match-highlight :foreground ,s-green)
-               (ivy-minibuffer-match-face-1    :foreground ,s-comment :bold t :italic t)
-               (ivy-minibuffer-match-face-2    :foreground ,s-comment :bold t :italic t)
-               (ivy-minibuffer-match-face-3    :foreground ,s-comment :bold t :italic t)
-               (ivy-minibuffer-match-face-4    :foreground ,s-comment :bold t :italic t)
-               (ivy-confirm-face               :foreground ,s-green)
-               (ivy-required-face              :foreground ,s-red)
-               (ivy-subdir                     :foreground ,s-comment)
-               (ivy-modified-buffer            :foreground ,s-red :bold t)
-               (ivy-modified-outside-buffer    :foreground ,s-red)
-               (ivy-remote                     :foreground ,s-comment)
-               (ivy-virtual                    :foreground ,s-comment :italic t)
-               (ivy-prompt                     :foreground ,s-red)
-               (ivy-prompt-match               :foreground ,s-red)
-               (ivy-separator                  :foreground ,s-beige)
-               (ivy-highlight-face             :foreground ,s-red)
-               (ivy-grep-info                  :foreground ,s-red)
-               (ivy-completions-annotations    :foreground ,s-red)
-
-               ;; TODO magit
-               (magit-branch                 :foreground ,s-beige :bold t)
-               (magit-diff-context-highlight :foreground ,s-lgray :background ,s-gray)
-               (magit-diff-file-header       :foreground ,s-lgray :background ,s-gray)
-               (magit-diffstat-added         :foreground ,s-green)
-               (magit-diffstat-removed       :foreground ,s-red)
-               (magit-hash                   :foreground ,s-lgray)
-               (magit-hunk-heading           :background ,s-gray)
-               (magit-hunk-heading-highlight :background ,s-gray)
-               (magit-item-highlight         :background ,s-gray)
-               (magit-log-author             :foreground ,s-lgray)
-               (magit-process-ng             :foreground ,s-beige :bold t)
-               (magit-process-ok             :foreground ,s-green :bold t)
-               (magit-section-heading        :foreground ,s-lgray :bold t)
-               (magit-section-highlight      :background ,s-gray)
-
-               ;; diff-hl
-               (diff-hl-insert         :foreground ,s-green   :background ,s-bg :bold nil :italic nil)
-               (diff-hl-delete         :foreground ,s-red     :background ,s-bg :bold nil :italic nil)
-               (diff-hl-change         :foreground ,s-lgray   :background ,s-bg :bold nil :italic nil)
-               (diff-hl-ignore         :foreground ,s-comment :background ,s-bg :bold nil :italic nil)
-               (diff-hl-margin-ignore  :foreground ,s-comment :background ,s-bg :bold nil :italic nil)
-               (diff-hl-margin-unknown :foreground ,s-comment :background ,s-bg :bold nil :italic nil)
-
-               ;; outline, extends org-outline
-               (outline-1 :foreground ,s-fg :bold t :extend t)
-               (outline-2 :foreground ,s-fg :bold t :extend t)
-               (outline-3 :foreground ,s-fg :bold t :extend t)
-               (outline-4 :foreground ,s-fg :bold t :extend t)
-               (outline-5 :foreground ,s-fg :bold t :extend t)
-               (outline-6 :foreground ,s-fg :bold t :extend t)
-               (outline-7 :foreground ,s-fg :bold t :extend t)
-               (outline-8 :foreground ,s-fg :bold t :extend t)
-
-               ;; org-agenda
-               ;; (org-agenda-done :inherit 'org-done)
-               ;; (org-agenda-dimmed-todo-face :foreground comments)
-               ;; (org-agenda-date          :foreground violet :weight 'ultra-bold)
-               ;; (org-agenda-date-today    :foreground (doom-lighten violet 0.4)   :weight 'ultra-bold)
-               ;; (org-agenda-date-weekend  :foreground (doom-darken violet 0.4)  :weight 'ultra-bold)
-               ;; (org-agenda-structure     :foreground fg :weight 'ultra-bold)
-               ;; (org-agenda-clocking      :background (doom-blend blue bg 0.2))
-               ;; (org-upcoming-deadline         :foreground (doom-blend fg bg 0.8))
-               ;; (org-upcoming-distant-deadline :foreground (doom-blend fg bg 0.5))
-               ;; (org-scheduled            :foreground fg)
-               ;; (org-scheduled-today      :foreground base7)
-               ;; (org-scheduled-previously :foreground base8)
-               ;; (org-time-grid            :foreground comments)
-               ;; (org-sexp-date            :foreground fg)
-
-               ;; org
-               (org-code                  :foreground ,s-beige :distant-foreground ,s-bg :background ,s-beige)
-               (org-block                 :foreground ,s-fg    :background ,s-gray)
-               (org-block-begin-line      :foreground ,s-lgray :background ,s-gray :bold t) ; could be a better fg
-               (org-block-end-line        :foreground ,s-lgray :background ,s-gray :bold t)
-               (org-date                  :foreground ,s-beige   :bold t)
-               (org-drawer                :foreground ,s-lgray   :bold t)
-               (org-document-info         :foreground ,s-fg      :background ,s-bg :italic t) ;; BUG  does not seem to correctly color fg
-               (org-document-info-keyword :foreground ,s-comment :background ,s-bg)
-               (org-document-title        :foreground ,s-fg      :weight bold)
-               (org-done                  :foreground ,s-green)
-               (org-ellipsis              :foreground ,s-comment)
-               (org-footnote              :foreground ,s-beige)
-               (org-formula               :foreground ,s-comment)
-               (org-headline-done         :foreground ,s-comment :weight normal :strike-through t)
-               (org-hide                  :foreground ,s-bg :background ,s-bg)
-               (org-link                  :foreground ,s-comment :bold t :underline t) ;; BUG  foreground not respected
-               (org-list-dt               :foreground ,s-comment :bold t)
-               (org-priority              :foreground ,s-beige)
-               (org-scheduled             :foreground ,s-red)
-               (org-scheduled-previously  :foreground ,s-beige)
-               (org-scheduled-today       :foreground ,s-green)
-               (org-sexp-date             :foreground ,s-beige)
-               (org-special-keyword       :foreground ,s-beige)
-               (org-table                 :foreground ,s-comment)
-               (org-tag                   :foreground ,s-comment :background ,s-bg :bold t)
-               (org-todo                  :foreground ,s-red :bold t)
-               (org-warning               :foreground ,s-red :bold t)
-               (org-upcoming-deadline     :foreground ,s-red)
-
-               ;; markdown mode
-               (markdown-header-face             :foreground ,s-fg      :bold t)
-               (markdown-list-face               :foreground ,s-lgray   :bold t)
-               (markdown-bold-face               :foreground ,s-fg      :bold t)
-               (markdown-blockquote-face         :foreground ,s-comment :italic t)
-               (markdown-italic-face             :foreground ,s-fg      :italic t)
-               (markdown-link-face               :foreground ,s-comment :underline t)
-               (markdown-url-face                :foreground ,s-comment :underline t)
-               (markdown-header-delimiter-face   :inherit 'markdown-header-face)
-               (markdown-metadata-key-face       :foreground ,s-comment)
-               (markdown-markup-face             :foreground ,s-fg)
-               (markdown-pre-face                :foreground ,s-fg)
-               (markdown-code-face               :background ,s-lgray :extend t)
-               (markdown-reference-face          :foreground ,s-comment)
-               (markdown-html-attr-name-face     :inherit 'font-lock-variable-name-face)
-               (markdown-html-attr-value-face    :inherit 'font-lock-string-face)
-               (markdown-html-entity-face        :inherit 'font-lock-variable-name-face)
-               (markdown-html-tag-delimiter-face :inherit 'markdown-markup-face)
-               (markdown-html-tag-name-face      :inherit 'font-lock-keyword-face)
-               (markdown-inline-code-face        :inherit 'markdown-code-face :extend nil)
-
-               ;; show-paren
-               ;; NOTE the green/red is a bit faint right now, but the italic sort of balances that, not sure
-               (show-paren-match-face       :background ,s-bg :foreground ,s-red :bold t :italic t)
-               (show-paren-match            :background ,s-bg :foreground ,s-red :bold t :italic t)
-               (show-paren-match-expression :background ,s-bg :foreground ,s-red :bold t :italic t)
-               (show-paren-mismatch         :background ,s-red :foreground ,s-bg :bold t :italic t)
-
-               ;; smartparens
-               (sp-show-pair-match-face    :inherit 'paren-matched)
-               (sp-show-pair-mismatch-face :inherit 'paren-unmatched)
-
-               ;; LaTeX
-               (font-latex-sectioning-0-face :foreground ,s-beige :bold t)
-               (font-latex-sectioning-1-face :foreground ,s-beige :bold t)
-               (font-latex-sectioning-2-face :foreground ,s-beige :bold t)
-               (font-latex-sectioning-3-face :foreground ,s-beige :bold t :italic t)
-               (font-latex-sectioning-4-face :foreground ,s-beige :italic t)
-               (font-latex-italic-face       :foreground ,s-fg :italic t)
-               (font-latex-bold-face         :foreground ,s-fg :bold t)
-               (font-latex-verbatim-face     :foreground ,s-beige :bold t)
-               (font-latex-string-face       :foreground ,s-lgray)
-               (font-latex-warning-face      :foreground ,s-red)
-               (font-latex-math-face         :foreground ,s-lgray)
-               (font-latex-script-char-face  :foreground ,s-beige)
-
-               ;; re-builder
-               (reb-match-0 :foreground ,s-fg :inverse-video t :bold t)
-               (reb-match-1 :foreground ,s-fg :inverse-video t :bold t)
-               (reb-match-2 :foreground ,s-fg :inverse-video t :bold t)
-               (reb-match-3 :foreground ,s-fg :inverse-video t :bold t)
-
-               ;; undo-tree
-               (undo-tree-visualizer-default-face       :foreground ,s-fg)
-               (undo-tree-visualizer-current-face       :foreground ,s-green :bold t)
-               (undo-tree-visualizer-unmodified-face    :foreground ,s-lgray :italic t)
-               (undo-tree-visualizer-active-branch-face :foreground ,s-fg)
-               (undo-tree-visualizer-register-face      :foreground ,s-fg)
-
-               ;; wo/man
-               (Man-overstrike :foreground ,s-comment :bold t)
-               (Man-underline  :foreground ,s-comment :underline nil :italic t)
-               (woman-bold     :inherit 'Man-overstrike)
-               (woman-italic   :inherit 'Man-underline)
-
-               ;; TODO prism
-
-               ;; web-mode
-               (web-mode-doctype-face           :foreground ,s-comment)
-               (web-mode-html-tag-face          :foreground ,s-fg :italic t)
-               (web-mode-html-tag-bracket-face  :foreground ,s-fg)
-               (web-mode-html-attr-name-face    :foreground ,s-fg :bold t)
-               (web-mode-html-entity-face       :foreground ,s-fg :italic t)
-               (web-mode-block-control-face     :foreground ,s-lgray)
-               (web-mode-html-tag-bracket-face  :foreground ,s-fg :bold t)
-
-               (whitespace-empty       :background ,s-gray)
-               (trailing-whitespace    :foreground ,s-red)
-               (whitespace-space       :foreground ,s-lgray)
-               (whitespace-newline     :foreground ,s-lgray)
-               (whitespace-tab         :foreground ,s-lgray :background ,s-bg)
-               (whitespace-indentation :foreground ,s-red   :background ,s-lgray)
-               (whitespace-line        :foreground ,s-red   :background ,s-fg :weight bold)
-               (nobreak-space          :inherit 'default    :underline nil)
-               (whitespace-trailing    :inherit 'trailing-whitespace))))
-
-  (apply #'custom-theme-set-faces
-         'stimmung
-         (let ((color-names (mapcar #'car colors))
-               (graphic-colors (mapcar #'cadr colors))
-               (tty-colors (mapcar #'car (mapcar #'last colors))))
-           (cl-flet* ((expand-for-tty (spec) (cl-progv color-names tty-colors
-                                               (eval `(backquote ,spec))))
-                      (expand-for-graphic (spec) (cl-progv color-names graphic-colors
-                                                   (eval `(backquote ,spec)))))
-             (cl-loop for (face . spec) in faces
-                      collect `(,face
-                                ((((min-colors 16777216))
-                                  ,(expand-for-graphic spec))
-                                 (t
-                                  ,(expand-for-tty spec)))))))))
+ ;; "white"space
+ '(whitespace-empty       ((t (:background "gray20"))))
+ '(whitespace-space       ((t (:foreground "gray60"))))
+ '(whitespace-newline     ((t (:foreground "gray60"))))
+ '(whitespace-tab         ((t (:foreground "gray60"  :background "gray12"))))
+ '(whitespace-indentation ((t (:foreground "IndianRed1" :background "gray60"))))
+ '(whitespace-line        ((t (:foreground "IndianRed1" :background "white" :weight bold))))
+ '(nobreak-space          ((t (:inherit 'default    :underline nil))))
+ '(whitespace-trailing    ((t (:foreground "IndianRed1"))))
+ )
 
 (custom-theme-set-variables
  'stimmung
