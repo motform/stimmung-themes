@@ -5,7 +5,7 @@
   #+END_QUOTE
   — Karlheinz Stockhausen, 1973
 
-  [[./.assets/stimmung.png]]
+  [[./.assets/stimmung.jpg]]
 
   Stimmung is an (almost) monochrome Emacs theme that features non-color based syntax highlighting and a dignified, yet distinctively /hacker,/ look.
 
