@@ -53,13 +53,13 @@
  '(default             ((t (:foreground "white"      :background "gray12"))))
  '(fringe              ((t (:foreground "white"      :background "gray12"))))
  '(match               ((t (:foreground "PaleGreen4" :bold t))))
- '(link                ((t (:foreground "NavajoWhite1" :underline t))))
- '(link-visited        ((t (:foreground "NavajoWhite1" :underline t :italic t))))
- '(button              ((t (:foreground "NavajoWhite1" :underline t))))
- '(header-line         ((t (:foreground "NavajoWhite1" :bold t))))
+ '(link                ((t (:foreground "bisque1" :underline t))))
+ '(link-visited        ((t (:foreground "bisque1" :underline t :italic t))))
+ '(button              ((t (:foreground "bisque1" :underline t))))
+ '(header-line         ((t (:foreground "bisque1" :bold t))))
  '(tooltip             ((t (:foreground "white"  :background "gray20"))))
  '(vertical-border     ((t (:foreground "gray15" :background "gray15"))))
- '(info-string         ((t (:foreground "NavajoWhite1"))))
+ '(info-string         ((t (:foreground "bisque1"))))
  '(default-italic      ((t (:slant italic))))
 
  '(error                       ((t (:foreground "IndianRed1"))))
@@ -82,14 +82,14 @@
  '(linum                    ((t (:inherit 'line-number))))
  
  ;; syntax
- '(font-lock-builtin-face              ((t (:foreground "NavajoWhite1" :italic t))))
+ '(font-lock-builtin-face              ((t (:foreground "bisque1" :italic t))))
  '(font-lock-comment-delimiter-face    ((t (:foreground "gray65"       :italic t))))
  '(font-lock-comment-face              ((t (:foreground "gray65"       :italic t))))
  '(font-lock-doc-face                  ((t (:foreground "gray65"       :italic t))))
- '(font-lock-constant-face             ((t (:foreground "NavajoWhite1" :bold t :italic t))))
+ '(font-lock-constant-face             ((t (:foreground "bisque1" :bold t :italic t))))
  '(font-lock-function-name-face        ((t (:foreground "white"        :bold t))))
  '(font-lock-keyword-face              ((t (:foreground "gray60"       :bold t))))
- '(font-lock-type-face                 ((t (:foreground "NavajoWhite1" :bold t))))
+ '(font-lock-type-face                 ((t (:foreground "bisque1" :bold t))))
  '(font-lock-variable-name-face        ((t (:foreground "white"        :italic t))))
  '(font-lock-string-face               ((t (:foreground "gray60"))))
  '(font-lock-warning-face              ((t (:foreground "IndianRed1"))))
@@ -101,7 +101,7 @@
  
  ;; eshell
  '(eshell-prompt        ((t (:foreground "gray60"       :bold t))))
- '(eshell-ls-directory  ((t (:foreground "NavajoWhite1" :bold t))))
+ '(eshell-ls-directory  ((t (:foreground "bisque1" :bold t))))
  '(eshell-ls-executable ((t (:foreground "gray20"       :bold t))))
  '(eshell-ls-symlink    ((t (:foreground "white"        :italic t))))
  '(eshell-ls-readonly   ((t (:foreground "IndianRed1"))))
@@ -122,10 +122,10 @@
  ;; flyspell
  ;; TODO make these lines wavy!
  '(flyspell-incorrect       ((t (:underline (:style wave :color "IndianRed1") ))))
- '(flyspell-duplicate       ((t (:underline (:style wave :color "NavajoWhite1")))))
+ '(flyspell-duplicate       ((t (:underline (:style wave :color "bisque1")))))
  '(flycheck-error           ((t (:underline (:style wave :color "IndianRed1")))))
- '(flysheck-warning         ((t (:underline (:style wave :color "NavajoWhite1")))))
- '(flysheck-warning-overlay ((t (:underline (:style wave :color "NavajoWhite1")))))
+ '(flysheck-warning         ((t (:underline (:style wave :color "bisque1")))))
+ '(flysheck-warning-overlay ((t (:underline (:style wave :color "bisque1")))))
  '(flycheck-note            ((t (:underline (:style wave :color "PaleGreen4")))))
  
  ;; hydra
@@ -141,17 +141,17 @@
  '(company-scrollbar-bg             ((t (:background "gray60"))))
  '(company-scrollbar-fg             ((t (:foreground "white"))))
  '(company-echo-common              ((t (:background "white"  :foreground "gray12"))))
- '(company-preview                  ((t (:background "gray12" :foreground "NavajoWhite1"))))
+ '(company-preview                  ((t (:background "gray12" :foreground "bisque1"))))
  '(company-tooltip                  ((t (:background "gray20" :foreground "white"))))
- '(company-tooltip-annotation       ((t (:foreground "NavajoWhite1"))))
+ '(company-tooltip-annotation       ((t (:foreground "bisque1"))))
  '(company-tooltip-common           ((t (:foreground "gray60"))))
- '(company-tooltip-common-selection ((t (:foreground "NavajoWhite1"))))
+ '(company-tooltip-common-selection ((t (:foreground "bisque1"))))
  '(company-tooltip-selection        ((t (:background "gray20" :foreground "gray60"))))
  '(company-tooltip-selection-       ((t (:background "gray20" :foreground "gray60"))))
  '(company-tooltip-mouse            ((t (:inherit highlight))))
  
  ;; compilation
- '(compilation-line-number    ((t (:foreground "NavajoWhite1" :bold t))))
+ '(compilation-line-number    ((t (:foreground "bisque1" :bold t))))
  '(compilation-column-number  ((t (:inherit 'font-lock-comment-face))))
  '(compilation-error          ((t (:inherit 'error   :bold t))))
  '(compilation-warning        ((t (:inherit 'warning :italic t))))
@@ -165,7 +165,7 @@
  '(mode-line-inactive  ((t (:foreground "gray60" :background "gray12"))))
  '(mode-line-buffer-id ((t (:foreground "white"  :bold t :italic t))))
  '(mode-line-emphasis  ((t (:foreground "white"  :bold t))))
- '(mode-line-highlight ((t (:foreground "NavajoWhite1"))))
+ '(mode-line-highlight ((t (:foreground "bisque1"))))
  
  ;; TODO custom
  
@@ -208,12 +208,12 @@
  '(evil-mc-cursor-hbar-face    ((t (:foreground "gray65"))))
  
  ;; info
- '(info-quoted    ((t (:foreground "NavajoWhite1" :inherit 'default :bold t))))
+ '(info-quoted    ((t (:foreground "bisque1" :inherit 'default :bold t))))
  '(info-menu-star ((t (:foreground "white" :bold t))))
  ;; NOTE this should maybe have another color
 
  ;; ivy
- '(ivy-current-match              ((t (:foreground "NavajoWhite1" :background "gray12" :bold t))))
+ '(ivy-current-match              ((t (:foreground "bisque1" :background "gray12" :bold t))))
  '(ivy-minibuffer-match-highlight ((t (:foreground "PaleGreen4"))))
  '(ivy-minibuffer-match-face-1    ((t (:foreground "gray65" :bold t :italic t))))
  '(ivy-minibuffer-match-face-2    ((t (:foreground "gray65" :bold t :italic t))))
@@ -228,7 +228,7 @@
  '(ivy-virtual                    ((t (:foreground "gray65" :italic t))))
  '(ivy-prompt                     ((t (:foreground "IndianRed1"))))
  '(ivy-prompt-match               ((t (:foreground "IndianRed1"))))
- '(ivy-separator                  ((t (:foreground "NavajoWhite1"))))
+ '(ivy-separator                  ((t (:foreground "bisque1"))))
  '(ivy-highlight-face             ((t (:foreground "IndianRed1"))))
  '(ivy-grep-info                  ((t (:foreground "IndianRed1"))))
  '(ivy-completions-annotations    ((t (:foreground "IndianRed1"))))
@@ -238,7 +238,7 @@
  '(magit-bisect-good       ((t (:foreground "PaleGreen4"))))
  '(magit-bisect-skip       ((t (:foreground "gray65"))))
  '(magit-blame-date        ((t (:foreground "IndianRed1"))))
- '(magit-branch            ((t (:foreground "NavajoWhite1" :bold t))))
+ '(magit-branch            ((t (:foreground "bisque1" :bold t))))
  
  '(magit-diff-context-highlight ((t (:foreground "gray60" :background "gray20"))))
  '(magit-diff-file-header       ((t (:foreground "gray60" :background "gray20"))))
@@ -250,7 +250,7 @@
  '(magit-hunk-heading-highlight ((t (:background "gray20"))))
  '(magit-item-highlight         ((t (:background "gray20"))))
  '(magit-log-author             ((t (:foreground "gray60"))))
- '(magit-process-ng             ((t (:foreground "NavajoWhite1" :bold t))))
+ '(magit-process-ng             ((t (:foreground "bisque1" :bold t))))
  '(magit-process-ok             ((t (:foreground "PaleGreen4" :bold t))))
  '(magit-section-heading        ((t (:foreground "gray60" :bold t))))
  '(magit-section-highlight      ((t (:background "gray20"))))
@@ -276,29 +276,29 @@
  ;; TODO org-agenda
  
  ;; org
- '(org-code                  ((t (:foreground "NavajoWhite1" :distant-foreground "gray12" :background "NavajoWhite1"))))
+ '(org-code                  ((t (:foreground "bisque1" :distant-foreground "gray12" :background "bisque1"))))
  '(org-block                 ((t (:foreground "white"        :background "gray20"))))
  '(org-block-begin-line      ((t (:foreground "gray60"       :background "gray20" :bold t)))) ; could be a better fg
  '(org-block-end-line        ((t (:foreground "gray60"       :background "gray20" :bold t))))
- '(org-date                  ((t (:foreground "NavajoWhite1" :bold t))))
+ '(org-date                  ((t (:foreground "bisque1" :bold t))))
  '(org-drawer                ((t (:foreground "gray60"       :bold t))))
  '(org-document-info         ((t (:foreground "white"        :background "gray12" :italic t)))) ;; BUG does not seem to correctly color fg
  '(org-document-info-keyword ((t (:foreground "gray65"       :background "gray12"))))
  '(org-document-title        ((t (:foreground "white"        :weight bold))))
  '(org-done                  ((t (:foreground "PaleGreen4"   :bold t :strike-through t))))
  '(org-ellipsis              ((t (:foreground "gray65"))))
- '(org-footnote              ((t (:foreground "NavajoWhite1"))))
+ '(org-footnote              ((t (:foreground "bisque1"))))
  '(org-formula               ((t (:foreground "gray65"))))
  '(org-headline-done         ((t (:foreground "gray65"       :weight normal :strike-through t))))
  '(org-hide                  ((t (:foreground "gray12"       :background "gray12"))))
  '(org-link                  ((t (:foreground "gray65"       :bold t :underline t)))) ;; BUG foreground not respected
  '(org-list-dt               ((t (:foreground "gray65"       :bold t))))
- '(org-priority              ((t (:foreground "NavajoWhite1"))))
+ '(org-priority              ((t (:foreground "bisque1"))))
  '(org-scheduled             ((t (:foreground "IndianRed1"))))
- '(org-scheduled-previously  ((t (:foreground "NavajoWhite1"))))
+ '(org-scheduled-previously  ((t (:foreground "bisque1"))))
  '(org-scheduled-today       ((t (:foreground "PaleGreen4"))))
- '(org-sexp-date             ((t (:foreground "NavajoWhite1"))))
- '(org-special-keyword       ((t (:foreground "NavajoWhite1"))))
+ '(org-sexp-date             ((t (:foreground "bisque1"))))
+ '(org-special-keyword       ((t (:foreground "bisque1"))))
  '(org-table                 ((t (:foreground "gray65"))))
  '(org-tag                   ((t (:foreground "gray65"       :background "gray12" :bold t))))
  '(org-todo                  ((t (:foreground "IndianRed1"   :bold t))))
@@ -327,9 +327,9 @@
  '(markdown-inline-code-face        ((t (:inherit 'markdown-code-face :extend nil))))
  
  ;; show-paren
- '(show-paren-match-face       ((t (:background "gray12"     :foreground "tan1" :bold t :italic t))))
- '(show-paren-match            ((t (:background "gray12"     :foreground "tan1" :bold t :italic t))))
- '(show-paren-match-expression ((t (:background "gray12"     :foreground "tan1" :bold t :italic t))))
+ '(show-paren-match-face       ((t (:background "gray12"     :foreground "red" :bold t :italic t))))
+ '(show-paren-match            ((t (:background "gray12"     :foreground "red" :bold t :italic t))))
+ '(show-paren-match-expression ((t (:background "gray12"     :foreground "red" :bold t :italic t))))
  '(show-paren-mismatch         ((t (:background "IndianRed1" :foreground "gray12" :bold t :italic t))))
  
  ;; smartparens
@@ -337,18 +337,18 @@
  '(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
  
  ;; LaTeX
- '(font-latex-sectioning-0-face ((t (:foreground "NavajoWhite1" :bold t))))
- '(font-latex-sectioning-1-face ((t (:foreground "NavajoWhite1" :bold t))))
- '(font-latex-sectioning-2-face ((t (:foreground "NavajoWhite1" :bold t))))
- '(font-latex-sectioning-3-face ((t (:foreground "NavajoWhite1" :bold t :italic t))))
- '(font-latex-sectioning-4-face ((t (:foreground "NavajoWhite1" :italic t))))
+ '(font-latex-sectioning-0-face ((t (:foreground "bisque1" :bold t))))
+ '(font-latex-sectioning-1-face ((t (:foreground "bisque1" :bold t))))
+ '(font-latex-sectioning-2-face ((t (:foreground "bisque1" :bold t))))
+ '(font-latex-sectioning-3-face ((t (:foreground "bisque1" :bold t :italic t))))
+ '(font-latex-sectioning-4-face ((t (:foreground "bisque1" :italic t))))
  '(font-latex-italic-face       ((t (:foreground "white" :italic t))))
  '(font-latex-bold-face         ((t (:foreground "white" :bold t))))
- '(font-latex-verbatim-face     ((t (:foreground "NavajoWhite1" :bold t))))
+ '(font-latex-verbatim-face     ((t (:foreground "bisque1" :bold t))))
  '(font-latex-string-face       ((t (:foreground "gray60"))))
  '(font-latex-warning-face      ((t (:foreground "IndianRed1"))))
  '(font-latex-math-face         ((t (:foreground "gray60"))))
- '(font-latex-script-char-face  ((t (:foreground "NavajoWhite1"))))
+ '(font-latex-script-char-face  ((t (:foreground "bisque1"))))
 
  ;; re-builder
  '(reb-match-0 ((t (:foreground "white" :inverse-video t :bold t))))
