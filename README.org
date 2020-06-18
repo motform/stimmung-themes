@@ -1,0 +1,28 @@
+* Stimmung, a theme tuned to inner harmonies
+
+  #+BEGIN_QUOTE
+  When you say We're in a good /Stimmung/, you mean a good psychological tuning, being well tuned together. 
+  #+END_QUOTE
+  — Karlheinz Stockhausen, 1973
+
+  [[./.assets/stimmung.png]]
+
+  Stimmung is an (almost) monochrome Emacs theme that features non-color based syntax highlighting and a dignified, yet distinctively /hacker,/ look.
+
+  The idea behind the theme is to decrease fruit salad factor, emphasize comments and mesh well with the colors used by MacOS dark mode. Stimmung makes heavy use of typographic features to distinguish syntactic elements instead of with colors — thus it requires a font with bold, italic and bold italic. It is implemented solely in Emacs native colors, as some kind of misguided artistic limitation.
+
+  If something looks off, you can report it as an issue. I have mainly tested it against [[https://github.com/motform/emacs.d][my personal configuration]], so there will probably be a few holes here and there. The modeline in the screenshot is from [[https://github.com/seagle0128/doom-modeline][Doom Emacs]] and the type is set in [[https://fsd.it/shop/fonts/pragmatapro/][PragmataPro]].
+
+** Installation
+   The theme is not on melpa (yet), so you have to clone the repository and manually require it in your ~init~.el.
+
+   #+BEGIN_SRC emacs-lisp
+   (load "*PATH-TO-.EL*")
+   (add-to-list 'custom-theme-load-path "*PATH-TO-FOLDER-CONTANING-.EL*")
+   (load-theme 'stimmung t)
+   #+END_SRC
+
+** TODO
+   - Expose a variable to select highlight color
+   - It is sometimes difficult so find ~isearch~ highlights, they should probably stand out a bit more
+   - Finish and publish /Mixtur/, a “dark-light mode” companion
