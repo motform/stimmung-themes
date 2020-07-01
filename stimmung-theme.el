@@ -46,10 +46,10 @@
  '(shadow   ((t (:background "gray15"))))
  '(hl-line  ((t (:background "gray15"))))
 
- '(secondary-selection ((t (:background "gray20"     :foreground "IndianRed1"  :bold t))))
- '(region              ((t (:background "gray15"     :bold t))))
+ '(secondary-selection ((t (:background "gray20"     :foreground "IndianRed1" :bold t))))
+ '(region              ((t (:background "gray30"))))
  '(highlight           ((t (:foreground "white"      :background "gray20" :bold t))))
- '(lazy-highlight      ((t (:foreground "gray60"     :background "gray12"   :bold t))))
+ '(lazy-highlight      ((t (:foreground "gray60"     :background "gray12" :bold t))))
  '(default             ((t (:foreground "white"      :background "gray12"))))
  '(fringe              ((t (:foreground "white"      :background "gray12"))))
  '(match               ((t (:foreground "PaleGreen4" :bold t))))
@@ -69,7 +69,7 @@
  
  '(minibuffer-noticable-prompt ((t (:foreground "gray60"     :bold t))))
  '(minibuffer-prompt           ((t (:foreground "gray60"     :bold t))))
- '(isearch                     ((t (:foreground "gray12"      :background "white"))))
+ '(isearch                     ((t (:foreground "gray12"     :background "white"))))
  '(isearch-highlight           ((t (:foreground "gray12"     :background "white"))))
  '(isearch-fail                ((t (:foreground "IndianRed1" :background "gray12"))))
  '(paren-matched               ((t (:foreground "PaleGreen4" :background "gray12"))))
