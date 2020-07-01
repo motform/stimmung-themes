@@ -69,7 +69,7 @@
  
  '(minibuffer-noticable-prompt ((t (:foreground "gray60"     :bold t))))
  '(minibuffer-prompt           ((t (:foreground "gray60"     :bold t))))
- '(isearch                     ((t (:foreground "white"      :background "gray15"))))
+ '(isearch                     ((t (:foreground "gray12"      :background "white"))))
  '(isearch-highlight           ((t (:foreground "gray12"     :background "white"))))
  '(isearch-fail                ((t (:foreground "IndianRed1" :background "gray12"))))
  '(paren-matched               ((t (:foreground "PaleGreen4" :background "gray12"))))
