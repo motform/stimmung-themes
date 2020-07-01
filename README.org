@@ -1,13 +1,13 @@
 * Stimmung, a theme tuned to inner harmonies
 
   #+BEGIN_QUOTE
-  When you say We're in a good /Stimmung/, you mean a good psychological tuning, being well tuned together. 
+  When you say: We're in a good /Stimmung/, you mean a good psychological tuning, being well tuned together. 
   #+END_QUOTE
   — Karlheinz Stockhausen, 1973
 
   [[./.assets/stimmung.jpg]]
 
-  Stimmung is an (almost) monochrome Emacs theme that features non-color based syntax highlighting and a dignified, yet distinctively /hacker,/ look.
+  Stimmung is an (almost) monochrome Emacs theme that features non-color based syntax highlighting and a dignified, yet distinctively hacker, look.
 
   The idea behind the theme is to decrease fruit salad factor, emphasize comments and mesh well with the colors used by MacOS dark mode. Stimmung makes heavy use of typographic features to distinguish syntactic elements instead of with colors — thus it requires a font with bold, italic and bold italic. It is implemented solely in Emacs native colors, as some kind of misguided artistic limitation.
 
@@ -22,7 +22,7 @@
    (load-theme 'stimmung t)
    #+END_SRC
 
-** TODO
+** Roadmap
    - Expose a variable to select highlight color
    - It is sometimes difficult so find ~isearch~ highlights, they should probably stand out a bit more
    - Finish and publish /Mixtur/, a “dark-light mode” companion

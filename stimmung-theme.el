@@ -1,4 +1,4 @@
-;;; stimmung.el --- a theme tuned to inner harmonies. -*- lexical-binding: t -*-
+;;; stimmung-theme.el --- a theme tuned to inner harmonies. -*- lexical-binding: t -*-
 ;;
 ;; Copyright © 2019
 ;;
@@ -33,8 +33,6 @@
 ;; instead of with colors.  Thus it requires a font with bold, italic and bold italic.
 ;;
 ;;; Code:
-
-(require 'cl-lib)
 
 (deftheme stimmung
   "A theme tuned to inner harmonies.")
