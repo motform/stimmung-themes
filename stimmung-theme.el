@@ -42,7 +42,7 @@
 
  '(default  ((t (:background "gray12" :foreground "white"))))
  '(shadow   ((t (:background "gray15"))))
- '(hl-line  ((t (:background "gray15"))))
+ '(hl-line  ((t (:background "gray15" :extend t))))
 
  '(secondary-selection ((t (:background "gray20"     :foreground "IndianRed1" :bold t))))
  '(region              ((t (:background "gray30"))))
@@ -275,7 +275,7 @@
  
  ;; org
  '(org-code                  ((t (:foreground "bisque1" :distant-foreground "gray12" :background "bisque1"))))
- '(org-block                 ((t (:foreground "white"        :background "gray20"))))
+ '(org-block                 ((t (:foreground "white"        :background "gray20" :extend t))))
  '(org-block-begin-line      ((t (:foreground "gray60"       :background "gray20" :bold t)))) ; could be a better fg
  '(org-block-end-line        ((t (:foreground "gray60"       :background "gray20" :bold t))))
  '(org-date                  ((t (:foreground "bisque1" :bold t))))
@@ -366,8 +366,6 @@
  '(Man-underline  ((t (:foreground "gray65" :underline nil :italic t))))
  '(woman-bold     ((t (:inherit 'Man-overstrike))))
  '(woman-italic   ((t (:inherit 'Man-underline))))
- 
- ;; TODO prism
  
  ;; web-mode
  '(web-mode-doctype-face           ((t (:foreground "gray65"))))
