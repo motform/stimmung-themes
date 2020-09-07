@@ -276,8 +276,8 @@
  ;; org
  '(org-code                  ((t (:foreground "bisque1" :distant-foreground "gray12" :background "bisque1"))))
  '(org-block                 ((t (:foreground "white"        :background "gray20" :extend t))))
- '(org-block-begin-line      ((t (:foreground "gray60"       :background "gray20" :bold t)))) ; could be a better fg
- '(org-block-end-line        ((t (:foreground "gray60"       :background "gray20" :bold t))))
+ '(org-block-begin-line      ((t (:foreground "gray60"       :background "gray20" :bold t :extend t)))) ; could be a better fg
+ '(org-block-end-line        ((t (:foreground "gray60"       :background "gray20" :bold t :extend t))))
  '(org-date                  ((t (:foreground "bisque1" :bold t))))
  '(org-drawer                ((t (:foreground "gray60"       :bold t))))
  '(org-document-info         ((t (:foreground "white"        :background "gray12" :italic t)))) ;; BUG does not seem to correctly color fg
