@@ -81,14 +81,14 @@
  
  ;; syntax
  '(font-lock-builtin-face              ((t (:foreground "bisque1" :italic t))))
- '(font-lock-comment-delimiter-face    ((t (:foreground "gray65"       :italic t))))
- '(font-lock-comment-face              ((t (:foreground "gray65"       :italic t))))
- '(font-lock-doc-face                  ((t (:foreground "gray65"       :italic t))))
+ '(font-lock-comment-delimiter-face    ((t (:foreground "gray65"  :italic t))))
+ '(font-lock-comment-face              ((t (:foreground "gray65"  :italic t))))
+ '(font-lock-doc-face                  ((t (:foreground "gray65"  :italic t))))
  '(font-lock-constant-face             ((t (:foreground "bisque1" :bold t :italic t))))
- '(font-lock-function-name-face        ((t (:foreground "white"        :bold t))))
- '(font-lock-keyword-face              ((t (:foreground "gray60"       :bold t))))
+ '(font-lock-function-name-face        ((t (:foreground "white"   :bold t))))
+ '(font-lock-keyword-face              ((t (:foreground "gray60"  :bold t))))
  '(font-lock-type-face                 ((t (:foreground "bisque1" :bold t))))
- '(font-lock-variable-name-face        ((t (:foreground "white"        :italic t))))
+ '(font-lock-variable-name-face        ((t (:foreground "white"   :italic t))))
  '(font-lock-string-face               ((t (:foreground "gray60"))))
  '(font-lock-warning-face              ((t (:foreground "IndianRed1"))))
  '(font-lock-negation-char-face        ((t (:foreground "white" :bold t))))
@@ -98,10 +98,10 @@
  '(font-lock-regexp-grouping-construct ((t (:foreground "white" :bold t))))
  
  ;; eshell
- '(eshell-prompt        ((t (:foreground "gray60"       :bold t))))
+ '(eshell-prompt        ((t (:foreground "gray60"  :bold t))))
  '(eshell-ls-directory  ((t (:foreground "bisque1" :bold t))))
- '(eshell-ls-executable ((t (:foreground "gray20"       :bold t))))
- '(eshell-ls-symlink    ((t (:foreground "white"        :italic t))))
+ '(eshell-ls-executable ((t (:foreground "gray20"  :bold t))))
+ '(eshell-ls-symlink    ((t (:foreground "white"   :italic t))))
  '(eshell-ls-readonly   ((t (:foreground "IndianRed1"))))
  '(eshell-ls-unreadable ((t (:foreground "gray20")))) ; too dark?
  '(eshell-ls-special    ((t (:foreground "PaleGreen4"   :italic t))))

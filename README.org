@@ -24,5 +24,4 @@
 
 ** Roadmap
    - Expose a variable to select highlight color
-   - It is sometimes difficult so find ~isearch~ highlights, they should probably stand out a bit more
    - Finish and publish /Mixtur/, a “dark-light mode” companion
