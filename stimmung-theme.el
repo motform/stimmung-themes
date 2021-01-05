@@ -1,37 +1,38 @@
-;;; stimmung-theme.el --- a theme tuned to inner harmonies. -*- lexical-binding: t -*-
-;;
+;;; stimmung-theme.el --- A theme tuned to inner harmonies. -*- lexical-binding: t -*-
+
 ;; Copyright © 2019
-;;
+
 ;; Author: Love Lagerkvist
 ;; URL: https://github.com/motform/stimmung
 ;; Package-Requires: ((emacs "24"))
 ;; Created: 2019-12-20
+;; Version: 2021-01-01
 ;; Keywords: color theme
-;;
+
 ;; This file is NOT part of GNU Emacs.
-;;
+
 ;;; License:
-;;
+
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation; either version 3, or (at your option)
 ;; any later version.
-;;
+
 ;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
-;;
+
 ;; For a full copy of the GNU General Public License
 ;; see <http://www.gnu.org/licenses/>.
-;;
+
 ;;; Commentary:
-;;
+
 ;; The idea behind this theme is to decrease fruit salad factor,
 ;; emphasize comments and mesh well with the colors used by MacOS dark mode.
 ;; Stimmung makes heavy use of typographic features to distinguish syntactic elements
 ;; instead of with colors.  Thus it requires a font with bold, italic and bold italic.
-;;
+
 ;;; Code:
 
 (deftheme stimmung
@@ -157,6 +158,10 @@
  '(compilation-mode-line-exit ((t (:inherit 'compilation-info))))
  '(compilation-mode-line-fail ((t (:inherit 'compilation-error))))
  
+ ;; TODO
+ ;; custom
+ '(custom-variable-tag    ((t (:foreground "bisque1" :bold t))))
+
  ;; modeline
  '(header-line         ((t (:inherit 'mode-line  :distant-foreground "gray12"))))
  '(mode-line           ((t (:foreground "white"  :background "gray12"))))
@@ -340,8 +345,8 @@
  '(font-latex-sectioning-2-face ((t (:foreground "bisque1" :bold t))))
  '(font-latex-sectioning-3-face ((t (:foreground "bisque1" :bold t :italic t))))
  '(font-latex-sectioning-4-face ((t (:foreground "bisque1" :italic t))))
- '(font-latex-italic-face       ((t (:foreground "white" :italic t))))
- '(font-latex-bold-face         ((t (:foreground "white" :bold t))))
+ '(font-latex-italic-face       ((t (:foreground "white"   :italic t))))
+ '(font-latex-bold-face         ((t (:foreground "white"   :bold t))))
  '(font-latex-verbatim-face     ((t (:foreground "bisque1" :bold t))))
  '(font-latex-string-face       ((t (:foreground "gray60"))))
  '(font-latex-warning-face      ((t (:foreground "IndianRed1"))))
