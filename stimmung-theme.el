@@ -365,6 +365,10 @@
  '(undo-tree-visualizer-unmodified-face    ((t (:foreground "gray60" :italic t))))
  '(undo-tree-visualizer-active-branch-face ((t (:foreground "white"))))
  '(undo-tree-visualizer-register-face      ((t (:foreground "white"))))
+
+ '(window-divider             ((t (:foreground "gray12"))))
+ '(window-divider-first-pixel ((t (:foreground "gray12"))))
+ '(window-divider-last-pixel  ((t (:foreground "gray12"))))
  
  ;; wo/man
  '(Man-overstrike ((t (:foreground "gray65" :bold t))))
