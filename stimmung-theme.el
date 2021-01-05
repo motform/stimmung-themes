@@ -164,8 +164,8 @@
 
  ;; modeline
  '(header-line         ((t (:inherit 'mode-line  :distant-foreground "gray12"))))
- '(mode-line           ((t (:foreground "white"  :background "gray12"))))
- '(mode-line-inactive  ((t (:foreground "gray60" :background "gray12"))))
+ '(mode-line           ((t (:foreground "white"  :background "gray15"))))
+ '(mode-line-inactive  ((t (:foreground "gray60" :background "gray15"))))
  '(mode-line-buffer-id ((t (:foreground "white"  :bold t :italic t))))
  '(mode-line-emphasis  ((t (:foreground "white"  :bold t))))
  '(mode-line-highlight ((t (:foreground "bisque1"))))
