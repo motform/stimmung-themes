@@ -68,8 +68,8 @@
  
  '(minibuffer-noticable-prompt ((t (:foreground "gray60"     :bold t))))
  '(minibuffer-prompt           ((t (:foreground "gray60"     :bold t))))
- '(isearch                     ((t (:foreground "gray12"     :background "white"))))
- '(isearch-highlight           ((t (:foreground "gray12"     :background "white"))))
+ '(isearch                     ((t (:foreground "IndianRed1" :background "white"))))
+ '(isearch-highlight           ((t (:foreground "IndianRed1" :background "white"))))
  '(isearch-fail                ((t (:foreground "IndianRed1" :background "gray12"))))
  '(paren-matched               ((t (:foreground "PaleGreen4" :background "gray12"))))
  '(paren-unmatched             ((t (:foreground "IndianRed1" :background "gray12"))))
@@ -180,7 +180,7 @@
  '(doom-modeline-project-root-dir   ((t (:foreground "gray60"     :weight normal))))
  '(doom-modeline-project-parent-dir ((t (:foreground "gray60"     :weight normal))))
  '(doom-modeline-bar-inactive       ((t (:foreground "white"      :background "gray12"))))
- '(doom-modeline-bar                ((t (:background "gray12")))) ; the leftmost bar
+ '(doom-modeline-bar                ((t (:background "gray15")))) ; the leftmost bar
  '(doom-modeline-evil-insert-state  ((t (:foreground "white"))))
  '(doom-modeline-evil-visual-state  ((t (:foreground "white"))))
  '(doom-modeline-evil-normal-state  ((t (:foreground "gray60"))))
