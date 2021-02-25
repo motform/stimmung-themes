@@ -43,7 +43,7 @@
 
  '(default  ((t (:background "gray12" :foreground "white"))))
  '(shadow   ((t (:background "gray15"))))
- '(hl-line  ((t (:background "gray15" :extend t))))
+ '(hl-line  ((t (:background "gray20" :extend t))))
 
  '(secondary-selection ((t (:background "gray20"     :foreground "IndianRed1" :bold t))))
  '(region              ((t (:background "gray30"))))
@@ -68,7 +68,7 @@
  
  '(minibuffer-noticable-prompt ((t (:foreground "gray60"     :bold t))))
  '(minibuffer-prompt           ((t (:foreground "gray60"     :bold t))))
- '(isearch                     ((t (:foreground "IndianRed1" :background "white"))))
+ '(isearch                     ((t (:foreground "IndianRed1" :background "white" :bold t))))
  '(isearch-highlight           ((t (:foreground "IndianRed1" :background "white"))))
  '(isearch-fail                ((t (:foreground "IndianRed1" :background "gray12"))))
  '(paren-matched               ((t (:foreground "PaleGreen4" :background "gray12"))))
@@ -119,7 +119,6 @@
  '(avy-lead-face-2 ((t (:inherit 'avy-lead-face))))
  
  ;; flyspell
- ;; TODO make these lines wavy!
  '(flyspell-incorrect       ((t (:underline (:style wave :color "IndianRed1") ))))
  '(flyspell-duplicate       ((t (:underline (:style wave :color "bisque1")))))
  '(flycheck-error           ((t (:underline (:style wave :color "IndianRed1")))))
@@ -164,13 +163,11 @@
 
  ;; modeline
  '(header-line         ((t (:inherit 'mode-line  :distant-foreground "gray12"))))
- '(mode-line           ((t (:foreground "white"  :background "gray15"))))
- '(mode-line-inactive  ((t (:foreground "gray60" :background "gray15"))))
+ '(mode-line           ((t (:foreground "white"  :background "gray30"))))
+ '(mode-line-inactive  ((t (:foreground "gray60" :background "gray10"))))
  '(mode-line-buffer-id ((t (:foreground "white"  :bold t :italic t))))
  '(mode-line-emphasis  ((t (:foreground "white"  :bold t))))
  '(mode-line-highlight ((t (:foreground "bisque1"))))
- 
- ;; TODO custom
  
  ;; doom-modeline
  '(doom-modeline-buffer-path        ((t (:foreground "gray60"))))
@@ -179,7 +176,7 @@
  '(doom-modeline-project-dir        ((t (:foreground "white"      :weight bold))))
  '(doom-modeline-project-root-dir   ((t (:foreground "gray60"     :weight normal))))
  '(doom-modeline-project-parent-dir ((t (:foreground "gray60"     :weight normal))))
- '(doom-modeline-bar-inactive       ((t (:foreground "white"      :background "gray12"))))
+ '(doom-modeline-bar-inactive       ((t (:foreground "white"      :background "bisque1"))))
  '(doom-modeline-bar                ((t (:background "gray15")))) ; the leftmost bar
  '(doom-modeline-evil-insert-state  ((t (:foreground "white"))))
  '(doom-modeline-evil-visual-state  ((t (:foreground "white"))))
@@ -294,7 +291,7 @@
  '(org-formula               ((t (:foreground "gray65"))))
  '(org-headline-done         ((t (:foreground "gray65"       :weight normal :strike-through t))))
  '(org-hide                  ((t (:foreground "gray12"       :background "gray12"))))
- '(org-link                  ((t (:foreground "gray65"       :bold t :underline t)))) ;; BUG foreground not respected
+ '(org-link                  ((t (:foreground "bisque1"      :bold t :underline t)))) ;; BUG foreground not respected
  '(org-list-dt               ((t (:foreground "gray65"       :bold t))))
  '(org-priority              ((t (:foreground "bisque1"))))
  '(org-scheduled             ((t (:foreground "IndianRed1"))))
