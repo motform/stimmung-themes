@@ -48,7 +48,7 @@
  '(secondary-selection ((t (:background "gray20"     :foreground "IndianRed1" :bold t))))
  '(region              ((t (:background "gray30"))))
  '(highlight           ((t (:foreground "white"      :background "gray20" :bold t))))
- '(lazy-highlight      ((t (:foreground "gray60"     :background "gray12" :bold t))))
+ '(lazy-highlight      ((t (:foreground "IndianRed1"     :background "gray12" :bold t))))
  '(default             ((t (:foreground "white"      :background "gray12"))))
  '(fringe              ((t (:foreground "white"      :background "gray12"))))
  '(match               ((t (:foreground "PaleGreen4" :bold t))))
@@ -163,8 +163,8 @@
 
  ;; modeline
  '(header-line         ((t (:inherit 'mode-line  :distant-foreground "gray12"))))
- '(mode-line           ((t (:foreground "white"  :background "gray30"))))
- '(mode-line-inactive  ((t (:foreground "gray60" :background "gray10"))))
+ '(mode-line           ((t (:foreground "white"  :background "gray20"))))
+ '(mode-line-inactive  ((t (:foreground "gray60" :background "gray12"))))
  '(mode-line-buffer-id ((t (:foreground "white"  :bold t :italic t))))
  '(mode-line-emphasis  ((t (:foreground "white"  :bold t))))
  '(mode-line-highlight ((t (:foreground "bisque1"))))
@@ -177,7 +177,7 @@
  '(doom-modeline-project-root-dir   ((t (:foreground "gray60"     :weight normal))))
  '(doom-modeline-project-parent-dir ((t (:foreground "gray60"     :weight normal))))
  '(doom-modeline-bar-inactive       ((t (:foreground "white"      :background "bisque1"))))
- '(doom-modeline-bar                ((t (:background "gray15")))) ; the leftmost bar
+ '(doom-modeline-bar                ((t (:background "gray20")))) ; the leftmost bar
  '(doom-modeline-evil-insert-state  ((t (:foreground "white"))))
  '(doom-modeline-evil-visual-state  ((t (:foreground "white"))))
  '(doom-modeline-evil-normal-state  ((t (:foreground "gray60"))))
