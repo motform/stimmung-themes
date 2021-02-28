@@ -406,6 +406,13 @@ You might have to re-load the theme for these changes to take effect."
    `(web-mode-block-control-face     ((t (:foreground ,fg3))))
    `(web-mode-html-tag-bracket-face  ((t (:foreground ,fg1 :bold t))))
 
+   ;; visual-regexp
+   `(vr/match-0 ((t (:background ,bg3 :foreground ,attention :bold t))))
+   `(vr/match-1 ((t (:background ,bg2 :foreground ,attention))))
+   `(vr/group-0 ((t (:background ,bg3 :foreground ,attention :bold t))))
+   `(vr/group-1 ((t (:background ,bg2 :foreground ,attention))))
+   `(vr/group-2 ((t (:background ,bg2 :foreground ,fg2))))
+
    ;; white-space
    `(whitespace-empty       ((t (:background ,bg3))))
    `(whitespace-space       ((t (:foreground ,fg3))))
