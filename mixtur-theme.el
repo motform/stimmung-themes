@@ -61,7 +61,7 @@ You might have to re-load the theme for these changes to take effect."
       (str "gray30")
 
       (attention "firebrick3")
-      (ok "PaleGreen4"))
+      (ok "DarkGreen"))
   (custom-theme-set-faces
    'mixtur
 
