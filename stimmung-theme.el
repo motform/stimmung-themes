@@ -29,36 +29,47 @@
 ;;; Commentary:
 
 ;; The idea behind this theme is to decrease fruit salad factor,
-;; emphasize comments and mesh well with the colors used by MacOS dark mode.
+;; emphasize comments and mesh well with the colors used by MacOS (Big Sur) dark mode.
 ;; Stimmung makes heavy use of typographic features to distinguish syntactic elements
-;; instead of with colors.  Thus it requires a font with bold, italic and bold italic.
+;; instead of with colors.  Thus it assumes a font with bold, italic and bold italic.
 
 ;;; Code:
 
 (deftheme stimmung
   "A theme tuned to inner harmonies.")
 
+(defgroup stimmung nil
+  "Stimmung theme settings.
+
+You might have to re-load the theme for these changes to take effect."
+  :group 'faces)
+
+(defcustom stimmung-highlight-color "bisque1"
+  "The primarily color for highlights, the only non-monochrome color in code."
+  :type 'string
+  :group 'stimmung)
+
 (custom-theme-set-faces
  'stimmung
 
  '(default  ((t (:background "gray12" :foreground "white"))))
  '(shadow   ((t (:background "gray15"))))
- '(hl-line  ((t (:background "gray20" :extend t))))
+ '(hl-line  ((t (:background "gray15" :extend t))))
 
- '(secondary-selection ((t (:background "gray20"     :foreground "IndianRed1" :bold t))))
  '(region              ((t (:background "gray30"))))
+ '(secondary-selection ((t (:background "gray20"     :foreground "IndianRed1" :bold t))))
  '(highlight           ((t (:foreground "white"      :background "gray20" :bold t))))
- '(lazy-highlight      ((t (:foreground "IndianRed1"     :background "gray12" :bold t))))
+ '(lazy-highlight      ((t (:foreground "IndianRed1" :background "gray12" :bold t))))
  '(default             ((t (:foreground "white"      :background "gray12"))))
  '(fringe              ((t (:foreground "white"      :background "gray12"))))
  '(match               ((t (:foreground "PaleGreen4" :bold t))))
- '(link                ((t (:foreground "bisque1" :underline t))))
- '(link-visited        ((t (:foreground "bisque1" :underline t :italic t))))
- '(button              ((t (:foreground "bisque1" :underline t))))
- '(header-line         ((t (:foreground "bisque1" :bold t))))
- '(tooltip             ((t (:foreground "white"  :background "gray20"))))
- '(vertical-border     ((t (:foreground "gray15" :background "gray15"))))
- '(info-string         ((t (:foreground "bisque1"))))
+ '(link                ((t (:foreground stimmung-highlight-color    :underline t))))
+ '(link-visited        ((t (:foreground stimmung-highlight-color    :underline t :italic t))))
+ '(button              ((t (:foreground stimmung-highlight-color    :underline t))))
+ '(header-line         ((t (:foreground stimmung-highlight-color    :bold t))))
+ '(tooltip             ((t (:foreground "white"      :background "gray20"))))
+ '(vertical-border     ((t (:foreground "gray15"     :background "gray15"))))
+ '(info-string         ((t (:foreground stimmung-highlight-color))))
  '(default-italic      ((t (:slant italic))))
 
  '(error                       ((t (:foreground "IndianRed1"))))
@@ -81,36 +92,36 @@
  '(linum                    ((t (:inherit 'line-number))))
  
  ;; syntax
- '(font-lock-builtin-face              ((t (:foreground "bisque1" :italic t))))
+ '(font-lock-builtin-face              ((t (:foreground stimmung-highlight-color :italic t))))
  '(font-lock-comment-delimiter-face    ((t (:foreground "gray65"  :italic t))))
  '(font-lock-comment-face              ((t (:foreground "gray65"  :italic t))))
  '(font-lock-doc-face                  ((t (:foreground "gray65"  :italic t))))
- '(font-lock-constant-face             ((t (:foreground "bisque1" :bold t :italic t))))
+ '(font-lock-constant-face             ((t (:foreground stimmung-highlight-color :bold t :italic t))))
  '(font-lock-function-name-face        ((t (:foreground "white"   :bold t))))
  '(font-lock-keyword-face              ((t (:foreground "gray60"  :bold t))))
- '(font-lock-type-face                 ((t (:foreground "bisque1" :bold t))))
+ '(font-lock-type-face                 ((t (:foreground stimmung-highlight-color :bold t))))
  '(font-lock-variable-name-face        ((t (:foreground "white"   :italic t))))
+ '(font-lock-negation-char-face        ((t (:foreground "white"   :bold t))))
+ '(font-lock-preprocessor-face         ((t (:foreground "white"   :bold t))))
+ '(font-lock-preprocessor-char-face    ((t (:foreground "white"   :bold t))))
+ '(font-lock-regexp-grouping-backslash ((t (:foreground "white"   :bold t))))
+ '(font-lock-regexp-grouping-construct ((t (:foreground "white"   :bold t))))
  '(font-lock-string-face               ((t (:foreground "gray60"))))
  '(font-lock-warning-face              ((t (:foreground "IndianRed1"))))
- '(font-lock-negation-char-face        ((t (:foreground "white" :bold t))))
- '(font-lock-preprocessor-face         ((t (:foreground "white" :bold t))))
- '(font-lock-preprocessor-char-face    ((t (:foreground "white" :bold t))))
- '(font-lock-regexp-grouping-backslash ((t (:foreground "white" :bold t))))
- '(font-lock-regexp-grouping-construct ((t (:foreground "white" :bold t))))
  
  ;; eshell
- '(eshell-prompt        ((t (:foreground "gray60"  :bold t))))
- '(eshell-ls-directory  ((t (:foreground "bisque1" :bold t))))
- '(eshell-ls-executable ((t (:foreground "gray20"  :bold t))))
- '(eshell-ls-symlink    ((t (:foreground "white"   :italic t))))
+ '(eshell-prompt        ((t (:foreground "gray60"     :bold t))))
+ '(eshell-ls-directory  ((t (:foreground stimmung-highlight-color    :bold t))))
+ '(eshell-ls-executable ((t (:foreground "gray20"     :bold t))))
+ '(eshell-ls-symlink    ((t (:foreground "white"      :italic t))))
+ '(eshell-ls-special    ((t (:foreground "PaleGreen4" :italic t))))
+ '(eshell-ls-backup     ((t (:foreground "gray60"     :italic t))))
  '(eshell-ls-readonly   ((t (:foreground "IndianRed1"))))
  '(eshell-ls-unreadable ((t (:foreground "gray20")))) ; too dark?
- '(eshell-ls-special    ((t (:foreground "PaleGreen4"   :italic t))))
  '(eshell-ls-missing    ((t (:foreground "IndianRed1"))))
  '(eshell-ls-product    ((t (:foreground "white"))))
  '(eshell-ls-archive    ((t (:foreground "gray60"))))
  '(eshell-ls-entries    ((t (:foreground "white"))))
- '(eshell-ls-backup     ((t (:foreground "gray60" :italic t))))
  
  ;; avy
  '(avy-lead-face   ((t (:background "gray15" :foreground "white" :distant-foreground "gray65" :bold t))))
@@ -120,10 +131,10 @@
  
  ;; flyspell
  '(flyspell-incorrect       ((t (:underline (:style wave :color "IndianRed1") ))))
- '(flyspell-duplicate       ((t (:underline (:style wave :color "bisque1")))))
+ '(flyspell-duplicate       ((t (:underline (:style wave :color stimmung-highlight-color)))))
  '(flycheck-error           ((t (:underline (:style wave :color "IndianRed1")))))
- '(flysheck-warning         ((t (:underline (:style wave :color "bisque1")))))
- '(flysheck-warning-overlay ((t (:underline (:style wave :color "bisque1")))))
+ '(flysheck-warning         ((t (:underline (:style wave :color stimmung-highlight-color)))))
+ '(flysheck-warning-overlay ((t (:underline (:style wave :color stimmung-highlight-color)))))
  '(flycheck-note            ((t (:underline (:style wave :color "PaleGreen4")))))
  
  ;; hydra
@@ -139,17 +150,17 @@
  '(company-scrollbar-bg             ((t (:background "gray60"))))
  '(company-scrollbar-fg             ((t (:foreground "white"))))
  '(company-echo-common              ((t (:background "white"  :foreground "gray12"))))
- '(company-preview                  ((t (:background "gray12" :foreground "bisque1"))))
+ '(company-preview                  ((t (:background "gray12" :foreground stimmung-highlight-color))))
  '(company-tooltip                  ((t (:background "gray20" :foreground "white"))))
- '(company-tooltip-annotation       ((t (:foreground "bisque1"))))
+ '(company-tooltip-annotation       ((t (:foreground stimmung-highlight-color))))
  '(company-tooltip-common           ((t (:foreground "gray60"))))
- '(company-tooltip-common-selection ((t (:foreground "bisque1"))))
+ '(company-tooltip-common-selection ((t (:foreground stimmung-highlight-color))))
  '(company-tooltip-selection        ((t (:background "gray20" :foreground "gray60"))))
  '(company-tooltip-selection-       ((t (:background "gray20" :foreground "gray60"))))
  '(company-tooltip-mouse            ((t (:inherit highlight))))
  
  ;; compilation
- '(compilation-line-number    ((t (:foreground "bisque1" :bold t))))
+ '(compilation-line-number    ((t (:foreground stimmung-highlight-color :bold t))))
  '(compilation-column-number  ((t (:inherit 'font-lock-comment-face))))
  '(compilation-error          ((t (:inherit 'error   :bold t))))
  '(compilation-warning        ((t (:inherit 'warning :italic t))))
@@ -159,7 +170,7 @@
  
  ;; TODO
  ;; custom
- '(custom-variable-tag    ((t (:foreground "bisque1" :bold t))))
+ '(custom-variable-tag    ((t (:foreground stimmung-highlight-color :bold t))))
 
  ;; modeline
  '(header-line         ((t (:inherit 'mode-line  :distant-foreground "gray12"))))
@@ -167,7 +178,7 @@
  '(mode-line-inactive  ((t (:foreground "gray60" :background "gray12"))))
  '(mode-line-buffer-id ((t (:foreground "white"  :bold t :italic t))))
  '(mode-line-emphasis  ((t (:foreground "white"  :bold t))))
- '(mode-line-highlight ((t (:foreground "bisque1"))))
+ '(mode-line-highlight ((t (:foreground stimmung-highlight-color))))
  
  ;; doom-modeline
  '(doom-modeline-buffer-path        ((t (:foreground "gray60"))))
@@ -176,8 +187,8 @@
  '(doom-modeline-project-dir        ((t (:foreground "white"      :weight bold))))
  '(doom-modeline-project-root-dir   ((t (:foreground "gray60"     :weight normal))))
  '(doom-modeline-project-parent-dir ((t (:foreground "gray60"     :weight normal))))
- '(doom-modeline-bar-inactive       ((t (:foreground "white"      :background "bisque1"))))
- '(doom-modeline-bar                ((t (:background "gray20")))) ; the leftmost bar
+ '(doom-modeline-bar-inactive       ((t (:foreground "white"      :background stimmung-highlight-color))))
+ '(doom-modeline-bar                ((t (:background "gray12")))) ; the leftmost bar
  '(doom-modeline-evil-insert-state  ((t (:foreground "white"))))
  '(doom-modeline-evil-visual-state  ((t (:foreground "white"))))
  '(doom-modeline-evil-normal-state  ((t (:foreground "gray60"))))
@@ -208,12 +219,12 @@
  '(evil-mc-cursor-hbar-face    ((t (:foreground "gray65"))))
  
  ;; info
- '(info-quoted    ((t (:foreground "bisque1" :inherit 'default :bold t))))
+ '(info-quoted    ((t (:foreground stimmung-highlight-color :inherit 'default :bold t))))
  '(info-menu-star ((t (:foreground "white" :bold t))))
  ;; NOTE this should maybe have another color
 
  ;; ivy
- '(ivy-current-match              ((t (:foreground "bisque1" :background "gray12" :bold t))))
+ '(ivy-current-match              ((t (:foreground stimmung-highlight-color :background "gray12" :bold t))))
  '(ivy-minibuffer-match-highlight ((t (:foreground "PaleGreen4"))))
  '(ivy-minibuffer-match-face-1    ((t (:foreground "gray65" :bold t :italic t))))
  '(ivy-minibuffer-match-face-2    ((t (:foreground "gray65" :bold t :italic t))))
@@ -228,7 +239,7 @@
  '(ivy-virtual                    ((t (:foreground "gray65" :italic t))))
  '(ivy-prompt                     ((t (:foreground "IndianRed1"))))
  '(ivy-prompt-match               ((t (:foreground "IndianRed1"))))
- '(ivy-separator                  ((t (:foreground "bisque1"))))
+ '(ivy-separator                  ((t (:foreground stimmung-highlight-color))))
  '(ivy-highlight-face             ((t (:foreground "IndianRed1"))))
  '(ivy-grep-info                  ((t (:foreground "IndianRed1"))))
  '(ivy-completions-annotations    ((t (:foreground "IndianRed1"))))
@@ -238,7 +249,7 @@
  '(magit-bisect-good       ((t (:foreground "PaleGreen4"))))
  '(magit-bisect-skip       ((t (:foreground "gray65"))))
  '(magit-blame-date        ((t (:foreground "IndianRed1"))))
- '(magit-branch            ((t (:foreground "bisque1" :bold t))))
+ '(magit-branch            ((t (:foreground stimmung-highlight-color :bold t))))
  
  '(magit-diff-context-highlight ((t (:foreground "gray60" :background "gray20"))))
  '(magit-diff-file-header       ((t (:foreground "gray60" :background "gray20"))))
@@ -250,7 +261,7 @@
  '(magit-hunk-heading-highlight ((t (:background "gray20"))))
  '(magit-item-highlight         ((t (:background "gray20"))))
  '(magit-log-author             ((t (:foreground "gray60"))))
- '(magit-process-ng             ((t (:foreground "bisque1" :bold t))))
+ '(magit-process-ng             ((t (:foreground stimmung-highlight-color :bold t))))
  '(magit-process-ok             ((t (:foreground "PaleGreen4" :bold t))))
  '(magit-section-heading        ((t (:foreground "gray60" :bold t))))
  '(magit-section-highlight      ((t (:background "gray20"))))
@@ -276,29 +287,29 @@
  ;; TODO org-agenda
  
  ;; org
- '(org-code                  ((t (:foreground "bisque1" :distant-foreground "gray12" :background "bisque1"))))
+ '(org-code                  ((t (:foreground stimmung-highlight-color :distant-foreground "gray12" :background stimmung-highlight-color))))
  '(org-block                 ((t (:foreground "white"        :background "gray20" :extend t))))
  '(org-block-begin-line      ((t (:foreground "gray60"       :background "gray20" :bold t :extend t)))) ; could be a better fg
  '(org-block-end-line        ((t (:foreground "gray60"       :background "gray20" :bold t :extend t))))
- '(org-date                  ((t (:foreground "bisque1" :bold t))))
+ '(org-date                  ((t (:foreground stimmung-highlight-color :bold t))))
  '(org-drawer                ((t (:foreground "gray60"       :bold t))))
  '(org-document-info         ((t (:foreground "white"        :background "gray12" :italic t)))) ;; BUG does not seem to correctly color fg
  '(org-document-info-keyword ((t (:foreground "gray65"       :background "gray12"))))
  '(org-document-title        ((t (:foreground "white"        :weight bold))))
  '(org-done                  ((t (:foreground "PaleGreen4"   :bold t :strike-through t))))
  '(org-ellipsis              ((t (:foreground "gray65"))))
- '(org-footnote              ((t (:foreground "bisque1"))))
+ '(org-footnote              ((t (:foreground stimmung-highlight-color))))
  '(org-formula               ((t (:foreground "gray65"))))
  '(org-headline-done         ((t (:foreground "gray65"       :weight normal :strike-through t))))
  '(org-hide                  ((t (:foreground "gray12"       :background "gray12"))))
- '(org-link                  ((t (:foreground "bisque1"      :bold t :underline t)))) ;; BUG foreground not respected
+ '(org-link                  ((t (:foreground stimmung-highlight-color      :bold t :underline t)))) ;; BUG foreground not respected
  '(org-list-dt               ((t (:foreground "gray65"       :bold t))))
- '(org-priority              ((t (:foreground "bisque1"))))
+ '(org-priority              ((t (:foreground stimmung-highlight-color))))
  '(org-scheduled             ((t (:foreground "IndianRed1"))))
- '(org-scheduled-previously  ((t (:foreground "bisque1"))))
+ '(org-scheduled-previously  ((t (:foreground stimmung-highlight-color))))
  '(org-scheduled-today       ((t (:foreground "PaleGreen4"))))
- '(org-sexp-date             ((t (:foreground "bisque1"))))
- '(org-special-keyword       ((t (:foreground "bisque1"))))
+ '(org-sexp-date             ((t (:foreground stimmung-highlight-color))))
+ '(org-special-keyword       ((t (:foreground stimmung-highlight-color))))
  '(org-table                 ((t (:foreground "gray65"))))
  '(org-tag                   ((t (:foreground "gray65"       :background "gray12" :bold t))))
  '(org-todo                  ((t (:foreground "IndianRed1"   :bold t))))
@@ -337,18 +348,18 @@
  '(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
  
  ;; LaTeX
- '(font-latex-sectioning-0-face ((t (:foreground "bisque1" :bold t))))
- '(font-latex-sectioning-1-face ((t (:foreground "bisque1" :bold t))))
- '(font-latex-sectioning-2-face ((t (:foreground "bisque1" :bold t))))
- '(font-latex-sectioning-3-face ((t (:foreground "bisque1" :bold t :italic t))))
- '(font-latex-sectioning-4-face ((t (:foreground "bisque1" :italic t))))
+ '(font-latex-sectioning-0-face ((t (:foreground stimmung-highlight-color :bold t))))
+ '(font-latex-sectioning-1-face ((t (:foreground stimmung-highlight-color :bold t))))
+ '(font-latex-sectioning-2-face ((t (:foreground stimmung-highlight-color :bold t))))
+ '(font-latex-sectioning-3-face ((t (:foreground stimmung-highlight-color :bold t :italic t))))
+ '(font-latex-sectioning-4-face ((t (:foreground stimmung-highlight-color :italic t))))
  '(font-latex-italic-face       ((t (:foreground "white"   :italic t))))
  '(font-latex-bold-face         ((t (:foreground "white"   :bold t))))
- '(font-latex-verbatim-face     ((t (:foreground "bisque1" :bold t))))
+ '(font-latex-verbatim-face     ((t (:foreground stimmung-highlight-color :bold t))))
  '(font-latex-string-face       ((t (:foreground "gray60"))))
  '(font-latex-warning-face      ((t (:foreground "IndianRed1"))))
  '(font-latex-math-face         ((t (:foreground "gray60"))))
- '(font-latex-script-char-face  ((t (:foreground "bisque1"))))
+ '(font-latex-script-char-face  ((t (:foreground stimmung-highlight-color))))
 
  ;; re-builder
  '(reb-match-0 ((t (:foreground "white" :inverse-video t :bold t))))
