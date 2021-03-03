@@ -1,13 +1,13 @@
-;;; mixtur-theme.el --- A theme tuned to inner harmonies. -*- lexical-binding: t -*-
+;;; mixtur-theme.el --- A theme tuned to inner harmonies -*- lexical-binding: t -*-
 ;;
 ;; Copyright © 2019
 ;;
 ;; Author: Love Lagerkvist
 ;; URL: https://github.com/motform/stimmung
-;; Package-Requires: ((emacs "24"))
+;; Package-Requires: ((emacs "25"))
 ;; Created: 2019-12-20
-;; Version: 2021-01-01
-;; Keywords: color theme
+;; Version: 2021-03-03
+;; Keywords: faces
 ;;
 ;; This file is NOT part of GNU Emacs.
 ;;
@@ -31,7 +31,7 @@
 ;; The idea behind this theme is to decrease fruit salad factor,
 ;; emphasize comments and mesh well with the colors used by MacOS (Big Sur) dark mode.
 ;; Stimmung makes heavy use of typographic features to distinguish syntactic elements
-;; instead of with colors.  Thus it assumes a font with bold, italic and bold italic.
+;; instead of with colors.  Thus it assumes a font with bold and italic.
 
 ;;; Code:
 
@@ -53,13 +53,13 @@ You might have to re-load the theme for these changes to take effect."
       (bg2 "gray90")
       (bg3 "gray85")
       (bg4 "gray60")
+      (bg5 "gray95")
 
       (fg "black")
 
       (str "gray90")
-      (link "blue")
-
-      (red "red")
+      (search "yellow2")
+      (red "darkred") ; TODO find a better red
       (ok "DarkGreen"))
   (custom-theme-set-faces
    'mixtur
@@ -69,20 +69,20 @@ You might have to re-load the theme for these changes to take effect."
    `(hl-line  ((t (:background ,bg2 :extend t))))
 
    `(region              ((t (:background ,bg4))))
-   `(lazy-highlight      ((t (:foreground ,red :background ,bg1 :bold t))))
-   `(secondary-selection ((t (:background ,bg3 :foreground ,red :bold t))))
+   `(lazy-highlight      ((t (:foreground ,fg :background ,search))))
+   `(secondary-selection ((t (:foreground ,fg :background ,search))))
    `(highlight           ((t (:foreground ,fg  :background ,bg3 :bold t))))
    `(default             ((t (:foreground ,fg  :background ,bg1))))
    `(fringe              ((t (:foreground ,fg  :background ,bg1))))
    `(match               ((t (:foreground ,ok  :bold t))))
 
-   `(link                ((t (:background ,mixtur-highlight-color :underline t))))
-   `(link-visited        ((t (:background ,mixtur-highlight-color :underline t :italic t))))
-   `(button              ((t (:foreground ,mixtur-highlight-color :underline t))))
-   `(header-line         ((t (:foreground ,mixtur-highlight-color :bold t))))
+   `(link                ((t (:underline t))))
+   `(link-visited        ((t (:underline t :italic t))))
+   `(button              ((t (:underline t))))
+   `(header-line         ((t (:bold t))))
    `(tooltip             ((t (:foreground ,fg :background ,bg3))))
    `(vertical-border     ((t (:foreground ,bg2 :background ,bg2))))
-   `(info-string         ((t (:foreground ,mixtur-highlight-color))))
+   `(info-string         ((t (:background ,mixtur-highlight-color))))
    `(default-italic      ((t (:slant italic))))
 
    `(error                       ((t (:foreground ,red))))
@@ -92,42 +92,44 @@ You might have to re-load the theme for these changes to take effect."
    
    `(minibuffer-noticable-prompt ((t (:foreground ,fg :bold t))))
    `(minibuffer-prompt           ((t (:foreground ,fg :bold t))))
-   `(isearch                     ((t (:foreground ,fg :box (:line-width -1 :color ,red :style nil) :bold t))))
-   `(isearch-highlight           ((t (:foreground ,fg :box (:line-width -1 :color ,red :style nil)))))
-   `(isearch-fail                ((t (:foreground ,red :background ,bg1))))
+
+   `(isearch                     ((t (:foreground ,fg :background ,search :bold t))))
+   `(isearch-highlight           ((t (:foreground ,fg :background ,search))))
+   `(isearch-fail                ((t (:foreground ,fg :background ,search))))
+
    `(paren-matched               ((t (:foreground ,ok  :background ,bg1))))
    `(paren-unmatched             ((t (:foreground ,red :background ,bg1))))
-   `(escape-glyph                ((t (:foreground ,red :bold t))))
-   `(homoglyph                   ((t (:foreground ,red :bold t))))
+   `(escape-glyph                ((t (:foreground ,red))))
+   `(homoglyph                   ((t (:foreground ,red))))
    
-   `(line-number              ((t (:foreground ,fg :background ,bg1))))
-   `(line-number-current-line ((t (:foreground ,fg :background ,bg1))))
+   `(line-number              ((t (:foreground ,bg3 :background ,bg1))))
+   `(line-number-current-line ((t (:foreground ,fg  :background ,bg1))))
    `(linum                    ((t (:inherit 'line-number))))
    
    ;; syntax
    `(font-lock-builtin-face              ((t (:background ,mixtur-highlight-color :italic t))))
-   `(font-lock-comment-delimiter-face    ((t (:background ,str :italic t :bold t))))
+   `(font-lock-comment-delimiter-face    ((t (:background ,str :italic t))))
    `(font-lock-comment-face              ((t (:background ,str :italic t))))
-   `(font-lock-doc-face                  ((t (:background ,str  :italic t))))
-   `(font-lock-constant-face             ((t (:background ,mixtur-highlight-color :bold t :italic t))))
-   `(font-lock-function-name-face        ((t (:foreground ,fg  :bold t))))
-   `(font-lock-keyword-face              ((t (:foreground ,fg  :bold t))))
-   `(font-lock-type-face                 ((t (:background ,mixtur-highlight-color :bold t))))
-   `(font-lock-variable-name-face        ((t (:foreground ,fg  :italic t))))
-   `(font-lock-negation-char-face        ((t (:foreground ,fg  :bold t))))
-   `(font-lock-preprocessor-face         ((t (:foreground ,fg  :bold t))))
-   `(font-lock-preprocessor-char-face    ((t (:foreground ,fg  :bold t))))
+   `(font-lock-doc-face                  ((t (:background ,str :italic t))))
+   `(font-lock-constant-face             ((t (:background ,mixtur-highlight-color :italic t))))
+   `(font-lock-function-name-face        ((t (:foreground ,fg :bold t))))
+   `(font-lock-keyword-face              ((t (:foreground ,fg))))
+   `(font-lock-type-face                 ((t (:background ,mixtur-highlight-color))))
+   `(font-lock-variable-name-face        ((t (:foreground ,fg :bold t))))
+   `(font-lock-negation-char-face        ((t (:foreground ,fg))))
+   `(font-lock-preprocessor-face         ((t (:foreground ,fg))))
+   `(font-lock-preprocessor-char-face    ((t (:foreground ,fg))))
    `(font-lock-regexp-grouping-backslash ((t (:foreground ,fg  :bold t))))
    `(font-lock-regexp-grouping-construct ((t (:foreground ,fg  :bold t))))
    `(font-lock-string-face               ((t (:foreground ,fg  :background ,str))))
    `(font-lock-warning-face              ((t (:foreground ,red))))
    
    ;; eshell
-   `(eshell-ls-directory  ((t (:foreground ,mixtur-highlight-color :bold t))))
+   `(eshell-ls-directory  ((t (:background ,mixtur-highlight-color :bold t))))
    `(eshell-prompt        ((t (:foreground ,fg :bold t))))
    `(eshell-ls-executable ((t (:foreground ,fg :bold t))))
    `(eshell-ls-symlink    ((t (:foreground ,fg :italic t))))
-   `(eshell-ls-special    ((t (:foreground ,ok  :italic t))))
+   `(eshell-ls-special    ((t (:foreground ,ok :italic t))))
    `(eshell-ls-backup     ((t (:foreground ,fg :italic t))))
    `(eshell-ls-readonly   ((t (:foreground ,red))))
    `(eshell-ls-unreadable ((t (:foreground ,red))))
@@ -163,17 +165,17 @@ You might have to re-load the theme for these changes to take effect."
    `(company-scrollbar-bg             ((t (:background ,fg))))
    `(company-scrollbar-fg             ((t (:foreground ,fg))))
    `(company-echo-common              ((t (:background ,fg :foreground ,bg1))))
-   `(company-preview                  ((t (:background ,bg1 :foreground ,mixtur-highlight-color))))
+   `(company-preview                  ((t (:background ,mixtur-highlight-color :foreground ,fg))))
    `(company-tooltip                  ((t (:background ,bg3 :foreground ,fg))))
    `(company-tooltip-annotation       ((t (:foreground ,mixtur-highlight-color))))
    `(company-tooltip-common           ((t (:foreground ,fg))))
-   `(company-tooltip-common-selection ((t (:foreground ,mixtur-highlight-color))))
+   `(company-tooltip-common-selection ((t (:background ,mixtur-highlight-color))))
    `(company-tooltip-selection        ((t (:background ,bg3 :foreground ,fg))))
    `(company-tooltip-selection-       ((t (:background ,bg3 :foreground ,fg))))
    `(company-tooltip-mouse            ((t (:inherit highlight))))
    
    ;; compilation
-   `(compilation-line-number    ((t (:foreground ,mixtur-highlight-color :bold t))))
+   `(compilation-line-number    ((t (:bold t))))
    `(compilation-column-number  ((t (:inherit 'font-lock-comment-face))))
    `(compilation-error          ((t (:inherit 'error   :bold t))))
    `(compilation-warning        ((t (:inherit 'warning :italic t))))
@@ -183,24 +185,27 @@ You might have to re-load the theme for these changes to take effect."
    
    ;; TODO
    ;; custom
-   `(custom-variable-tag    ((t (:foreground ,mixtur-highlight-color :bold t))))
+   `(custom-variable-tag    ((t (:bold t))))
 
    ;; modeline
    `(header-line         ((t (:inherit 'mode-line  :distant-foreground ,bg1))))
-   `(mode-line           ((t (:foreground ,fg     :background ,bg2))))
-   `(mode-line-inactive  ((t (:foreground ,fg     :background ,bg1))))
-   `(mode-line-buffer-id ((t (:foreground ,fg     :bold t :italic t))))
-   `(mode-line-emphasis  ((t (:foreground ,fg     :bold t))))
+   `(mode-line           ((t (:foreground ,fg :background ,bg5 :box (:line-width 1 :color ,bg4 :style nil)))))
+   `(mode-line-inactive  ((t (:foreground ,bg4 :background ,bg5 :box (:line-width 1 :color ,bg4 :style nil)))))
+   `(mode-line-buffer-id ((t (:foreground ,fg :bold t))))
+   `(mode-line-emphasis  ((t (:foreground ,fg :bold t))))
    `(mode-line-highlight ((t (:foreground ,bg3))))
+   
+   ;; completions
+   `(completions-common-part ((t (:foreground ,fg :bold t))))
    
    ;; doom-modeline
    `(doom-modeline-buffer-path        ((t (:foreground ,fg))))
-   `(doom-modeline-buffer-file        ((t (:foreground ,fg       :weight bold))))
+   `(doom-modeline-buffer-file        ((t (:foreground ,fg  :weight bold))))
    `(doom-modeline-buffer-modified    ((t (:foreground ,red :weight bold))))
-   `(doom-modeline-project-dir        ((t (:foreground ,fg       :weight bold))))
-   `(doom-modeline-project-root-dir   ((t (:foreground ,fg       :weight normal))))
-   `(doom-modeline-project-parent-dir ((t (:foreground ,fg       :weight normal))))
-   `(doom-modeline-bar-inactive       ((t (:foreground ,fg       :background ,bg1))))
+   `(doom-modeline-project-dir        ((t (:foreground ,fg  :weight bold))))
+   `(doom-modeline-project-root-dir   ((t (:foreground ,fg  :weight normal))))
+   `(doom-modeline-project-parent-dir ((t (:foreground ,fg  :weight normal))))
+   `(doom-modeline-bar-inactive       ((t (:foreground ,fg  :background ,bg1))))
    `(doom-modeline-bar                ((t (:background ,bg1)))) ; the leftmost bar
    `(doom-modeline-evil-insert-state  ((t (:foreground ,fg))))
    `(doom-modeline-evil-visual-state  ((t (:foreground ,fg))))
@@ -211,18 +216,16 @@ You might have to re-load the theme for these changes to take effect."
    `(dired-directory  ((t (:foreground ,fg :bold t))))
    `(dired-ignored    ((t (:foreground ,fg))))
    `(dired-flagged    ((t (:foreground ,ok))))
-   `(dired-header     ((t (:foreground ,fg      :bold t))))
+   `(dired-header     ((t (:foreground ,fg  :bold t))))
    `(dired-mark       ((t (:foreground ,red :bold t))))
-   `(dired-marked     ((t (:foreground ,red :bold t :italic t))))
-   `(dired-perm-write ((t (:foreground ,fg      :underline t))))
-   `(dired-symlink    ((t (:foreground ,fg      :italic t))))
+   `(dired-marked     ((t (:foreground ,red :bold t))))
+   `(dired-perm-write ((t (:foreground ,fg  :underline t))))
+   `(dired-symlink    ((t (:foreground ,fg  :italic t))))
    `(dired-warning    ((t (:foreground ,red))))
    
    ;; evil
    `(evil-ex-info                   ((t (:foreground ,red :italic t))))
    `(evil-ex-search                 ((t (:background ,bg2 :foreground ,fg :bold t))))
-   ;; (evil-ex-sub,stitute-matches     :background base0 :foreground red   :strike-through t :weight 'bold)
-   ;; (evil-ex-sub,stitute-replacement :background base0 :foreground green :weight 'bold)
    `(evil-search-highlight-persist-highlight-face ((t (:inherit 'lazy-highlight))))
    
    ;; evil-mc
@@ -232,17 +235,16 @@ You might have to re-load the theme for these changes to take effect."
    `(evil-mc-cursor-hbar-face    ((t (:foreground ,fg))))
    
    ;; info
-   `(info-quoted    ((t (:foreground ,mixtur-highlight-color :inherit 'default :bold t))))
-   `(info-menu-star ((t (:foreground ,fg :bold t))))
-   ;; NOTE this should maybe have another color
+   `(info-quoted    ((t (:inherit 'default :bold t))))
+   `(info-menu-star ((t (:bold t))))
 
    ;; ivy
-   `(ivy-current-match              ((t (:foreground ,mixtur-highlight-color :background ,bg1 :bold t))))
+   `(ivy-current-match              ((t (:background ,bg1 :bold t))))
    `(ivy-minibuffer-match-highlight ((t (:foreground ,ok))))
-   `(ivy-minibuffer-match-face-1    ((t (:foreground ,fg :bold t :italic t))))
-   `(ivy-minibuffer-match-face-2    ((t (:foreground ,fg :bold t :italic t))))
-   `(ivy-minibuffer-match-face-3    ((t (:foreground ,fg :bold t :italic t))))
-   `(ivy-minibuffer-match-face-4    ((t (:foreground ,fg :bold t :italic t))))
+   `(ivy-minibuffer-match-face-1    ((t (:foreground ,fg :bold t))))
+   `(ivy-minibuffer-match-face-2    ((t (:foreground ,fg :bold t))))
+   `(ivy-minibuffer-match-face-3    ((t (:foreground ,fg :bold t))))
+   `(ivy-minibuffer-match-face-4    ((t (:foreground ,fg :bold t))))
    `(ivy-confirm-face               ((t (:foreground ,ok))))
    `(ivy-required-face              ((t (:foreground ,red))))
    `(ivy-subdir                     ((t (:foreground ,fg))))
@@ -274,7 +276,7 @@ You might have to re-load the theme for these changes to take effect."
    `(magit-hunk-heading-highlight ((t (:background ,bg3))))
    `(magit-item-highlight         ((t (:background ,bg3))))
    `(magit-log-author             ((t (:foreground ,fg))))
-   `(magit-process-ng             ((t (:foreground ,mixtur-highlight-color :bold t))))
+   `(magit-process-ng             ((t (:background ,mixtur-highlight-color :bold t))))
    `(magit-process-ok             ((t (:foreground ,ok :bold t))))
    `(magit-section-heading        ((t (:foreground ,fg :bold t))))
    `(magit-section-highlight      ((t (:background ,bg3))))
@@ -300,29 +302,30 @@ You might have to re-load the theme for these changes to take effect."
    ;; TODO org-agenda
    
    ;; org
-   `(org-code                  ((t (:foreground ,mixtur-highlight-color :distant-foreground ,bg1 :background ,mixtur-highlight-color))))
+   `(org-code                  ((t (:background ,str :distant-foreground ,bg1 :background ,mixtur-highlight-color))))
    `(org-date                  ((t (:background ,mixtur-highlight-color :bold t))))
    `(org-link                  ((t (:underline t))))
    `(org-block                 ((t (:foreground ,fg :background ,bg3 :extend t))))
-   `(org-block-begin-line      ((t (:foreground ,fg :background ,bg3 :bold t :extend t)))) ; could be a better fg
+   `(org-block-begin-line      ((t (:foreground ,fg :background ,bg3 :bold t :extend t))))
    `(org-block-end-line        ((t (:foreground ,fg :background ,bg3 :bold t :extend t))))
    `(org-drawer                ((t (:foreground ,fg :bold t))))
-   `(org-document-info         ((t (:foreground ,fg :background ,bg1 :italic t)))) ;; BUG does not seem to correctly color fg
+   `(org-document-info         ((t (:foreground ,fg :background ,bg1 :italic t))))
    `(org-document-info-keyword ((t (:foreground ,fg :background ,bg1))))
    `(org-document-title        ((t (:foreground ,fg :weight bold))))
    `(org-done                  ((t (:foreground ,ok  :bold t :strike-through t))))
    `(org-ellipsis              ((t (:foreground ,fg))))
-   `(org-footnote              ((t (:foreground ,mixtur-highlight-color))))
+   `(org-footnote              ((t (:background ,mixtur-highlight-color))))
+   `(org-meta-line             ((t (:background ,bg1))))
    `(org-formula               ((t (:foreground ,fg))))
    `(org-headline-done         ((t (:foreground ,fg :weight normal :strike-through t))))
    `(org-hide                  ((t (:foreground ,bg1 :background ,bg1))))
    `(org-list-dt               ((t (:foreground ,fg :bold t))))
-   `(org-priority              ((t (:foreground ,mixtur-highlight-color))))
+   `(org-priority              ((t (:background ,mixtur-highlight-color))))
    `(org-scheduled             ((t (:foreground ,red))))
-   `(org-scheduled-previously  ((t (:foreground ,mixtur-highlight-color))))
+   `(org-scheduled-previously  ((t (:background ,mixtur-highlight-color))))
    `(org-scheduled-today       ((t (:foreground ,ok))))
-   `(org-sexp-date             ((t (:foreground ,mixtur-highlight-color))))
-   `(org-special-keyword       ((t (:foreground ,mixtur-highlight-color))))
+   `(org-sexp-date             ((t (:background ,mixtur-highlight-color))))
+   `(org-special-keyword       ((t (:background ,mixtur-highlight-color))))
    `(org-table                 ((t (:foreground ,fg))))
    `(org-tag                   ((t (:foreground ,fg       :background ,bg1 :bold t))))
    `(org-todo                  ((t (:foreground ,red   :bold t))))
@@ -351,28 +354,28 @@ You might have to re-load the theme for these changes to take effect."
    `(markdown-inline-code-face        ((t (:inherit 'markdown-code-face :extend nil))))
    
    ;; show-paren
-   `(show-paren-match-face       ((t (:background ,bg1       :foreground "red" :bold t :italic t))))
-   `(show-paren-match            ((t (:background ,bg1       :foreground "red" :bold t :italic t))))
-   `(show-paren-match-expression ((t (:background ,bg1       :foreground "red" :bold t :italic t))))
-   `(show-paren-mismatch         ((t (:background ,mixtur-highlight-color :foreground ,bg1 :bold t :italic t))))
+   `(show-paren-match-face       ((t (:distant-background ,fg :distant-foreground ,bg1 :bold t))))
+   `(show-paren-match            ((t (:distant-background ,fg :distant-foreground ,bg1 :bold t))))
+   `(show-paren-match-expression ((t (:background ,fg :foreground ,bg1 :bold t))))
+   `(show-paren-mismatch         ((t (:background ,fg :foreground ,red :bold t))))
    
    ;; smartparens
    `(sp-show-pair-match-face    ((t (:inherit 'paren-matched))))
    `(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
    
    ;; LaTeX
-   `(font-latex-sectioning-0-face ((t (:foreground ,mixtur-highlight-color :bold t))))
-   `(font-latex-sectioning-1-face ((t (:foreground ,mixtur-highlight-color :bold t))))
-   `(font-latex-sectioning-2-face ((t (:foreground ,mixtur-highlight-color :bold t))))
-   `(font-latex-sectioning-3-face ((t (:foreground ,mixtur-highlight-color :bold t :italic t))))
-   `(font-latex-sectioning-4-face ((t (:foreground ,mixtur-highlight-color :italic t))))
+   `(font-latex-sectioning-0-face ((t (:background ,mixtur-highlight-color :bold t))))
+   `(font-latex-sectioning-1-face ((t (:background ,mixtur-highlight-color :bold t))))
+   `(font-latex-sectioning-2-face ((t (:background ,mixtur-highlight-color :bold t))))
+   `(font-latex-sectioning-3-face ((t (:background ,mixtur-highlight-color :bold t))))
+   `(font-latex-sectioning-4-face ((t (:background ,mixtur-highlight-color :italic t))))
    `(font-latex-italic-face       ((t (:foreground ,fg   :italic t))))
    `(font-latex-bold-face         ((t (:foreground ,fg   :bold t))))
-   `(font-latex-verbatim-face     ((t (:foreground ,mixtur-highlight-color :bold t))))
+   `(font-latex-verbatim-face     ((t (:background ,mixtur-highlight-color :bold t))))
    `(font-latex-string-face       ((t (:foreground ,fg))))
    `(font-latex-warning-face      ((t (:foreground ,red))))
    `(font-latex-math-face         ((t (:foreground ,fg))))
-   `(font-latex-script-char-face  ((t (:foreground ,mixtur-highlight-color))))
+   `(font-latex-script-char-face  ((t (:background ,mixtur-highlight-color))))
 
    ;; re-builder
    `(reb-match-0 ((t (:foreground ,fg :inverse-video t :bold t))))
