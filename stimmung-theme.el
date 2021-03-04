@@ -147,10 +147,10 @@ You might have to re-load the theme for these changes to take effect."
    
    ;; flyspell
    `(flyspell-incorrect       ((t (:underline (:style wave :color ,red) ))))
-   `(flyspell-duplicate       ((t (:underline (:style wave :color ,stimmung-highlight-color)))))
+   `(flyspell-duplicate       ((t (:underline (:style wave :color ,search)))))
    `(flycheck-error           ((t (:underline (:style wave :color ,red)))))
-   `(flysheck-warning         ((t (:underline (:style wave :color ,stimmung-highlight-color)))))
-   `(flysheck-warning-overlay ((t (:underline (:style wave :color ,stimmung-highlight-color)))))
+   `(flysheck-warning         ((t (:underline (:style wave :color ,search)))))
+   `(flysheck-warning-overlay ((t (:underline (:style wave :color ,search)))))
    `(flycheck-note            ((t (:underline (:style wave :color ,ok)))))
    
    ;; hydra
