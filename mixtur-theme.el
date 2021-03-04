@@ -58,7 +58,7 @@ You might have to re-load the theme for these changes to take effect."
       (fg "black")
 
       (str "gray90")
-      (search "yellow2")
+      (search "yellow")
       (red "darkred") ; TODO find a better red
       (ok "DarkGreen"))
   (custom-theme-set-faces
@@ -99,7 +99,7 @@ You might have to re-load the theme for these changes to take effect."
 
    `(paren-matched               ((t (:foreground ,ok  :background ,bg1))))
    `(paren-unmatched             ((t (:foreground ,red :background ,bg1))))
-   `(escape-glyph                ((t (:foreground ,red))))
+   `(escape-glyph                ((t (:foreground ,bg4)))) ; TODO move into an fg color?
    `(homoglyph                   ((t (:foreground ,red))))
    
    `(line-number              ((t (:foreground ,bg3 :background ,bg1))))
@@ -362,20 +362,26 @@ You might have to re-load the theme for these changes to take effect."
    ;; smartparens
    `(sp-show-pair-match-face    ((t (:inherit 'paren-matched))))
    `(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
-   
+
+   ;; tab-bar-mode
+   `(tab-bar              ((t (:background ,bg1 :foreground ,fg))))
+   `(tab-bar-tab          ((t (:background ,bg1 :foreground ,fg :bold t))))
+   `(tab-bar-tab-inactive ((t (:background ,bg1 :foreground ,fg))))
+
    ;; LaTeX
-   `(font-latex-sectioning-0-face ((t (:background ,mixtur-highlight-color :bold t))))
-   `(font-latex-sectioning-1-face ((t (:background ,mixtur-highlight-color :bold t))))
-   `(font-latex-sectioning-2-face ((t (:background ,mixtur-highlight-color :bold t))))
-   `(font-latex-sectioning-3-face ((t (:background ,mixtur-highlight-color :bold t))))
-   `(font-latex-sectioning-4-face ((t (:background ,mixtur-highlight-color :italic t))))
+   `(font-latex-sectioning-0-face ((t (:bold t))))
+   `(font-latex-sectioning-1-face ((t (:bold t))))
+   `(font-latex-sectioning-2-face ((t (:bold t))))
+   `(font-latex-sectioning-3-face ((t (:bold t))))
+   `(font-latex-sectioning-4-face ((t (:italic t))))
+   `(font-latex-sedate-face       ((t (:foreground ,fg :background ,bg1))))
    `(font-latex-italic-face       ((t (:foreground ,fg   :italic t))))
    `(font-latex-bold-face         ((t (:foreground ,fg   :bold t))))
    `(font-latex-verbatim-face     ((t (:background ,mixtur-highlight-color :bold t))))
    `(font-latex-string-face       ((t (:foreground ,fg))))
-   `(font-latex-warning-face      ((t (:foreground ,red))))
+   `(font-latex-warning-face      ((t (:foreground ,bg4))))
    `(font-latex-math-face         ((t (:foreground ,fg))))
-   `(font-latex-script-char-face  ((t (:background ,mixtur-highlight-color))))
+   `(font-latex-script-char-face  ((t (:foregroudn ,fg))))
 
    ;; re-builder
    `(reb-match-0 ((t (:foreground ,fg :inverse-video t :bold t))))

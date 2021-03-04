@@ -57,9 +57,11 @@ You might have to re-load the theme for these changes to take effect."
 
       (fg "white")
 
+
+      (search "yellow4")
       (str "gray20")
-      (red "IndianRed1") ; TODO find a better red
-      (ok "chartreuse1"))
+      (red "IndianRed1")
+      (ok "SeaGreen"))
   (custom-theme-set-faces
    'stimmung
 
@@ -68,20 +70,20 @@ You might have to re-load the theme for these changes to take effect."
    `(hl-line  ((t (:background ,bg2 :extend t))))
 
    `(region              ((t (:background ,bg4))))
-   `(lazy-highlight      ((t (:foreground ,red :background ,bg1 :bold t))))
-   `(secondary-selection ((t (:background ,bg3 :foreground ,red :bold t))))
+   `(lazy-highlight      ((t (:foreground ,fg :background ,search))))
+   `(secondary-selection ((t (:foreground ,fg :background ,search))))
    `(highlight           ((t (:foreground ,fg  :background ,bg3 :bold t))))
    `(default             ((t (:foreground ,fg  :background ,bg1))))
    `(fringe              ((t (:foreground ,fg  :background ,bg1))))
    `(match               ((t (:foreground ,ok  :bold t))))
 
-   `(link                ((t (:background ,stimmung-highlight-color :underline t))))
-   `(link-visited        ((t (:background ,stimmung-highlight-color :underline t :italic t))))
-   `(button              ((t (:background ,stimmung-highlight-color :underline t))))
-   `(header-line         ((t (:background ,stimmung-highlight-color :bold t))))
+   `(link                ((t (:underline t))))
+   `(link-visited        ((t (:underline t :italic t))))
+   `(button              ((t (:underline t))))
+   `(header-line         ((t (:bold t))))
    `(tooltip             ((t (:foreground ,fg :background ,bg3))))
    `(vertical-border     ((t (:foreground ,bg2 :background ,bg2))))
-   `(info-string         ((t (:background ,stimmung-highlight-color))))
+   `(info-string         ((t (:background ,mixtur-highlight-color))))
    `(default-italic      ((t (:slant italic))))
 
    `(error                       ((t (:foreground ,red))))
@@ -91,15 +93,17 @@ You might have to re-load the theme for these changes to take effect."
    
    `(minibuffer-noticable-prompt ((t (:foreground ,fg :bold t))))
    `(minibuffer-prompt           ((t (:foreground ,fg :bold t))))
-   `(isearch                     ((t (:foreground ,fg :box (:line-width -1 :color ,red :style nil) :bold t))))
-   `(isearch-highlight           ((t (:foreground ,fg :box (:line-width -1 :color ,red :style nil)))))
-   `(isearch-fail                ((t (:foreground ,red :background ,bg1))))
+
+   `(isearch                     ((t (:foreground ,fg :background ,search :bold t))))
+   `(isearch-highlight           ((t (:foreground ,fg :background ,search))))
+   `(isearch-fail                ((t (:foreground ,fg :background ,search))))
+
    `(paren-matched               ((t (:foreground ,ok  :background ,bg1))))
    `(paren-unmatched             ((t (:foreground ,red :background ,bg1))))
    `(escape-glyph                ((t (:foreground ,red :bold t))))
    `(homoglyph                   ((t (:foreground ,red :bold t))))
    
-   `(line-number              ((t (:foreground ,fg :background ,bg1))))
+   `(line-number              ((t (:foreground ,bg3 :background ,bg1))))
    `(line-number-current-line ((t (:foreground ,fg :background ,bg1))))
    `(linum                    ((t (:inherit 'line-number))))
    
@@ -191,16 +195,19 @@ You might have to re-load the theme for these changes to take effect."
    `(mode-line-buffer-id ((t (:foreground ,fg :bold t))))
    `(mode-line-emphasis  ((t (:foreground ,fg :bold t))))
    `(mode-line-highlight ((t (:foreground ,bg3))))
-   
+
+   ;; completions
+   `(completions-common-part ((t (:foreground ,fg :bold t))))
+
    ;; doom-modeline
    `(doom-modeline-buffer-path        ((t (:foreground ,fg))))
-   `(doom-modeline-buffer-file        ((t (:foreground ,fg       :weight bold))))
+   `(doom-modeline-buffer-file        ((t (:foreground ,fg  :weight bold))))
    `(doom-modeline-buffer-modified    ((t (:foreground ,red :weight bold))))
-   `(doom-modeline-project-dir        ((t (:foreground ,fg       :weight bold))))
-   `(doom-modeline-project-root-dir   ((t (:foreground ,fg       :weight normal))))
-   `(doom-modeline-project-parent-dir ((t (:foreground ,fg       :weight normal))))
-   `(doom-modeline-bar-inactive       ((t (:foreground ,fg       :background ,bg1))))
-   `(doom-modeline-bar                ((t (:background ,bg1)))) ; the leftmost bar
+   `(doom-modeline-project-dir        ((t (:foreground ,fg  :weight bold))))
+   `(doom-modeline-project-root-dir   ((t (:foreground ,fg  :weight normal))))
+   `(doom-modeline-project-parent-dir ((t (:foreground ,fg  :weight normal))))
+   `(doom-modeline-bar-inactive       ((t (:foreground ,fg  :background ,bg1))))
+   `(doom-modeline-bar                ((t (:background ,bg5)))) ; the leftmost bar
    `(doom-modeline-evil-insert-state  ((t (:foreground ,fg))))
    `(doom-modeline-evil-visual-state  ((t (:foreground ,fg))))
    `(doom-modeline-evil-normal-state  ((t (:foreground ,fg))))
@@ -359,19 +366,25 @@ You might have to re-load the theme for these changes to take effect."
    `(sp-show-pair-match-face    ((t (:inherit 'paren-matched))))
    `(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
    
+   ;; tab-bar-mode
+   `(tab-bar              ((t (:background ,bg1 :foreground ,fg))))
+   `(tab-bar-tab          ((t (:background ,bg1 :foreground ,fg :bold t))))
+   `(tab-bar-tab-inactive ((t (:background ,bg1 :foreground ,fg))))
+
    ;; LaTeX
-   `(font-latex-sectioning-0-face ((t (:background ,stimmung-highlight-color :bold t))))
-   `(font-latex-sectioning-1-face ((t (:background ,stimmung-highlight-color :bold t))))
-   `(font-latex-sectioning-2-face ((t (:background ,stimmung-highlight-color :bold t))))
-   `(font-latex-sectioning-3-face ((t (:background ,stimmung-highlight-color :bold t))))
-   `(font-latex-sectioning-4-face ((t (:background ,stimmung-highlight-color :italic t))))
+   `(font-latex-sectioning-0-face ((t (:bold t))))
+   `(font-latex-sectioning-1-face ((t (:bold t))))
+   `(font-latex-sectioning-2-face ((t (:bold t))))
+   `(font-latex-sectioning-3-face ((t (:bold t))))
+   `(font-latex-sectioning-4-face ((t (:italic t))))
+   `(font-latex-sedate-face       ((t (:foreground ,fg :background ,bg1))))
    `(font-latex-italic-face       ((t (:foreground ,fg   :italic t))))
    `(font-latex-bold-face         ((t (:foreground ,fg   :bold t))))
-   `(font-latex-verbatim-face     ((t (:background ,stimmung-highlight-color :bold t))))
+   `(font-latex-verbatim-face     ((t (:background ,mixtur-highlight-color :bold t))))
    `(font-latex-string-face       ((t (:foreground ,fg))))
-   `(font-latex-warning-face      ((t (:foreground ,red))))
+   `(font-latex-warning-face      ((t (:foreground ,bg4))))
    `(font-latex-math-face         ((t (:foreground ,fg))))
-   `(font-latex-script-char-face  ((t (:background ,stimmung-highlight-color))))
+   `(font-latex-script-char-face  ((t (:foregroudn ,fg))))
 
    ;; re-builder
    `(reb-match-0 ((t (:foreground ,fg :inverse-video t :bold t))))
