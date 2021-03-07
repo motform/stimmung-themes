@@ -44,10 +44,11 @@ You might have to re-load the theme for these changes to take effect."
   :group 'faces
   :prefix "stimmung-")
 
-(defcustom stimmung-highlight-color "NavajoWhite4"
+(defcustom stimmung-highlight-color "#40382b" ; I dub this shade "Japanese gravy"
   "The primarily color for highlights, the only non-monochrome color in code."
   :type 'string
   :group 'stimmung)
+
 
 (let ((bg1 "gray12")
       (bg2 "gray15")
@@ -161,6 +162,10 @@ You might have to re-load the theme for these changes to take effect."
    `(hydra-face-teal     ((t (:foreground ,fg :bold t))))
    
    ;; cider
+   `(cider-fringe-good-face      ((t (:foreground ,ok))))
+   ;; `(cider-test-success-face     ((t (:background ,ok :foreground  ,bg1))))
+   ;; `(cider-test-failure-face     ((t (:background ,red :foreground ,bg1))))
+   `(cider-test-error-face       ((t (:background ,mixtur-highlight-color))))
    
    ;; company
    `(company-scrollbar-bg             ((t (:background ,fg))))

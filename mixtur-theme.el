@@ -1,18 +1,17 @@
 ;;; mixtur-theme.el --- A theme tuned to inner harmonies -*- lexical-binding: t -*-
-;;
 ;; Copyright © 2019
-;;
+
 ;; Author: Love Lagerkvist
 ;; URL: https://github.com/motform/stimmung
 ;; Package-Requires: ((emacs "25"))
 ;; Created: 2019-12-20
-;; Version: 2021-03-03
+;; Version: 2021-03-06
 ;; Keywords: faces
-;;
+
 ;; This file is NOT part of GNU Emacs.
-;;
+
 ;;; License:
-;;
+
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation; either version 3, or (at your option)
@@ -52,10 +51,11 @@ You might have to re-load the theme for these changes to take effect."
 (let ((bg1 "white smoke")
       (bg2 "gray90")
       (bg3 "gray85")
-      (bg4 "gray60")
+      (bg4 "gray80")
       (bg5 "gray95")
 
-      (fg "black")
+      (fg  "black")
+      (fg2 "gray60")
 
       (str "gray90")
       (search "yellow")
@@ -99,7 +99,7 @@ You might have to re-load the theme for these changes to take effect."
 
    `(paren-matched               ((t (:foreground ,ok  :background ,bg1))))
    `(paren-unmatched             ((t (:foreground ,red :background ,bg1))))
-   `(escape-glyph                ((t (:foreground ,bg4)))) ; TODO move into an fg color?
+   `(escape-glyph                ((t (:foreground ,fg2)))) ; TODO move into an fg color?
    `(homoglyph                   ((t (:foreground ,red))))
    
    `(line-number              ((t (:foreground ,bg3 :background ,bg1))))
@@ -160,6 +160,11 @@ You might have to re-load the theme for these changes to take effect."
    `(hydra-face-teal     ((t (:foreground ,fg :bold t))))
    
    ;; cider
+   `(cider-fringe-good-face      ((t (:foreground ,ok))))
+   ;; `(cider-test-success-face     ((t (:background ,ok  :foreground ,bg1))))
+   ;; `(cider-test-failure-face     ((t (:background ,red :foreground ,bg1))))
+   `(cider-test-error-face       ((t (:background ,mixtur-highlight-color))))
+
    
    ;; company
    `(company-scrollbar-bg             ((t (:background ,fg))))
@@ -189,8 +194,8 @@ You might have to re-load the theme for these changes to take effect."
 
    ;; modeline
    `(header-line         ((t (:inherit 'mode-line  :distant-foreground ,bg1))))
-   `(mode-line           ((t (:foreground ,fg :background ,bg5 :box (:line-width 1 :color ,bg4 :style nil)))))
-   `(mode-line-inactive  ((t (:foreground ,bg4 :background ,bg5 :box (:line-width 1 :color ,bg4 :style nil)))))
+   `(mode-line           ((t (:foreground ,fg :background ,bg5 :box (:line-width 1 :color ,fg2 :style nil)))))
+   `(mode-line-inactive  ((t (:foreground ,fg2 :background ,bg5 :box (:line-width 1 :color ,fg2 :style nil)))))
    `(mode-line-buffer-id ((t (:foreground ,fg :bold t))))
    `(mode-line-emphasis  ((t (:foreground ,fg :bold t))))
    `(mode-line-highlight ((t (:foreground ,bg3))))
@@ -327,17 +332,17 @@ You might have to re-load the theme for these changes to take effect."
    `(org-sexp-date             ((t (:background ,mixtur-highlight-color))))
    `(org-special-keyword       ((t (:background ,mixtur-highlight-color))))
    `(org-table                 ((t (:foreground ,fg))))
-   `(org-tag                   ((t (:foreground ,fg       :background ,bg1 :bold t))))
-   `(org-todo                  ((t (:foreground ,red   :bold t))))
-   `(org-warning               ((t (:foreground ,red   :bold t))))
+   `(org-tag                   ((t (:foreground ,fg  :background ,bg1 :bold t))))
+   `(org-todo                  ((t (:foreground ,red :bold t))))
+   `(org-warning               ((t (:foreground ,red :bold t))))
    `(org-upcoming-deadline     ((t (:foreground ,red))))
    
    ;; markdown mode
-   `(markdown-header-face             ((t (:foreground ,fg  :bold t))))
+   `(markdown-header-face             ((t (:foreground ,fg :bold t))))
    `(markdown-list-face               ((t (:foreground ,fg :bold t))))
-   `(markdown-bold-face               ((t (:foreground ,fg  :bold t))))
+   `(markdown-bold-face               ((t (:foreground ,fg :bold t))))
    `(markdown-blockquote-face         ((t (:foreground ,fg :italic t))))
-   `(markdown-italic-face             ((t (:foreground ,fg  :italic t))))
+   `(markdown-italic-face             ((t (:foreground ,fg :italic t))))
    `(markdown-link-face               ((t (:foreground ,fg :underline t))))
    `(markdown-url-face                ((t (:foreground ,fg :underline t))))
    `(markdown-header-delimiter-face   ((t (:inherit 'markdown-header-face))))
@@ -374,12 +379,12 @@ You might have to re-load the theme for these changes to take effect."
    `(font-latex-sectioning-2-face ((t (:bold t))))
    `(font-latex-sectioning-3-face ((t (:bold t))))
    `(font-latex-sectioning-4-face ((t (:italic t))))
-   `(font-latex-sedate-face       ((t (:foreground ,fg :background ,bg1))))
-   `(font-latex-italic-face       ((t (:foreground ,fg   :italic t))))
-   `(font-latex-bold-face         ((t (:foreground ,fg   :bold t))))
+   `(font-latex-sedate-face       ((t (:foreground ,fg2))))
+   `(font-latex-italic-face       ((t (:foreground ,fg :italic t))))
+   `(font-latex-bold-face         ((t (:foreground ,fg :bold t))))
    `(font-latex-verbatim-face     ((t (:background ,mixtur-highlight-color :bold t))))
    `(font-latex-string-face       ((t (:foreground ,fg))))
-   `(font-latex-warning-face      ((t (:foreground ,bg4))))
+   `(font-latex-warning-face      ((t (:foreground ,fg2))))
    `(font-latex-math-face         ((t (:foreground ,fg))))
    `(font-latex-script-char-face  ((t (:foregroudn ,fg))))
 
