@@ -28,10 +28,13 @@
 
 ;;; Commentary:
 
-;; The idea behind this theme is to decrease fruit salad factor,
-;; emphasize comments and mesh well with the colors used by MacOS (Big Sur) dark mode.
-;; Stimmung makes heavy use of typographic features to distinguish syntactic elements
-;; instead of with colors.  Thus it assumes a font with bold and italic.
+;; Stimmung (dark) and Mixtur (light) is a set of monochrome Emacs themes
+;; with minimal syntax highlighting.  They are inspired by Tonsky's
+;; Alabaster theme (https://github.com/tonsky/sublime-scheme-alabaster),
+;; similarly arguing that excessive highlighting paradoxically hides
+;; syntactic distinctions.  Unlike Tonksy, I find the use of bold and
+;; italic fonts rather pleasant.  As such, font variations are employed
+;; those conservatively throughout the theme.
 
 ;;; Code:
 

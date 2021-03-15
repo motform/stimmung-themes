@@ -27,10 +27,14 @@
 
 ;;; Commentary:
 
-;; The idea behind this theme is to decrease fruit salad factor,
-;; emphasize comments and mesh well with the colors used by MacOS (Big Sur) dark mode.
-;; Stimmung makes heavy use of typographic features to distinguish syntactic elements
-;; instead of with colors.  Thus it assumes a font with bold and italic.
+
+;; Stimmung (dark) and Mixtur (light) is a set of monochrome Emacs themes
+;; with minimal syntax highlighting.  They are inspired by Tonsky's
+;; Alabaster theme (https://github.com/tonsky/sublime-scheme-alabaster),
+;; similarly arguing that excessive highlighting paradoxically hides
+;; syntactic distinctions.  Unlike Tonksy, I find the use of bold and
+;; italic fonts rather pleasant.  As such, font variations are employed
+;; those conservatively throughout the theme.
 
 ;;; Code:
 
@@ -58,8 +62,9 @@ You might have to re-load the theme for these changes to take effect."
       (fg2 "gray60")
 
       (str "gray90")
-      (search "yellow")
-      (red "darkred") ; TODO find a better red
+      (search "gold2")
+      (warning "goldenrod4")
+      (red "darkred")
       (ok "DarkGreen"))
   (custom-theme-set-faces
    'mixtur
@@ -86,7 +91,7 @@ You might have to re-load the theme for these changes to take effect."
    `(default-italic      ((t (:slant italic))))
 
    `(error                       ((t (:foreground ,red))))
-   `(warning                     ((t (:foreground ,red))))
+   `(warning                     ((t (:foreground ,fg :underline (:style wave :color ,warning)))))
    `(success                     ((t (:foreground ,ok))))
    `(cancel                      ((t (:foreground ,red :strike-through t))))
    
@@ -122,7 +127,7 @@ You might have to re-load the theme for these changes to take effect."
    `(font-lock-regexp-grouping-backslash ((t (:foreground ,fg  :bold t))))
    `(font-lock-regexp-grouping-construct ((t (:foreground ,fg  :bold t))))
    `(font-lock-string-face               ((t (:foreground ,fg  :background ,str))))
-   `(font-lock-warning-face              ((t (:foreground ,red))))
+   `(font-lock-warning-face              ((t (:foreground ,fg :underline (:style wave :color ,warning)))))
    
    ;; eshell
    `(eshell-ls-directory  ((t (:background ,mixtur-highlight-color :bold t))))
@@ -145,12 +150,12 @@ You might have to re-load the theme for these changes to take effect."
    `(avy-lead-face-2 ((t (:inherit 'avy-lead-face))))
    
    ;; flyspell
-   `(flyspell-incorrect       ((t (:underline (:style wave :color ,red) ))))
-   `(flyspell-duplicate       ((t (:underline (:style wave :color ,search)))))
-   `(flycheck-error           ((t (:underline (:style wave :color ,red)))))
-   `(flysheck-warning         ((t (:underline (:style wave :color ,search)))))
-   `(flysheck-warning-overlay ((t (:underline (:style wave :color ,search)))))
    `(flycheck-note            ((t (:underline (:style wave :color ,ok)))))
+   `(flyspell-incorrect       ((t (:underline (:style wave :color ,red) ))))
+   `(flycheck-error           ((t (:underline (:style wave :color ,red)))))
+   `(flyspell-duplicate       ((t (:underline (:style wave :color ,warning)))))
+   `(flysheck-warning         ((t (:underline (:style wave :color ,warning)))))
+   `(flysheck-warning-overlay ((t (:underline (:style wave :color ,warning)))))
    
    ;; hydra
    `(hydra-face-red      ((t (:foreground ,fg  :bold t))))
@@ -183,7 +188,7 @@ You might have to re-load the theme for these changes to take effect."
    `(compilation-line-number    ((t (:bold t))))
    `(compilation-column-number  ((t (:inherit 'font-lock-comment-face))))
    `(compilation-error          ((t (:inherit 'error   :bold t))))
-   `(compilation-warning        ((t (:inherit 'warning :italic t))))
+   `(compilation-warning        ((t (:inherit 'warning))))
    `(compilation-info           ((t (:inherit ,success))))
    `(compilation-mode-line-exit ((t (:inherit 'compilation-info))))
    `(compilation-mode-line-fail ((t (:inherit 'compilation-error))))
@@ -226,7 +231,7 @@ You might have to re-load the theme for these changes to take effect."
    `(dired-marked     ((t (:foreground ,red :bold t))))
    `(dired-perm-write ((t (:foreground ,fg  :underline t))))
    `(dired-symlink    ((t (:foreground ,fg  :italic t))))
-   `(dired-warning    ((t (:foreground ,red))))
+   `(dired-warning    ((t (:foreground ,fg :underline (:style wave :color ,warning)))))
    
    ;; evil
    `(evil-ex-info                   ((t (:foreground ,red :italic t))))
@@ -269,7 +274,12 @@ You might have to re-load the theme for these changes to take effect."
    `(magit-bisect-good       ((t (:foreground ,ok))))
    `(magit-bisect-skip       ((t (:foreground ,fg))))
    `(magit-blame-date        ((t (:foreground ,red))))
-   `(magit-branch            ((t (:foreground ,mixtur-highlight-color :bold t))))
+   `(magit-branch            ((t (:foreground ,fg :bold t))))
+   `(magit-branch-local      ((t (:foreground ,fg :bold t))))
+   `(magit-branch-remote     ((t (:foreground ,fg :bold t))))
+   `(magit-diff-file-heading ((t (:foreground ,fg :bold nil))))
+   `(magit-diff-whitespace-warning ((t (:background ,red))))
+
    
    `(magit-diff-context-highlight ((t (:foreground ,fg :background ,bg3))))
    `(magit-diff-file-header       ((t (:foreground ,fg :background ,bg3))))
@@ -334,7 +344,7 @@ You might have to re-load the theme for these changes to take effect."
    `(org-table                 ((t (:foreground ,fg))))
    `(org-tag                   ((t (:foreground ,fg  :background ,bg1 :bold t))))
    `(org-todo                  ((t (:foreground ,red :bold t))))
-   `(org-warning               ((t (:foreground ,red :bold t))))
+   `(org-warning               ((t (:inherit 'warning))))
    `(org-upcoming-deadline     ((t (:foreground ,red))))
    
    ;; markdown mode
