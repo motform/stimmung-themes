@@ -9,7 +9,7 @@
 
   [[./.assets/dark.png]]
 
-  /Stimmung/ is a pair of monochrome-ish Emacs themes with minimal syntax highlighting. They are inspired by [[https://github.com/tonsky/sublime-scheme-alabaster][Tonsky's Alabaster theme]], similarly arguing that excessive highlighting paradoxically hides syntactic distinctions. Unlike Tonksy, I find the use of bold and italic fonts rather pleasant. As such, font variations are employed those conservatively throughout the theme. The hues of the /Stimmung/ are selected to match the default MacOS dark mode.
+  /Stimmung/ is a pair of monochrome-ish Emacs themes with minimal syntax highlighting. They are inspired by [[https://github.com/tonsky/sublime-scheme-alabaster][Tonsky's Alabaster theme]], similarly arguing that excessive highlighting paradoxically hides syntactic distinctions. Unlike Tonksy, I find the use of bold and italic fonts rather pleasant. As such, font variations are employed those conservatively throughout the theme. The hues of the /stimmung-dark/ are selected to match the default MacOS dark mode.
 
   If something looks off, you can report it as an issue. I have only tested it against [[https://github.com/motform/emacs.d][my personal configuration]], so there will probably be a few holes here and there. The modeline in the screenshot is from [[https://github.com/seagle0128/doom-modeline][Doom Emacs]] and the type is set in [[https://fsd.it/shop/fonts/pragmatapro/][PragmataPro]].
 
@@ -17,9 +17,10 @@
    The theme is not on melpa (yet), so you have to clone the repository and manually require it in your ~init~.el.
 
    #+BEGIN_SRC emacs-lisp
-   (load "*PATH-TO-.EL*")
-   (add-to-list 'custom-theme-load-path "*PATH-TO-FOLDER-CONTANING-.EL*")
-   (load-theme 'stimmung t)
+   (load "*PATH-TO-STIMMUNG.EL*")
+   (add-to-list 'custom-theme-load-path "*PATH-TO-FOLDER-CONTANING-STIMMUNG.EL*")
+   ;; (load-theme 'stimmung-dark t)
+   (load-theme 'stimmung-light t) ; depending on your preferences
    #+END_SRC
 
 ** Customization
