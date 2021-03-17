@@ -445,8 +445,8 @@ You might have to re-load the theme for these changes to take effect."
 
 (custom-theme-set-variables
  'stimmung
- '(ansi-color-names-vector ["#1e1e1e" "#dddddd" "#dddddd" "#dddddd"
-                            "#dddddd" "#dddddd" "#dddddd" "#dddddd"]))
+ '(ansi-color-names-vector ["white" "white" "white" "white"
+                            "white" "white" "white" "black"]))
 
 ;;;###autoload
 (when load-file-name

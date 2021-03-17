@@ -449,8 +449,8 @@ You might have to re-load the theme for these changes to take effect."
 
 (custom-theme-set-variables
  'mixtur
- '(ansi-color-names-vector ["#1e1e1e" "#dddddd" "#dddddd" "#dddddd"
-                            "#dddddd" "#dddddd" "#dddddd" "#dddddd"]))
+ '(ansi-color-names-vector ["black" "black" "black" "black"
+                            "black" "black" "black" "white"]))
 
 ;;;###autoload
 (when load-file-name
