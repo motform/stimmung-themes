@@ -38,7 +38,7 @@
 ;;; Code:
 
 (deftheme stimmung-dark
-  "A theme tuned to inner harmonies.")
+  "A dark theme tuned to inner harmonies.")
 
 (defgroup stimmung-theme nil
   "Stimmung theme settings.
@@ -60,11 +60,11 @@ You have to re-load the theme for these changes to take effect."
       (fg "white")
 
       (search "yellow4")
-      (str "gray20")
-      (red "IndianRed1")
-      (ok "SeaGreen"))
+      (str    "gray20")
+      (red    "IndianRed1")
+      (ok     "SeaGreen"))
   (custom-theme-set-faces
-   'stimmung
+   'stimmung-dark
 
    `(default  ((t (:background ,bg1 :foreground ,fg))))
    `(shadow   ((t (:background ,bg2))))
@@ -84,7 +84,7 @@ You have to re-load the theme for these changes to take effect."
    `(header-line         ((t (:bold t))))
    `(tooltip             ((t (:foreground ,fg  :background ,bg3))))
    `(vertical-border     ((t (:foreground ,bg2 :background ,bg2))))
-   `(info-string         ((t (:background ,mixtur-highlight-color))))
+   `(info-string         ((t (:background ,stimmung-theme-dark-highlight-color))))
    `(default-italic      ((t (:slant italic))))
 
    `(error                       ((t (:foreground ,red))))
@@ -109,14 +109,14 @@ You have to re-load the theme for these changes to take effect."
    `(linum                    ((t (:inherit 'line-number))))
    
    ;; syntax
-   `(font-lock-builtin-face              ((t (:background ,stimmung-highlight-color :italic t))))
+   `(font-lock-builtin-face              ((t (:background ,stimmung-theme-dark-highlight-color :italic t))))
    `(font-lock-comment-delimiter-face    ((t (:background ,str :italic t))))
    `(font-lock-comment-face              ((t (:background ,str :italic t))))
    `(font-lock-doc-face                  ((t (:background ,str :italic t))))
-   `(font-lock-constant-face             ((t (:background ,stimmung-highlight-color :italic t))))
+   `(font-lock-constant-face             ((t (:background ,stimmung-theme-dark-highlight-color :italic t))))
    `(font-lock-function-name-face        ((t (:foreground ,fg :bold t))))
    `(font-lock-keyword-face              ((t (:foreground ,fg))))
-   `(font-lock-type-face                 ((t (:background ,stimmung-highlight-color))))
+   `(font-lock-type-face                 ((t (:background ,stimmung-theme-dark-highlight-color))))
    `(font-lock-variable-name-face        ((t (:foreground ,fg :bold t))))
    `(font-lock-negation-char-face        ((t (:foreground ,fg))))
    `(font-lock-preprocessor-face         ((t (:foreground ,fg))))
@@ -127,7 +127,7 @@ You have to re-load the theme for these changes to take effect."
    `(font-lock-warning-face              ((t (:foreground ,red))))
    
    ;; eshell
-   `(eshell-ls-directory  ((t (:background ,stimmung-highlight-color :bold t))))
+   `(eshell-ls-directory  ((t (:background ,stimmung-theme-dark-highlight-color :bold t))))
    `(eshell-prompt        ((t (:foreground ,fg :bold t))))
    `(eshell-ls-executable ((t (:foreground ,fg :bold t))))
    `(eshell-ls-symlink    ((t (:foreground ,fg :italic t))))
@@ -165,17 +165,17 @@ You have to re-load the theme for these changes to take effect."
    `(cider-fringe-good-face      ((t (:foreground ,ok))))
    ;; `(cider-test-success-face     ((t (:background ,ok :foreground  ,bg1))))
    ;; `(cider-test-failure-face     ((t (:background ,red :foreground ,bg1))))
-   `(cider-test-error-face       ((t (:background ,mixtur-highlight-color))))
+   `(cider-test-error-face       ((t (:background ,stimmung-theme-dark-highlight-color))))
    
    ;; company
    `(company-scrollbar-bg             ((t (:background ,fg))))
    `(company-scrollbar-fg             ((t (:foreground ,fg))))
    `(company-echo-common              ((t (:background ,fg :foreground ,bg1))))
-   `(company-preview                  ((t (:background ,stimmung-highlight-color :foreground ,fg))))
+   `(company-preview                  ((t (:background ,stimmung-theme-dark-highlight-color :foreground ,fg))))
    `(company-tooltip                  ((t (:background ,bg3 :foreground ,fg))))
-   `(company-tooltip-annotation       ((t (:foreground ,stimmung-highlight-color))))
+   `(company-tooltip-annotation       ((t (:foreground ,stimmung-theme-dark-highlight-color))))
    `(company-tooltip-common           ((t (:foreground ,fg))))
-   `(company-tooltip-common-selection ((t (:background ,stimmung-highlight-color))))
+   `(company-tooltip-common-selection ((t (:background ,stimmung-theme-dark-highlight-color))))
    `(company-tooltip-selection        ((t (:background ,bg3 :foreground ,fg))))
    `(company-tooltip-selection-       ((t (:background ,bg3 :foreground ,fg))))
    `(company-tooltip-mouse            ((t (:inherit highlight))))
@@ -262,7 +262,7 @@ You have to re-load the theme for these changes to take effect."
    `(ivy-virtual                    ((t (:foreground ,fg :italic t))))
    `(ivy-prompt                     ((t (:foreground ,red))))
    `(ivy-prompt-match               ((t (:foreground ,red))))
-   `(ivy-separator                  ((t (:foreground ,stimmung-highlight-color))))
+   `(ivy-separator                  ((t (:foreground ,stimmung-theme-dark-highlight-color))))
    `(ivy-highlight-face             ((t (:foreground ,red))))
    `(ivy-grep-info                  ((t (:foreground ,red))))
    `(ivy-completions-annotations    ((t (:foreground ,red))))
@@ -272,7 +272,7 @@ You have to re-load the theme for these changes to take effect."
    `(magit-bisect-good       ((t (:foreground ,ok))))
    `(magit-bisect-skip       ((t (:foreground ,fg))))
    `(magit-blame-date        ((t (:foreground ,red))))
-   `(magit-branch            ((t (:foreground ,stimmung-highlight-color :bold t))))
+   `(magit-branch            ((t (:foreground ,stimmung-theme-dark-highlight-color :bold t))))
    
    `(magit-diff-context-highlight ((t (:foreground ,fg :background ,bg3))))
    `(magit-diff-file-header       ((t (:foreground ,fg :background ,bg3))))
@@ -284,7 +284,7 @@ You have to re-load the theme for these changes to take effect."
    `(magit-hunk-heading-highlight ((t (:background ,bg3))))
    `(magit-item-highlight         ((t (:background ,bg3))))
    `(magit-log-author             ((t (:foreground ,fg))))
-   `(magit-process-ng             ((t (:background ,stimmung-highlight-color :bold t))))
+   `(magit-process-ng             ((t (:background ,stimmung-theme-dark-highlight-color :bold t))))
    `(magit-process-ok             ((t (:foreground ,ok :bold t))))
    `(magit-section-heading        ((t (:foreground ,fg :bold t))))
    `(magit-section-highlight      ((t (:background ,bg3))))
@@ -310,8 +310,8 @@ You have to re-load the theme for these changes to take effect."
    ;; TODO org-agenda
    
    ;; org
-   `(org-code                  ((t (:background ,str :distant-foreground ,bg1 :background ,stimmung-highlight-color))))
-   `(org-date                  ((t (:background ,stimmung-highlight-color :bold t))))
+   `(org-code                  ((t (:background ,str :distant-foreground ,bg1 :background ,stimmung-theme-dark-highlight-color))))
+   `(org-date                  ((t (:background ,stimmung-theme-dark-highlight-color :bold t))))
    `(org-link                  ((t (:underline t))))
    `(org-block                 ((t (:foreground ,fg :background ,bg3 :extend t))))
    `(org-block-begin-line      ((t (:foreground ,fg :background ,bg3 :bold t :extend t))))
@@ -322,18 +322,18 @@ You have to re-load the theme for these changes to take effect."
    `(org-document-title        ((t (:foreground ,fg :weight bold))))
    `(org-done                  ((t (:foreground ,ok  :bold t :strike-through t))))
    `(org-ellipsis              ((t (:foreground ,fg))))
-   `(org-footnote              ((t (:background ,stimmung-highlight-color))))
+   `(org-footnote              ((t (:background ,stimmung-theme-dark-highlight-color))))
    `(org-meta-line             ((t (:background ,bg1))))
    `(org-formula               ((t (:foreground ,fg))))
    `(org-headline-done         ((t (:foreground ,fg :weight normal :strike-through t))))
    `(org-hide                  ((t (:foreground ,bg1 :background ,bg1))))
    `(org-list-dt               ((t (:foreground ,fg :bold t))))
-   `(org-priority              ((t (:background ,stimmung-highlight-color))))
+   `(org-priority              ((t (:background ,stimmung-theme-dark-highlight-color))))
    `(org-scheduled             ((t (:foreground ,red))))
-   `(org-scheduled-previously  ((t (:background ,stimmung-highlight-color))))
+   `(org-scheduled-previously  ((t (:background ,stimmung-theme-dark-highlight-color))))
    `(org-scheduled-today       ((t (:foreground ,ok))))
-   `(org-sexp-date             ((t (:background ,stimmung-highlight-color))))
-   `(org-special-keyword       ((t (:background ,stimmung-highlight-color))))
+   `(org-sexp-date             ((t (:background ,stimmung-theme-dark-highlight-color))))
+   `(org-special-keyword       ((t (:background ,stimmung-theme-dark-highlight-color))))
    `(org-table                 ((t (:foreground ,fg))))
    `(org-tag                   ((t (:foreground ,fg  :background ,bg1 :bold t))))
    `(org-todo                  ((t (:foreground ,red :bold t))))
@@ -385,7 +385,7 @@ You have to re-load the theme for these changes to take effect."
    `(font-latex-sedate-face       ((t (:foreground ,fg :background ,bg1))))
    `(font-latex-italic-face       ((t (:foreground ,fg :italic t))))
    `(font-latex-bold-face         ((t (:foreground ,fg :bold t))))
-   `(font-latex-verbatim-face     ((t (:background ,mixtur-highlight-color :bold t))))
+   `(font-latex-verbatim-face     ((t (:background ,stimmung-theme-dark-highlight-color :bold t))))
    `(font-latex-string-face       ((t (:foreground ,fg))))
    `(font-latex-warning-face      ((t (:foreground ,bg4))))
    `(font-latex-math-face         ((t (:foreground ,fg))))
@@ -441,14 +441,16 @@ You have to re-load the theme for these changes to take effect."
    `(whitespace-trailing    ((t (:foreground ,red))))))
 
 (custom-theme-set-variables
- 'stimmung
+ 'stimmung-dark
  '(ansi-color-names-vector ["white" "white" "white" "white"
                             "white" "white" "white" "gray90"]))
 
 ;;;###autoload
-(when load-file-name
+(when (and (boundp 'custom-theme-load-path)
+           load-file-name)
   (add-to-list 'custom-theme-load-path
-               (file-name-as-directory (file-name-directory load-file-name))))
+               (file-name-as-directory
+                (file-name-directory load-file-name))))
 
 (provide-theme 'stimmung-dark)
 (provide 'stimmung-theme-dark)

@@ -38,7 +38,7 @@
 ;;; Code:
 
 (deftheme stimmung-light
-  "A theme tuned to inner harmonies.")
+  "A light theme tuned to inner harmonies.")
 
 (defgroup stimmung-theme nil
   "Stimmung theme settings.
@@ -247,7 +247,7 @@ You have to re-load the theme for these changes to take effect."
    `(info-menu-star ((t (:bold t))))
 
    ;; ivy
-   `(ivy-current-match              ((t (:background ,bg1 :bold t))))
+   `(ivy-current-match              ((t (:background ,bg1 :bold t :underline t)))) ; NOTE
    `(ivy-minibuffer-match-highlight ((t (:foreground ,ok))))
    `(ivy-minibuffer-match-face-1    ((t (:foreground ,fg :bold t))))
    `(ivy-minibuffer-match-face-2    ((t (:foreground ,fg :bold t))))
@@ -451,9 +451,11 @@ You have to re-load the theme for these changes to take effect."
                             "black" "black" "black" "white"]))
 
 ;;;###autoload
-(when load-file-name
+(when (and (boundp 'custom-theme-load-path)
+           load-file-name)
   (add-to-list 'custom-theme-load-path
-               (file-name-as-directory (file-name-directory load-file-name))))
+               (file-name-as-directory
+                (file-name-directory load-file-name))))
 
 (provide-theme 'stimmung-light)
 (provide 'stimmung-theme-light)
