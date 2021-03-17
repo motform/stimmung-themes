@@ -9,7 +9,7 @@
 
   [[./.assets/dark.png]]
 
-  /Stimmung/ (dark) and /Mixtur/ (light) form a set of monochrome Emacs themes with minimal syntax highlighting. They are inspired by [[https://github.com/tonsky/sublime-scheme-alabaster][Tonsky's Alabaster theme]], similarly arguing that excessive highlighting paradoxically hides syntactic distinctions. Unlike Tonksy, I find the use of bold and italic fonts rather pleasant. As such, font variations are employed those conservatively throughout the theme. The hues of the /Stimmung/ are selected to match the default MacOS dark mode.
+  /Stimmung/ is a pair of monochrome-ish Emacs themes with minimal syntax highlighting. They are inspired by [[https://github.com/tonsky/sublime-scheme-alabaster][Tonsky's Alabaster theme]], similarly arguing that excessive highlighting paradoxically hides syntactic distinctions. Unlike Tonksy, I find the use of bold and italic fonts rather pleasant. As such, font variations are employed those conservatively throughout the theme. The hues of the /Stimmung/ are selected to match the default MacOS dark mode.
 
   If something looks off, you can report it as an issue. I have only tested it against [[https://github.com/motform/emacs.d][my personal configuration]], so there will probably be a few holes here and there. The modeline in the screenshot is from [[https://github.com/seagle0128/doom-modeline][Doom Emacs]] and the type is set in [[https://fsd.it/shop/fonts/pragmatapro/][PragmataPro]].
 
@@ -23,4 +23,4 @@
    #+END_SRC
 
 ** Customization
-   The highlight color of each theme can be set by ~stimmung-highlight-color~ and ~mixtur-highlight-color~, respectively.
+   The highlight color of each theme can be set by ~stimmung-theme-dark-highlight-color~ and ~stimmung-theme-light-highlight-color~, respectively.
