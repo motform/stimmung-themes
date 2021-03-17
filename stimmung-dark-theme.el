@@ -1,4 +1,4 @@
-;;; stimmung-dark-theme.el --- A theme tuned to inner harmonies -*- lexical-binding: t -*-
+;;; stimmung-dark-theme.el --- A dark theme tuned to inner harmonies -*- lexical-binding: t -*-
 ;; Copyright © 2019
 
 ;; Author: Love Lagerkvist
@@ -32,8 +32,8 @@
 ;; Alabaster theme (https://github.com/tonsky/sublime-scheme-alabaster),
 ;; similarly arguing that excessive highlighting paradoxically hides
 ;; syntactic distinctions.  Unlike Tonksy, I find the use of bold and
-;; italic fonts rather pleasant.  As such, font variations are employed
-;; those conservatively throughout the theme.
+;; italic fonts rather pleasant.  As such, bold and italic font
+;; variations are employed those conservatively throughout the theme.
 
 ;;; Code:
 
