@@ -1,4 +1,4 @@
-;;; stimmung-theme-dark.el --- A theme tuned to inner harmonies -*- lexical-binding: t -*-
+;;; stimmung-dark-theme.el --- A theme tuned to inner harmonies -*- lexical-binding: t -*-
 ;; Copyright © 2019
 
 ;; Author: Love Lagerkvist
@@ -453,10 +453,10 @@ You have to re-load the theme for these changes to take effect."
                 (file-name-directory load-file-name))))
 
 (provide-theme 'stimmung-dark)
-(provide 'stimmung-theme-dark)
+(provide 'stimmung-dark-theme)
 
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:
 
-;;; stimmung-theme-dark.el ends here
+;;; stimmung-dark-theme.el ends here
