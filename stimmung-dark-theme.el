@@ -95,7 +95,7 @@ You have to re-load the theme for these changes to take effect."
    `(minibuffer-noticable-prompt ((t (:foreground ,fg :bold t))))
    `(minibuffer-prompt           ((t (:foreground ,fg :bold t))))
 
-   `(isearch                     ((t (:foreground ,fg :background ,search :bold t))))
+   `(isearch                     ((t (:foreground ,fg :background ,search :bold t :underline t))))
    `(isearch-highlight           ((t (:foreground ,fg :background ,search))))
    `(isearch-fail                ((t (:foreground ,fg :background ,search))))
 
