@@ -5,7 +5,7 @@
 ;; URL: https://github.com/motform/stimmung
 ;; Package-Requires: ((emacs "25"))
 ;; Created: 2019-12-20
-;; Version: 2021-03-17
+;; Version: 2021-03-20
 ;; Keywords: faces
 
 ;; This file is NOT part of GNU Emacs.
