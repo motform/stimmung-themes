@@ -40,16 +40,17 @@
 (deftheme stimmung-dark
   "A dark theme tuned to inner harmonies.")
 
-(defgroup stimmung-theme nil
-  "Stimmung theme settings.
+(defgroup stimmung-themes nil
+  "Stimmung settings.
 You have to re-load the theme for these changes to take effect."
   :group 'faces
-  :prefix "stimmung-theme-")
+  :prefix "stimmung-theme-"
+  :link   '(url-link "https://github.com/motform/stimmung-themes"))
 
 (defcustom stimmung-theme-dark-highlight-color "#40382b" ; I dub this shade "Japanese gravy"
   "The primarily color for highlights, the only non-monochrome color in code."
   :type 'string
-  :group 'stimmung-theme)
+  :group 'stimmung-themes)
 
 (let ((bg1 "gray12")
       (bg2 "gray15")

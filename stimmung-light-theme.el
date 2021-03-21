@@ -40,16 +40,17 @@
 (deftheme stimmung-light
   "A light theme tuned to inner harmonies.")
 
-(defgroup stimmung-theme nil
-  "Stimmung theme settings.
+(defgroup stimmung-themes nil
+  "Stimmung settings.
 You have to re-load the theme for these changes to take effect."
   :group 'faces
-  :prefix "stimmung-theme-")
+  :prefix "stimmung-theme-"
+  :link   '(url-link "https://github.com/motform/stimmung-themes"))
 
 (defcustom stimmung-theme-light-highlight-color "ivory2"
   "The primarily color for highlights, the only non-monochrome color in code."
   :type 'string
-  :group 'stimmung-theme)
+  :group 'stimmung-themes)
 
 (let ((bg1 "white smoke")
       (bg2 "gray90")
