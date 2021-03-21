@@ -1,4 +1,4 @@
-;;; stimmung-theme.el --- A dark theme tuned to inner harmonies -*- lexical-binding: t -*-
+;;; stimmung-themes.el --- Themes tuned to inner harmonies -*- lexical-binding: t -*-
 ;; Copyright © 2019
 
 ;; Author: Love Lagerkvist
@@ -37,10 +37,10 @@
 
 ;;; Code:
 
-(provide 'stimmung-theme)
+(provide 'stimmung-themes)
 
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:
 
-;;; stimmung-theme.el ends here
+;;; stimmung-themes.el ends here
