@@ -362,9 +362,9 @@ You have to re-load the theme for these changes to take effect."
    `(markdown-inline-code-face        ((t (:inherit 'markdown-code-face :extend nil))))
    
    ;; show-paren
-   `(show-paren-match-face       ((t (:distant-background ,fg :distant-foreground ,bg1 :bold t))))
-   `(show-paren-match            ((t (:distant-background ,fg :distant-foreground ,bg1 :bold t))))
-   `(show-paren-match-expression ((t (:background ,fg :foreground ,bg1 :bold t))))
+   `(show-paren-match-face       ((t (:background ,search :bold t))))
+   `(show-paren-match            ((t (:background ,search :bold t))))
+   `(show-paren-match-expression ((t (:background ,search :bold t))))
    `(show-paren-mismatch         ((t (:background ,fg :foreground ,red :bold t))))
    
    ;; smartparens
