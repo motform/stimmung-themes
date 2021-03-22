@@ -1,9 +1,8 @@
-;;; stimmung-dark-theme.el --- A dark theme tuned to inner harmonies -*- lexical-binding: t -*-
+;;; stimmung-themes-light-theme.el --- A light theme tuned to inner harmonies -*- lexical-binding: t -*-
 ;; Copyright © 2019
 
 ;; Author: Love Lagerkvist
 ;; URL: https://github.com/motform/stimmung
-;; Package-Requires: ((emacs "25"))
 ;; Created: 2019-12-20
 ;; Version: 2021-03-20
 ;; Keywords: faces
@@ -37,8 +36,8 @@
 
 ;;; Code:
 
-(deftheme stimmung-dark
-  "A dark theme tuned to inner harmonies.")
+(deftheme stimmung-themes-light
+  "A light theme tuned to inner harmonies.")
 
 (defgroup stimmung-themes nil
   "Stimmung settings.
@@ -47,25 +46,27 @@ You have to re-load the theme for these changes to take effect."
   :prefix "stimmung-theme-"
   :link   '(url-link "https://github.com/motform/stimmung-themes"))
 
-(defcustom stimmung-theme-dark-highlight-color "#40382b" ; I dub this shade "Japanese gravy"
+(defcustom stimmung-themes-light-highlight-color "ivory2"
   "The primarily color for highlights, the only non-monochrome color in code."
   :type 'string
   :group 'stimmung-themes)
 
-(let ((bg1 "gray12")
-      (bg2 "gray15")
-      (bg3 "gray20")
-      (bg4 "gray30")
-      (bg5 "gray15")
+(let ((bg1 "white smoke")
+      (bg2 "gray90")
+      (bg3 "gray85")
+      (bg4 "gray80")
+      (bg5 "gray95")
 
-      (fg "white")
+      (fg  "black")
+      (fg2 "gray60")
 
-      (search "yellow4")
-      (str    "gray20")
-      (red    "IndianRed1")
-      (ok     "SeaGreen"))
+      (str     "gray90")
+      (search  "gold2")
+      (warning "goldenrod4")
+      (red     "darkred")
+      (ok      "DarkGreen"))
   (custom-theme-set-faces
-   'stimmung-dark
+   'stimmung-themes-light
 
    `(default  ((t (:background ,bg1 :foreground ,fg))))
    `(shadow   ((t (:background ,bg2))))
@@ -85,11 +86,11 @@ You have to re-load the theme for these changes to take effect."
    `(header-line         ((t (:bold t))))
    `(tooltip             ((t (:foreground ,fg  :background ,bg3))))
    `(vertical-border     ((t (:foreground ,bg2 :background ,bg2))))
-   `(info-string         ((t (:background ,stimmung-theme-dark-highlight-color))))
+   `(info-string         ((t (:background ,stimmung-themes-light-highlight-color))))
    `(default-italic      ((t (:slant italic))))
 
    `(error                       ((t (:foreground ,red))))
-   `(warning                     ((t (:foreground ,red))))
+   `(warning                     ((t (:foreground ,fg :underline (:style wave :color ,warning)))))
    `(success                     ((t (:foreground ,ok))))
    `(cancel                      ((t (:foreground ,red :strike-through t))))
    
@@ -102,33 +103,33 @@ You have to re-load the theme for these changes to take effect."
 
    `(paren-matched               ((t (:foreground ,ok  :background ,bg1))))
    `(paren-unmatched             ((t (:foreground ,red :background ,bg1))))
-   `(escape-glyph                ((t (:foreground ,red :bold t))))
-   `(homoglyph                   ((t (:foreground ,red :bold t))))
+   `(escape-glyph                ((t (:foreground ,fg2)))) ; TODO move into an fg color?
+   `(homoglyph                   ((t (:foreground ,red))))
    
    `(line-number              ((t (:foreground ,bg3 :background ,bg1))))
-   `(line-number-current-line ((t (:foreground ,fg :background ,bg1))))
+   `(line-number-current-line ((t (:foreground ,fg  :background ,bg1))))
    `(linum                    ((t (:inherit 'line-number))))
    
    ;; syntax
-   `(font-lock-builtin-face              ((t (:background ,stimmung-theme-dark-highlight-color :italic t))))
+   `(font-lock-builtin-face              ((t (:background ,stimmung-themes-light-highlight-color :italic t))))
    `(font-lock-comment-delimiter-face    ((t (:background ,str :italic t))))
    `(font-lock-comment-face              ((t (:background ,str :italic t))))
    `(font-lock-doc-face                  ((t (:background ,str :italic t))))
-   `(font-lock-constant-face             ((t (:background ,stimmung-theme-dark-highlight-color :italic t))))
+   `(font-lock-constant-face             ((t (:background ,stimmung-themes-light-highlight-color :italic t))))
    `(font-lock-function-name-face        ((t (:foreground ,fg :bold t))))
    `(font-lock-keyword-face              ((t (:foreground ,fg))))
-   `(font-lock-type-face                 ((t (:background ,stimmung-theme-dark-highlight-color))))
+   `(font-lock-type-face                 ((t (:background ,stimmung-themes-light-highlight-color))))
    `(font-lock-variable-name-face        ((t (:foreground ,fg :bold t))))
    `(font-lock-negation-char-face        ((t (:foreground ,fg))))
    `(font-lock-preprocessor-face         ((t (:foreground ,fg))))
    `(font-lock-preprocessor-char-face    ((t (:foreground ,fg))))
-   `(font-lock-regexp-grouping-backslash ((t (:foreground ,fg  :bold t))))
-   `(font-lock-regexp-grouping-construct ((t (:foreground ,fg  :bold t))))
-   `(font-lock-string-face               ((t (:foreground ,fg  :background ,str))))
-   `(font-lock-warning-face              ((t (:foreground ,red))))
+   `(font-lock-regexp-grouping-backslash ((t (:foreground ,fg :bold t))))
+   `(font-lock-regexp-grouping-construct ((t (:foreground ,fg :bold t))))
+   `(font-lock-string-face               ((t (:foreground ,fg :background ,str))))
+   `(font-lock-warning-face              ((t (:foreground ,fg :underline (:style wave :color ,warning)))))
    
    ;; eshell
-   `(eshell-ls-directory  ((t (:background ,stimmung-theme-dark-highlight-color :bold t))))
+   `(eshell-ls-directory  ((t (:background ,stimmung-themes-light-highlight-color :bold t))))
    `(eshell-prompt        ((t (:foreground ,fg :bold t))))
    `(eshell-ls-executable ((t (:foreground ,fg :bold t))))
    `(eshell-ls-symlink    ((t (:foreground ,fg :italic t))))
@@ -148,15 +149,15 @@ You have to re-load the theme for these changes to take effect."
    `(avy-lead-face-2 ((t (:inherit 'avy-lead-face))))
    
    ;; flyspell
-   `(flyspell-incorrect       ((t (:underline (:style wave :color ,red) ))))
-   `(flyspell-duplicate       ((t (:underline (:style wave :color ,search)))))
-   `(flycheck-error           ((t (:underline (:style wave :color ,red)))))
-   `(flysheck-warning         ((t (:underline (:style wave :color ,search)))))
-   `(flysheck-warning-overlay ((t (:underline (:style wave :color ,search)))))
    `(flycheck-note            ((t (:underline (:style wave :color ,ok)))))
+   `(flyspell-incorrect       ((t (:underline (:style wave :color ,red) ))))
+   `(flycheck-error           ((t (:underline (:style wave :color ,red)))))
+   `(flyspell-duplicate       ((t (:underline (:style wave :color ,warning)))))
+   `(flysheck-warning         ((t (:underline (:style wave :color ,warning)))))
+   `(flysheck-warning-overlay ((t (:underline (:style wave :color ,warning)))))
    
    ;; hydra
-   `(hydra-face-red      ((t (:foreground ,fg  :bold t))))
+   `(hydra-face-red      ((t (:foreground ,fg :bold t))))
    `(hydra-face-blue     ((t (:foreground ,fg :bold t))))
    `(hydra-face-amaranth ((t (:foreground ,fg :bold t))))
    `(hydra-face-pink     ((t (:foreground ,fg :bold t))))
@@ -164,28 +165,28 @@ You have to re-load the theme for these changes to take effect."
    
    ;; cider
    `(cider-fringe-good-face      ((t (:foreground ,ok))))
-   ;; `(cider-test-success-face     ((t (:background ,ok :foreground  ,bg1))))
+   ;; `(cider-test-success-face     ((t (:background ,ok  :foreground ,bg1))))
    ;; `(cider-test-failure-face     ((t (:background ,red :foreground ,bg1))))
-   `(cider-test-error-face       ((t (:background ,stimmung-theme-dark-highlight-color))))
-   
+   `(cider-test-error-face       ((t (:background ,stimmung-themes-light-highlight-color))))
+
    ;; company
+   `(company-tooltip-mouse            ((t (:inherit highlight))))
    `(company-scrollbar-bg             ((t (:background ,fg))))
    `(company-scrollbar-fg             ((t (:foreground ,fg))))
-   `(company-echo-common              ((t (:background ,fg :foreground ,bg1))))
-   `(company-preview                  ((t (:background ,stimmung-theme-dark-highlight-color :foreground ,fg))))
-   `(company-tooltip                  ((t (:background ,bg3 :foreground ,fg))))
-   `(company-tooltip-annotation       ((t (:foreground ,stimmung-theme-dark-highlight-color))))
    `(company-tooltip-common           ((t (:foreground ,fg))))
-   `(company-tooltip-common-selection ((t (:background ,stimmung-theme-dark-highlight-color))))
+   `(company-echo-common              ((t (:background ,fg  :foreground ,bg1))))
+   `(company-tooltip                  ((t (:background ,bg3 :foreground ,fg))))
    `(company-tooltip-selection        ((t (:background ,bg3 :foreground ,fg))))
    `(company-tooltip-selection-       ((t (:background ,bg3 :foreground ,fg))))
-   `(company-tooltip-mouse            ((t (:inherit highlight))))
+   `(company-tooltip-common-selection ((t (:background ,stimmung-themes-light-highlight-color))))
+   `(company-tooltip-annotation       ((t (:foreground ,stimmung-themes-light-highlight-color))))
+   `(company-preview                  ((t (:background ,stimmung-themes-light-highlight-color :foreground ,fg))))
    
    ;; compilation
    `(compilation-line-number    ((t (:bold t))))
    `(compilation-column-number  ((t (:inherit 'font-lock-comment-face))))
-   `(compilation-error          ((t (:inherit 'error   :bold t))))
-   `(compilation-warning        ((t (:inherit 'warning :italic t))))
+   `(compilation-error          ((t (:inherit 'error :bold t))))
+   `(compilation-warning        ((t (:inherit 'warning))))
    `(compilation-info           ((t (:inherit ,success))))
    `(compilation-mode-line-exit ((t (:inherit 'compilation-info))))
    `(compilation-mode-line-fail ((t (:inherit 'compilation-error))))
@@ -196,15 +197,15 @@ You have to re-load the theme for these changes to take effect."
 
    ;; modeline
    `(header-line         ((t (:inherit 'mode-line  :distant-foreground ,bg1))))
-   `(mode-line           ((t (:foreground ,fg  :background ,bg5 :box (:line-width 1 :color ,bg4 :style nil)))))
-   `(mode-line-inactive  ((t (:foreground ,bg4 :background ,bg5 :box (:line-width 1 :color ,bg4 :style nil)))))
+   `(mode-line           ((t (:foreground ,fg  :background ,bg5 :box (:line-width 1 :color ,fg2 :style nil)))))
+   `(mode-line-inactive  ((t (:foreground ,fg2 :background ,bg5 :box (:line-width 1 :color ,fg2 :style nil)))))
    `(mode-line-buffer-id ((t (:foreground ,fg :bold t))))
    `(mode-line-emphasis  ((t (:foreground ,fg :bold t))))
    `(mode-line-highlight ((t (:foreground ,bg3))))
-
+   
    ;; completions
    `(completions-common-part ((t (:foreground ,fg :bold t))))
-
+   
    ;; doom-modeline
    `(doom-modeline-buffer-path        ((t (:foreground ,fg))))
    `(doom-modeline-buffer-file        ((t (:foreground ,fg  :weight bold))))
@@ -213,7 +214,7 @@ You have to re-load the theme for these changes to take effect."
    `(doom-modeline-project-root-dir   ((t (:foreground ,fg  :weight normal))))
    `(doom-modeline-project-parent-dir ((t (:foreground ,fg  :weight normal))))
    `(doom-modeline-bar-inactive       ((t (:foreground ,fg  :background ,bg1))))
-   `(doom-modeline-bar                ((t (:background ,bg5)))) ; the leftmost bar
+   `(doom-modeline-bar                ((t (:background ,bg1)))) ; the leftmost bar
    `(doom-modeline-evil-insert-state  ((t (:foreground ,fg))))
    `(doom-modeline-evil-visual-state  ((t (:foreground ,fg))))
    `(doom-modeline-evil-normal-state  ((t (:foreground ,fg))))
@@ -228,13 +229,11 @@ You have to re-load the theme for these changes to take effect."
    `(dired-marked     ((t (:foreground ,red :bold t))))
    `(dired-perm-write ((t (:foreground ,fg  :underline t))))
    `(dired-symlink    ((t (:foreground ,fg  :italic t))))
-   `(dired-warning    ((t (:foreground ,red))))
+   `(dired-warning    ((t (:foreground ,fg :underline (:style wave :color ,warning)))))
    
    ;; evil
    `(evil-ex-info                   ((t (:foreground ,red :italic t))))
    `(evil-ex-search                 ((t (:background ,bg2 :foreground ,fg :bold t))))
-   ;; (evil-ex-sub,stitute-matches     :background base0 :foreground red   :strike-through t :weight 'bold)
-   ;; (evil-ex-sub,stitute-replacement :background base0 :foreground green :weight 'bold)
    `(evil-search-highlight-persist-highlight-face ((t (:inherit 'lazy-highlight))))
    
    ;; evil-mc
@@ -263,7 +262,7 @@ You have to re-load the theme for these changes to take effect."
    `(ivy-virtual                    ((t (:foreground ,fg :italic t))))
    `(ivy-prompt                     ((t (:foreground ,red))))
    `(ivy-prompt-match               ((t (:foreground ,red))))
-   `(ivy-separator                  ((t (:foreground ,stimmung-theme-dark-highlight-color))))
+   `(ivy-separator                  ((t (:foreground ,stimmung-themes-light-highlight-color))))
    `(ivy-highlight-face             ((t (:foreground ,red))))
    `(ivy-grep-info                  ((t (:foreground ,red))))
    `(ivy-completions-annotations    ((t (:foreground ,red))))
@@ -273,7 +272,12 @@ You have to re-load the theme for these changes to take effect."
    `(magit-bisect-good       ((t (:foreground ,ok))))
    `(magit-bisect-skip       ((t (:foreground ,fg))))
    `(magit-blame-date        ((t (:foreground ,red))))
-   `(magit-branch            ((t (:foreground ,stimmung-theme-dark-highlight-color :bold t))))
+   `(magit-branch            ((t (:foreground ,fg :bold t))))
+   `(magit-branch-local      ((t (:foreground ,fg :bold t))))
+   `(magit-branch-remote     ((t (:foreground ,fg :bold t))))
+   `(magit-diff-file-heading ((t (:foreground ,fg :bold nil))))
+   `(magit-diff-whitespace-warning ((t (:background ,red))))
+
    
    `(magit-diff-context-highlight ((t (:foreground ,fg :background ,bg3))))
    `(magit-diff-file-header       ((t (:foreground ,fg :background ,bg3))))
@@ -285,7 +289,7 @@ You have to re-load the theme for these changes to take effect."
    `(magit-hunk-heading-highlight ((t (:background ,bg3))))
    `(magit-item-highlight         ((t (:background ,bg3))))
    `(magit-log-author             ((t (:foreground ,fg))))
-   `(magit-process-ng             ((t (:background ,stimmung-theme-dark-highlight-color :bold t))))
+   `(magit-process-ng             ((t (:background ,stimmung-themes-light-highlight-color :bold t))))
    `(magit-process-ok             ((t (:foreground ,ok :bold t))))
    `(magit-section-heading        ((t (:foreground ,fg :bold t))))
    `(magit-section-highlight      ((t (:background ,bg3))))
@@ -311,8 +315,7 @@ You have to re-load the theme for these changes to take effect."
    ;; TODO org-agenda
    
    ;; org
-   `(org-code                  ((t (:background ,str :distant-foreground ,bg1 :background ,stimmung-theme-dark-highlight-color))))
-   `(org-date                  ((t (:background ,stimmung-theme-dark-highlight-color :bold t))))
+   `(org-code                  ((t (:background ,str :distant-foreground ,bg1 :background ,stimmung-themes-light-highlight-color))))
    `(org-link                  ((t (:underline t))))
    `(org-block                 ((t (:foreground ,fg :background ,bg3 :extend t))))
    `(org-block-begin-line      ((t (:foreground ,fg :background ,bg3 :bold t :extend t))))
@@ -321,25 +324,26 @@ You have to re-load the theme for these changes to take effect."
    `(org-document-info         ((t (:foreground ,fg :background ,bg1 :italic t))))
    `(org-document-info-keyword ((t (:foreground ,fg :background ,bg1))))
    `(org-document-title        ((t (:foreground ,fg :weight bold))))
-   `(org-done                  ((t (:foreground ,ok  :bold t :strike-through t))))
+   `(org-done                  ((t (:foreground ,ok :bold t :strike-through t))))
    `(org-ellipsis              ((t (:foreground ,fg))))
-   `(org-footnote              ((t (:background ,stimmung-theme-dark-highlight-color))))
    `(org-meta-line             ((t (:background ,bg1))))
    `(org-formula               ((t (:foreground ,fg))))
    `(org-headline-done         ((t (:foreground ,fg :weight normal :strike-through t))))
    `(org-hide                  ((t (:foreground ,bg1 :background ,bg1))))
    `(org-list-dt               ((t (:foreground ,fg :bold t))))
-   `(org-priority              ((t (:background ,stimmung-theme-dark-highlight-color))))
    `(org-scheduled             ((t (:foreground ,red))))
-   `(org-scheduled-previously  ((t (:background ,stimmung-theme-dark-highlight-color))))
    `(org-scheduled-today       ((t (:foreground ,ok))))
-   `(org-sexp-date             ((t (:background ,stimmung-theme-dark-highlight-color))))
-   `(org-special-keyword       ((t (:background ,stimmung-theme-dark-highlight-color))))
    `(org-table                 ((t (:foreground ,fg))))
    `(org-tag                   ((t (:foreground ,fg  :background ,bg1 :bold t))))
    `(org-todo                  ((t (:foreground ,red :bold t))))
-   `(org-warning               ((t (:foreground ,red :bold t))))
+   `(org-warning               ((t (:inherit 'warning))))
    `(org-upcoming-deadline     ((t (:foreground ,red))))
+   `(org-priority              ((t (:background ,stimmung-themes-light-highlight-color))))
+   `(org-footnote              ((t (:background ,stimmung-themes-light-highlight-color))))
+   `(org-scheduled-previously  ((t (:background ,stimmung-themes-light-highlight-color))))
+   `(org-sexp-date             ((t (:background ,stimmung-themes-light-highlight-color))))
+   `(org-special-keyword       ((t (:background ,stimmung-themes-light-highlight-color))))
+   `(org-date                  ((t (:background ,stimmung-themes-light-highlight-color :bold t))))
    
    ;; markdown mode
    `(markdown-header-face             ((t (:foreground ,fg :bold t))))
@@ -371,7 +375,7 @@ You have to re-load the theme for these changes to take effect."
    ;; smartparens
    `(sp-show-pair-match-face    ((t (:inherit 'paren-matched))))
    `(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
-   
+
    ;; tab-bar-mode
    `(tab-bar              ((t (:background ,bg1 :foreground ,fg))))
    `(tab-bar-tab          ((t (:background ,bg1 :foreground ,fg :bold t))))
@@ -383,12 +387,12 @@ You have to re-load the theme for these changes to take effect."
    `(font-latex-sectioning-2-face ((t (:bold t))))
    `(font-latex-sectioning-3-face ((t (:bold t))))
    `(font-latex-sectioning-4-face ((t (:italic t))))
-   `(font-latex-sedate-face       ((t (:foreground ,fg :background ,bg1))))
+   `(font-latex-sedate-face       ((t (:foreground ,fg2))))
    `(font-latex-italic-face       ((t (:foreground ,fg :italic t))))
    `(font-latex-bold-face         ((t (:foreground ,fg :bold t))))
-   `(font-latex-verbatim-face     ((t (:background ,stimmung-theme-dark-highlight-color :bold t))))
+   `(font-latex-verbatim-face     ((t (:background ,stimmung-themes-light-highlight-color :bold t))))
    `(font-latex-string-face       ((t (:foreground ,fg))))
-   `(font-latex-warning-face      ((t (:foreground ,bg4))))
+   `(font-latex-warning-face      ((t (:foreground ,fg2))))
    `(font-latex-math-face         ((t (:foreground ,fg))))
    `(font-latex-script-char-face  ((t (:foregroudn ,fg))))
 
@@ -442,9 +446,9 @@ You have to re-load the theme for these changes to take effect."
    `(whitespace-trailing    ((t (:foreground ,red))))))
 
 (custom-theme-set-variables
- 'stimmung-dark
- '(ansi-color-names-vector ["white" "white" "white" "white"
-                            "white" "white" "white" "gray90"]))
+ 'stimmung-themes-light
+ '(ansi-color-names-vector ["black" "black" "black" "black"
+                            "black" "black" "black" "white"]))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path)
@@ -453,11 +457,11 @@ You have to re-load the theme for these changes to take effect."
                (file-name-as-directory
                 (file-name-directory load-file-name))))
 
-(provide-theme 'stimmung-dark)
-(provide 'stimmung-dark-theme)
+(provide-theme 'stimmung-themes-light)
+(provide 'stimmung-themes-light-theme)
 
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:
 
-;;; stimmung-dark-theme.el ends here
+;;; stimmung-themes-light-theme.el ends here
