@@ -9,9 +9,13 @@
 
   [[./.assets/dark.png]]
 
-  /Stimmung/ is a pair of monochrome-ish Emacs themes with minimal syntax highlighting. They are inspired by [[https://github.com/tonsky/sublime-scheme-alabaster][Tonsky's Alabaster theme]], similarly arguing that excessive highlighting paradoxically hides syntactic distinctions. Unlike Tonksy, I find the use of bold and italic fonts rather pleasant. As such, font variations are employed those conservatively throughout the theme. The hues of the /stimmung-dark/ are selected to match the default MacOS dark mode.
+  /Stimmung/ is a pair of monochrome-ish Emacs themes with minimal syntax highlighting. They are inspired by [[https://github.com/tonsky/sublime-scheme-alabaster][Tonsky's Alabaster theme]], similarly arguing that highlighting everything paradoxically highlights nothing. Unlike Tonksy, I find the use of bold and italic fonts rather pleasant. As such, font variations are employed those conservatively throughout the theme. The hues of the /stimmung-dark/ are selected to match the default MacOS dark mode.
 
-  If something looks off, you can report it as an issue. I have only tested it against [[https://github.com/motform/emacs.d][my personal configuration]], so there will probably be a few holes here and there. The modeline in the screenshot is from [[https://github.com/seagle0128/doom-modeline][Doom Emacs]] and the type is set in [[https://fsd.it/shop/fonts/pragmatapro/][PragmataPro]].
+  Emacs packages often define their own faces, making theming a sisyphean task.
+  The themes define all default faces and some of the most common packages. It is have only tested it against [[https://github.com/motform/emacs.d][my personal configuration]], so there will probably be a missing definitions. Open an issue or send a pull request if you hit something jarring.
+
+  The modeline in the screenshot is from [[https://github.com/seagle0128/doom-modeline][Doom Emacs]] and the type is set in [[https://fsd.it/shop/fonts/pragmatapro/][PragmataPro]].
+
 
 ** Installation
    The theme is not on melpa (yet), so you have to clone the repository and manually require it in your ~init~.el.
@@ -24,4 +28,4 @@
    #+END_SRC
 
 ** Customization
-   The highlight color of each theme can be set by ~stimmung-theme-dark-highlight-color~ and ~stimmung-theme-light-highlight-color~, respectively.
+   The highlight color of each theme can be set by ~stimmung-themes-dark-highlight-color~ and ~stimmung-themes-light-highlight-color~, respectively.
