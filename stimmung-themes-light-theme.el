@@ -46,21 +46,21 @@ You have to re-load the theme for these changes to take effect."
   :prefix "stimmung-theme-"
   :link   '(url-link "https://github.com/motform/stimmung-themes"))
 
-(defcustom stimmung-themes-light-highlight-color "ivory2"
+(defcustom stimmung-themes-light-highlight-color "cornsilk1"
   "The primarily color for highlights, the only non-monochrome color in code."
   :type 'string
   :group 'stimmung-themes)
 
-(let ((bg1 "white smoke")
-      (bg2 "gray90")
-      (bg3 "gray85")
-      (bg4 "gray80")
-      (bg5 "gray95")
+(let ((bg1 "white")
+      (bg2 "gray95")
+      (bg3 "gray90")
+      (bg4 "gray85")
+      (bg5 "gray98")
 
       (fg  "black")
       (fg2 "gray60")
 
-      (str     "gray90")
+      (str     "gray95")
       (search  "gold2")
       (warning "goldenrod4")
       (red     "darkred")
@@ -214,7 +214,7 @@ You have to re-load the theme for these changes to take effect."
    `(doom-modeline-project-root-dir   ((t (:foreground ,fg  :weight normal))))
    `(doom-modeline-project-parent-dir ((t (:foreground ,fg  :weight normal))))
    `(doom-modeline-bar-inactive       ((t (:foreground ,fg  :background ,bg1))))
-   `(doom-modeline-bar                ((t (:background ,bg1)))) ; the leftmost bar
+   `(doom-modeline-bar                ((t (:background ,bg5)))) ; the leftmost bar
    `(doom-modeline-evil-insert-state  ((t (:foreground ,fg))))
    `(doom-modeline-evil-visual-state  ((t (:foreground ,fg))))
    `(doom-modeline-evil-normal-state  ((t (:foreground ,fg))))
