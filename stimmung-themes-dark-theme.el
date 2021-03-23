@@ -58,6 +58,7 @@ You have to re-load the theme for these changes to take effect."
       (bg5 "gray15")
 
       (fg "white")
+      (fg2 "gray50")
 
       (search "yellow4")
       (str    "gray20")
@@ -104,8 +105,8 @@ You have to re-load the theme for these changes to take effect."
    `(escape-glyph                ((t (:foreground ,red :bold t))))
    `(homoglyph                   ((t (:foreground ,red :bold t))))
    
-   `(line-number              ((t (:foreground ,bg3 :background ,bg1))))
-   `(line-number-current-line ((t (:foreground ,fg :background ,bg1))))
+   `(line-number              ((t (:foreground ,fg2 :background ,bg1))))
+   `(line-number-current-line ((t (:foreground ,fg  :background ,bg1))))
    `(linum                    ((t (:inherit 'line-number))))
    
    ;; syntax

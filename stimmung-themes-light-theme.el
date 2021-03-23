@@ -106,7 +106,7 @@ You have to re-load the theme for these changes to take effect."
    `(escape-glyph                ((t (:foreground ,fg2)))) ; TODO move into an fg color?
    `(homoglyph                   ((t (:foreground ,red))))
    
-   `(line-number              ((t (:foreground ,bg3 :background ,bg1))))
+   `(line-number              ((t (:foreground ,fg2 :background ,bg1))))
    `(line-number-current-line ((t (:foreground ,fg  :background ,bg1))))
    `(linum                    ((t (:inherit 'line-number))))
    
