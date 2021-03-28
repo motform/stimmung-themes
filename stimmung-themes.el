@@ -2,7 +2,7 @@
 ;; Copyright © 2019
 
 ;; Author: Love Lagerkvist
-;; URL: https://github.com/motform/stimmung
+;; URL: https://github.com/motform/stimmung-themes
 ;; Package-Requires: ((emacs "25"))
 ;; Created: 2019-12-20
 ;; Version: 2021-03-20
@@ -27,14 +27,17 @@
 
 ;;; Commentary:
 
-
 ;; Stimmung (dark and light) is a pair of monochrome Emacs themes
 ;; with minimal syntax highlighting.  They are inspired by Tonsky's
 ;; Alabaster theme (https://github.com/tonsky/sublime-scheme-alabaster),
-;; similarly arguing that highlighting everything paradoxically highlights
-;; nothing.  Unlike Tonksy, I find the use of bold and
-;; italic fonts rather pleasant.  As such, bold and italic font
-;; variations are employed those conservatively throughout the theme.
+;; following the maxim that a theme that highlights everything
+;; paradoxically highlights nothing.  Text backgrounds (comments,
+;; strings and constants) and font variations (definitions) are used
+;; as alternatives to text colors, ensuring a harmonious reading
+;; experience.  Use `stimmung-themes-dark-highlight-color' and
+;; `stimmung-themes-light-highlight-color' to customize the highlight.
+;;
+;; Screenshots are available at: https://github.com/motform/stimmung-themes
 
 ;;; Code:
 

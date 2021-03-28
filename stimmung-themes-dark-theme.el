@@ -2,7 +2,7 @@
 ;; Copyright © 2019
 
 ;; Author: Love Lagerkvist
-;; URL: https://github.com/motform/stimmung
+;; URL: https://github.com/motform/stimmung-themes
 ;; Created: 2019-12-20
 ;; Version: 2021-03-20
 ;; Keywords: faces
@@ -29,10 +29,14 @@
 ;; Stimmung (dark and light) is a pair of monochrome Emacs themes
 ;; with minimal syntax highlighting.  They are inspired by Tonsky's
 ;; Alabaster theme (https://github.com/tonsky/sublime-scheme-alabaster),
-;; similarly arguing that highlighting everything paradoxically highlights
-;; nothing.  Unlike Tonksy, I find the use of bold and
-;; italic fonts rather pleasant.  As such, bold and italic font
-;; variations are employed those conservatively throughout the theme.
+;; following the maxim that a theme that highlights everything
+;; paradoxically highlights nothing.  Text backgrounds (comments,
+;; strings and constants) and font variations (definitions) are used
+;; as alternatives to text colors, ensuring a harmonious reading
+;; experience.  Use `stimmung-themes-dark-highlight-color' and
+;; `stimmung-themes-light-highlight-color' to customize the highlight.
+;;
+;; Screenshots are available at: https://github.com/motform/stimmung-themes
 
 ;;; Code:
 
@@ -167,7 +171,8 @@ You have to re-load the theme for these changes to take effect."
    ;; `(cider-test-success-face     ((t (:background ,ok :foreground  ,bg1))))
    ;; `(cider-test-failure-face     ((t (:background ,red :foreground ,bg1))))
    `(cider-test-error-face       ((t (:background ,stimmung-themes-dark-highlight-color))))
-   
+   `(cider-result-overlay-face   ((t (:background ,bg5 :box (:line-width -1 :color ,fg2)))))
+
    ;; company
    `(company-scrollbar-bg             ((t (:background ,fg))))
    `(company-scrollbar-fg             ((t (:foreground ,fg))))
@@ -198,7 +203,7 @@ You have to re-load the theme for these changes to take effect."
    `(header-line         ((t (:inherit 'mode-line  :distant-foreground ,bg1))))
    `(mode-line           ((t (:foreground ,fg  :background ,bg5 :box (:line-width 1 :color ,bg4 :style nil)))))
    `(mode-line-inactive  ((t (:foreground ,bg4 :background ,bg5 :box (:line-width 1 :color ,bg4 :style nil)))))
-   `(mode-line-buffer-id ((t (:foreground ,fg :bold t))))
+   `(mode-line-buffer-id ((t (:foreground ,fg :bold t :distant-foreground ,bg4))))
    `(mode-line-emphasis  ((t (:foreground ,fg :bold t))))
    `(mode-line-highlight ((t (:foreground ,bg3))))
 
@@ -268,13 +273,17 @@ You have to re-load the theme for these changes to take effect."
    `(ivy-grep-info                  ((t (:foreground ,red))))
    `(ivy-completions-annotations    ((t (:foreground ,red))))
    
-   ;; TODO magit
+   ;; magit
    `(magit-bisect-bad        ((t (:foreground ,red))))
    `(magit-bisect-good       ((t (:foreground ,ok))))
    `(magit-bisect-skip       ((t (:foreground ,fg))))
    `(magit-blame-date        ((t (:foreground ,red))))
-   `(magit-branch            ((t (:foreground ,stimmung-themes-dark-highlight-color :bold t))))
-   
+   `(magit-branch            ((t (:foreground ,fg :bold t))))
+   `(magit-branch-local      ((t (:foreground ,fg :bold t))))
+   `(magit-branch-remote     ((t (:foreground ,fg :bold t))))
+   `(magit-diff-file-heading ((t (:foreground ,fg :bold nil))))
+   `(magit-diff-whitespace-warning ((t (:background ,red))))
+
    `(magit-diff-context-highlight ((t (:foreground ,fg :background ,bg3))))
    `(magit-diff-file-header       ((t (:foreground ,fg :background ,bg3))))
    `(magit-diffstat-added         ((t (:foreground ,ok))))
