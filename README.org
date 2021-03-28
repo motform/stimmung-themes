@@ -21,8 +21,8 @@
 
    #+BEGIN_SRC emacs-lisp
    (use-package stimmung-themes
-     :config (stimmung-themes-light-highlight-color "cornsilk1") ; the default highlight color
-     :init   (load-theme 'stimmung-themes-light t))
+     :custom (stimmung-themes-light-highlight-color "cornsilk1") ; the default highlight color
+     :config (load-theme 'stimmung-themes-light t))
    #+END_SRC
 
 ** Customization
