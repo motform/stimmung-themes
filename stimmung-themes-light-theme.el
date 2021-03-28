@@ -65,7 +65,10 @@ You have to re-load the theme for these changes to take effect."
       (fg2 "gray60")
 
       (str     "gray95")
-      (search  "gold2")
+
+      (search   "#e8e800")
+      (search2  "#ffffb4")
+
       (warning "orange")
       (red     "darkred")
       (ok      "DarkGreen"))
@@ -77,8 +80,8 @@ You have to re-load the theme for these changes to take effect."
    `(hl-line  ((t (:background ,bg2 :extend t))))
 
    `(region              ((t (:background ,bg4))))
-   `(lazy-highlight      ((t (:foreground ,fg :background ,search))))
-   `(secondary-selection ((t (:foreground ,fg :background ,search))))
+   `(lazy-highlight      ((t (:foreground ,fg :background ,search2))))
+   `(secondary-selection ((t (:foreground ,fg :background ,search2))))
    `(highlight           ((t (:foreground ,fg :background ,bg3 :bold t))))
    `(default             ((t (:foreground ,fg :background ,bg1))))
    `(fringe              ((t (:foreground ,fg :background ,bg1))))
@@ -101,9 +104,9 @@ You have to re-load the theme for these changes to take effect."
    `(minibuffer-noticable-prompt ((t (:foreground ,fg :bold t))))
    `(minibuffer-prompt           ((t (:foreground ,fg :bold t))))
 
-   `(isearch                     ((t (:foreground ,fg :background ,search :bold t :underline t))))
-   `(isearch-highlight           ((t (:foreground ,fg :background ,search))))
-   `(isearch-fail                ((t (:foreground ,fg :background ,search))))
+   `(isearch                     ((t (:foreground ,fg :background ,search))))
+   `(isearch-highlight           ((t (:foreground ,fg :background ,search2))))
+   `(isearch-fail                ((t (:foreground ,fg :background ,search2))))
 
    `(paren-matched               ((t (:foreground ,ok  :background ,bg1))))
    `(paren-unmatched             ((t (:foreground ,red :background ,bg1))))
