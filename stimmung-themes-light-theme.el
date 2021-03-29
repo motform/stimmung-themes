@@ -206,7 +206,7 @@ You have to re-load the theme for these changes to take effect."
    ;; modeline
    `(header-line         ((t (:inherit 'mode-line :distant-foreground ,bg1))))
    `(mode-line           ((t (:foreground ,fg  :background ,bg5 :box (:line-width 1 :color ,fg2 :style nil)))))
-   `(mode-line-inactive  ((t (:foreground ,fg2 :background ,bg5 :box (:line-width 1 :color ,fg2 :style nil)))))
+   `(mode-line-inactive  ((t (:foreground ,fg2 :background ,bg1 :box (:line-width 1 :color ,bg3 :style nil)))))
    `(mode-line-buffer-id ((t (:foreground ,fg :bold t :distant-foreground ,bg1))))
    `(mode-line-emphasis  ((t (:foreground ,fg :bold t))))
    `(mode-line-highlight ((t (:foreground ,bg3))))
