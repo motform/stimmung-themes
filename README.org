@@ -17,12 +17,11 @@
 
 
 ** Installation
-   [[https://melpa.org/#/stimmung-themes][Stimmung-themes is distributed via MELPA]]. A typical [[https://github.com/jwiegley/use-package][use-package]] configuration could look like:
+   [[https://melpa.org/#/stimmung-themes][Stimmung-themes is distributed via MELPA]]. Install it with your package manager of preference (~package.el~, ~straight~, ~use-package~) and make sure the following lines are in your init-file:
 
    #+BEGIN_SRC emacs-lisp
-   (use-package stimmung-themes
-     :custom (stimmung-themes-light-highlight-color "cornsilk1") ; the default highlight color
-     :config (load-theme 'stimmung-themes-light t))
+   (require 'stimmung-themes) ; if you use package.el
+   (load-theme 'stimmung-themes-light)
    #+END_SRC
 
 ** Customization
