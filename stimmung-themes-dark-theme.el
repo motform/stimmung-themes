@@ -382,6 +382,19 @@ You have to re-load the theme for these changes to take effect."
    ;; smartparens
    `(sp-show-pair-match-face    ((t (:inherit 'paren-matched))))
    `(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
+
+   ;; treemacs
+   `(treemacs-root-face                     ((t (:background ,bg1 :foreground ,fg  :bold t :underline t))))
+   `(treemacs-root-unreadable-face          ((t (:background ,bg1 :foreground ,fg  :bold t :underline t :strike-through t))))
+   `(treemacs-root-remote-face              ((t (:background ,bg1 :foreground ,fg  :bold t :underline t))))
+   `(treemacs-root-remote-disconnected-face ((t (:background ,bg1 :foreground ,red :bold t :underline t))))
+   `(treemacs-root-remote-unreadable-face   ((t (:background ,bg1 :foreground ,fg  :bold t :underline t :strike-through t))))
+   `(treemacs-git-ignored-face              ((t (:background ,str :foreground ,fg :italic nil))))
+   `(treemacs-git-renamed-face              ((t (:background ,bg1 :foreground ,fg :italic t))))
+   `(treemacs-on-failure-pulse-face         ((t (:background ,bg1 :foreground ,red))))
+   `(treemacs-on-success-pulse-face         ((t (:background ,bg1 :foreground ,ok))))
+   `(treemacs-tags-face                     ((t (:background ,bg1 :foreground ,fg  :italic nil))))
+   `(treemacs-term-node-face                ((t (:background ,bg1 :foreground ,fg))))
    
    ;; tab-bar-mode
    `(tab-bar              ((t (:background ,bg1 :foreground ,fg))))
