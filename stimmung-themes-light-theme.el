@@ -355,7 +355,7 @@ You have to re-load the theme for these changes to take effect."
    `(org-scheduled-previously  ((t (:background ,stimmung-themes-light-highlight-color))))
    `(org-sexp-date             ((t (:background ,stimmung-themes-light-highlight-color))))
    `(org-special-keyword       ((t (:background ,stimmung-themes-light-highlight-color))))
-   `(org-date                  ((t (:background ,stimmung-themes-light-highlight-color :bold t))))
+   `(org-date                  ((t (:background ,bg :bold t))))
    
    ;; markdown mode
    `(markdown-header-face             ((t (:foreground ,fg :bold t))))
