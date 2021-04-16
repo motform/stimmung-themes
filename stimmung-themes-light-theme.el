@@ -86,6 +86,7 @@ You have to re-load the theme for these changes to take effect."
    `(default             ((t (:foreground ,fg :background ,bg1))))
    `(fringe              ((t (:foreground ,fg :background ,bg1))))
    `(match               ((t (:foreground ,ok :bold t))))
+   `(scroll-bar          ((t (:foreground ,fg2))))
 
    `(link                ((t (:underline t))))
    `(link-visited        ((t (:underline t :italic t))))
@@ -310,6 +311,9 @@ You have to re-load the theme for these changes to take effect."
    `(diff-hl-margin-ignore  ((t (:foreground ,fg  :background ,bg1 :bold nil :italic nil))))
    `(diff-hl-margin-unknown ((t (:foreground ,fg  :background ,bg1 :bold nil :italic nil))))
    
+   ;; help
+   `(help-key-binding ((t (:foreground ,fg :background ,bg5 :box (:line-width (1 . -1) :color ,fg2)))))
+
    ;; outline, extends org-outline
    `(outline-1 ((t (:foreground ,fg :bold t :extend t))))
    `(outline-2 ((t (:foreground ,fg :bold t :extend t))))
