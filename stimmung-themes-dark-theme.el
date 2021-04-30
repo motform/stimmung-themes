@@ -377,6 +377,10 @@ You have to re-load the theme for these changes to take effect."
    `(markdown-html-tag-name-face      ((t (:inherit 'font-lock-keyword-face))))
    `(markdown-inline-code-face        ((t (:inherit 'markdown-code-face :extend nil))))
    
+   ;; sh
+   `(sh-quoted-exec ((t (:background ,stimmung-themes-dark-highlight-color))))
+   `(sh-heredoc     ((t (:background ,stimmung-themes-dark-highlight-color))))
+
    ;; show-paren
    `(show-paren-match-face       ((t (:background ,search :bold t))))
    `(show-paren-match            ((t (:background ,search :bold t))))
