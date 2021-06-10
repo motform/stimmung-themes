@@ -368,7 +368,7 @@ You have to re-load the theme for these changes to take effect."
    `(markdown-metadata-key-face       ((t (:foreground ,fg))))
    `(markdown-markup-face             ((t (:foreground ,fg))))
    `(markdown-pre-face                ((t (:foreground ,fg))))
-   `(markdown-code-face               ((t (:background ,fg :extend t))))
+   `(markdown-code-face               ((t (:foreground ,fg :background ,stimmung-themes-light-highlight-color :extend t))))
    `(markdown-reference-face          ((t (:foreground ,fg))))
    `(markdown-html-attr-name-face     ((t (:inherit 'font-lock-variable-name-face))))
    `(markdown-html-attr-value-face    ((t (:inherit 'font-lock-string-face))))
