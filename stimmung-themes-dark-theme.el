@@ -326,7 +326,7 @@ You have to re-load the theme for these changes to take effect."
    ;; TODO org-agenda
    
    ;; org
-   `(org-code                  ((t (:background ,str :distant-foreground ,bg1 :background ,stimmung-themes-light-highlight-color))))
+   `(org-code                  ((t (:background ,str :distant-foreground ,bg1 :background ,stimmung-themes-dark-highlight-color))))
    `(org-link                  ((t (:underline t))))
    `(org-block                 ((t (:foreground ,fg :background ,bg3 :extend t))))
    `(org-block-begin-line      ((t (:foreground ,fg :background ,bg3 :bold t :extend t))))
@@ -349,11 +349,11 @@ You have to re-load the theme for these changes to take effect."
    `(org-todo                  ((t (:foreground ,red :bold t))))
    `(org-warning               ((t (:inherit 'warning))))
    `(org-upcoming-deadline     ((t (:foreground ,red))))
-   `(org-priority              ((t (:background ,stimmung-themes-light-highlight-color))))
-   `(org-footnote              ((t (:background ,stimmung-themes-light-highlight-color))))
-   `(org-scheduled-previously  ((t (:background ,stimmung-themes-light-highlight-color))))
-   `(org-sexp-date             ((t (:background ,stimmung-themes-light-highlight-color))))
-   `(org-special-keyword       ((t (:background ,stimmung-themes-light-highlight-color))))
+   `(org-priority              ((t (:background ,stimmung-themes-dark-highlight-color))))
+   `(org-footnote              ((t (:background ,stimmung-themes-dark-highlight-color))))
+   `(org-scheduled-previously  ((t (:background ,stimmung-themes-dark-highlight-color))))
+   `(org-sexp-date             ((t (:background ,stimmung-themes-dark-highlight-color))))
+   `(org-special-keyword       ((t (:background ,stimmung-themes-dark-highlight-color))))
    `(org-date                  ((t (:background ,bg1 :bold t))))
 
    ;; markdown mode
@@ -368,7 +368,7 @@ You have to re-load the theme for these changes to take effect."
    `(markdown-metadata-key-face       ((t (:foreground ,fg))))
    `(markdown-markup-face             ((t (:foreground ,fg))))
    `(markdown-pre-face                ((t (:foreground ,fg))))
-   `(markdown-code-face               ((t (:foreground ,fg :background ,stimmung-themes-light-highlight-color :extend t))))
+   `(markdown-code-face               ((t (:foreground ,fg :background ,stimmung-themes-dark-highlight-color :extend t))))
    `(markdown-reference-face          ((t (:foreground ,fg))))
    `(markdown-html-attr-name-face     ((t (:inherit 'font-lock-variable-name-face))))
    `(markdown-html-attr-value-face    ((t (:inherit 'font-lock-string-face))))
