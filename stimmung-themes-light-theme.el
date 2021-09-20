@@ -196,7 +196,7 @@ You have to re-load the theme for these changes to take effect."
    `(compilation-column-number  ((t (:inherit 'font-lock-comment-face))))
    `(compilation-error          ((t (:inherit 'error :bold t))))
    `(compilation-warning        ((t (:inherit 'warning))))
-   `(compilation-info           ((t (:inherit ,success))))
+   `(compilation-info           ((t (:inherit 'success))))
    `(compilation-mode-line-exit ((t (:inherit 'compilation-info))))
    `(compilation-mode-line-fail ((t (:inherit 'compilation-error))))
    
