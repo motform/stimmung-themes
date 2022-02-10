@@ -86,7 +86,7 @@ You have to re-load the theme for these changes to take effect."
    `(default             ((t (:foreground ,fg :background ,bg1))))
    `(fringe              ((t (:foreground ,fg :background ,bg1))))
    `(match               ((t (:foreground ,ok :bold t))))
-   `(scroll-bar          ((t (:foreground ,fg2))))
+   `(scroll-bar          ((t (:foreground ,fg2 :backgorund ,bg1))))
 
    `(link                ((t (:underline t))))
    `(link-visited        ((t (:underline t :italic t))))
