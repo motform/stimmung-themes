@@ -275,6 +275,51 @@ You have to re-load the theme for these changes to take effect."
    `(ivy-highlight-face             ((t (:foreground ,red))))
    `(ivy-grep-info                  ((t (:foreground ,red))))
    `(ivy-completions-annotations    ((t (:foreground ,red))))
+
+   ;; helm
+   `(helm-header ((t (:foreground ,fg2 :background ,bg1 :underline nil :box nil))))
+   `(helm-source-header
+     ((t (:foreground ,fg
+                      :background ,bg1
+                      :underline nil
+                      :weight bold
+                      :box (:line-width 1 :style released-button)))))
+   `(helm-selection ((t (:background ,fg :underline t :foreground ,bg1))))
+   `(helm-selection-line ((t (:background ,fg))))
+   `(helm-visible-mark ((t (:foreground ,fg2 :background ,bg4))))
+   `(helm-candidate-number ((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-separator ((t (:foreground ,fg :background ,bg1))))
+   `(helm-time-zone-current ((t (:foreground ,fg :background ,bg1))))
+   `(helm-time-zone-home ((t (:foreground ,fg :background ,bg1))))
+   `(helm-bookmark-addressbook ((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-bookmark-directory ((t (:foreground nil :background nil :inherit helm-ff-directory))))
+   `(helm-bookmark-file ((t (:foreground nil :background nil :inherit helm-ff-file))))
+   `(helm-bookmark-gnus ((t (:foreground ,fg :background ,bg1))))
+   `(helm-bookmark-info ((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-bookmark-man ((t (:foreground ,fg :background ,bg1))))
+   `(helm-bookmark-w3m ((t (:foreground ,fg :background ,bg1))))
+   `(helm-buffer-not-saved ((t (:foreground ,fg :background ,bg1))))
+   `(helm-buffer-process ((t (:foreground ,fg :background ,bg1))))
+   `(helm-buffer-saved-out ((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-buffer-size ((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-ff-directory ((t (:foreground ,fg :background ,bg1 :weight bold))))
+   `(helm-ff-file ((t (:foreground ,fg2 :background ,bg1 :weight normal))))
+   `(helm-ff-file-extension ((t (:foreground ,fg2 :weight bold))))
+   `(helm-ff-executable ((t (:foreground ,fg2 :background ,bg1 :weight normal))))
+   `(helm-ff-invalid-symlink ((t (:foreground ,fg :background ,bg1 :weight bold))))
+   `(helm-ff-symlink ((t (:foreground ,fg :background ,bg1 :weight bold))))
+   `(helm-ff-prefix ((t (:foreground ,bg1 :background ,fg :weight normal))))
+   `(helm-grep-cmd-line ((t (:foreground ,fg :background ,bg1))))
+   `(helm-grep-file ((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-grep-finish ((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-grep-lineno ((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-grep-match ((t (:foreground nil :background nil :inherit helm-match))))
+   `(helm-grep-running ((t (:foreground ,fg :background ,bg1))))
+   `(helm-lisp-show-completion ((t (:background ,bg2))))
+   `(helm-match ((t (:background ,search))))
+   `(helm-moccur-buffer ((t (:foreground ,fg :background ,bg1))))
+   `(helm-mu-contacts-address-face ((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-mu-contacts-name-face ((t (:foreground ,fg2 :background ,bg1))))
    
    ;; magit
    `(magit-bisect-bad        ((t (:foreground ,red))))
