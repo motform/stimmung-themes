@@ -3,26 +3,43 @@
   #+BEGIN_QUOTE
   When you say: We're in a good /Stimmung/, you mean a good psychological tuning, being well tuned together. 
   #+END_QUOTE
-  — Karlheinz Stockhausen, 1973
+— Karlheinz Stockhausen, 1973
 
-  [[./.assets/light.png]]
+/Stimmung-themes/ is a pair of monoesuqe Emacs themes with minimal syntax highlighting. They are inspired by [[https://github.com/tonsky/sublime-scheme-alabaster][Tonsky's Alabaster theme]], following the maxim that a theme that highlights everything paradoxically highlights nothing. Text backgrounds (comments, strings and constants) and font variations (definitions/callsites) are used as alternatives to text colors, ensuring a harmonious reading experience. The hues of the /stimmung-dark/ are selected to match the default macOS dark mode. The themes feature a (default golden beige) highlight color that you can set with the variables ~stimmung-themes-light-highlight-color~ and ~stimmung-themes-dark-highlight-color~ respectively.
 
-  [[./.assets/dark.png]]
+Emacs packages often define their own faces, making theming a relatively sisyphean task. /Stimmung-themes/ defines all default faces and some of the most common packages, including lsp-mode and magit. Open an issue or make pull request if you lack a definition, they are always appreciated!
 
-  /Stimmung/ is a pair of monochrome-ish Emacs themes with minimal syntax highlighting. They are inspired by [[https://github.com/tonsky/sublime-scheme-alabaster][Tonsky's Alabaster theme]], following the maxim that a theme that highlights everything paradoxically highlights nothing. Text backgrounds (comments, strings and constants) and font variations (definitions) are used as alternatives to text colors, ensuring a harmonious reading experience. The hues of the /stimmung-dark/ are selected to match the default MacOS dark mode.
+** Screenshots
+[[./.assets/clojure.png]]
 
-  Emacs packages often define their own faces, making theming a relatively sisyphean task. /Stimmung/-themes defines all default faces and some of the most common packages. It is have only tested it against [[https://github.com/motform/emacs.d][my personal configuration]], so there will probably be a missing definitions. Open an issue or send a pull request if you hit something jarring.
+[[./.assets/tsx.png]]
 
-  The screenshot features [[https://github.com/seagle0128/doom-modeline][doom-modeline]] and is set in [[https://fsd.it/shop/fonts/pragmatapro/][PragmataPro]].
+[[./.assets/magit.png]]
+
+The screenshots are set in [[https://fsd.it/shop/fonts/pragmatapro/][PragmataPro]] and feature modeline/whitespace settings inspired by [[https://github.com/rougier][rougier]] that you can find in my [[https://github.com/motform/emacs.d][emacs.d]].
 
 
 ** Installation
-   [[https://melpa.org/#/stimmung-themes][Stimmung-themes is distributed via MELPA]]. Install it with your package manager of preference (~package.el~, ~straight~, ~use-package~) and make sure the following lines are in your init-file:
+[[https://melpa.org/#/stimmung-themes][Stimmung-themes is distributed via MELPA]]. Install it with your package manager of preference (~package.el~, ~straight~, ~use-package~) and make sure the following lines are in your init-file:
 
-   #+BEGIN_SRC emacs-lisp
-   (require 'stimmung-themes) ; if you use package.el
-   (load-theme 'stimmung-themes-light)
-   #+END_SRC
+#+BEGIN_SRC emacs-lisp
+(require 'stimmung-themes) ; if you use package.el
+(load-theme 'stimmung-themes-light)
+#+END_SRC
+
+A typical use-package installation might look something like:
+
+#+BEGIN_SRC emacs-lisp
+(use-package stimmung-themes
+  ;; :straight (stimmung-themes :host github :repo "motform/stimmung-themes") ; if you are a straight shooter
+  :demand t
+  :ensure t
+  :config (load-theme 'stimmung-themes-light t))
+#+END_SRC
 
 ** Customization
-   The highlight color of each theme can be set by ~stimmung-themes-dark-highlight-color~ and ~stimmung-themes-light-highlight-color~, respectively.
+
+| variable                              | values          |
+|---------------------------------------+-----------------|
+| ~stimmung-themes-dark-highlight-color~  | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]] |
+| ~stimmung-themes-light-highlight-color~ | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]] |
