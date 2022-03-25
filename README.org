@@ -10,7 +10,7 @@
 Emacs packages often define their own faces, making theming a relatively sisyphean task. /Stimmung-themes/ defines all default faces and some of the most common packages, including lsp-mode and magit. Open an issue or make pull request if you lack a definition, they are always appreciated!
 
 ** Screenshots
-[[./.assets/clojure.png]]
+[[./.assets/clj.png]]
 
 [[./.assets/tsx.png]]
 
