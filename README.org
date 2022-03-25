@@ -1,4 +1,4 @@
-* Stimmung, Emacs tuned to inner harmines
+* Stimmung, Emacs tuned to inner harmonies
 
   #+BEGIN_QUOTE
   When you say: We're in a good /Stimmung/, you mean a good psychological tuning, being well tuned together. 
