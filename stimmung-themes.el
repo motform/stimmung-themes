@@ -41,6 +41,29 @@
 
 ;;; Code:
 
+;;; Theme loading/toggle inspired/sourced from the fantastic `protesilaos/modus-themes'
+
+;;;###autoload
+(defun stimmung-themes--toggle-prompt ()
+  "Helper for `stimmung-themes-toggle'."
+  (let ((theme (intern (completing-read "Load Stimmung theme: "
+                           '(stimmung-themes-light stimmung-themes-dark) nil t))))
+	(pcase theme
+	  ('stimmung-themes-light (load-theme 'stimmung-themes-light t))
+	  ('stimmung-themes-dark  (load-theme 'stimmung-themes-dark  t)))))
+
+;;;###autoload
+(defun stimmung-themes-toggle ()
+  "Toggle between the dark and light version of `stimming-themes'.
+Prompt the user for which to pick in case none is enabled.
+Currently assumes the themes is loaded, which might be an issue.
+Inspired by modus-themes."
+  (interactive)
+  (pcase (car custom-enabled-themes)
+	('stimmung-themes-light (load-theme 'stimmung-themes-dark  t))
+	('stimmung-themes-dark  (load-theme 'stimmung-themes-light t))
+	(_ (stimmung-themes--toggle-prompt))))
+
 (provide 'stimmung-themes)
 
 ;; Local Variables:
