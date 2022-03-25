@@ -334,7 +334,7 @@ You have to re-load the theme for these changes to take effect."
    `(magit-diffstat-added         ((t (:foreground ,ok))))
    `(magit-diffstat-removed       ((t (:foreground ,red))))
    `(magit-dimmed                 ((t (:foreground ,fg1))))
-   `(magit-hash                   ((t (:foreground ,fg1))))
+   `(magit-hash                   ((t (:foreground ,fg1 :background ,str))))
    `(magit-hunk-heading           ((t (:background ,bg3))))
    `(magit-hunk-heading-highlight ((t (:background ,bg3))))
    `(magit-item-highlight         ((t (:background ,bg3))))
