@@ -39,7 +39,11 @@ A typical use-package installation might look something like:
 
 ** Customization
 
+You can control the color of the highlight with the following variables.
+
 | variable                              | values          |
 |---------------------------------------+-----------------|
 | ~stimmung-themes-dark-highlight-color~  | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]] |
 | ~stimmung-themes-light-highlight-color~ | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]] |
+
+There is also a convenience function to toggle between the dark and light theme, ~stimmung-themes-toggle~.
