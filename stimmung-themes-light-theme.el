@@ -4,7 +4,7 @@
 ;; Author: Love Lagerkvist
 ;; URL: https://github.com/motform/stimmung
 ;; Created: 2019-12-20
-;; Version: 2021-03-20
+;; Version: 2022-03-26
 ;; Keywords: faces
 
 ;; This file is NOT part of GNU Emacs.
@@ -136,7 +136,7 @@ You have to re-load the theme for these changes to take effect."
    `(font-lock-string-face               ((t (:foreground ,fg1 :background ,str))))
    `(font-lock-warning-face              ((t (:foreground ,fg1 :underline (:style wave :color ,warning)))))
 
-   ;; Custom
+   ;; custom
    `(custom-invalid		((t (:background ,bg1 :foreground ,fg1 :underline (:style wave :color ,warning)))))
    `(custom-rogue		((t (:background ,bg1 :foreground ,fg2 :underline nil))))
    `(custom-modified	((t (:background ,stimmung-themes-light-highlight-color :foreground ,fg1))))
@@ -397,9 +397,9 @@ You have to re-load the theme for these changes to take effect."
    ;; org
    `(org-code                  ((t (:background ,str :distant-foreground ,bg1 :background ,stimmung-themes-light-highlight-color))))
    `(org-link                  ((t (:underline t))))
-   `(org-block                 ((t (:foreground ,fg1 :background ,bg3 :extend t))))
-   `(org-block-begin-line      ((t (:foreground ,fg1 :background ,bg3 :bold t :extend t))))
-   `(org-block-end-line        ((t (:foreground ,fg1 :background ,bg3 :bold t :extend t))))
+   `(org-block                 ((t (:foreground ,fg1 :background ,bg5 :extend t))))
+   `(org-block-begin-line      ((t (:foreground ,fg2 :background ,bg5 :extend t))))
+   `(org-block-end-line        ((t (:foreground ,fg2 :background ,bg5 :extend t))))
    `(org-drawer                ((t (:foreground ,fg1 :bold t))))
    `(org-document-info         ((t (:foreground ,fg1 :background ,bg1 :italic t))))
    `(org-document-info-keyword ((t (:foreground ,fg1 :background ,bg1))))
@@ -414,7 +414,7 @@ You have to re-load the theme for these changes to take effect."
    `(org-scheduled             ((t (:foreground ,red))))
    `(org-scheduled-today       ((t (:foreground ,ok))))
    `(org-table                 ((t (:foreground ,fg1))))
-   `(org-tag                   ((t (:foreground ,fg1  :background ,bg1 :bold t))))
+   `(org-tag                   ((t (:foreground ,fg1 :background ,bg1 :bold t))))
    `(org-todo                  ((t (:foreground ,red :bold t))))
    `(org-warning               ((t (:inherit 'warning))))
    `(org-upcoming-deadline     ((t (:foreground ,red))))
@@ -437,14 +437,14 @@ You have to re-load the theme for these changes to take effect."
    `(markdown-metadata-key-face       ((t (:foreground ,fg1))))
    `(markdown-markup-face             ((t (:foreground ,fg1))))
    `(markdown-pre-face                ((t (:foreground ,fg1))))
-   `(markdown-code-face               ((t (:foreground ,fg1 :background ,stimmung-themes-light-highlight-color :extend t))))
+   `(markdown-inline-code-face        ((t (:foreground ,fg1 :background ,stimmung-themes-light-highlight-color))))
+   `(markdown-code-face               ((t (:foreground ,fg1 :background ,bg5 :extend t))))
    `(markdown-reference-face          ((t (:foreground ,fg1))))
    `(markdown-html-attr-name-face     ((t (:inherit 'font-lock-variable-name-face))))
    `(markdown-html-attr-value-face    ((t (:inherit 'font-lock-string-face))))
    `(markdown-html-entity-face        ((t (:inherit 'font-lock-variable-name-face))))
    `(markdown-html-tag-delimiter-face ((t (:inherit 'markdown-markup-face))))
    `(markdown-html-tag-name-face      ((t (:inherit 'font-lock-keyword-face))))
-   `(markdown-inline-code-face        ((t (:inherit 'markdown-code-face :extend nil))))
 
    ;; solaire 
 
