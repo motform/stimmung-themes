@@ -136,6 +136,38 @@ You have to re-load the theme for these changes to take effect."
    `(font-lock-string-face               ((t (:foreground ,fg1  :background ,str))))
    `(font-lock-warning-face              ((t (:foreground ,red))))
    
+   ;; Customize
+   `(custom-invalid		((t (:background ,bg1 :foreground ,fg1 :underline (:style wave :color ,warning)))))
+   `(custom-rogue		((t (:background ,bg1 :foreground ,fg2 :underline nil))))
+   `(custom-modified	((t (:background ,stimmung-themes-light-highlight-color :foreground ,fg1))))
+   `(custom-set			((t (:background ,bg1 :foreground ,fg1 :bold t))))
+   `(custom-changed		((t (:background ,bg1 :foreground ,fg1 :italic t))))
+   `(custom-themed		((t (:background ,str :foreground ,fg1))))
+   `(custom-saved		((t (:background ,bg1 :foreground ,fg1 :bold t))))
+   `(custom-state		((t (:background ,bg1 :foreground ,fg1 :italic t))))
+   `(custom-link        ((t (:background ,str :foreground ,fg1 :underline nil))))
+   `(custom-visibility  ((t (:background ,bg1 :foreground ,fg2 :height 0.8))))
+   `(custom-comment		((t (:background ,bg1 :foregorund ,fg1 :italic t))))
+   `(custom-comment-tag ((t (:background ,bg1 :foreground ,fg1 :italic t))))
+
+   `(custom-group-tag-1		((t (:background ,bg1 :foreground ,fg1 :bold t :height 1.1 :inherit variable-pitch))))
+   `(custom-group-tag		((t (:background ,bg1 :foreground ,fg1 :bold t :height 1.1 :inherit variable-pitch))))
+   `(custom-group-subtitle	((t (:background ,bg1 :foreground ,fg1 :bold t))))
+
+   `(custom-button			((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
+   `(custom-button-mouse	((t (:background ,bg3 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
+   `(custom-button-unraised	((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
+
+   `(custom-variable-obsolete	((t (:background ,bg1 :foreground ,fg2))))
+   `(custom-variable-tag		((t (:background ,bg1 :foreground ,fg2))))
+   `(custom-variable-button		((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
+0
+   ;; widget
+   `(widget-inactive			((t (:background ,bg1 :foreground ,fg2))))
+   `(widget-documentation		((t (:background ,bg1 :foreground ,fg1))))
+   `(widget-button				((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
+   `(widget-field				((t (:background ,bg2 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
+   `(widget-single-line-field	((t (:background ,bg2 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
    ;; eshell
    `(eshell-ls-directory  ((t (:background ,stimmung-themes-dark-highlight-color :bold t))))
    `(eshell-prompt        ((t (:foreground ,fg1 :bold t))))

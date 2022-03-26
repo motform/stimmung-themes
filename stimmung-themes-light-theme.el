@@ -56,22 +56,22 @@ You have to re-load the theme for these changes to take effect."
   :group 'stimmung-themes)
 
 (let ((bg1 "white")
-      (bg2 "gray95")
-      (bg3 "gray90")
-      (bg4 "gray85")
-      (bg5 "gray98")
+	  (bg2 "gray95")
+	  (bg3 "gray90")
+	  (bg4 "gray85")
+	  (bg5 "gray98")
 
-      (fg1  "black")
-      (fg2 "gray60")
+	  (fg1  "black")
+	  (fg2 "gray60")
 
-      (str     "gray95")
+	  (str     "gray95")
 
-      (search   "#e8e800")
-      (search2  "#ffffb4")
+	  (search   "#e8e800")
+	  (search2  "#ffffb4")
 
-      (warning "orange")
-      (red     "darkred")
-      (ok      "DarkGreen"))
+	  (warning "orange")
+	  (red     "darkred")
+	  (ok      "DarkGreen"))
   (custom-theme-set-faces
    'stimmung-themes-light
 
@@ -135,7 +135,40 @@ You have to re-load the theme for these changes to take effect."
    `(font-lock-regexp-grouping-construct ((t (:foreground ,fg1 :bold t))))
    `(font-lock-string-face               ((t (:foreground ,fg1 :background ,str))))
    `(font-lock-warning-face              ((t (:foreground ,fg1 :underline (:style wave :color ,warning)))))
-   
+
+   ;; Customize
+   `(custom-invalid		((t (:background ,bg1 :foreground ,fg1 :underline (:style wave :color ,warning)))))
+   `(custom-rogue		((t (:background ,bg1 :foreground ,fg2 :underline nil))))
+   `(custom-modified	((t (:background ,stimmung-themes-light-highlight-color :foreground ,fg1))))
+   `(custom-set			((t (:background ,bg1 :foreground ,fg1 :bold t))))
+   `(custom-changed		((t (:background ,bg1 :foreground ,fg1 :italic t))))
+   `(custom-themed		((t (:background ,str :foreground ,fg1))))
+   `(custom-saved		((t (:background ,bg1 :foreground ,fg1 :bold t))))
+   `(custom-state		((t (:background ,bg1 :foreground ,fg1 :italic t))))
+   `(custom-link        ((t (:background ,str :foreground ,fg1 :underline nil))))
+   `(custom-visibility  ((t (:background ,bg1 :foreground ,fg2 :height 0.8))))
+   `(custom-comment		((t (:background ,bg1 :foregorund ,fg1 :italic t))))
+   `(custom-comment-tag ((t (:background ,bg1 :foreground ,fg1 :italic t))))
+
+   `(custom-group-tag-1		((t (:background ,bg1 :foreground ,fg1 :bold t :height 1.1 :inherit variable-pitch))))
+   `(custom-group-tag		((t (:background ,bg1 :foreground ,fg1 :bold t :height 1.1 :inherit variable-pitch))))
+   `(custom-group-subtitle	((t (:background ,bg1 :foreground ,fg1 :bold t))))
+
+   `(custom-button			((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
+   `(custom-button-mouse	((t (:background ,bg3 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
+   `(custom-button-unraised	((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
+
+   `(custom-variable-obsolete	((t (:background ,bg1 :foreground ,fg2))))
+   `(custom-variable-tag		((t (:background ,bg1 :foreground ,fg2))))
+   `(custom-variable-button		((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
+
+   ;; widget
+   `(widget-inactive			((t (:background ,bg1 :foreground ,fg2))))
+   `(widget-documentation		((t (:background ,bg1 :foreground ,fg1))))
+   `(widget-button				((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
+   `(widget-field				((t (:background ,bg2 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
+   `(widget-single-line-field	((t (:background ,bg2 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
+
    ;; eshell
    `(eshell-ls-directory  ((t (:background ,stimmung-themes-light-highlight-color :bold t))))
    `(eshell-prompt        ((t (:foreground ,fg1 :bold t))))
@@ -149,13 +182,13 @@ You have to re-load the theme for these changes to take effect."
    `(eshell-ls-product    ((t (:foreground ,fg1))))
    `(eshell-ls-archive    ((t (:foreground ,fg1))))
    `(eshell-ls-entries    ((t (:foreground ,fg1))))
-   
+
    ;; avy
    `(avy-lead-face   ((t (:background ,bg2 :foreground ,fg1 :distant-foreground ,fg1 :bold t))))
    `(avy-lead-face-0 ((t (:inherit 'avy-lead-face))))
    `(avy-lead-face-1 ((t (:inherit 'avy-lead-face))))
    `(avy-lead-face-2 ((t (:inherit 'avy-lead-face))))
-   
+
    ;; flyspell
    `(flycheck-note            ((t (:underline (:style wave :color ,ok)))))
    `(flyspell-incorrect       ((t (:underline (:style wave :color ,red) ))))
@@ -163,21 +196,21 @@ You have to re-load the theme for these changes to take effect."
    `(flyspell-duplicate       ((t (:underline (:style wave :color ,warning)))))
    `(flysheck-warning         ((t (:underline (:style wave :color ,warning)))))
    `(flysheck-warning-overlay ((t (:underline (:style wave :color ,warning)))))
-   
+
    ;; hydra
    `(hydra-face-red      ((t (:foreground ,fg1 :bold t))))
    `(hydra-face-blue     ((t (:foreground ,fg1 :bold t))))
    `(hydra-face-amaranth ((t (:foreground ,fg1 :bold t))))
    `(hydra-face-pink     ((t (:foreground ,fg1 :bold t))))
    `(hydra-face-teal     ((t (:foreground ,fg1 :bold t))))
-   
+
    ;; cider
    `(cider-fringe-good-face      ((t (:foreground ,ok))))
    ;; `(cider-test-success-face     ((t (:background ,ok  :foreground ,bg1))))
    ;; `(cider-test-failure-face     ((t (:background ,red :foreground ,bg1))))
    `(cider-test-error-face       ((t (:background ,stimmung-themes-light-highlight-color))))
    `(cider-result-overlay-face   ((t (:background ,bg5 :box (:line-width -1 :color ,fg2)))))
-   
+
    ;; company
    `(company-tooltip-mouse            ((t (:inherit highlight))))
    `(company-scrollbar-bg             ((t (:background ,fg1))))
@@ -190,7 +223,7 @@ You have to re-load the theme for these changes to take effect."
    `(company-tooltip-common-selection ((t (:background ,stimmung-themes-light-highlight-color))))
    `(company-tooltip-annotation       ((t (:foreground ,stimmung-themes-light-highlight-color))))
    `(company-preview                  ((t (:background ,stimmung-themes-light-highlight-color :foreground ,fg1))))
-   
+
    ;; compilation
    `(compilation-line-number    ((t (:bold t))))
    `(compilation-column-number  ((t (:inherit 'font-lock-comment-face))))
@@ -199,10 +232,6 @@ You have to re-load the theme for these changes to take effect."
    `(compilation-info           ((t (:inherit 'success))))
    `(compilation-mode-line-exit ((t (:inherit 'compilation-info))))
    `(compilation-mode-line-fail ((t (:inherit 'compilation-error))))
-   
-   ;; TODO
-   ;; custom
-   `(custom-variable-tag    ((t (:bold t))))
 
    ;; modeline
    `(header-line         ((t (:inherit 'mode-line :distant-foreground ,bg1))))
@@ -211,10 +240,10 @@ You have to re-load the theme for these changes to take effect."
    `(mode-line-buffer-id ((t (:foreground ,fg1 :bold t :distant-foreground ,bg1))))
    `(mode-line-emphasis  ((t (:foreground ,fg1 :bold t))))
    `(mode-line-highlight ((t (:foreground ,bg3))))
-   
+
    ;; completions
    `(completions-common-part ((t (:foreground ,fg1 :bold t))))
-   
+
    ;; doom-modeline
    `(doom-modeline-buffer-path        ((t (:foreground ,fg1))))
    `(doom-modeline-buffer-file        ((t (:foreground ,fg1  :weight bold))))
@@ -228,7 +257,7 @@ You have to re-load the theme for these changes to take effect."
    `(doom-modeline-evil-visual-state  ((t (:foreground ,fg1))))
    `(doom-modeline-evil-normal-state  ((t (:foreground ,fg1))))
    `(doom-modeline-evil-emacs-state   ((t (:foreground ,red :italic nil))))
-   
+
    ;; dired
    `(dired-directory  ((t (:foreground ,fg1 :bold t))))
    `(dired-ignored    ((t (:foreground ,fg1))))
@@ -239,18 +268,18 @@ You have to re-load the theme for these changes to take effect."
    `(dired-perm-write ((t (:foreground ,fg1 :underline t))))
    `(dired-symlink    ((t (:foreground ,fg1 :italic t))))
    `(dired-warning    ((t (:foreground ,fg1 :underline (:style wave :color ,warning)))))
-   
+
    ;; evil
    `(evil-ex-info                   ((t (:foreground ,red :italic t))))
    `(evil-ex-search                 ((t (:background ,bg2 :foreground ,fg1 :bold t))))
    `(evil-search-highlight-persist-highlight-face ((t (:inherit 'lazy-highlight))))
-   
+
    ;; evil-mc
    `(evil-mc-cursor-default-face ((t (:foreground ,bg1 :background ,fg1))))
    `(evil-mc-region-face         ((t (:foreground ,bg1 :background ,fg1))))
    `(evil-mc-cursor-bar-face     ((t (:foreground ,fg1))))
    `(evil-mc-cursor-hbar-face    ((t (:foreground ,fg1))))
-   
+
    ;; info
    `(info-quoted    ((t (:inherit 'default :bold t))))
    `(info-menu-star ((t (:bold t))))
@@ -315,7 +344,7 @@ You have to re-load the theme for these changes to take effect."
    `(helm-moccur-buffer				((t (:foreground ,fg1 :background ,bg1))))
    `(helm-mu-contacts-address-face	((t (:foreground ,fg2 :background ,bg1))))
    `(helm-mu-contacts-name-face		((t (:foreground ,fg2 :background ,bg1))))
-   
+
    ;; magit
    `(magit-bisect-bad        ((t (:foreground ,red))))
    `(magit-bisect-good       ((t (:foreground ,ok))))
@@ -326,7 +355,7 @@ You have to re-load the theme for these changes to take effect."
    `(magit-branch-remote     ((t (:foreground ,fg1 :bold t))))
    `(magit-diff-file-heading ((t (:foreground ,fg1 :bold nil))))
    `(magit-diff-whitespace-warning ((t (:background ,red))))
-   
+
    `(magit-diff-context-highlight ((t (:foreground ,fg1 :background ,bg3))))
    `(magit-diff-file-header       ((t (:foreground ,fg1 :background ,bg3))))
    `(magit-diffstat-added         ((t (:foreground ,ok))))
@@ -341,7 +370,7 @@ You have to re-load the theme for these changes to take effect."
    `(magit-process-ok             ((t (:foreground ,ok :bold t))))
    `(magit-section-heading        ((t (:foreground ,fg1 :bold t))))
    `(magit-section-highlight      ((t (:background ,bg3))))
-   
+
    ;; diff-hl
    `(diff-hl-insert         ((t (:foreground ,ok  :background ,bg1 :bold nil :italic nil))))
    `(diff-hl-delete         ((t (:foreground ,red :background ,bg1 :bold nil :italic nil))))
@@ -349,7 +378,7 @@ You have to re-load the theme for these changes to take effect."
    `(diff-hl-ignore         ((t (:foreground ,fg1  :background ,bg1 :bold nil :italic nil))))
    `(diff-hl-margin-ignore  ((t (:foreground ,fg1  :background ,bg1 :bold nil :italic nil))))
    `(diff-hl-margin-unknown ((t (:foreground ,fg1  :background ,bg1 :bold nil :italic nil))))
-   
+
    ;; help
    `(help-key-binding ((t (:foreground ,fg1 :background ,bg5 :box (:line-width (1 . -1) :color ,fg2)))))
 
@@ -364,7 +393,7 @@ You have to re-load the theme for these changes to take effect."
    `(outline-8 ((t (:foreground ,fg1 :bold t :extend t))))
 
    ;; TODO org-agenda
-   
+
    ;; org
    `(org-code                  ((t (:background ,str :distant-foreground ,bg1 :background ,stimmung-themes-light-highlight-color))))
    `(org-link                  ((t (:underline t))))
@@ -395,7 +424,7 @@ You have to re-load the theme for these changes to take effect."
    `(org-sexp-date             ((t (:background ,stimmung-themes-light-highlight-color))))
    `(org-special-keyword       ((t (:background ,stimmung-themes-light-highlight-color))))
    `(org-date                  ((t (:background ,bg1 :bold t))))
-   
+
    ;; markdown mode
    `(markdown-header-face             ((t (:foreground ,fg1 :bold t))))
    `(markdown-list-face               ((t (:foreground ,fg1 :bold t))))
@@ -416,7 +445,7 @@ You have to re-load the theme for these changes to take effect."
    `(markdown-html-tag-delimiter-face ((t (:inherit 'markdown-markup-face))))
    `(markdown-html-tag-name-face      ((t (:inherit 'font-lock-keyword-face))))
    `(markdown-inline-code-face        ((t (:inherit 'markdown-code-face :extend nil))))
-   
+
    ;; sh
    `(sh-quoted-exec ((t (:background ,stimmung-themes-light-highlight-color))))
    `(sh-heredoc     ((t (:background ,stimmung-themes-light-highlight-color))))
@@ -426,7 +455,7 @@ You have to re-load the theme for these changes to take effect."
    `(show-paren-match            ((t (:background ,search :bold t))))
    `(show-paren-match-expression ((t (:background ,search :bold t))))
    `(show-paren-mismatch         ((t (:background ,fg1 :foreground ,red :bold t))))
-   
+
    ;; smartparens
    `(sp-show-pair-match-face    ((t (:inherit 'paren-matched))))
    `(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
