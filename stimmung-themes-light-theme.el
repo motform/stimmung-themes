@@ -136,7 +136,7 @@ You have to re-load the theme for these changes to take effect."
    `(font-lock-string-face               ((t (:foreground ,fg1 :background ,str))))
    `(font-lock-warning-face              ((t (:foreground ,fg1 :underline (:style wave :color ,warning)))))
 
-   ;; Customize
+   ;; Custom
    `(custom-invalid		((t (:background ,bg1 :foreground ,fg1 :underline (:style wave :color ,warning)))))
    `(custom-rogue		((t (:background ,bg1 :foreground ,fg2 :underline nil))))
    `(custom-modified	((t (:background ,stimmung-themes-light-highlight-color :foreground ,fg1))))

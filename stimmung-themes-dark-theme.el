@@ -136,7 +136,7 @@ You have to re-load the theme for these changes to take effect."
    `(font-lock-string-face               ((t (:foreground ,fg1  :background ,str))))
    `(font-lock-warning-face              ((t (:foreground ,red))))
    
-   ;; Customize
+   ;; Custom
    `(custom-invalid		((t (:background ,bg1 :foreground ,fg1 :underline (:style wave :color ,warning)))))
    `(custom-rogue		((t (:background ,bg1 :foreground ,fg2 :underline nil))))
    `(custom-modified	((t (:background ,stimmung-themes-light-highlight-color :foreground ,fg1))))
@@ -161,13 +161,14 @@ You have to re-load the theme for these changes to take effect."
    `(custom-variable-obsolete	((t (:background ,bg1 :foreground ,fg2))))
    `(custom-variable-tag		((t (:background ,bg1 :foreground ,fg2))))
    `(custom-variable-button		((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
-0
+
    ;; widget
    `(widget-inactive			((t (:background ,bg1 :foreground ,fg2))))
    `(widget-documentation		((t (:background ,bg1 :foreground ,fg1))))
    `(widget-button				((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
    `(widget-field				((t (:background ,bg2 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
    `(widget-single-line-field	((t (:background ,bg2 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
+
    ;; eshell
    `(eshell-ls-directory  ((t (:background ,stimmung-themes-dark-highlight-color :bold t))))
    `(eshell-prompt        ((t (:foreground ,fg1 :bold t))))
