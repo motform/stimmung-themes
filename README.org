@@ -16,7 +16,7 @@ Emacs packages often define their own faces, making theming a relatively sisyphe
 
 [[./.assets/magit.png]]
 
-The screenshots are set in [[https://fsd.it/shop/fonts/pragmatapro/][PragmataPro]] and feature modeline/whitespace settings inspired by [[https://github.com/rougier][rougier]] that you can find in my [[https://github.com/motform/emacs.d][emacs.d]].
+The screenshots are set in [[https://fsd.it/shop/fonts/pragmatapro/][PragmataPro]] (with line-height [[https://github.com/tam5/font-patcher][patched]] to 1.4) and feature modeline/whitespace settings inspired by [[https://github.com/rougier][rougier]] that you can find in my [[https://github.com/motform/emacs.d][emacs.d]].
 
 
 ** Installation
