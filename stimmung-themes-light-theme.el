@@ -446,6 +446,8 @@ You have to re-load the theme for these changes to take effect."
    `(markdown-html-tag-name-face      ((t (:inherit 'font-lock-keyword-face))))
    `(markdown-inline-code-face        ((t (:inherit 'markdown-code-face :extend nil))))
 
+   ;; solaire 
+
    ;; sh
    `(sh-quoted-exec ((t (:background ,stimmung-themes-light-highlight-color))))
    `(sh-heredoc     ((t (:background ,stimmung-themes-light-highlight-color))))
@@ -461,17 +463,33 @@ You have to re-load the theme for these changes to take effect."
    `(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
 
    ;; treemacs
-   `(treemacs-root-face                     ((t (:background ,bg1 :foreground ,fg1  :bold t :underline t))))
-   `(treemacs-root-unreadable-face          ((t (:background ,bg1 :foreground ,fg1  :bold t :underline t :strike-through t))))
-   `(treemacs-root-remote-face              ((t (:background ,bg1 :foreground ,fg1  :bold t :underline t))))
-   `(treemacs-root-remote-disconnected-face ((t (:background ,bg1 :foreground ,red :bold t :underline t))))
-   `(treemacs-root-remote-unreadable-face   ((t (:background ,bg1 :foreground ,fg1  :bold t :underline t :strike-through t))))
-   `(treemacs-git-ignored-face              ((t (:background ,str :foreground ,fg1 :italic nil))))
+   `(treemacs-directory-face				((t (:background ,bg1 :foreground ,fg1))))
+   `(treemacs-directory-collapsed-face		((t (:background ,bg1 :foreground ,fg1))))
+   `(treemacs-file-face						((t (:background ,bg1 :foreground ,fg1))))
+   `(treemacs-root-face                     ((t (:background ,bg1 :foreground ,fg1  :bold t))))
+   `(treemacs-root-unreadable-face          ((t (:background ,bg1 :foreground ,fg1  :underline t :strike-through t))))
+   `(treemacs-root-remote-face              ((t (:background ,bg1 :foreground ,fg1))))
+   `(treemacs-root-remote-disconnected-face ((t (:background ,bg1 :foreground ,red))))
+   `(treemacs-root-remote-unreadable-face   ((t (:background ,bg1 :foreground ,red))))
+   `(treemacs-term-node-face                ((t (:background ,bg1 :foreground ,fg1))))
+   `(treemacs-git-unmodified-face           ((t (:background ,bg1 :foreground ,fg1))))
+   `(treemacs-git-modified-face             ((t (:background ,bg1 :foreground ,fg1 :italic t))))
    `(treemacs-git-renamed-face              ((t (:background ,bg1 :foreground ,fg1 :italic t))))
+   `(treemacs-git-added-face                ((t (:background ,bg1 :foreground ,fg1))))
+   `(treemacs-git-ignored-face              ((t (:background ,bg1 :foreground ,fg2 :italic nil))))
+   `(treemacs-git-untracked-face            ((t (:background ,bg1 :foreground ,fg2 :italic nil))))
+   `(treemacs-git-conflict-face             ((t (:background ,bg1 :foreground ,red))))
    `(treemacs-on-failure-pulse-face         ((t (:background ,bg1 :foreground ,red))))
    `(treemacs-on-success-pulse-face         ((t (:background ,bg1 :foreground ,ok))))
-   `(treemacs-tags-face                     ((t (:background ,bg1 :foreground ,fg1  :italic nil))))
-   `(treemacs-term-node-face                ((t (:background ,bg1 :foreground ,fg1))))
+   `(treemacs-tags-face                     ((t (:background ,bg1 :foreground ,fg1 :italic nil))))
+   `(treemacs-help-title-face               ((t (:background ,bg1 :foreground ,fg1 :bold t))))
+   `(treemacs-help-column-face              ((t (:background ,bg1 :foreground ,fg1 :bold t))))
+   `(treemacs-on-failure-pulse-face         ((t (:background ,warning :foreground ,fg1 :extend t))))
+   `(treemacs-on-success-pulse-face         ((t (:background ,ok :foreground ,fg1 :extend t))))
+   `(treemacs-fringe-indicator-face         ((t (:background ,bg1 :foreground ,fg2))))
+   `(treemacs-peek-mode-indicator-face      ((t (:background ,stimmung-themes-light-highlight-color))))
+   `(treemacs-header-button-face            ((t (:background ,stimmung-themes-light-highlight-color))))
+   `(treemacs-header-button-face            ((t (:foreground ,fg1 :background ,bg5 :box (:line-width -1 :color ,fg2 :style nil)))))
 
    ;; tab-bar-mode
    `(tab-bar              ((t (:background ,bg1 :foreground ,fg1))))
