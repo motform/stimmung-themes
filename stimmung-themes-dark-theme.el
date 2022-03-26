@@ -618,6 +618,21 @@ You have to re-load the theme for these changes to take effect."
    `(vr/group-1 ((t (:background ,bg2 :foreground ,red))))
    `(vr/group-2 ((t (:background ,bg2 :foreground ,fg1))))
 
+   ;; elfeed
+   `(elfeed-search-date-face         ((t (:foreground ,fg2 :inherit bold))))
+   `(elfeed-search-feed-face         ((t (:foreground ,fg1 :background ,bg5))))
+   `(elfeed-search-filter-face       ((t (:inherit bold :foreground ,fg1 :background ,bg3))))
+   `(elfeed-search-last-update-face  ((t (:foreground ,fg2 :inherit bold))))
+   `(elfeed-search-tag-face          ((t (:foreground ,fg2))))
+   `(elfeed-search-title-face        ((t (:foreground ,fg2))))
+   `(elfeed-search-unread-title-face ((t (:foreground ,fg1 :inherit bold))))
+   `(elfeed-search-unread-count-face ((t (:foreground ,fg2 :inherit bold))))
+   `(elfeed-log-date-face            ((t (:inherit elfeed-search-date-face))))
+   `(elfeed-log-debug-level-face     ((t (:inherit elfeed-search-filter-face))))
+   `(elfeed-log-error-level-face     ((t (:inherit error))))
+   `(elfeed-log-info-level-face      ((t (:inherit success))))
+   `(elfeed-log-warn-level-face      ((t (:inherit warning))))
+
    ;; white-space
    `(whitespace-empty       ((t (:background ,bg3))))
    `(whitespace-space       ((t (:foreground ,fg1))))
