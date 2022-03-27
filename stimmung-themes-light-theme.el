@@ -175,9 +175,9 @@ You have to re-load the theme for these changes to take effect."
 
    ;; message
    `(message-cited-text-1      ((t (:foreground ,fg5))))
-   `(message-cited-text-2      ((t (:inherit message-cited-text-1))))
-   `(message-cited-text-3      ((t (:inherit message-cited-text-1))))
-   `(message-cited-text-4      ((t (:inherit message-cited-text-1))))
+   `(message-cited-text-2      ((t (:foreground ,fg4))))
+   `(message-cited-text-3      ((t (:foreground ,fg3))))
+   `(message-cited-text-4      ((t (:inherit message-cited-text-3))))
    `(message-header-cc         ((t (:foreground ,fg1))))
    `(message-header-name       ((t (:foreground ,fg1))))
    `(message-header-newsgroups ((t (:inherit message-header-other))))
@@ -675,8 +675,8 @@ You have to re-load the theme for these changes to take effect."
    `(notmuch-tree-match-date-face        ((t (:inherit notmuch-search-date))))
    `(notmuch-tree-match-face             ((t (:foreground ,fg1))))
    `(notmuch-tree-match-tag-face         ((t (:inherit notmuch-tag-face))))
-   `(notmuch-tree-no-match-face          ((t (:foreground ,fg5 :background ,bg5))))
-   `(notmuch-tree-no-match-date-face     ((t (:foreground ,fg5 :background ,bg5))))
+   `(notmuch-tree-no-match-face          ((t (:foreground ,fg4 :background ,bg5))))
+   `(notmuch-tree-no-match-date-face     ((t (:foreground ,fg4 :background ,bg5))))
    `(notmuch-wash-cited-text             ((t (:inherit message-cited-text-1))))
    `(notmuch-wash-toggle-button          ((t (:foreground ,fg5 :background ,bg5))))
 
