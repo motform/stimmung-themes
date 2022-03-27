@@ -170,6 +170,21 @@ You have to re-load the theme for these changes to take effect."
    `(widget-field				((t (:background ,bg2 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
    `(widget-single-line-field	((t (:background ,bg2 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
 
+   ;; message
+   `(message-cited-text-1      ((t (:foreground ,fg2))))
+   `(message-cited-text-2      ((t (:inherit message-cited-text-1))))
+   `(message-cited-text-3      ((t (:inherit message-cited-text-1))))
+   `(message-cited-text-4      ((t (:inherit message-cited-text-1))))
+   `(message-header-cc         ((t (:foreground ,fg1))))
+   `(message-header-name       ((t (:foreground ,fg1))))
+   `(message-header-newsgroups ((t (:inherit message-header-other))))
+   `(message-header-other      ((t (:foreground ,fg2))))
+   `(message-header-subject    ((t (:foreground ,fg1 :inherit bold))))
+   `(message-header-to         ((t (:foreground ,fg1))))
+   `(message-header-xheader    ((t (:background ,bg2))))
+   `(message-mml               ((t (:foreground ,fg2 :background ,bg2))))
+   `(message-separator         ((t (:background ,bg3))))
+
    ;; eshell
    `(eshell-ls-directory  ((t (:background ,stimmung-themes-dark-highlight-color :bold t))))
    `(eshell-prompt        ((t (:foreground ,fg1 :bold t))))
