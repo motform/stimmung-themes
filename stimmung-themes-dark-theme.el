@@ -63,7 +63,10 @@ You have to re-load the theme for these changes to take effect."
       (bg6 "gray8")
 
       (fg1 "white")
-      (fg2 "gray50")
+      (fg2 "gray20")
+      (fg3 "gray30")
+      (fg4 "gray40")
+      (fg5 "gray50")
 
       (str    "gray20")
 
@@ -87,7 +90,7 @@ You have to re-load the theme for these changes to take effect."
    `(default             ((t (:foreground ,fg1 :background ,bg1))))
    `(fringe              ((t (:foreground ,fg1 :background ,bg1))))
    `(match               ((t (:foreground ,ok :bold t))))
-   `(scroll-bar          ((t (:foreground ,fg2 :backgorund ,bg1))))
+   `(scroll-bar          ((t (:foreground ,fg5 :backgorund ,bg1))))
 
    `(link                ((t (:underline t))))
    `(link-visited        ((t (:underline t :italic t))))
@@ -114,11 +117,11 @@ You have to re-load the theme for these changes to take effect."
    `(paren-unmatched             ((t (:foreground ,red :background ,bg1))))
    `(escape-glyph                ((t (:foreground ,red :bold t))))
    `(homoglyph                   ((t (:foreground ,red :bold t))))
-   
-   `(line-number              ((t (:foreground ,fg2 :background ,bg1))))
+
+   `(line-number              ((t (:foreground ,fg5 :background ,bg1))))
    `(line-number-current-line ((t (:foreground ,fg1  :background ,bg1))))
    `(linum                    ((t (:inherit 'line-number))))
-   
+
    ;; syntax
    `(font-lock-builtin-face              ((t (:background ,stimmung-themes-dark-highlight-color :italic t))))
    `(font-lock-comment-delimiter-face    ((t (:background ,str :italic t))))
@@ -136,10 +139,10 @@ You have to re-load the theme for these changes to take effect."
    `(font-lock-regexp-grouping-construct ((t (:foreground ,fg1  :bold t))))
    `(font-lock-string-face               ((t (:foreground ,fg1  :background ,str))))
    `(font-lock-warning-face              ((t (:foreground ,red))))
-   
+
    ;; custom
    `(custom-invalid		((t (:background ,bg1 :foreground ,fg1 :underline (:style wave :color ,warning)))))
-   `(custom-rogue		((t (:background ,bg1 :foreground ,fg2 :underline nil))))
+   `(custom-rogue		((t (:background ,bg1 :foreground ,fg5 :underline nil))))
    `(custom-modified	((t (:background ,stimmung-themes-dark-highlight-color :foreground ,fg1))))
    `(custom-set			((t (:background ,bg1 :foreground ,fg1 :bold t))))
    `(custom-changed		((t (:background ,bg1 :foreground ,fg1 :italic t))))
@@ -147,7 +150,7 @@ You have to re-load the theme for these changes to take effect."
    `(custom-saved		((t (:background ,bg1 :foreground ,fg1 :bold t))))
    `(custom-state		((t (:background ,bg1 :foreground ,fg1 :italic t))))
    `(custom-link        ((t (:background ,str :foreground ,fg1 :underline nil))))
-   `(custom-visibility  ((t (:background ,bg1 :foreground ,fg2 :height 0.8))))
+   `(custom-visibility  ((t (:background ,bg1 :foreground ,fg5 :height 0.8))))
    `(custom-comment		((t (:background ,bg1 :foregorund ,fg1 :italic t))))
    `(custom-comment-tag ((t (:background ,bg1 :foreground ,fg1 :italic t))))
 
@@ -155,34 +158,34 @@ You have to re-load the theme for these changes to take effect."
    `(custom-group-tag		((t (:background ,bg1 :foreground ,fg1 :bold t :height 1.1 :inherit variable-pitch))))
    `(custom-group-subtitle	((t (:background ,bg1 :foreground ,fg1 :bold t))))
 
-   `(custom-button			((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
+   `(custom-button			((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg5)))))
    `(custom-button-mouse	((t (:background ,bg3 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
-   `(custom-button-unraised	((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
+   `(custom-button-unraised	((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg5)))))
 
-   `(custom-variable-obsolete	((t (:background ,bg1 :foreground ,fg2))))
-   `(custom-variable-tag		((t (:background ,bg1 :foreground ,fg2))))
-   `(custom-variable-button		((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
+   `(custom-variable-obsolete	((t (:background ,bg1 :foreground ,fg5))))
+   `(custom-variable-tag		((t (:background ,bg1 :foreground ,fg5))))
+   `(custom-variable-button		((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg5)))))
 
    ;; widget
-   `(widget-inactive			((t (:background ,bg1 :foreground ,fg2))))
+   `(widget-inactive			((t (:background ,bg1 :foreground ,fg5))))
    `(widget-documentation		((t (:background ,bg1 :foreground ,fg1))))
-   `(widget-button				((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg2)))))
+   `(widget-button				((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg5)))))
    `(widget-field				((t (:background ,bg2 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
    `(widget-single-line-field	((t (:background ,bg2 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
 
    ;; message
-   `(message-cited-text-1      ((t (:foreground ,fg2))))
+   `(message-cited-text-1      ((t (:foreground ,fg5))))
    `(message-cited-text-2      ((t (:inherit message-cited-text-1))))
    `(message-cited-text-3      ((t (:inherit message-cited-text-1))))
    `(message-cited-text-4      ((t (:inherit message-cited-text-1))))
    `(message-header-cc         ((t (:foreground ,fg1))))
    `(message-header-name       ((t (:foreground ,fg1))))
    `(message-header-newsgroups ((t (:inherit message-header-other))))
-   `(message-header-other      ((t (:foreground ,fg2))))
+   `(message-header-other      ((t (:foreground ,fg5))))
    `(message-header-subject    ((t (:foreground ,fg1 :inherit bold))))
    `(message-header-to         ((t (:foreground ,fg1))))
    `(message-header-xheader    ((t (:background ,bg2))))
-   `(message-mml               ((t (:foreground ,fg2 :background ,bg2))))
+   `(message-mml               ((t (:foreground ,fg5 :background ,bg2))))
    `(message-separator         ((t (:background ,bg3))))
 
    ;; eshell
@@ -225,7 +228,7 @@ You have to re-load the theme for these changes to take effect."
    ;; `(cider-test-success-face     ((t (:background ,ok :foreground  ,bg1))))
    ;; `(cider-test-failure-face     ((t (:background ,red :foreground ,bg1))))
    `(cider-test-error-face       ((t (:background ,stimmung-themes-dark-highlight-color))))
-   `(cider-result-overlay-face   ((t (:background ,bg5 :box (:line-width -1 :color ,fg2)))))
+   `(cider-result-overlay-face   ((t (:background ,bg5 :box (:line-width -1 :color ,fg5)))))
 
    ;; company
    `(company-scrollbar-bg             ((t (:background ,fg1))))
@@ -248,11 +251,11 @@ You have to re-load the theme for these changes to take effect."
    `(compilation-info           ((t (:inherit 'success))))
    `(compilation-mode-line-exit ((t (:inherit 'compilation-info))))
    `(compilation-mode-line-fail ((t (:inherit 'compilation-error))))
-   
+
    ;; modeline
    `(header-line         ((t (:inherit 'mode-line  :distant-foreground ,bg1))))
    `(mode-line           ((t (:foreground ,fg1  :background ,bg5 :box (:line-width 1 :color ,bg4 :style nil)))))
-   `(mode-line-inactive  ((t (:foreground ,fg2 :background ,bg1 :box (:line-width 1 :color ,bg3 :style nil)))))
+   `(mode-line-inactive  ((t (:foreground ,fg5 :background ,bg1 :box (:line-width 1 :color ,bg3 :style nil)))))
    `(mode-line-buffer-id ((t (:foreground ,fg1 :bold t :distant-foreground ,bg4))))
    `(mode-line-emphasis  ((t (:foreground ,fg1 :bold t))))
    `(mode-line-highlight ((t (:foreground ,bg3))))
@@ -324,45 +327,45 @@ You have to re-load the theme for these changes to take effect."
    `(ivy-completions-annotations    ((t (:foreground ,red))))
 
    ;; helm
-   `(helm-header					((t (:foreground ,fg2 :background ,bg1 :underline nil :box nil))))
+   `(helm-header					((t (:foreground ,fg5 :background ,bg1 :underline nil :box nil))))
    `(helm-source-header				((t (:foreground ,fg1 :background ,bg1 :underline nil :weight bold :box (:line-width 1 :style released-button)))))
    `(helm-selection					((t (:background ,fg1 :underline t :foreground ,bg1))))
    `(helm-selection-line			((t (:background ,fg1))))
-   `(helm-visible-mark				((t (:foreground ,fg2 :background ,bg4))))
-   `(helm-candidate-number			((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-visible-mark				((t (:foreground ,fg5 :background ,bg4))))
+   `(helm-candidate-number			((t (:foreground ,fg5 :background ,bg1))))
    `(helm-separator					((t (:foreground ,fg1 :background ,bg1))))
    `(helm-time-zone-current			((t (:foreground ,fg1 :background ,bg1))))
    `(helm-time-zone-home			((t (:foreground ,fg1 :background ,bg1))))
-   `(helm-bookmark-addressbook		((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-bookmark-addressbook		((t (:foreground ,fg5 :background ,bg1))))
    `(helm-bookmark-directory		((t (:foreground nil :background nil :inherit helm-ff-directory))))
    `(helm-bookmark-file				((t (:foreground nil :background nil :inherit helm-ff-file))))
    `(helm-bookmark-gnus				((t (:foreground ,fg1 :background ,bg1))))
-   `(helm-bookmark-info				((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-bookmark-info				((t (:foreground ,fg5 :background ,bg1))))
    `(helm-bookmark-man				((t (:foreground ,fg1 :background ,bg1))))
    `(helm-bookmark-w3m				((t (:foreground ,fg1 :background ,bg1))))
    `(helm-buffer-not-saved			((t (:foreground ,fg1 :background ,bg1))))
    `(helm-buffer-process			((t (:foreground ,fg1 :background ,bg1))))
-   `(helm-buffer-saved-out			((t (:foreground ,fg2 :background ,bg1))))
-   `(helm-buffer-size				((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-buffer-saved-out			((t (:foreground ,fg5 :background ,bg1))))
+   `(helm-buffer-size				((t (:foreground ,fg5 :background ,bg1))))
    `(helm-ff-directory				((t (:foreground ,fg1 :background ,bg1 :weight bold))))
-   `(helm-ff-file					((t (:foreground ,fg2 :background ,bg1 :weight normal))))
-   `(helm-ff-file-extension			((t (:foreground ,fg2 :weight bold))))
-   `(helm-ff-executable				((t (:foreground ,fg2 :background ,bg1 :weight normal))))
+   `(helm-ff-file					((t (:foreground ,fg5 :background ,bg1 :weight normal))))
+   `(helm-ff-file-extension			((t (:foreground ,fg5 :weight bold))))
+   `(helm-ff-executable				((t (:foreground ,fg5 :background ,bg1 :weight normal))))
    `(helm-ff-invalid-symlink		((t (:foreground ,fg1 :background ,bg1 :weight bold))))
    `(helm-ff-symlink				((t (:foreground ,fg1 :background ,bg1 :weight bold))))
    `(helm-ff-prefix					((t (:foreground ,bg1 :background ,fg1 :weight normal))))
    `(helm-grep-cmd-line				((t (:foreground ,fg1 :background ,bg1))))
-   `(helm-grep-file					((t (:foreground ,fg2 :background ,bg1))))
-   `(helm-grep-finish				((t (:foreground ,fg2 :background ,bg1))))
-   `(helm-grep-lineno				((t (:foreground ,fg2 :background ,bg1))))
+   `(helm-grep-file					((t (:foreground ,fg5 :background ,bg1))))
+   `(helm-grep-finish				((t (:foreground ,fg5 :background ,bg1))))
+   `(helm-grep-lineno				((t (:foreground ,fg5 :background ,bg1))))
    `(helm-grep-match				((t (:foreground nil :background nil :inherit helm-match))))
    `(helm-grep-running				((t (:foreground ,fg1 :background ,bg1))))
    `(helm-lisp-show-completion		((t (:background ,bg2))))
    `(helm-match						((t (:background ,search))))
    `(helm-moccur-buffer				((t (:foreground ,fg1 :background ,bg1))))
-   `(helm-mu-contacts-address-face	((t (:foreground ,fg2 :background ,bg1))))
-   `(helm-mu-contacts-name-face		((t (:foreground ,fg2 :background ,bg1))))
-   
+   `(helm-mu-contacts-address-face	((t (:foreground ,fg5 :background ,bg1))))
+   `(helm-mu-contacts-name-face		((t (:foreground ,fg5 :background ,bg1))))
+
    ;; magit
    `(magit-bisect-bad        ((t (:foreground ,red))))
    `(magit-bisect-good       ((t (:foreground ,ok))))
@@ -396,9 +399,9 @@ You have to re-load the theme for these changes to take effect."
    `(diff-hl-ignore         ((t (:foreground ,fg1  :background ,bg1 :bold nil :italic nil))))
    `(diff-hl-margin-ignore  ((t (:foreground ,fg1  :background ,bg1 :bold nil :italic nil))))
    `(diff-hl-margin-unknown ((t (:foreground ,fg1  :background ,bg1 :bold nil :italic nil))))
-   
+
    ;; help
-   `(help-key-binding ((t (:foreground ,fg1 :background ,bg5 :box (:line-width (1 . -1) :color ,fg2)))))
+   `(help-key-binding ((t (:foreground ,fg1 :background ,bg5 :box (:line-width (1 . -1) :color ,fg5)))))
 
    ;; outline, extends org-outline
    `(outline-1 ((t (:foreground ,fg1 :bold t :extend t))))
@@ -411,13 +414,13 @@ You have to re-load the theme for these changes to take effect."
    `(outline-8 ((t (:foreground ,fg1 :bold t :extend t))))
 
    ;; TODO org-agenda
-   
+
    ;; org
    `(org-code                  ((t (:background ,str :distant-foreground ,bg1 :background ,stimmung-themes-dark-highlight-color))))
    `(org-link                  ((t (:underline t))))
    `(org-block                 ((t (:foreground ,fg1 :background ,bg5 :extend t))))
-   `(org-block-begin-line      ((t (:foreground ,fg2 :background ,bg5 :extend t))))
-   `(org-block-end-line        ((t (:foreground ,fg2 :background ,bg5 :extend t))))
+   `(org-block-begin-line      ((t (:foreground ,fg5 :background ,bg5 :extend t))))
+   `(org-block-end-line        ((t (:foreground ,fg5 :background ,bg5 :extend t))))
    `(org-drawer                ((t (:foreground ,fg1 :bold t))))
    `(org-document-info         ((t (:foreground ,fg1 :background ,bg1 :italic t))))
    `(org-document-info-keyword ((t (:foreground ,fg1 :background ,bg1))))
@@ -464,15 +467,15 @@ You have to re-load the theme for these changes to take effect."
    `(markdown-html-tag-delimiter-face ((t (:inherit 'markdown-markup-face))))
    `(markdown-html-tag-name-face      ((t (:inherit 'font-lock-keyword-face))))
 
-   ;; solaire 
-   `(solaire-default-face				((t (:background ,bg6 :foreground ,fg1))))	
+   ;; solaire
+   `(solaire-default-face				((t (:background ,bg6 :foreground ,fg1))))
    `(solaire-fringe-face				((t (:background ,bg6 :foreground ,fg1))))
-   `(solaire-line-number-face			((t (:background ,bg6 :foreground ,fg2))))
+   `(solaire-line-number-face			((t (:background ,bg6 :foreground ,fg5))))
    `(solaire-hl-line-face				((t (:background ,bg2 :extend t))))
    `(solaire-org-hide-face				((t (:background ,bg6 :foreground ,fg1))))
    `(solaire-mode-line-face				((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,bg4 :style nil)))))
-   `(solaire-mode-line-inactive-face	((t (:foreground ,fg2 :background ,bg1 :box (:line-width 1 :color ,bg3 :style nil)))))
-   `(solaire-header-line-face			((t (:background ,bg6 :foreground ,fg1 :bold t))))	
+   `(solaire-mode-line-inactive-face	((t (:foreground ,fg5 :background ,bg1 :box (:line-width 1 :color ,bg3 :style nil)))))
+   `(solaire-header-line-face			((t (:background ,bg6 :foreground ,fg1 :bold t))))
 
    ;; sh
    `(sh-quoted-exec ((t (:background ,stimmung-themes-dark-highlight-color))))
@@ -502,8 +505,8 @@ You have to re-load the theme for these changes to take effect."
    `(treemacs-git-modified-face             ((t (:foreground ,fg1 :italic t))))
    `(treemacs-git-renamed-face              ((t (:foreground ,fg1 :italic t))))
    `(treemacs-git-added-face                ((t (:foreground ,fg1))))
-   `(treemacs-git-ignored-face              ((t (:foreground ,fg2 :italic nil))))
-   `(treemacs-git-untracked-face            ((t (:foreground ,fg2 :italic nil))))
+   `(treemacs-git-ignored-face              ((t (:foreground ,fg5 :italic nil))))
+   `(treemacs-git-untracked-face            ((t (:foreground ,fg5 :italic nil))))
    `(treemacs-git-conflict-face             ((t (:foreground ,red))))
    `(treemacs-on-failure-pulse-face         ((t (:foreground ,red))))
    `(treemacs-on-success-pulse-face         ((t (:foreground ,ok))))
@@ -512,11 +515,11 @@ You have to re-load the theme for these changes to take effect."
    `(treemacs-help-column-face              ((t (:foreground ,fg1 :bold t))))
    `(treemacs-on-failure-pulse-face         ((t (:background ,warning :foreground ,fg1 :extend t))))
    `(treemacs-on-success-pulse-face         ((t (:background ,ok :foreground ,fg1 :extend t))))
-   `(treemacs-fringe-indicator-face         ((t (:foreground ,fg2))))
+   `(treemacs-fringe-indicator-face         ((t (:foreground ,fg5))))
    `(treemacs-peek-mode-indicator-face      ((t (:background ,stimmung-themes-dark-highlight-color))))
    `(treemacs-header-button-face            ((t (:background ,stimmung-themes-dark-highlight-color))))
-   `(treemacs-header-button-face            ((t (:foreground ,fg1 :background ,bg5 :box (:line-width -1 :color ,fg2 :style nil)))))
-   
+   `(treemacs-header-button-face            ((t (:foreground ,fg1 :background ,bg5 :box (:line-width -1 :color ,fg5 :style nil)))))
+
    ;; tab-bar-mode
    `(tab-bar              ((t (:background ,bg1 :foreground ,fg1))))
    `(tab-bar-tab          ((t (:background ,bg1 :foreground ,fg1 :bold t))))
@@ -548,18 +551,18 @@ You have to re-load the theme for these changes to take effect."
    `(lsp-modeline-code-actions-face				((t :foreground ,fg1 :bold t)))
    `(lsp-modeline-code-actions-preferred-face	((t :foreground ,fg1 :bold t)))
 
-   `(lsp-lens-mouse-face		((t (:foreground ,fg2 :underline t))))
-   `(lsp-lens-face				((t (:foreground ,fg2))))
+   `(lsp-lens-mouse-face		((t (:foreground ,fg5 :underline t))))
+   `(lsp-lens-face				((t (:foreground ,fg5))))
    `(lsp-face-highlight-textual ((t (:foreground ,fg1 :background ,search2))))
 
-   `(lsp-headerline-breadcrumb-separator-face				((t (:foreground ,fg2))))
+   `(lsp-headerline-breadcrumb-separator-face				((t (:foreground ,fg5))))
    `(lsp-headerline-breadcrumb-path-face					((t (:foreground ,fg1))))
    `(lsp-headerline-breadcrumb-path-error-face				((t (:foreground ,fg1 :underline (:style wave :color ,red)))))
    `(lsp-headerline-breadcrumb-path-warning-face			((t (:foreground ,fg1 :underline (:style wave :color ,warning)))))
    `(lsp-headerline-breadcrumb-path-info-face				((t (:foreground ,fg1))))
    `(lsp-headerline-breadcrumb-path-hint-face				((t (:foreground ,fg1))))
    `(lsp-headerline-breadcrumb-project-prefix-face			((t (:foreground ,fg1 :bold t))))
-   `(lsp-headerline-breadcrumb-unknown-project-prefix-face	((t (:foreground ,fg2))))
+   `(lsp-headerline-breadcrumb-unknown-project-prefix-face	((t (:foreground ,fg5))))
    `(lsp-headerline-breadcrumb-symbols-face					((t (:foreground ,fg1))))
    `(lsp-headerline-breadcrumb-symbols-error-face			((t (:foreground ,fg1 :underline (:style wave :color ,red)))))
    `(lsp-headerline-breadcrumb-symbols-warning-face			((t (:foreground ,fg1 :underline (:style wave :color ,warning)))))
@@ -568,18 +571,18 @@ You have to re-load the theme for these changes to take effect."
    `(lsp-headerline-breadcrumb-deprecated-face				((t (:foreground ,red))))
 
    ;; LSP UI
-   `(lsp-ui-doc-background		((t (:foreground ,fg1 :background ,bg5 :box (:line-width -1 :color ,fg2 :style nil)))))
+   `(lsp-ui-doc-background		((t (:foreground ,fg1 :background ,bg5 :box (:line-width -1 :color ,fg5 :style nil)))))
    `(lsp-ui-doc-header			((t (:foreground ,fg1 :bold t))))
    `(lsp-ui-doc-highlight-hover ((t (:foreground ,fg1 :background ,stimmung-themes-dark-highlight-color))))
    `(lsp-ui-doc-url				((t (:foreground ,fg1 :underline t))))
 
-   `(lsp-ui-peek-peek			((t (:foreground ,fg1 :background ,bg5 :box (:line-width -1 :color ,fg2 :style nil)))))
-   `(lsp-ui-peek-list			((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg2 :style nil)))))
+   `(lsp-ui-peek-peek			((t (:foreground ,fg1 :background ,bg5 :box (:line-width -1 :color ,fg5 :style nil)))))
+   `(lsp-ui-peek-list			((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg5 :style nil)))))
    `(lsp-ui-peek-filename		((t (:foreground ,fg1 :underline t :italic t))))
-   `(lsp-ui-peek-line-number	((t (:foreground ,fg2 :background ,bg1))))
+   `(lsp-ui-peek-line-number	((t (:foreground ,fg5 :background ,bg1))))
    `(lsp-ui-peek-highlight		((t (:foreground ,fg1 :background ,stimmung-themes-dark-highlight-color))))
    `(lsp-ui-peek-header			((t (:foreground ,fg1 :bold))))
-   `(lsp-ui-peek-footer			((t (:foreground ,fg2))))
+   `(lsp-ui-peek-footer			((t (:foreground ,fg5))))
    `(lsp-ui-peek-selection		((t (:background ,bg4 :foreground ,fg1))))
 
    `(lsp-ui-sideline-symbol         ((t (:foreground ,fg1 :background ,search2))))
@@ -634,14 +637,14 @@ You have to re-load the theme for these changes to take effect."
    `(vr/group-2 ((t (:background ,bg2 :foreground ,fg1))))
 
    ;; elfeed
-   `(elfeed-search-date-face         ((t (:foreground ,fg2 :inherit bold))))
+   `(elfeed-search-date-face         ((t (:foreground ,fg5 :inherit bold))))
    `(elfeed-search-feed-face         ((t (:foreground ,fg1 :background ,bg5))))
    `(elfeed-search-filter-face       ((t (:inherit bold :foreground ,fg1 :background ,bg3))))
-   `(elfeed-search-last-update-face  ((t (:foreground ,fg2 :inherit bold))))
-   `(elfeed-search-tag-face          ((t (:foreground ,fg2))))
-   `(elfeed-search-title-face        ((t (:foreground ,fg2))))
+   `(elfeed-search-last-update-face  ((t (:foreground ,fg5 :inherit bold))))
+   `(elfeed-search-tag-face          ((t (:foreground ,fg5))))
+   `(elfeed-search-title-face        ((t (:foreground ,fg5))))
    `(elfeed-search-unread-title-face ((t (:foreground ,fg1 :inherit bold))))
-   `(elfeed-search-unread-count-face ((t (:foreground ,fg2 :inherit bold))))
+   `(elfeed-search-unread-count-face ((t (:foreground ,fg5 :inherit bold))))
    `(elfeed-log-date-face            ((t (:inherit elfeed-search-date-face))))
    `(elfeed-log-debug-level-face     ((t (:inherit elfeed-search-filter-face))))
    `(elfeed-log-error-level-face     ((t (:inherit error))))
@@ -658,8 +661,8 @@ You have to re-load the theme for these changes to take effect."
    `(notmuch-hello-logo-background       ((t (:background ,bg5))))
    `(notmuch-jump-key                    ((t (:inherit help-key-binding))))
    `(notmuch-message-summary-face        ((t (:foreground ,fg1))))
-   `(notmuch-search-count                ((t (:foreground ,fg2))))
-   `(notmuch-search-date                 ((t (:foreground ,fg2 :inherit bold))))
+   `(notmuch-search-count                ((t (:foreground ,fg5))))
+   `(notmuch-search-date                 ((t (:foreground ,fg5 :inherit bold))))
    `(notmuch-search-flagged-face         ((t (:background ,search2))))
    `(notmuch-search-matching-authors     ((t (:foreground ,fg1))))
    `(notmuch-search-non-matching-authors ((t (:inherit notmuch-tree-no-match-face))))
@@ -667,17 +670,17 @@ You have to re-load the theme for these changes to take effect."
    `(notmuch-search-unread-face          ((t (:foreground ,fg1 :inherit bold))))
    `(notmuch-tag-added                   ((t (:underline ,fg1 :background ,bg6))))
    `(notmuch-tag-deleted                 ((t (:strike-through ,red))))
-   `(notmuch-tag-face                    ((t (:foreground ,fg2))))
+   `(notmuch-tag-face                    ((t (:foreground ,fg5))))
    `(notmuch-tag-flagged                 ((t (:foreground ,fg1))))
    `(notmuch-tag-unread                  ((t (:foreground ,fg1 :background ,stimmung-themes-light-highlight-color))))
    `(notmuch-tree-match-author-face      ((t (:inherit notmuch-search-matching-authors))))
    `(notmuch-tree-match-date-face        ((t (:inherit notmuch-search-date))))
    `(notmuch-tree-match-face             ((t (:foreground ,fg1))))
    `(notmuch-tree-match-tag-face         ((t (:inherit notmuch-tag-face))))
-   `(notmuch-tree-no-match-face          ((t (:foreground ,fg2 :background ,bg5))))
-   `(notmuch-tree-no-match-date-face     ((t (:foreground ,fg2 :background ,bg5))))
+   `(notmuch-tree-no-match-face          ((t (:foreground ,fg5 :background ,bg5))))
+   `(notmuch-tree-no-match-date-face     ((t (:foreground ,fg5 :background ,bg5))))
    `(notmuch-wash-cited-text             ((t (:inherit message-cited-text-1))))
-   `(notmuch-wash-toggle-button          ((t (:foreground ,fg2 :background ,bg5))))
+   `(notmuch-wash-toggle-button          ((t (:foreground ,fg5 :background ,bg5))))
 
    ;; white-space
    `(whitespace-empty       ((t (:background ,bg3))))
