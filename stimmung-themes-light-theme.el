@@ -363,6 +363,8 @@
    `(magit-diff-file-heading ((t (:foreground ,fg1 :bold nil))))
    `(magit-diff-whitespace-warning ((t (:background ,red))))
 
+   `(magit-branch-remote-head	  ((t (:foreground ,fg5 :background ,bg5 :box (:line-width (1 . -1) :color ,fg5)))))
+   `(magit-branch-current         ((t (:foreground ,fg1 :background ,bg5 :box (:line-width (1 . -1) :color ,fg5)))))
    `(magit-diff-context-highlight ((t (:foreground ,fg1 :background ,bg3))))
    `(magit-diff-file-header       ((t (:foreground ,fg1 :background ,bg3))))
    `(magit-diffstat-added         ((t (:foreground ,ok))))
