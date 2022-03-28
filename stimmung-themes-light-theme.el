@@ -40,6 +40,8 @@
 
 ;;; Code:
 
+(require 'stimmung-themes)
+
 (deftheme stimmung-themes-light
   "A light theme tuned to inner harmonies.")
 

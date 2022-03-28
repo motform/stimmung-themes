@@ -40,6 +40,8 @@
 
 ;;; Code:
 
+(require 'stimmung-themes)
+
 (deftheme stimmung-themes-dark
   "A dark theme tuned to inner harmonies.")
 
