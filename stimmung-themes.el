@@ -74,12 +74,12 @@ You have to re-load the theme for these changes to take effect."
   (disable-theme 'stimmung-themes-dark)
   (load-theme 'stimmung-themes-light t))
 
-
 ;;;###autoload
 (defun stimmung-themes--toggle-prompt ()
   "Helper for `stimmung-themes-toggle'."
   (let ((theme (intern (completing-read "Load Stimmung theme: "
                            '(stimmung-themes-light stimmung-themes-dark) nil t))))
+	(mapc #'disable-theme custom-enabled-themes) ; make sure to disable any non-stimmung themes to ignore accidental face-overlap
 	(pcase theme
 	  ('stimmung-themes-light (stimmung-themes-load-dark))
 	  ('stimmung-themes-dark  (stimmung-themes-load-light)))))
