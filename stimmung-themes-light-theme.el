@@ -49,6 +49,7 @@
 	  (bg4 "gray85")
 	  (bg5 "gray98")
 	  (bg6 "gray99")
+	  (bg7 "gray80")
 
 	  (fg1  "black")
 	  (fg2 "gray90")
@@ -220,11 +221,12 @@
 
    ;; company
    `(company-scrollbar-bg					((t (:background ,bg2))))
-   `(company-scrollbar-fg					((t (:background ,bg4))))
-   `(company-tooltip-scrollbar-thumb		((t (:background ,bg4))))
+   `(company-scrollbar-fg					((t (:background ,fg5))))
+   `(company-tooltip-scrollbar-thumb        ((t (:background ,fg5))))
+   `(company-tooltip-scrollbar-track        ((t (:background ,bg2))))
    `(company-tooltip-common					((t (:foreground ,fg1))))
    `(company-tooltip						((t (:background ,bg2 :foreground ,fg1))))
-   `(company-tooltip-selection				((t (:background ,bg4 :foreground ,fg1))))
+   `(company-tooltip-selection				((t (:background ,bg3 :foreground ,fg1))))
    `(company-tooltip-common					((t (:foreground ,fg1 :background ,search2))))
    `(company-tooltip-common-selection		((t (:foreground ,fg1 :background ,search2))))
    `(company-tooltip-search					((t (:foreground ,fg1 :background ,search2))))

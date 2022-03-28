@@ -220,8 +220,9 @@
 
    ;; company
    `(company-scrollbar-bg					((t (:background ,bg2))))
-   `(company-scrollbar-fg					((t (:background ,bg4))))
-   `(company-tooltip-scrollbar-thumb		((t (:background ,bg4))))
+   `(company-scrollbar-fg					((t (:background ,fg5))))
+   `(company-tooltip-scrollbar-thumb        ((t (:background ,fg5))))
+   `(company-tooltip-scrollbar-track        ((t (:background ,bg2))))
    `(company-tooltip-common					((t (:foreground ,fg1))))
    `(company-tooltip						((t (:background ,bg2 :foreground ,fg1))))
    `(company-tooltip-selection				((t (:background ,bg4 :foreground ,fg1))))
