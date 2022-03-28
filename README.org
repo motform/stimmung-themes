@@ -24,7 +24,7 @@ The screenshots are set in [[https://fsd.it/shop/fonts/pragmatapro/][PragmataPro
 
 #+BEGIN_SRC emacs-lisp
 (require 'stimmung-themes) ; if you use package.el
-(load-theme 'stimmung-themes-light)
+(stimmung-themes-load-light)
 #+END_SRC
 
 A typical use-package installation might look something like:
@@ -34,7 +34,7 @@ A typical use-package installation might look something like:
   ;; :straight (stimmung-themes :host github :repo "motform/stimmung-themes") ; if you are a straight shooter
   :demand t
   :ensure t
-  :config (load-theme 'stimmung-themes-light t))
+  :config (stimmung-themes-load-light)) ; or (stimmung-themes-load-dark)
 #+END_SRC
 
 ** Customization
