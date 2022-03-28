@@ -43,18 +43,6 @@
 (deftheme stimmung-themes-dark
   "A dark theme tuned to inner harmonies.")
 
-(defgroup stimmung-themes nil
-  "Stimmung settings.
-You have to re-load the theme for these changes to take effect."
-  :group 'faces
-  :prefix "stimmung-theme-"
-  :link   '(url-link "https://github.com/motform/stimmung-themes"))
-
-(defcustom stimmung-themes-dark-highlight-color "#40382b" ; I dub this shade "Japanese gravy"
-  "The primarily color for highlights, the only non-monochrome color in code."
-  :type 'string
-  :group 'stimmung-themes)
-
 (let ((bg1 "gray12")
       (bg2 "gray15")
       (bg3 "gray20")
@@ -458,7 +446,7 @@ You have to re-load the theme for these changes to take effect."
    `(markdown-metadata-key-face       ((t (:foreground ,fg1))))
    `(markdown-markup-face             ((t (:foreground ,fg1))))
    `(markdown-pre-face                ((t (:foreground ,fg1))))
-   `(markdown-inline-code-face        ((t (:foreground ,fg1 :background ,stimmung-themes-light-highlight-color))))
+   `(markdown-inline-code-face        ((t (:foreground ,fg1 :background ,stimmung-themes-dark-highlight-color))))
    `(markdown-code-face               ((t (:foreground ,fg1 :background ,bg5 :extend t))))
    `(markdown-reference-face          ((t (:foreground ,fg1))))
    `(markdown-html-attr-name-face     ((t (:inherit 'font-lock-variable-name-face))))
@@ -672,7 +660,7 @@ You have to re-load the theme for these changes to take effect."
    `(notmuch-tag-deleted                 ((t (:strike-through ,red))))
    `(notmuch-tag-face                    ((t (:foreground ,fg5))))
    `(notmuch-tag-flagged                 ((t (:foreground ,fg1))))
-   `(notmuch-tag-unread                  ((t (:foreground ,fg1 :background ,stimmung-themes-light-highlight-color))))
+   `(notmuch-tag-unread                  ((t (:foreground ,fg1 :background ,stimmung-themes-dark-highlight-color))))
    `(notmuch-tree-match-author-face      ((t (:inherit notmuch-search-matching-authors))))
    `(notmuch-tree-match-date-face        ((t (:inherit notmuch-search-date))))
    `(notmuch-tree-match-face             ((t (:foreground ,fg1))))

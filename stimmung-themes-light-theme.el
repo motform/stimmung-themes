@@ -43,18 +43,6 @@
 (deftheme stimmung-themes-light
   "A light theme tuned to inner harmonies.")
 
-(defgroup stimmung-themes nil
-  "Stimmung settings.
-You have to re-load the theme for these changes to take effect."
-  :group 'faces
-  :prefix "stimmung-theme-"
-  :link   '(url-link "https://github.com/motform/stimmung-themes"))
-
-(defcustom stimmung-themes-light-highlight-color "cornsilk1"
-  "The primarily color for highlights, the only non-monochrome color in code."
-  :type 'string
-  :group 'stimmung-themes)
-
 (let ((bg1 "white")
 	  (bg2 "gray95")
 	  (bg3 "gray90")
