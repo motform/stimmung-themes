@@ -81,8 +81,8 @@ You have to re-load the theme for these changes to take effect."
                            '(stimmung-themes-light stimmung-themes-dark) nil t))))
 	(mapc #'disable-theme custom-enabled-themes) ; make sure to disable any non-stimmung themes to ignore accidental face-overlap
 	(pcase theme
-	  ('stimmung-themes-light (stimmung-themes-load-dark))
-	  ('stimmung-themes-dark  (stimmung-themes-load-light)))))
+	  ('stimmung-themes-light (stimmung-themes-load-light))
+	  ('stimmung-themes-dark  (stimmung-themes-load-dark)))))
 
 ;;;###autoload
 (defun stimmung-themes-toggle ()
