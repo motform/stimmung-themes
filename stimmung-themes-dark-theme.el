@@ -148,20 +148,20 @@
    `(custom-group-tag		((t (:background ,bg1 :foreground ,fg1 :bold t :height 1.1 :inherit variable-pitch))))
    `(custom-group-subtitle	((t (:background ,bg1 :foreground ,fg1 :bold t))))
 
-   `(custom-button			((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg5)))))
-   `(custom-button-mouse	((t (:background ,bg3 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
-   `(custom-button-unraised	((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg5)))))
+   `(custom-button			((t (:background ,bg5 :foreground ,fg1 :box (:line-width 1 :color ,fg5)))))
+   `(custom-button-mouse	((t (:background ,bg3 :foreground ,fg1 :box (:line-width 1 :color ,bg4)))))
+   `(custom-button-unraised	((t (:background ,bg5 :foreground ,fg1 :box (:line-width 1 :color ,fg5)))))
 
    `(custom-variable-obsolete	((t (:background ,bg1 :foreground ,fg5))))
    `(custom-variable-tag		((t (:background ,bg1 :foreground ,fg5))))
-   `(custom-variable-button		((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg5)))))
+   `(custom-variable-button		((t (:background ,bg5 :foreground ,fg1 :box (:line-width 1 :color ,fg5)))))
 
    ;; widget
    `(widget-inactive			((t (:background ,bg1 :foreground ,fg5))))
    `(widget-documentation		((t (:background ,bg1 :foreground ,fg1))))
-   `(widget-button				((t (:background ,bg5 :foreground ,fg1 :box (:line-width -1 :color ,fg5)))))
-   `(widget-field				((t (:background ,bg2 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
-   `(widget-single-line-field	((t (:background ,bg2 :foreground ,fg1 :box (:line-width -1 :color ,bg4)))))
+   `(widget-button				((t (:background ,bg5 :foreground ,fg1 :box (:line-width 1 :color ,fg5)))))
+   `(widget-field				((t (:background ,bg2 :foreground ,fg1 :box (:line-width 1 :color ,bg4)))))
+   `(widget-single-line-field	((t (:background ,bg2 :foreground ,fg1 :box (:line-width 1 :color ,bg4)))))
 
    ;; message
    `(message-cited-text-1      ((t (:foreground ,fg5))))
@@ -218,7 +218,7 @@
    ;; `(cider-test-success-face     ((t (:background ,ok :foreground  ,bg1))))
    ;; `(cider-test-failure-face     ((t (:background ,red :foreground ,bg1))))
    `(cider-test-error-face       ((t (:background ,stimmung-themes-dark-highlight-color))))
-   `(cider-result-overlay-face   ((t (:background ,bg5 :box (:line-width -1 :color ,fg5)))))
+   `(cider-result-overlay-face   ((t (:background ,bg5 :box (:line-width 1 :color ,fg5)))))
 
    ;; company
    `(company-scrollbar-bg					((t (:background ,bg2))))
@@ -374,8 +374,8 @@
    `(magit-diff-whitespace-warning ((t (:background ,red))))
 
 
-   `(magit-branch-remote-head	  ((t (:foreground ,fg5 :background ,bg5 :box (:line-width (1 . -1) :color ,fg5)))))
-   `(magit-branch-current         ((t (:foreground ,fg1 :background ,bg5 :box (:line-width (1 . -1) :color ,fg5)))))
+   `(magit-branch-remote-head	  ((t (:foreground ,fg5 :background ,bg5 :box (:line-width 1 :color ,fg5)))))
+   `(magit-branch-current         ((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg5)))))
    `(magit-diff-context-highlight ((t (:foreground ,fg1 :background ,bg3))))
    `(magit-diff-file-header       ((t (:foreground ,fg1 :background ,bg3))))
    `(magit-diffstat-added         ((t (:foreground ,ok))))
@@ -400,7 +400,7 @@
    `(diff-hl-margin-unknown ((t (:foreground ,fg1  :background ,bg1 :bold nil :italic nil))))
 
    ;; help
-   `(help-key-binding ((t (:foreground ,fg1 :background ,bg5 :box (:line-width (1 . -1) :color ,fg5)))))
+   `(help-key-binding ((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg5)))))
 
    ;; outline, extends org-outline
    `(outline-1 ((t (:foreground ,fg1 :bold t :extend t))))
@@ -517,7 +517,7 @@
    `(treemacs-fringe-indicator-face         ((t (:foreground ,fg5))))
    `(treemacs-peek-mode-indicator-face      ((t (:background ,stimmung-themes-dark-highlight-color))))
    `(treemacs-header-button-face            ((t (:background ,stimmung-themes-dark-highlight-color))))
-   `(treemacs-header-button-face            ((t (:foreground ,fg1 :background ,bg5 :box (:line-width -1 :color ,fg5 :style nil)))))
+   `(treemacs-header-button-face            ((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg5 :style nil)))))
 
    ;; tab-bar-mode
    `(tab-bar              ((t (:background ,bg1 :foreground ,fg1))))
@@ -570,12 +570,12 @@
    `(lsp-headerline-breadcrumb-deprecated-face				((t (:foreground ,red))))
 
    ;; LSP UI
-   `(lsp-ui-doc-background		((t (:foreground ,fg1 :background ,bg5 :box (:line-width -1 :color ,fg5 :style nil)))))
+   `(lsp-ui-doc-background		((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg5 :style nil)))))
    `(lsp-ui-doc-header			((t (:foreground ,fg1 :bold t))))
    `(lsp-ui-doc-highlight-hover ((t (:foreground ,fg1 :background ,stimmung-themes-dark-highlight-color))))
    `(lsp-ui-doc-url				((t (:foreground ,fg1 :underline t))))
 
-   `(lsp-ui-peek-peek			((t (:foreground ,fg1 :background ,bg5 :box (:line-width -1 :color ,fg5 :style nil)))))
+   `(lsp-ui-peek-peek			((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg5 :style nil)))))
    `(lsp-ui-peek-list			((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg5 :style nil)))))
    `(lsp-ui-peek-filename		((t (:foreground ,fg1 :underline t :italic t))))
    `(lsp-ui-peek-line-number	((t (:foreground ,fg5 :background ,bg1))))
