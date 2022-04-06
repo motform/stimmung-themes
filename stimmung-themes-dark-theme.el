@@ -521,8 +521,8 @@
 
    ;; tab-bar-mode
    `(tab-bar              ((t (:background ,bg1 :foreground ,fg1))))
-   `(tab-bar-tab          ((t (:background ,bg1 :foreground ,fg1 :bold t))))
-   `(tab-bar-tab-inactive ((t (:background ,bg1 :foreground ,fg1))))
+   `(tab-bar-tab          ((t (:background ,bg5 :foreground ,fg1 :box (:line-width 1 :color ,fg5 :style nil)))))
+   `(tab-bar-tab-inactive ((t (:background ,bg1 :foreground ,fg5 :box (:line-width 1 :color ,fg2 :style nil)))))
 
    ;; LaTeX
    `(font-latex-sectioning-0-face ((t (:bold t))))
