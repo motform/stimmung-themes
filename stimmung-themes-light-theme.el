@@ -479,6 +479,10 @@
    `(sh-quoted-exec ((t (:background ,stimmung-themes-light-highlight-color))))
    `(sh-heredoc     ((t (:background ,stimmung-themes-light-highlight-color))))
 
+   ;; Shortdoc
+   `(shortdoc-heading  ((t (:background ,bg1 :foreground ,fg1 :bold t))))
+   `(shortdoc-section  ((t (:background ,bg1 :foreground ,fg1))))
+
    ;; show-paren
    `(show-paren-match-face       ((t (:background ,search :bold t))))
    `(show-paren-match            ((t (:background ,search :bold t))))
