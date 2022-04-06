@@ -129,6 +129,7 @@
    `(font-lock-regexp-grouping-construct ((t (:foreground ,fg1  :bold t))))
    `(font-lock-string-face               ((t (:foreground ,fg1  :background ,str))))
    `(font-lock-warning-face              ((t (:foreground ,red))))
+   `(font-lock-doc-markup-face           ((t (:background ,stimmung-themes-light-highlight-color))))
 
    ;; custom
    `(custom-invalid		((t (:background ,bg1 :foreground ,fg1 :underline (:style wave :color ,warning)))))
