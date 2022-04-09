@@ -95,7 +95,7 @@
    `(warning                     ((t (:foreground ,red))))
    `(success                     ((t (:foreground ,ok))))
    `(cancel                      ((t (:foreground ,red :strike-through t))))
-   
+
    `(minibuffer-noticable-prompt ((t (:foreground ,fg1 :bold t))))
    `(minibuffer-prompt           ((t (:foreground ,fg1 :bold t))))
 
@@ -192,13 +192,13 @@
    `(eshell-ls-product    ((t (:foreground ,fg1))))
    `(eshell-ls-archive    ((t (:foreground ,fg1))))
    `(eshell-ls-entries    ((t (:foreground ,fg1))))
-   
+
    ;; avy
    `(avy-lead-face   ((t (:background ,bg2 :foreground ,fg1 :distant-foreground ,fg1 :bold t))))
    `(avy-lead-face-0 ((t (:inherit 'avy-lead-face))))
    `(avy-lead-face-1 ((t (:inherit 'avy-lead-face))))
    `(avy-lead-face-2 ((t (:inherit 'avy-lead-face))))
-   
+
    ;; flyspell
    `(flyspell-incorrect       ((t (:underline (:style wave :color ,red) ))))
    `(flyspell-duplicate       ((t (:underline (:style wave :color ,search)))))
@@ -206,14 +206,14 @@
    `(flysheck-warning         ((t (:underline (:style wave :color ,search)))))
    `(flysheck-warning-overlay ((t (:underline (:style wave :color ,search)))))
    `(flycheck-note            ((t (:underline (:style wave :color ,ok)))))
-   
+
    ;; hydra
    `(hydra-face-red      ((t (:foreground ,fg1  :bold t))))
    `(hydra-face-blue     ((t (:foreground ,fg1 :bold t))))
    `(hydra-face-amaranth ((t (:foreground ,fg1 :bold t))))
    `(hydra-face-pink     ((t (:foreground ,fg1 :bold t))))
    `(hydra-face-teal     ((t (:foreground ,fg1 :bold t))))
-   
+
    ;; cider
    `(cider-fringe-good-face      ((t (:foreground ,ok))))
    ;; `(cider-test-success-face     ((t (:background ,ok :foreground  ,bg1))))
@@ -273,7 +273,7 @@
    `(doom-modeline-evil-visual-state  ((t (:foreground ,fg1))))
    `(doom-modeline-evil-normal-state  ((t (:foreground ,fg1))))
    `(doom-modeline-evil-emacs-state   ((t (:foreground ,red :italic nil))))
-   
+
    ;; dired
    `(dired-directory  ((t (:foreground ,fg1 :bold t))))
    `(dired-ignored    ((t (:foreground ,fg1))))
@@ -284,20 +284,20 @@
    `(dired-perm-write ((t (:foreground ,fg1  :underline t))))
    `(dired-symlink    ((t (:foreground ,fg1  :italic t))))
    `(dired-warning    ((t (:foreground ,red))))
-   
+
    ;; evil
    `(evil-ex-info                   ((t (:foreground ,red :italic t))))
    `(evil-ex-search                 ((t (:background ,bg2 :foreground ,fg1 :bold t))))
    ;; (evil-ex-sub,stitute-matches     :background base0 :foreground red   :strike-through t :weight 'bold)
    ;; (evil-ex-sub,stitute-replacement :background base0 :foreground green :weight 'bold)
    `(evil-search-highlight-persist-highlight-face ((t (:inherit 'lazy-highlight))))
-   
+
    ;; evil-mc
    `(evil-mc-cursor-default-face ((t (:foreground ,bg1 :background ,fg1))))
    `(evil-mc-region-face         ((t (:foreground ,bg1 :background ,fg1))))
    `(evil-mc-cursor-bar-face     ((t (:foreground ,fg1))))
    `(evil-mc-cursor-hbar-face    ((t (:foreground ,fg1))))
-   
+
    ;; info
    `(info-quoted    ((t (:inherit 'default :bold t))))
    `(info-menu-star ((t (:bold t))))
@@ -363,6 +363,12 @@
    `(helm-mu-contacts-address-face	((t (:foreground ,fg5 :background ,bg1))))
    `(helm-mu-contacts-name-face		((t (:foreground ,fg5 :background ,bg1))))
 
+   ;; orderless
+   `(orderless-match-face-0 ((t (:foreground ,fg1 :bold t))))
+   `(orderless-match-face-1 ((t (:foreground ,fg1 :bold t))))
+   `(orderless-match-face-2 ((t (:foreground ,fg1 :bold t))))
+   `(orderless-match-face-3 ((t (:foreground ,fg1 :bold t))))
+
    ;; magit
    `(magit-bisect-bad        ((t (:foreground ,red))))
    `(magit-bisect-good       ((t (:foreground ,ok))))
@@ -391,7 +397,7 @@
    `(magit-process-ok             ((t (:foreground ,ok :bold t))))
    `(magit-section-heading        ((t (:foreground ,fg1 :bold t))))
    `(magit-section-highlight      ((t (:background ,bg3))))
-   
+
    ;; diff-hl
    `(diff-hl-insert         ((t (:foreground ,ok  :background ,bg1 :bold nil :italic nil))))
    `(diff-hl-delete         ((t (:foreground ,red :background ,bg1 :bold nil :italic nil))))
@@ -486,7 +492,7 @@
    `(show-paren-match            ((t (:background ,search :bold t))))
    `(show-paren-match-expression ((t (:background ,search :bold t))))
    `(show-paren-mismatch         ((t (:background ,fg1 :foreground ,red :bold t))))
-   
+
    ;; smartparens
    `(sp-show-pair-match-face    ((t (:inherit 'paren-matched))))
    `(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
@@ -613,7 +619,7 @@
    `(reb-match-1 ((t (:foreground ,fg1 :inverse-video t :bold t))))
    `(reb-match-2 ((t (:foreground ,fg1 :inverse-video t :bold t))))
    `(reb-match-3 ((t (:foreground ,fg1 :inverse-video t :bold t))))
-   
+
    ;; undo-tree
    `(undo-tree-visualizer-default-face       ((t (:foreground ,fg1))))
    `(undo-tree-visualizer-current-face       ((t (:foreground ,ok :bold t))))
@@ -624,13 +630,13 @@
    `(window-divider             ((t (:foreground ,bg1))))
    `(window-divider-first-pixel ((t (:foreground ,bg1))))
    `(window-divider-last-pixel  ((t (:foreground ,bg1))))
-   
+
    ;; wo/man
    `(Man-overstrike ((t (:foreground ,fg1 :bold t))))
    `(Man-underline  ((t (:foreground ,fg1 :underline nil :italic t))))
    `(woman-bold     ((t (:inherit 'Man-overstrike))))
    `(woman-italic   ((t (:inherit 'Man-underline))))
-   
+
    ;; web-mode
    `(web-mode-doctype-face           ((t (:foreground ,fg1))))
    `(web-mode-html-tag-face          ((t (:foreground ,fg1 :italic t))))

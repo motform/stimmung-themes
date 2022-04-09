@@ -96,7 +96,7 @@
    `(warning                     ((t (:foreground ,warning))))
    `(success                     ((t (:foreground ,ok))))
    `(cancel                      ((t (:foreground ,red :strike-through t))))
-   
+
    `(minibuffer-noticable-prompt ((t (:foreground ,fg1 :bold t))))
    `(minibuffer-prompt           ((t (:foreground ,fg1 :bold t))))
 
@@ -361,6 +361,12 @@
    `(helm-moccur-buffer				((t (:foreground ,fg1 :background ,bg1))))
    `(helm-mu-contacts-address-face	((t (:foreground ,fg5 :background ,bg1))))
    `(helm-mu-contacts-name-face		((t (:foreground ,fg5 :background ,bg1))))
+
+   ;; orderless
+   `(orderless-match-face-0 ((t (:foreground ,fg1 :bold t))))
+   `(orderless-match-face-1 ((t (:foreground ,fg1 :bold t))))
+   `(orderless-match-face-2 ((t (:foreground ,fg1 :bold t))))
+   `(orderless-match-face-3 ((t (:foreground ,fg1 :bold t))))
 
    ;; magit
    `(magit-bisect-bad        ((t (:foreground ,red))))
