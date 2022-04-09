@@ -96,7 +96,7 @@
    `(warning                     ((t (:foreground ,warning))))
    `(success                     ((t (:foreground ,ok))))
    `(cancel                      ((t (:foreground ,red :strike-through t))))
-   
+
    `(minibuffer-noticable-prompt ((t (:foreground ,fg1 :bold t))))
    `(minibuffer-prompt           ((t (:foreground ,fg1 :bold t))))
 
@@ -240,6 +240,9 @@
    `(company-tooltip-mouse					((t (:inherit highlight))))
    `(company-preview						((t (:background ,stimmung-themes-light-highlight-color :foreground ,fg1))))
    `(company-echo-common					((t (:background ,fg1 :foreground ,bg1))))
+
+   ;; corfu
+   `(corfu-current ((t (:background ,bg3 :foreground ,fg1))))
 
    ;; compilation
    `(compilation-line-number    ((t (:bold t))))
