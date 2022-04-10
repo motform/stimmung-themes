@@ -534,6 +534,9 @@
    `(tab-line-tab-inactive				((t (:background ,bg1 :foreground ,fg5 :box (:line-width 1 :color ,fg2 :style nil)))))
    `(tab-line-tab-inactive-alternate	((t (:background ,bg1 :foreground ,fg4 :box (:line-width 1 :color ,fg2 :style nil)))))
 
+   ;; perspective
+   `(persp-selected-face ((t (:bold t))))
+
    ;; LaTeX
    `(font-latex-sectioning-0-face ((t (:bold t))))
    `(font-latex-sectioning-1-face ((t (:bold t))))
