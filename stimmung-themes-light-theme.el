@@ -277,6 +277,7 @@
    `(doom-modeline-evil-visual-state  ((t (:foreground ,fg1))))
    `(doom-modeline-evil-normal-state  ((t (:foreground ,fg1))))
    `(doom-modeline-evil-emacs-state   ((t (:foreground ,red :italic nil))))
+   `(doom-modeline-buffer-minor-mode  ((t (:background ,bg5))))
 
    ;; dired
    `(dired-directory  ((t (:foreground ,fg1 :bold t))))
