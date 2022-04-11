@@ -618,7 +618,7 @@
 
    `(lsp-ui-peek-peek			((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg5 :style nil)))))
    `(lsp-ui-peek-list			((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg5 :style nil)))))
-   `(lsp-ui-peek-filename		((t (:foreground ,fg1 :underline t :italic t))))
+   `(lsp-ui-peek-filename		((t (:foreground ,fg5 :underline t))))
    `(lsp-ui-peek-line-number	((t (:foreground ,fg5 :background ,bg1))))
    `(lsp-ui-peek-highlight		((t (:foreground ,fg1 :background ,stimmung-themes-light-highlight-color))))
    `(lsp-ui-peek-header			((t (:foreground ,fg1 :bold))))
