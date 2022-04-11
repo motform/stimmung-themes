@@ -240,6 +240,9 @@
    `(company-preview						((t (:background ,stimmung-themes-dark-highlight-color :foreground ,fg1))))
    `(company-echo-common					((t (:background ,fg1 :foreground ,bg1))))
 
+   ;; corfu
+   `(corfu-current ((t (:background ,bg4 :foreground ,fg1))))
+
    ;; compilation
    `(compilation-line-number    ((t (:bold t))))
    `(compilation-column-number  ((t (:inherit 'font-lock-comment-face))))
