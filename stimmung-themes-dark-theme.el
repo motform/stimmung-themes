@@ -276,6 +276,7 @@
    `(doom-modeline-evil-visual-state  ((t (:foreground ,fg1))))
    `(doom-modeline-evil-normal-state  ((t (:foreground ,fg1))))
    `(doom-modeline-evil-emacs-state   ((t (:foreground ,red :italic nil))))
+   `(doom-modeline-buffer-minor-mode  ((t (:background ,bg5))))
 
    ;; dired
    `(dired-directory  ((t (:foreground ,fg1 :bold t))))
@@ -558,6 +559,9 @@
    `(tab-line-tab						((t (:background ,bg5 :foreground ,fg1 :italic t:box (:line-width 1 :color ,fg5 :style nil)))))
    `(tab-line-tab-inactive				((t (:background ,bg1 :foreground ,fg5 :box (:line-width 1 :color ,fg2 :style nil)))))
    `(tab-line-tab-inactive-alternate	((t (:background ,bg1 :foreground ,fg4 :box (:line-width 1 :color ,fg2 :style nil)))))
+
+   ;; perspective
+   `(persp-selected-face ((t (:bold t))))
 
    ;; LaTeX
    `(font-latex-sectioning-0-face ((t (:bold t))))
