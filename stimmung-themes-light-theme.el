@@ -96,7 +96,7 @@
    `(warning                     ((t (:foreground ,warning))))
    `(success                     ((t (:foreground ,ok))))
    `(cancel                      ((t (:foreground ,red :strike-through t))))
-   
+
    `(minibuffer-noticable-prompt ((t (:foreground ,fg1 :bold t))))
    `(minibuffer-prompt           ((t (:foreground ,fg1 :bold t))))
 
@@ -241,6 +241,9 @@
    `(company-preview						((t (:background ,stimmung-themes-light-highlight-color :foreground ,fg1))))
    `(company-echo-common					((t (:background ,fg1 :foreground ,bg1))))
 
+   ;; corfu
+   `(corfu-current ((t (:background ,bg3 :foreground ,fg1))))
+
    ;; compilation
    `(compilation-line-number    ((t (:bold t))))
    `(compilation-column-number  ((t (:inherit 'font-lock-comment-face))))
@@ -361,6 +364,12 @@
    `(helm-moccur-buffer				((t (:foreground ,fg1 :background ,bg1))))
    `(helm-mu-contacts-address-face	((t (:foreground ,fg5 :background ,bg1))))
    `(helm-mu-contacts-name-face		((t (:foreground ,fg5 :background ,bg1))))
+
+   ;; orderless
+   `(orderless-match-face-0 ((t (:foreground ,fg1 :bold t))))
+   `(orderless-match-face-1 ((t (:foreground ,fg1 :bold t))))
+   `(orderless-match-face-2 ((t (:foreground ,fg1 :bold t))))
+   `(orderless-match-face-3 ((t (:foreground ,fg1 :bold t))))
 
    ;; magit
    `(magit-bisect-bad        ((t (:foreground ,red))))
@@ -493,6 +502,20 @@
    `(sp-show-pair-match-face    ((t (:inherit 'paren-matched))))
    `(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
 
+   ;; rainbow-delimiters
+   `(rainbow-delimiters-depth-1-face  ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-2-face  ((t (:foreground ,fg4))))
+   `(rainbow-delimiters-depth-3-face  ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-4-face  ((t (:foreground ,fg5))))
+   `(rainbow-delimiters-depth-5-face  ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-6-face  ((t (:foreground ,fg4))))
+   `(rainbow-delimiters-depth-7-face  ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-8-face  ((t (:foreground ,fg5))))
+   `(rainbow-delimiters-depth-9-face  ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-10-face ((t (:foreground ,fg4))))
+   `(rainbow-delimiters-depth-11-face ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-12-face ((t (:foreground ,fg5))))
+
    ;; treemacs
    `(treemacs-directory-face				((t (:foreground ,fg1))))
    `(treemacs-directory-collapsed-face		((t (:foreground ,fg1))))
@@ -537,6 +560,9 @@
    `(tab-line-tab						((t (:background ,bg5 :foreground ,fg1 :italic t:box (:line-width 1 :color ,fg5 :style nil)))))
    `(tab-line-tab-inactive				((t (:background ,bg1 :foreground ,fg5 :box (:line-width 1 :color ,fg2 :style nil)))))
    `(tab-line-tab-inactive-alternate	((t (:background ,bg1 :foreground ,fg4 :box (:line-width 1 :color ,fg2 :style nil)))))
+
+   ;; perspective
+   `(persp-selected-face ((t (:bold t))))
 
    ;; LaTeX
    `(font-latex-sectioning-0-face ((t (:bold t))))
