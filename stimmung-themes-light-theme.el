@@ -498,6 +498,20 @@
    `(sp-show-pair-match-face    ((t (:inherit 'paren-matched))))
    `(sp-show-pair-mismatch-face ((t (:inherit 'paren-unmatched))))
 
+   ;; rainbow-delimiters
+   `(rainbow-delimiters-depth-1-face  ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-2-face  ((t (:foreground ,fg4))))
+   `(rainbow-delimiters-depth-3-face  ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-4-face  ((t (:foreground ,fg5))))
+   `(rainbow-delimiters-depth-5-face  ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-6-face  ((t (:foreground ,fg4))))
+   `(rainbow-delimiters-depth-7-face  ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-8-face  ((t (:foreground ,fg5))))
+   `(rainbow-delimiters-depth-9-face  ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-10-face ((t (:foreground ,fg4))))
+   `(rainbow-delimiters-depth-11-face ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-12-face ((t (:foreground ,fg5))))
+
    ;; treemacs
    `(treemacs-directory-face				((t (:foreground ,fg1))))
    `(treemacs-directory-collapsed-face		((t (:foreground ,fg1))))
