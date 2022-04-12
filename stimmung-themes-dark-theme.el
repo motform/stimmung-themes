@@ -596,6 +596,7 @@
    `(lsp-lens-mouse-face		((t (:foreground ,fg5 :underline t))))
    `(lsp-lens-face				((t (:foreground ,fg5))))
    `(lsp-face-highlight-textual ((t (:foreground ,fg1 :background ,search2))))
+   `(lsp-face-highlight-read    ((t (:foreground ,fg1 :background ,search2 :underline nil))))
 
    `(lsp-headerline-breadcrumb-separator-face				((t (:foreground ,fg5))))
    `(lsp-headerline-breadcrumb-path-face					((t (:foreground ,fg1))))

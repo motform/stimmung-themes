@@ -506,16 +506,16 @@
    ;; rainbow-delimiters
    `(rainbow-delimiters-depth-1-face  ((t (:foreground ,fg1))))
    `(rainbow-delimiters-depth-2-face  ((t (:foreground ,fg4))))
-   `(rainbow-delimiters-depth-3-face  ((t (:foreground ,fg1))))
-   `(rainbow-delimiters-depth-4-face  ((t (:foreground ,fg5))))
-   `(rainbow-delimiters-depth-5-face  ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-3-face  ((t (:foreground ,fg4))))
+   `(rainbow-delimiters-depth-4-face  ((t (:foreground ,fg4))))
+   `(rainbow-delimiters-depth-5-face  ((t (:foreground ,fg4))))
    `(rainbow-delimiters-depth-6-face  ((t (:foreground ,fg4))))
-   `(rainbow-delimiters-depth-7-face  ((t (:foreground ,fg1))))
-   `(rainbow-delimiters-depth-8-face  ((t (:foreground ,fg5))))
-   `(rainbow-delimiters-depth-9-face  ((t (:foreground ,fg1))))
+   `(rainbow-delimiters-depth-7-face  ((t (:foreground ,fg4))))
+   `(rainbow-delimiters-depth-8-face  ((t (:foreground ,fg4))))
+   `(rainbow-delimiters-depth-9-face  ((t (:foreground ,fg4))))
    `(rainbow-delimiters-depth-10-face ((t (:foreground ,fg4))))
-   `(rainbow-delimiters-depth-11-face ((t (:foreground ,fg1))))
-   `(rainbow-delimiters-depth-12-face ((t (:foreground ,fg5))))
+   `(rainbow-delimiters-depth-11-face ((t (:foreground ,fg4))))
+   `(rainbow-delimiters-depth-12-face ((t (:foreground ,fg4))))
 
    ;; treemacs
    `(treemacs-directory-face				((t (:foreground ,fg1))))
@@ -594,6 +594,7 @@
    `(lsp-lens-mouse-face		((t (:foreground ,fg5 :underline t))))
    `(lsp-lens-face				((t (:foreground ,fg5))))
    `(lsp-face-highlight-textual ((t (:foreground ,fg1 :background ,search2))))
+   `(lsp-face-highlight-read    ((t (:foreground ,fg1 :background ,search2 :underline nil))))
 
    `(lsp-headerline-breadcrumb-separator-face				((t (:foreground ,fg5))))
    `(lsp-headerline-breadcrumb-path-face					((t (:foreground ,fg1))))
