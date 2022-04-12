@@ -733,7 +733,12 @@
    `(whitespace-indentation ((t (:foreground ,red  :background ,fg1))))
    `(whitespace-line        ((t (:foreground ,red  :background ,fg1 :weight bold))))
    `(nobreak-space          ((t (:inherit 'default :underline nil))))
-   `(whitespace-trailing    ((t (:foreground ,red))))))
+   `(whitespace-trailing    ((t (:foreground ,red))))
+
+   ;; yasnippet
+   `(yas-field-highlight-face ((t (:background ,bg5 :foreground ,fg1 :box (:line-width 1 :color ,fg5)))))
+
+   ))
 
 (custom-theme-set-variables
  'stimmung-themes-dark
