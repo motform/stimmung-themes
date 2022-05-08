@@ -37,6 +37,14 @@ A typical use-package installation might look something like:
   :config (stimmung-themes-load-light)) ; or (stimmung-themes-load-dark)
 #+END_SRC
 
+Note that some faces, like =org-block=, inherit from the =fixed-pitch= font, in order to allow them to properly work with =variable-pitch-mode=. This means that, in order to have a consistent experience, you may have to set the relevant =face-attribute=. For example:
+
+#+BEGIN_SRC emacs-lisp
+(set-face-attribute 'default        nil :family "iosevka"            :height fixed-size    :weight 'medium)
+(set-face-attribute 'fixed-pitch    nil :family "iosevka"            :height fixed-size    :weight 'medium)
+(set-face-attribute 'variable-pitch nil :family "Overpass Nerd Font" :height variable-size :weight 'normal)
+#+END_SRC
+
 ** Customization
 
 You can control the color of the highlight with the following variables.
