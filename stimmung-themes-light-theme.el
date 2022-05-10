@@ -261,6 +261,18 @@
    `(mode-line-emphasis  ((t (:foreground ,fg1 :bold t))))
    `(mode-line-highlight ((t (:foreground ,bg3))))
 
+   ;; centaur tabs
+   `(centaur-tabs-default             ((t (:foreground ,fg1 :background ,bg5))))
+   `(centaur-tabs-unselected          ((t (:foreground ,fg5 :background ,bg2))))
+   `(centaur-tabs-selected            ((t (:foreground ,fg1 :background ,bg1))))
+   `(centaur-tabs-unselected-modified ((t (:foreground ,fg5 :background ,bg2))))
+   `(centaur-tabs-selected-modified   ((t (:foreground ,fg1 :background ,bg1))))
+   `(centaur-tabs-close-unselected    ((t (:foreground ,fg3 :background ,bg2))))
+   `(centaur-tabs-close-selected      ((t (:foreground ,fg3 :background ,bg1))))
+   `(centaur-tabs-name-mouse-face     ((t (:foreground ,fg1))))
+   `(centaur-tabs-close-mouse-face    ((t (:foreground ,fg1))))
+   `(centaur-tabs-active-bar-face     ((t (:background ,stimmung-themes-light-highlight-color))))
+
    ;; completions
    `(completions-common-part ((t (:foreground ,fg1 :bold t))))
 
