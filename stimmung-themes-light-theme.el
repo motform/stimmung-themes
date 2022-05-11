@@ -440,12 +440,12 @@
    `(magit-section-highlight      ((t (:background ,bg3))))
 
    ;; diff-hl
-   `(diff-hl-insert         ((t (:foreground ,ok  :background ,bg1 :bold nil :italic nil))))
-   `(diff-hl-delete         ((t (:foreground ,red :background ,bg1 :bold nil :italic nil))))
-   `(diff-hl-change         ((t (:foreground ,fg1  :background ,bg1 :bold nil :italic nil))))
-   `(diff-hl-ignore         ((t (:foreground ,fg1  :background ,bg1 :bold nil :italic nil))))
-   `(diff-hl-margin-ignore  ((t (:foreground ,fg1  :background ,bg1 :bold nil :italic nil))))
-   `(diff-hl-margin-unknown ((t (:foreground ,fg1  :background ,bg1 :bold nil :italic nil))))
+   `(diff-hl-insert         ((t (:foreground ,fg1 :background ,ok :bold nil :italic nil))))
+   `(diff-hl-delete         ((t (:foreground ,fg1 :background ,red :bold nil :italic nil))))
+   `(diff-hl-change         ((t (:foreground ,fg1 :background ,search :bold nil :italic nil))))
+   `(diff-hl-ignore         ((t (:foreground ,fg1 :background ,bg1 :bold nil :italic nil))))
+   `(diff-hl-margin-ignore  ((t (:foreground ,fg1 :background ,bg1 :bold nil :italic nil))))
+   `(diff-hl-margin-unknown ((t (:foreground ,fg1 :background ,bg1 :bold nil :italic nil))))
 
    ;; help
    `(help-key-binding ((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg5)))))
