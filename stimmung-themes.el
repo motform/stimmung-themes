@@ -46,19 +46,60 @@
 (defgroup stimmung-themes nil
   "Stimmung settings.
 You have to re-load the theme for these changes to take effect."
-  :group 'faces
+  :group  'faces
   :prefix "stimmung-theme-"
   :link   '(url-link "https://github.com/motform/stimmung-themes"))
 
+
+;;; Highlight colors
+
 (defcustom stimmung-themes-dark-highlight-color "#40382b" ; I dub this shade "Japanese gravy"
-  "The primarily color for highlights, the only non-monochrome color in code."
-  :type 'string
+  "The dark theme color for highlights, the only non-monochrome color in code."
+  :type  'string
+  :group 'stimmung-themes)
+
+(defcustom stimmung-themes-dark-highlight-color-foreground "bisque1"
+  "The dark theme color for highlights that are defined as 'foreground.
+There are no 'foreground colors active by default."
+  :type  'string
   :group 'stimmung-themes)
 
 (defcustom stimmung-themes-light-highlight-color "cornsilk1"
-  "The primarily color for highlights, the only non-monochrome color in code."
-  :type 'string
+  "The light theme color for highlights, the only non-monochrome color in code."
+  :type  'string
   :group 'stimmung-themes)
+
+(defcustom stimmung-themes-light-highlight-color-foreground "dark goldenrod"
+  "The light theme color for highlights that are defined as 'foreground.
+There are no 'foreground colors active by default."
+  :type  'string
+  :group 'stimmung-themes)
+
+
+;;; font-lock faces
+
+(defmacro stimmung-themes--font-lock-face (name default)
+  "Register the custom font-lock-face for NAME with value DEFAULT."
+  (let ((custom-name (intern (concat "stimmung-themes-" name))))
+	`(defcustom ,custom-name ,default
+	   ,(format "The type of highlighting used for %s." name)
+	   :type    'symbol
+	   :group   'stimmung-themes
+	   :options '('background 'foreground 'none))))
+
+(stimmung-themes--font-lock-face "builtin"  'background)
+(stimmung-themes--font-lock-face "comment"  'background)
+(stimmung-themes--font-lock-face "constant" 'background)
+(stimmung-themes--font-lock-face "string"   'background)
+(stimmung-themes--font-lock-face "markup"   'background)
+(stimmung-themes--font-lock-face "function-name" 'none)
+(stimmung-themes--font-lock-face "keyword"		 'none)
+(stimmung-themes--font-lock-face "type"			 'none)
+(stimmung-themes--font-lock-face "variable-name" 'none)
+(stimmung-themes--font-lock-face "preprocessor"  'none)
+(stimmung-themes--font-lock-face "regex"         'none)
+
+;;;; Interactive functions
 
 ;;;###autoload
 (defun stimmung-themes-load-dark ()
@@ -78,7 +119,7 @@ You have to re-load the theme for these changes to take effect."
 (defun stimmung-themes--toggle-prompt ()
   "Helper for `stimmung-themes-toggle'."
   (let ((theme (intern (completing-read "Load Stimmung theme: "
-                           '(stimmung-themes-light stimmung-themes-dark) nil t))))
+										'(stimmung-themes-light stimmung-themes-dark) nil t))))
 	(mapc #'disable-theme custom-enabled-themes) ; make sure to disable any non-stimmung themes to ignore accidental face-overlap
 	(pcase theme
 	  ('stimmung-themes-light (stimmung-themes-load-light))

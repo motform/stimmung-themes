@@ -5,7 +5,7 @@
 
 * Stimmung, Emacs tuned to inner harmonies
 
-/Stimmung-themes/ is a pair of monoesuqe Emacs themes with minimal syntax highlighting. They are inspired by [[https://github.com/tonsky/sublime-scheme-alabaster][Tonsky's Alabaster theme]], following the maxim that a theme that highlights everything paradoxically highlights nothing. Text backgrounds (comments, strings and constants) and font variations (definitions/callsites) are used as alternatives to text colors, ensuring a harmonious reading experience. The hues of the /stimmung-dark/ are selected to match the default macOS dark mode. The themes feature a (default golden beige) highlight color that you can set with the variables ~stimmung-themes-light-highlight-color~ and ~stimmung-themes-dark-highlight-color~ respectively.
+/Stimmung-themes/ is a pair of monoesuqe Emacs themes with minimal syntax highlighting. They are inspired by [[https://github.com/tonsky/sublime-scheme-alabaster][Tonsky's Alabaster theme]], following the maxim that a theme that highlights everything paradoxically highlights nothing. Text backgrounds (comments, strings and constants) and font variations (definitions/callsites) are used as alternatives to text colors, ensuring a harmonious reading experience. The hues of the /stimmung-dark/ are selected to match the default macOS dark mode. The themes feature a (default golden beige) highlight color that you can set color and application of, see /Customization/.
 
 Emacs packages often define their own faces, making theming a relatively sisyphean task. /Stimmung-themes/ defines all default faces and some of the most common, and uncommon, packages. This includes programming modes like [[https://github.com/emacs-lsp/lsp-ui][lsp-ui]] and [[https://github.com/magit/magit][magit]], but also things like [[https://github.com/hlissner/emacs-solaire-mode][solaire]] and productivity/communication modes like [[https://git.notmuchmail.org/git/notmuch][notmuch]] or [[https://github.com/skeeto/elfeed][elfeed]]. Open an issue or make pull request if you lack a definition, they are always appreciated!
 
@@ -40,18 +40,31 @@ A typical use-package installation might look something like:
 Note that some faces, like =org-block=, inherit from the =fixed-pitch= font, in order to allow them to properly work with =variable-pitch-mode=. This means that, in order to have a consistent experience, you may have to set the relevant =face-attribute=. For example:
 
 #+BEGIN_SRC emacs-lisp
-(set-face-attribute 'default        nil :family "iosevka"            :height fixed-size    :weight 'medium)
-(set-face-attribute 'fixed-pitch    nil :family "iosevka"            :height fixed-size    :weight 'medium)
+(set-face-attribute 'default        nil :family "Iosevka"            :height fixed-size    :weight 'medium)
+(set-face-attribute 'fixed-pitch    nil :family "Iosevka"            :height fixed-size    :weight 'medium)
 (set-face-attribute 'variable-pitch nil :family "Overpass Nerd Font" :height variable-size :weight 'normal)
 #+END_SRC
 
 ** Customization
 
-You can control the color of the highlight with the following variables.
+Stimmung offers extensive control what and how to highlight ~font-lock~ faces, i.e. the colors used for syntax highlighting. It exposes a number of customizable variables (see table) that take a value of either ~'background~ (highlight behind the text), ~'foreground~ (highlight of the text) or ~'none~ (no highlight). In addition to these, one can control the color of the background and foreground highlight in both modes. See [[https://github.com/motform/stimmung-themes/issues/20][this thread]] for the fruitful discussion that introduced these.
 
-| variable                              | values          |
-|---------------------------------------+-----------------|
-| ~stimmung-themes-dark-highlight-color~  | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]] |
-| ~stimmung-themes-light-highlight-color~ | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]] |
+| variable                                         | values                                      |
+|--------------------------------------------------+---------------------------------------------|
+| ~stimmung-themes-dark-highlight-color~             | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]]                             |
+| ~stimmung-themes-dark-highlight-color-foreground~  | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]]                             |
+| ~stimmung-themes-light-highlight-color~            | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]]                             |
+| ~stimmung-themes-light-highlight-color-foreground~ | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]]                             |
+| ~stimmung-themes-builtin~                          | ~'background~ (default), ~'foreground~ or ~'none~ |
+| ~stimmung-themes-comment~                          | ~'background~ (default), ~'foreground~ or ~'none~ |
+| ~stimmung-themes-constant~                         | ~'background~ (default), ~'foreground~ or ~'none~ |
+| ~stimmung-themes-string~                           | ~'background~ (default), ~'foreground~ or ~'none~ |
+| ~stimmung-themes-markup~                           | ~'background~ (default), ~'foreground~ or ~'none~ |
+| ~stimmung-themes-function-name~                    | ~'background~, ~'foreground~ or ~'none~ (default) |
+| ~stimmung-themes-keyword~                          | ~'background~, ~'foreground~ or ~'none~ (default) |
+| ~stimmung-themes-type~                             | ~'background~, ~'foreground~ or ~'none~ (default) |
+| ~stimmung-themes-variable-name~                    | ~'background~, ~'foreground~ or ~'none~ (default) |
+| ~stimmung-themes-preprocessor~                     | ~'background~, ~'foreground~ or ~'none~ (default) |
+| ~stimmung-themes-regex~                            | ~'background~, ~'foreground~ or ~'none~ (default) |
 
-There is also a convenience function to toggle between the dark and light theme, ~stimmung-themes-toggle~.
+There is a convenience function to toggle between the dark and light theme, ~stimmung-themes-toggle~, along with variants to interactively load the dark and light versions ~stimmung-themes-load-{light|dark}~.
