@@ -55,16 +55,16 @@ Stimmung offers extensive control what and how to highlight ~font-lock~ faces, i
 | ~stimmung-themes-dark-highlight-color-foreground~  | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]]                             |
 | ~stimmung-themes-light-highlight-color~            | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]]                             |
 | ~stimmung-themes-light-highlight-color-foreground~ | [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Colors.html][any Emacs color]]                             |
-| ~stimmung-themes-builtin~                          | ~'background~ (default), ~'foreground~ or ~'none~ |
-| ~stimmung-themes-comment~                          | ~'background~ (default), ~'foreground~ or ~'none~ |
-| ~stimmung-themes-constant~                         | ~'background~ (default), ~'foreground~ or ~'none~ |
-| ~stimmung-themes-string~                           | ~'background~ (default), ~'foreground~ or ~'none~ |
-| ~stimmung-themes-markup~                           | ~'background~ (default), ~'foreground~ or ~'none~ |
-| ~stimmung-themes-function-name~                    | ~'background~, ~'foreground~ or ~'none~ (default) |
-| ~stimmung-themes-keyword~                          | ~'background~, ~'foreground~ or ~'none~ (default) |
-| ~stimmung-themes-type~                             | ~'background~, ~'foreground~ or ~'none~ (default) |
-| ~stimmung-themes-variable-name~                    | ~'background~, ~'foreground~ or ~'none~ (default) |
-| ~stimmung-themes-preprocessor~                     | ~'background~, ~'foreground~ or ~'none~ (default) |
-| ~stimmung-themes-regex~                            | ~'background~, ~'foreground~ or ~'none~ (default) |
+| ~stimmung-themes-builtin~                          | 'background (default), 'foreground or 'none |
+| ~stimmung-themes-comment~                          | 'background (default), 'foreground or 'none |
+| ~stimmung-themes-constant~                         | 'background (default), 'foreground or 'none |
+| ~stimmung-themes-string~                           | 'background (default), 'foreground or 'none |
+| ~stimmung-themes-markup~                           | 'background (default), 'foreground or 'none |
+| ~stimmung-themes-function-name~                    | 'background, 'foreground or 'none (default) |
+| ~stimmung-themes-keyword~                          | 'background, 'foreground or 'none (default) |
+| ~stimmung-themes-type~                             | 'background, 'foreground or 'none (default) |
+| ~stimmung-themes-variable-name~                    | 'background, 'foreground or 'none (default) |
+| ~stimmung-themes-preprocessor~                     | 'background, 'foreground or 'none (default) |
+| ~stimmung-themes-regex~                            | 'background, 'foreground or 'none (default) |
 
 There is a convenience function to toggle between the dark and light theme, ~stimmung-themes-toggle~, along with variants to interactively load the dark and light versions ~stimmung-themes-load-{light|dark}~.
