@@ -142,7 +142,7 @@ ITALIC? and BOLD? control font variant."
 	 `(font-lock-function-name-face     ,(user-controlled-with stimmung-themes-function-name :bold? t))
 	 `(font-lock-keyword-face           ,(user-controlled-with stimmung-themes-keyword))
 	 `(font-lock-type-face              ,(user-controlled-with stimmung-themes-type))
-	 `(font-lock-variable-name-face     ,(user-controlled-with stimmung-themes-type :bold? t))
+	 `(font-lock-variable-name-face     ,(user-controlled-with stimmung-themes-variable-name :bold? t))
 	 `(font-lock-string-face            ,(user-controlled-with stimmung-themes-string :bg str :fg str-fg))
 	 `(font-lock-doc-markup-face        ,(user-controlled-with stimmung-themes-markup))
 
