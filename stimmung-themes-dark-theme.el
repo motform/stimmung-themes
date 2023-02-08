@@ -475,6 +475,13 @@ ITALIC? and BOLD? control font variant."
 	 `(diff-hl-margin-ignore  ((t (:foreground ,fg1 :background ,bg1    :bold nil :italic nil))))
 	 `(diff-hl-margin-unknown ((t (:foreground ,fg1 :background ,bg1    :bold nil :italic nil))))
 
+	 ;; git-gutter-fringe
+	 `(git-gutter-fr:added    ((t (:foreground ,ok :bold nil :italic nil))))
+	 `(git-gutter-fr:deleted  ((t (:foreground ,red :bold nil :italic nil))))
+	 `(git-gutter-fr:modified ((t (:foreground ,search :bold nil :italic nil))))
+	 `(git-gutter:added       ((t (:foreground ,ok :bold nil :italic nil))))
+	 `(git-gutter:deleted     ((t (:foreground ,red :bold nil :italic nil))))
+	 `(git-gutter:modified    ((t (:foreground ,search :bold nil :italic nil))))
 
 	 ;; help
 	 `(help-key-binding ((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg5)))))
