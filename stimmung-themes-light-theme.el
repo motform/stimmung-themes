@@ -659,7 +659,8 @@ ITALIC? and BOLD? control font variant."
 
 	 ;; eglot
 
-	 `(eglot-mode-line ((t (:foregroud ,fg1 :background ,bg5))))
+	 `(eglot-highlight-symbol-face           ((t (:foregroud ,fg1 :background ,bg1))))
+	 `(eglot-mode-line                       ((t (:foregroud ,fg1 :background ,bg5))))
 	 `(eglot-diagnostic-tag-unnecessary-face ((t (:foregroud ,str-fg))))
 	 `(eglot-diagnostic-tag-deprecated-face  ((t (:foregroud ,str-fg :strike-through t))))
 
@@ -714,6 +715,46 @@ ITALIC? and BOLD? control font variant."
 	 `(lsp-ui-sideline-code-action		((t (:foreground ,fg1 :background ,str))))
 	 `(lsp-ui-sideline-symbol-info		((t (:foreground ,fg1 :background ,search2))))
 	 `(lsp-ui-sideline-global			((t (:foreground ,fg1 :background ,bg1))))
+
+	 ;; tree-sitter
+
+	 `(tree-sitter-hl-face:attribute             ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:comment               ((t (:inherit 'font-lock-comment-face))))
+	 `(tree-sitter-hl-face:constant              ((t (:inherit 'font-lock-constant-face))))
+	 `(tree-sitter-hl-face:constant.builtin      ((t (:inherit 'font-lock-constant-face))))
+	 `(tree-sitter-hl-face:constructor           ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:doc                   ((t (:inherit 'font-lock-comment-face))))
+	 `(tree-sitter-hl-face:embedded              ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:escape                ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:function              ((t (:inherit 'font-lock-function-name-face))))
+	 `(tree-sitter-hl-face:function.builtin      ((t (:inherit 'font-lock-function-name-face))))
+	 `(tree-sitter-hl-face:function.call         ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:function.macro        ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:function.special      ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:keyword               ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:label                 ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:method                ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:method.call           ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:number                ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:operator              ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:property              ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:property.definition   ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:punctuation           ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:punctuation.bracket   ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:punctuation.special   ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:punctuation.delimiter ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:string                ((t (:inherit 'font-lock-string-face))))
+	 `(tree-sitter-hl-face:string.special        ((t (:inherit 'font-lock-string-face))))
+	 `(tree-sitter-hl-face:tag                   ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:type                  ((t (:inherit 'font-lock-type-face))))
+	 `(tree-sitter-hl-face:type.argument         ((t (:inherit 'font-lock-type-face))))
+	 `(tree-sitter-hl-face:type.builtin          ((t (:inherit 'font-lock-type-face))))
+	 `(tree-sitter-hl-face:type.parameter        ((t (:inherit 'font-lock-type-face))))
+	 `(tree-sitter-hl-face:type.super            ((t (:inherit 'font-lock-type-face))))
+	 `(tree-sitter-hl-face:type.variable         ((t (:inherit 'font-lock-type-face))))
+	 `(tree-sitter-hl-face:variable.builtin      ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:variable.parameter    ((t (:foreground ,fg1 :background ,bg1))))
+	 `(tree-sitter-hl-face:variable.special      ((t (:foreground ,fg1 :background ,bg1))))
 
 	 ;; DAP
 
