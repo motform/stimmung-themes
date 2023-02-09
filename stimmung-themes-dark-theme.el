@@ -260,7 +260,7 @@ ITALIC? and BOLD? control font variant."
 	 `(corfu-echo    ((t (:background ,bg1 :foreground ,fg1 :italic t))))
 
 	 ;; consult
-	 `(consult-project-extra-projects ((t (:foreground ,str-fg :italic nil :bold t))))
+	 `(consult-project-extra-projects ((t (:foreground ,str-fg :italic t))))
 	 `(consult-file               ((t (:foreground ,fg1))))
 	 `(consult-grep-context       ((t (:foreground ,fg1))))
 	 `(consult-grep-help          ((t (:foreground ,ok))))
@@ -476,11 +476,11 @@ ITALIC? and BOLD? control font variant."
 	 `(diff-hl-margin-unknown ((t (:foreground ,fg1 :background ,bg1    :bold nil :italic nil))))
 
 	 ;; git-gutter-fringe
-	 `(git-gutter-fr:added    ((t (:foreground ,ok :bold nil :italic nil))))
-	 `(git-gutter-fr:deleted  ((t (:foreground ,red :bold nil :italic nil))))
+	 `(git-gutter-fr:added    ((t (:foreground ,ok     :bold nil :italic nil))))
+	 `(git-gutter-fr:deleted  ((t (:foreground ,red    :bold nil :italic nil))))
 	 `(git-gutter-fr:modified ((t (:foreground ,search :bold nil :italic nil))))
-	 `(git-gutter:added       ((t (:foreground ,ok :bold nil :italic nil))))
-	 `(git-gutter:deleted     ((t (:foreground ,red :bold nil :italic nil))))
+	 `(git-gutter:added       ((t (:foreground ,ok     :bold nil :italic nil))))
+	 `(git-gutter:deleted     ((t (:foreground ,red    :bold nil :italic nil))))
 	 `(git-gutter:modified    ((t (:foreground ,search :bold nil :italic nil))))
 
 	 ;; help
@@ -653,9 +653,15 @@ ITALIC? and BOLD? control font variant."
 	 `(font-latex-string-face       ((t (:foreground ,fg1))))
 	 `(font-latex-warning-face      ((t (:foreground ,bg4))))
 	 `(font-latex-math-face         ((t (:foreground ,fg1))))
-	 `(font-latex-script-char-face  ((t (:foregroudn ,fg1))))
+	 `(font-latex-script-char-face  ((t (:foreground ,fg1))))
 
-	 ;; LSP
+	 ;; eglot
+
+	 `(eglot-mode-line ((t (:foregroud ,fg1 :background ,bg5))))
+	 `(eglot-diagnostic-tag-unnecessary-face ((t (:foregroud ,str-fg))))
+	 `(eglot-diagnostic-tag-deprecated-face  ((t (:foregroud ,str-fg :strike-through t))))
+
+	 ;; lsp-mode
 
 	 `(lsp-dired-path-face			((t (:foreground ,fg1))))
 	 `(lsp-dired-path-error-face	((t (:foreground ,fg1 :underline (:style wave :color ,red)))))
