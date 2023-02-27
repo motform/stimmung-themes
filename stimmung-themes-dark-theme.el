@@ -662,6 +662,11 @@ ITALIC? and BOLD? control font variant."
 	 `(eglot-diagnostic-tag-unnecessary-face ((t (:foregroud ,str-fg))))
 	 `(eglot-diagnostic-tag-deprecated-face  ((t (:foregroud ,str-fg :strike-through t))))
 
+	 ;; eldoc-box
+
+	 `(eldoc-box-border ((t (:background ,fg5))))
+	 `(eldoc-box-body   ((t (:foreground ,fg1 background ,bg5))))
+
 	 ;; lsp-mode
 
 	 `(lsp-dired-path-face			((t (:foreground ,fg1))))
@@ -753,6 +758,10 @@ ITALIC? and BOLD? control font variant."
 	 `(tree-sitter-hl-face:variable.builtin      ((t (:foreground ,fg1 :background ,bg1))))
 	 `(tree-sitter-hl-face:variable.parameter    ((t (:foreground ,fg1 :background ,bg1))))
 	 `(tree-sitter-hl-face:variable.special      ((t (:foreground ,fg1 :background ,bg1))))
+
+	 ;; Typescript
+
+	 `(typescript-jsdoc-value ((t (:inherit org-block))))
 
 	 ;; DAP
 

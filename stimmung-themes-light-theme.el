@@ -664,6 +664,11 @@ ITALIC? and BOLD? control font variant."
 	 `(eglot-diagnostic-tag-unnecessary-face ((t (:foregroud ,str-fg))))
 	 `(eglot-diagnostic-tag-deprecated-face  ((t (:foregroud ,str-fg :strike-through t))))
 
+	 ;; eldoc-box
+
+	 `(eldoc-box-border ((t (:background ,fg5))))
+	 `(eldoc-box-body   ((t (:foreground ,fg1 background ,bg5))))
+
 	 ;; lsp-mode
 
 	 `(lsp-dired-path-face			((t (:foreground ,fg1))))
@@ -746,15 +751,19 @@ ITALIC? and BOLD? control font variant."
 	 `(tree-sitter-hl-face:string                ((t (:inherit 'font-lock-string-face))))
 	 `(tree-sitter-hl-face:string.special        ((t (:inherit 'font-lock-string-face))))
 	 `(tree-sitter-hl-face:tag                   ((t (:foreground ,fg1 :background ,bg1))))
-	 `(tree-sitter-hl-face:type                  ((t (:inherit 'font-lock-type-face))))
-	 `(tree-sitter-hl-face:type.argument         ((t (:inherit 'font-lock-type-face))))
-	 `(tree-sitter-hl-face:type.builtin          ((t (:inherit 'font-lock-type-face))))
-	 `(tree-sitter-hl-face:type.parameter        ((t (:inherit 'font-lock-type-face))))
-	 `(tree-sitter-hl-face:type.super            ((t (:inherit 'font-lock-type-face))))
-	 `(tree-sitter-hl-face:type.variable         ((t (:inherit 'font-lock-type-face))))
+	 `(tree-sitter-hl-face:type                  ((t (:inherit font-lock-type-face))))
+	 `(tree-sitter-hl-face:type.argument         ((t (:foreground ,fg1 :background ,bg1 :italic t))))
+	 `(tree-sitter-hl-face:type.builtin          ((t (:foreground ,fg1 :background ,bg1 :italic t))))
+	 `(tree-sitter-hl-face:type.parameter        ((t (:foreground ,fg1 :background ,bg1 :italic t))))
+	 `(tree-sitter-hl-face:type.super            ((t (:foreground ,fg1 :background ,bg1 :italic t))))
+	 `(tree-sitter-hl-face:type.variable         ((t (:foreground ,fg1 :background ,bg1 :italic t))))
 	 `(tree-sitter-hl-face:variable.builtin      ((t (:foreground ,fg1 :background ,bg1))))
 	 `(tree-sitter-hl-face:variable.parameter    ((t (:foreground ,fg1 :background ,bg1))))
 	 `(tree-sitter-hl-face:variable.special      ((t (:foreground ,fg1 :background ,bg1))))
+
+	 ;; Typescript
+
+	 `(typescript-jsdoc-value ((t (:foreground ,fg1 :background ,stimmung-themes-light-highlight-color))))
 
 	 ;; DAP
 
