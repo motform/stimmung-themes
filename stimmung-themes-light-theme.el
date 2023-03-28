@@ -887,6 +887,12 @@ ITALIC? and BOLD? control font variant."
 	 ;; yasnippet
 	 `(yas-field-highlight-face ((t (:background ,bg5 :foreground ,fg1 :box (:line-width 1 :color ,fg5)))))
 
+	 ;; xref
+
+	 `(next-error-message ((t (:background ,search2))))
+	 `(xref-file-header ((t (:foreground ,fg1 :bold t))))
+	 `(xref-match       ((t (:foreground ,fg1))))
+	 `(xref-line-number ((t (:inherit 'line-number))))
 	 )))
 
 (custom-theme-set-variables
