@@ -465,6 +465,7 @@ ITALIC? and BOLD? control font variant."
 	 `(magit-process-ok             ((t (:foreground ,ok :bold t))))
 	 `(magit-section-heading        ((t (:foreground ,fg1 :bold t))))
 	 `(magit-section-highlight      ((t (:background ,bg3))))
+	 `(magit-tag                    ((t ,(user-controlled-with stimmung-themes-constant :italic? t))))
 	 
 	 `(git-commit-comment-action    ((t ((:inherit 'font-lock-comment-face) :bold t))))
 
