@@ -769,6 +769,20 @@ ITALIC? and BOLD? control font variant."
 	 `(typescript-jsdoc-type  ((t (:inherit font-lock-type-face))))
 	 `(typescript-jsdoc-tag   ((t (:foreground ,fg1 :bold t))))
 
+	 ;; rg.el
+
+	 `(rg-match-face          ((t (:foreground ,fg1 :background ,search2))))
+	 `(rg-error-face          ((t (:inherit error))))
+	 `(rg-warning-face        ((t (:inherit warning))))
+	 `(rg-context-face        ((t (:foreground ,fg5))))
+	 `(rg-filename-face       ((t (:foreground ,fg1 :bold t))))
+	 `(rg-info-face           ((t (:foreground ,fg1))))
+	 `(rg-tag-face            ((t ,(user-controlled-with stimmung-themes-constant :italic? t))))
+	 `(rg-file-tag-face       ((t ,(user-controlled-with stimmung-themes-constant :italic? t))))
+	 `(rg-line-number-face    ((t (:inherit 'line-number))))
+	 `(rg-column-number-face  ((t (:inherit 'line-number))))
+	 `(rg-match-position-face ((t (:inherit 'line-number))))
+
 	 ;; DAP
 
 	 ;; TODO I'm not sure how popular DAP is is, but it would be nice to support it.
