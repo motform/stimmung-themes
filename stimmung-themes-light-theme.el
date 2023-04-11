@@ -466,6 +466,12 @@ ITALIC? and BOLD? control font variant."
 	 `(magit-section-heading        ((t (:foreground ,fg1 :bold t))))
 	 `(magit-section-highlight      ((t (:background ,bg3))))
 	 `(magit-tag                    ((t ,(user-controlled-with stimmung-themes-constant :italic? t))))
+
+	 `(magit-blame-highlight        ((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,fg5 :style nil)))))
+	 `(magit-blame-name             ((t (:bold t))))
+	 `(magit-blame-date             ((t (:foreground ,fg1 :italic t))))
+	 `(magit-blame-summary          ((t (:foreground ,fg1))))
+	 `(magit-blame-hash             ((t (:foreground ,fg1))))
 	 
 	 `(git-commit-comment-action    ((t ((:inherit 'font-lock-comment-face) :bold t))))
 
@@ -662,7 +668,7 @@ ITALIC? and BOLD? control font variant."
 
 	 ;; eglot
 
-	 `(eglot-highlight-symbol-face           ((t (:foregroud ,fg1 :background ,bg1))))
+	 `(eglot-highlight-symbol-face           ((t (:foregroud ,fg1 :background ,search))))
 	 `(eglot-mode-line                       ((t (:foregroud ,fg1 :background ,bg5))))
 	 `(eglot-diagnostic-tag-unnecessary-face ((t (:foregroud ,str-fg))))
 	 `(eglot-diagnostic-tag-deprecated-face  ((t (:foregroud ,str-fg :strike-through t))))
