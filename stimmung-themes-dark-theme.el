@@ -308,7 +308,7 @@ ITALIC? and BOLD? control font variant."
 	 `(doom-modeline-project-root-dir   ((t (:foreground ,fg1 :weight normal))))
 	 `(doom-modeline-project-parent-dir ((t (:foreground ,fg1 :weight normal))))
 	 `(doom-modeline-bar-inactive       ((t (:foreground ,fg1 :background ,bg1))))
-	 `(doom-modeline-bar                ((t (:background ,bg5)))) ; the leftmost bar
+	 `(doom-modeline-bar                ((t (:background ,stimmung-themes-dark-highlight-color)))) ; the leftmost bar
 	 `(doom-modeline-evil-insert-state  ((t (:foreground ,fg1))))
 	 `(doom-modeline-evil-visual-state  ((t (:foreground ,fg1))))
 	 `(doom-modeline-evil-normal-state  ((t (:foreground ,fg1))))
