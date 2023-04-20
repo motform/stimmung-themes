@@ -90,7 +90,6 @@ ITALIC? and BOLD? control font variant."
 	 `(lazy-highlight      ((t (:foreground ,fg1 :background ,search2))))
 	 `(secondary-selection ((t (:foreground ,fg1 :background ,search2))))
 	 `(highlight           ((t (:foreground ,fg1 :background ,bg3 :bold t))))
-	 `(default             ((t (:foreground ,fg1 :background ,bg1))))
 	 `(fringe              ((t (:foreground ,fg1 :background ,bg1))))
 	 `(match               ((t (:foreground ,ok  :bold t))))
 	 `(scroll-bar          ((t (:foreground ,fg5 :background ,bg1))))
@@ -663,6 +662,10 @@ ITALIC? and BOLD? control font variant."
 	 `(font-latex-warning-face      ((t (:foreground ,bg4))))
 	 `(font-latex-math-face         ((t (:foreground ,fg1))))
 	 `(font-latex-script-char-face  ((t (:foreground ,fg1))))
+
+	 ;; copilot
+
+	 `(copilot-overlay-face         ((t (:foreground ,fg5 :italic t))))
 
 	 ;; eglot
 
