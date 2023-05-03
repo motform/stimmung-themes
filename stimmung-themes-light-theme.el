@@ -835,11 +835,11 @@ ITALIC? and BOLD? control font variant."
 	 `(web-mode-html-tag-bracket-face  ((t (:foreground ,fg1 :bold t))))
 
 	 ;; visual-regexp
-	 `(vr/match-0 ((t (:background ,bg3 :foreground ,red :bold t))))
-	 `(vr/match-1 ((t (:background ,bg2 :foreground ,red))))
-	 `(vr/group-0 ((t (:background ,bg3 :foreground ,red :bold t))))
-	 `(vr/group-1 ((t (:background ,bg2 :foreground ,red))))
-	 `(vr/group-2 ((t (:background ,bg2 :foreground ,fg1))))
+	 `(vr/match-0 ((t (:background ,search2 :foreground ,fg1))))
+	 `(vr/match-1 ((t (:background ,search2 :foreground ,fg1))))
+	 `(vr/group-0 ((t (:background ,search2 :foreground ,fg1))))
+	 `(vr/group-1 ((t (:background ,search2 :foreground ,fg1))))
+	 `(vr/group-2 ((t (:background ,search2 :foreground ,fg1))))
 
 	 ;; elfeed
 	 `(elfeed-search-date-face         ((t (:foreground ,fg5 :inherit bold))))
