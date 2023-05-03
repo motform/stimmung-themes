@@ -97,14 +97,13 @@ ITALIC? and BOLD? control font variant."
 	 `(link                ((t (:underline t))))
 	 `(link-visited        ((t (:underline t :italic t))))
 	 `(button              ((t (:underline t))))
-	 `(header-line         ((t (:bold t))))
 	 `(tooltip             ((t (:foreground ,fg1 :background ,bg3))))
 	 `(vertical-border     ((t (:foreground ,bg2 :background ,bg2))))
 	 `(info-string         ((t (:background ,stimmung-themes-dark-highlight-color))))
 	 `(default-italic      ((t (:slant italic))))
 
 	 `(error                       ((t (:foreground ,red))))
-	 `(warning                     ((t (:foreground ,red))))
+	 `(warning                     ((t (:foreground ,warning))))
 	 `(success                     ((t (:foreground ,ok))))
 	 `(cancel                      ((t (:foreground ,red :strike-through t))))
 

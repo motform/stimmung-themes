@@ -2,7 +2,7 @@
 ;; Copyright © 2019
 
 ;; Author: Love Lagerkvist
-;; URL: https://github.com/motform/stimmung
+;; URL: https://github.com/motform/stimmung-themes
 ;; Created: 2019-12-20
 ;; Version: 2022-03-26
 ;; Keywords: faces
@@ -49,7 +49,7 @@
 	  (bg2 "gray95")
 	  (bg3 "gray90")
 	  (bg4 "gray85")
-	  (bg5 "gray98")
+	  (bg5 "gray95")
 	  (bg6 "gray99")
 	  (bg7 "gray80")
 
@@ -84,7 +84,7 @@ ITALIC? and BOLD? control font variant."
 	 'stimmung-themes-light
 
 	 `(default  ((t (:background ,bg1 :foreground ,fg1))))
-	 `(shadow   ((t (:background ,bg1))))
+	 ;; `(shadow   ((t (:background ,bg1))))
 	 `(hl-line  ((t (:background ,bg2 :extend t))))
 
 	 `(region              ((t (:background ,bg4))))
@@ -98,7 +98,6 @@ ITALIC? and BOLD? control font variant."
 	 `(link                ((t (:underline t))))
 	 `(link-visited        ((t (:underline t :italic t))))
 	 `(button              ((t (:underline t))))
-	 `(header-line         ((t (:bold t))))
 	 `(tooltip             ((t (:foreground ,fg1 :background ,bg3))))
 	 `(vertical-border     ((t (:foreground ,bg2 :background ,bg2))))
 	 `(info-string         ((t (:background ,stimmung-themes-light-highlight-color))))
@@ -119,7 +118,7 @@ ITALIC? and BOLD? control font variant."
 
 	 `(paren-matched               ((t (:foreground ,ok  :background ,bg1))))
 	 `(paren-unmatched             ((t (:foreground ,red :background ,bg1))))
-	 `(escape-glyph                ((t (:foreground ,fg5)))) ; TODO move into an fg1 color?
+	 `(escape-glyph                ((t (:foreground ,red :bold t))))
 	 `(homoglyph                   ((t (:foreground ,red))))
 
 	 `(line-number              ((t (:foreground ,fg5 :background ,bg1))))
@@ -369,6 +368,10 @@ ITALIC? and BOLD? control font variant."
 	 ;; info
 	 `(info-quoted    ((t (:inherit 'default :bold t))))
 	 `(info-menu-star ((t (:bold t))))
+
+	 ;; Mini-frame
+
+	 `(mini-frame-mode ((t (:bold t))))
 
 	 ;; ivy
 	 `(ivy-current-match              ((t (:background ,bg1 :bold t))))
