@@ -145,6 +145,18 @@ ITALIC? and BOLD? control font variant."
 	 `(font-lock-string-face            ,(user-controlled-with stimmung-themes-string :bg str :fg str-fg))
 	 `(font-lock-doc-markup-face        ,(user-controlled-with stimmung-themes-markup))
 
+     ;; tree-sitter based font lock faces
+	 `(font-lock-regexp-face            ,(user-controlled-with stimmung-themes-regex))
+     `(font-lock-escape-face            ,(user-controlled-with stimmung-themes-regex :italic? t))
+     `(font-lock-number-face            ((t (:foreground ,fg1))))
+     `(font-lock-operator-face          ((t (:foreground ,fg1))))
+     `(font-lock-property-name-face     ((t (:foreground ,fg1))))
+     `(font-lock-property-use-face      ((t (:foreground ,fg1))))
+	 `(font-lock-bracket-face           ((t (:foreground ,str-fg))))
+	 `(font-lock-delimiter-face         ((t (:foreground ,str-fg))))
+	 `(font-lock-punctuation-face       ((t (:foreground ,str-fg))))
+	 `(font-lock-misc-punctuation-face  ((t (:foreground ,str-fg))))
+
 	 ;; custom
 	 `(custom-invalid			((t (:background ,bg1 :foreground ,fg1 :underline (:style wave :color ,warning)))))
 	 `(custom-rogue				((t (:background ,bg1 :foreground ,fg5 :underline nil))))
@@ -768,10 +780,10 @@ ITALIC? and BOLD? control font variant."
 	 `(tree-sitter-hl-face:operator              ((t (:foreground ,fg1 :background nil))))
 	 `(tree-sitter-hl-face:property              ((t (:foreground ,fg1 :background nil))))
 	 `(tree-sitter-hl-face:property.definition   ((t (:foreground ,fg1 :background nil))))
-	 `(tree-sitter-hl-face:punctuation           ((t (:foreground ,fg1 :background nil))))
-	 `(tree-sitter-hl-face:punctuation.bracket   ((t (:foreground ,fg1 :background nil))))
-	 `(tree-sitter-hl-face:punctuation.special   ((t (:foreground ,fg1 :background nil))))
-	 `(tree-sitter-hl-face:punctuation.delimiter ((t (:foreground ,fg1 :background nil))))
+	 `(tree-sitter-hl-face:punctuation           ((t (:foreground ,fg5 :background nil))))
+	 `(tree-sitter-hl-face:punctuation.bracket   ((t (:foreground ,fg5 :background nil))))
+	 `(tree-sitter-hl-face:punctuation.special   ((t (:foreground ,fg5 :background nil))))
+	 `(tree-sitter-hl-face:punctuation.delimiter ((t (:foreground ,fg5 :background nil))))
 	 `(tree-sitter-hl-face:string                ((t (:inherit 'font-lock-string-face))))
 	 `(tree-sitter-hl-face:string.special        ((t (:inherit 'font-lock-string-face))))
 	 `(tree-sitter-hl-face:tag                   ((t (:foreground ,fg1 :background nil :bold t))))
