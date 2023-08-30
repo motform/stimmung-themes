@@ -277,10 +277,10 @@ ITALIC? and BOLD? control font variant."
 	 `(compilation-mode-line-exit ((t (:inherit 'compilation-info))))
 	 `(compilation-mode-line-fail ((t (:inherit 'compilation-error))))
 
-	 ;; modeline
+	 ;; mode-line
 	 `(header-line         ((t (:inherit 'mode-line  :distant-foreground ,bg1))))
-	 `(mode-line           ((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,bg4 :style nil)))))
-	 `(mode-line-inactive  ((t (:foreground ,fg5 :background ,bg1 :box (:line-width 1 :color ,bg3 :style nil)))))
+	 `(mode-line           ((t (:foreground ,fg1 :background ,bg1 :box nil))))
+	 `(mode-line-inactive  ((t (:foreground ,fg5 :background ,bg6 :box nil))))
 	 `(mode-line-buffer-id ((t (:foreground ,fg1 :bold t :distant-foreground ,bg4))))
 	 `(mode-line-emphasis  ((t (:foreground ,fg1 :bold t))))
 	 `(mode-line-highlight ((t (:foreground ,bg3))))
@@ -307,13 +307,13 @@ ITALIC? and BOLD? control font variant."
 	 `(doom-modeline-project-dir        ((t (:foreground ,fg1 :weight bold))))
 	 `(doom-modeline-project-root-dir   ((t (:foreground ,fg1 :weight normal))))
 	 `(doom-modeline-project-parent-dir ((t (:foreground ,fg1 :weight normal))))
-	 `(doom-modeline-bar-inactive       ((t (:foreground ,fg1 :background ,bg1))))
+	 `(doom-modeline-bar-inactive       ((t (:foreground ,fg1 :background ,bg6))))
 	 `(doom-modeline-bar                ((t (:background ,stimmung-themes-dark-highlight-color)))) ; the leftmost bar
 	 `(doom-modeline-evil-insert-state  ((t (:foreground ,fg1))))
 	 `(doom-modeline-evil-visual-state  ((t (:foreground ,fg1))))
 	 `(doom-modeline-evil-normal-state  ((t (:foreground ,fg1))))
 	 `(doom-modeline-evil-emacs-state   ((t (:foreground ,red :italic nil))))
-	 `(doom-modeline-buffer-minor-mode  ((t (:background ,bg5))))
+	 `(doom-modeline-buffer-minor-mode  ((t (:background ,bg6))))
 
 	 ;; dired
 	 `(dired-directory  ((t (:foreground ,fg1 :bold t))))
@@ -564,9 +564,9 @@ ITALIC? and BOLD? control font variant."
 	 `(solaire-line-number-face			((t (:background ,bg6 :foreground ,fg5))))
 	 `(solaire-hl-line-face				((t (:background ,bg2 :extend t))))
 	 `(solaire-org-hide-face			((t (:background ,bg6 :foreground ,fg1))))
-	 `(solaire-mode-line-face			((t (:foreground ,fg1 :background ,bg5 :box (:line-width 1 :color ,bg4 :style nil)))))
-	 `(solaire-mode-line-inactive-face	((t (:foreground ,fg5 :background ,bg1 :box (:line-width 1 :color ,bg3 :style nil)))))
-	 `(solaire-header-line-face			((t (:background ,bg6 :foreground ,fg1 :bold t))))
+	 `(solaire-mode-line-face			((t (:foreground ,fg1 :background ,bg6 :box nil))))
+	 `(solaire-mode-line-inactive-face	((t (:foreground ,fg5 :background ,bg6 :box nil))))
+	 `(solaire-header-line-face			((t (:foreground ,fg1 :background ,bg6 :bold t))))
 
 	 ;; sh
 	 `(sh-quoted-exec ((t (:background ,stimmung-themes-dark-highlight-color))))
