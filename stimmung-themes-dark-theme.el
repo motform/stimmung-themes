@@ -731,10 +731,24 @@ ITALIC? and BOLD? control font variant."
 	 `(lsp-ui-sideline-symbol-info		((t (:foreground ,fg1 :background ,search2))))
 	 `(lsp-ui-sideline-global			((t (:foreground ,fg1 :background ,bg1))))
 
+     ;; lsp-bridge
+	 `(lsp-bridge-ref-font-lock-header-line-text      ((t (:foreground ,fg1 :background nil))))
+	 `(lsp-bridge-ref-font-lock-header-line-edit-mode ((t (:foreground ,fg1 :background nil))))
+	 `(lsp-bridge-ref-font-lock-command               ((t (:foreground ,fg1 :background nil :bold t))))
+	 `(lsp-bridge-ref-font-lock-file                  ((t (:foreground ,fg1 :background nil :bold t))))
+	 `(lsp-bridge-ref-font-lock-line-number           ((t (:inherit 'line-number))))
+	 `(lsp-bridge-ref-font-lock-column-number         ((t (:inherit 'line-number))))
+	 `(lsp-bridge-ref-font-lock-position-splitter     ((t (:foreground ,fg1 :background nil))))
+	 `(lsp-bridge-ref-font-lock-match                 ((t (:foreground ,fg1 :background ,search2))))
+	 `(lsp-bridge-ref-font-lock-diagnostic            ((t (:inherit 'error))))
+	 `(lsp-bridge-ref-font-lock-mark-changed          ((t (:foreground ,fg1 :background ,search2 :italic t))))
+	 `(lsp-bridge-ref-font-lock-mark-deleted          ((t (:foreground ,fg1 :background ,bg1 :strike-through ,red))))
+	 `(lsp-bridge-ref-font-lock-function-location     ((t (:foreground ,fg1 :background ,search2))))
+
 	 ;; tree-sitter
 
 	 `(tree-sitter-hl-face:attribute             ((t (:inherit 'font-lock-constant-face))))
-	 `(tree-sitter-hl-face:comment               ((t (:inherit 'font-lock-comment-face))))
+	 `(tree-sitter-hl-face:comment               ((t (:inherit 'font-lock-comment-face :extend t))))
 	 `(tree-sitter-hl-face:constant              ((t (:inherit 'font-lock-constant-face))))
 	 `(tree-sitter-hl-face:constant.builtin      ((t (:inherit 'font-lock-constant-face))))
 	 `(tree-sitter-hl-face:constructor           ((t (:foreground ,fg1 :background nil))))
