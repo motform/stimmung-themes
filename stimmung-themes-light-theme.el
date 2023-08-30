@@ -805,9 +805,11 @@ ITALIC? and BOLD? control font variant."
 
 	 ;; Typescript
 
-	 `(typescript-jsdoc-value ((t (:foreground ,fg1 :background ,stimmung-themes-light-highlight-color))))
-	 `(typescript-jsdoc-type  ((t (:inherit font-lock-type-face))))
-	 `(typescript-jsdoc-tag   ((t (:foreground ,fg1 :bold t))))
+	 `(typescript-jsdoc-value           ((t (:foreground ,fg1 :background ,stimmung-themes-dark-highlight-color))))
+	 `(typescript-jsdoc-type            ((t (:inherit font-lock-type-face))))
+	 `(typescript-jsdoc-tag             ((t (:foreground ,fg1 :bold t))))
+	 `(typescript-ts-jsx-attribute-face ((t (:foreground ,fg1 :italic t))))
+	 `(typescript-ts-jsx-tag-face       ((t (:foreground ,fg1 :bold t))))
 
 	 ;; rg.el
 
