@@ -67,13 +67,14 @@
       (warning "orange")
       (red     "IndianRed1")
       (ok      "SeaGreen"))
-  (cl-flet ((user-controlled-with (var &key bg fg italic? bold?)
+  (cl-flet ((user-controlled-with (var &key bg fg italic? bold? extend?)
 			  "Utility function for user-customizable faces.
 VAR is the variable that is checked, like `stimmung-themes-comment'.
 BG and FG  correspond to the highlight used by 'background and 'foreground,
 if something other than the standard is desired.
 ITALIC? and BOLD? control font variant."
 			  (let ((font-variants `(,@(when italic? `(:italic t))
+                                     ,@(when extend? `(:extend t))
 									 ,@(when bold? `(:bold t)))))
 				`((t ,(pcase var
 						('background `(:background ,(or bg stimmung-themes-dark-highlight-color) :foreground ,fg1 ,@font-variants))
@@ -124,9 +125,9 @@ ITALIC? and BOLD? control font variant."
 	 `(linum                    ((t (:inherit 'line-number))))
 
 	 ;; syntax, user customizable
-	 `(font-lock-comment-delimiter-face ,(user-controlled-with stimmung-themes-comment :bg str :fg fg5 :italic? t))
+	 `(font-lock-comment-delimiter-face ,(user-controlled-with stimmung-themes-comment :bg str :fg fg5 :italic? t :extend? t))
 	 `(font-lock-comment-face           ,(user-controlled-with stimmung-themes-comment :bg str :fg fg5 :italic? t))
-	 `(font-lock-doc-face               ,(user-controlled-with stimmung-themes-comment :bg str :fg fg5 :italic? t))
+	 `(font-lock-doc-face               ,(user-controlled-with stimmung-themes-comment :bg str :fg fg5 :italic? t :extend? t))
 
 	 `(font-lock-negation-char-face     ,(user-controlled-with stimmung-themes-preprocessor))
 	 `(font-lock-preprocessor-face      ,(user-controlled-with stimmung-themes-preprocessor))
