@@ -81,14 +81,15 @@ There are no 'foreground colors active by default."
 (defmacro stimmung-themes--font-lock-face (name default)
   "Register the custom font-lock-face for NAME with value DEFAULT."
   (let ((custom-name (intern (concat "stimmung-themes-" name))))
-	`(defcustom ,custom-name ,default
-	   ,(format "The type of highlighting used for %s." name)
-	   :type    'symbol
-	   :group   'stimmung-themes
-	   :options '('background 'foreground 'none))))
+	  `(defcustom ,custom-name ,default
+	     ,(format "The type of highlighting used for %s." name)
+	     :type    'symbol
+	     :group   'stimmung-themes
+	     :options '('background 'foreground 'none))))
 
 (stimmung-themes--font-lock-face "builtin"  'background)
 (stimmung-themes--font-lock-face "comment"  'background)
+(stimmung-themes--font-lock-face "doc"      'background)
 (stimmung-themes--font-lock-face "constant" 'background)
 (stimmung-themes--font-lock-face "string"   'background)
 (stimmung-themes--font-lock-face "markup"   'background)
@@ -119,11 +120,11 @@ There are no 'foreground colors active by default."
 (defun stimmung-themes--toggle-prompt ()
   "Helper for `stimmung-themes-toggle'."
   (let ((theme (intern (completing-read "Load Stimmung theme: "
-										'(stimmung-themes-light stimmung-themes-dark) nil t))))
-	(mapc #'disable-theme custom-enabled-themes) ; make sure to disable any non-stimmung themes to ignore accidental face-overlap
-	(pcase theme
-	  ('stimmung-themes-light (stimmung-themes-load-light))
-	  ('stimmung-themes-dark  (stimmung-themes-load-dark)))))
+										                    '(stimmung-themes-light stimmung-themes-dark) nil t))))
+	  (mapc #'disable-theme custom-enabled-themes) ; make sure to disable any non-stimmung themes to ignore accidental face-overlap
+	  (pcase theme
+	    ('stimmung-themes-light (stimmung-themes-load-light))
+	    ('stimmung-themes-dark  (stimmung-themes-load-dark)))))
 
 ;;;###autoload
 (defun stimmung-themes-toggle ()
@@ -133,9 +134,9 @@ Currently assumes the themes is loaded, which might be an issue.
 Inspired by stimmung-themes."
   (interactive)
   (pcase (car custom-enabled-themes)
-	('stimmung-themes-light (stimmung-themes-load-dark))
-	('stimmung-themes-dark  (stimmung-themes-load-light))
-	(_ (stimmung-themes--toggle-prompt))))
+	  ('stimmung-themes-light (stimmung-themes-load-dark))
+	  ('stimmung-themes-dark  (stimmung-themes-load-light))
+	  (_ (stimmung-themes--toggle-prompt))))
 
 (provide 'stimmung-themes)
 
