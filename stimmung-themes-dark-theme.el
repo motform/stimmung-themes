@@ -43,7 +43,10 @@
 (require 'stimmung-themes)
 
 (deftheme stimmung-themes-dark
-  "A dark theme tuned to inner harmonies.")
+  "A dark theme tuned to inner harmonies."
+  :family 'stimmung-themes
+  :kind 'color-scheme
+  :background-mode 'dark)
 
 (let ((bg1 "#1E1E1E")
       (bg2 "#404040")
