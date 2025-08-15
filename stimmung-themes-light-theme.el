@@ -529,7 +529,7 @@ ITALIC? and BOLD? control font variant."
 	   `(outline-8 ((t (:foreground ,fg1 :bold t :extend t))))
 
 	   ;; TODO org-agenda
-
+	   `(org-agenda-structure ((t (:foreground ,fg1 :background ,bg1))))
 	   ;; org
 	   `(org-code                  ((t (:background ,str :distant-foreground ,bg1 :background ,stimmung-themes-light-highlight-color))))
 	   `(org-link                  ((t (:underline t))))
